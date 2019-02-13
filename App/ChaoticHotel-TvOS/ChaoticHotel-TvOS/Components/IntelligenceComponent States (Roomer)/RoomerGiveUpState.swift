@@ -10,6 +10,13 @@ import Foundation
 import GameplayKit
 
 class RoomerGiveUpState: GKState {
+    
+    var entity: GKEntity!
+    
+    init(_ entity: GKEntity) {
+        self.entity = entity
+        super.init()
+    }
 
    override func isValidNextState(_ stateClass: AnyClass) -> Bool {
         switch stateClass {
@@ -21,7 +28,11 @@ class RoomerGiveUpState: GKState {
     }
     
     override func didEnter(from previousState: GKState?) {
+        print("RoomerGiveUpState didEnter")
         
+        // TODO: #06 Logic to lost some points
+        
+        self.stateMachine!.enter(RoomerGoOutState.self)
     }
 
 }

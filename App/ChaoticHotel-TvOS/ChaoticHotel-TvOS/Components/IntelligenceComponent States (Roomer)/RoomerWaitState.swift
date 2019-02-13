@@ -11,6 +11,13 @@ import GameplayKit
 
 class RoomerWaitState: GKState {
     
+    var entity: GKEntity!
+    
+    init(_ entity: GKEntity) {
+        self.entity = entity
+        super.init()
+    }
+    
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {
         switch stateClass {
         case is RoomerRoomServiceState.Type:
@@ -23,7 +30,7 @@ class RoomerWaitState: GKState {
     }
     
     override func didEnter(from previousState: GKState?) {
-        
+        // TODO: #01 Logic to choose between RoomServie or LeaveHotel
     }
 
 }

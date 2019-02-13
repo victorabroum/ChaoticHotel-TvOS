@@ -10,6 +10,13 @@ import Foundation
 import GameplayKit
 
 class RoomerAssistState: GKState {
+    
+    var entity: GKEntity!
+    
+    init(_ entity: GKEntity) {
+        self.entity = entity
+        super.init()
+    }
 
    override func isValidNextState(_ stateClass: AnyClass) -> Bool {
         switch stateClass {
@@ -23,7 +30,8 @@ class RoomerAssistState: GKState {
     }
     
     override func didEnter(from previousState: GKState?) {
-        
+        // TODO: #03 Choose right next state
+        // Or Room or Wait
     }
 
 }

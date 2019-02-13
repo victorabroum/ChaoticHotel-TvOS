@@ -28,6 +28,7 @@
 		76608BD522149AF40023C29C /* RoomerRoomServiceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76608BD422149AF40023C29C /* RoomerRoomServiceState.swift */; };
 		76608BD722149B2D0023C29C /* RoomerLeaveState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76608BD622149B2D0023C29C /* RoomerLeaveState.swift */; };
 		76608BD922149B520023C29C /* RoomerGoOutState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76608BD822149B520023C29C /* RoomerGoOutState.swift */; };
+		76608BDB2214A08E0023C29C /* Roomer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76608BDA2214A08E0023C29C /* Roomer+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		76608BD422149AF40023C29C /* RoomerRoomServiceState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomerRoomServiceState.swift; sourceTree = "<group>"; };
 		76608BD622149B2D0023C29C /* RoomerLeaveState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomerLeaveState.swift; sourceTree = "<group>"; };
 		76608BD822149B520023C29C /* RoomerGoOutState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomerGoOutState.swift; sourceTree = "<group>"; };
+		76608BDA2214A08E0023C29C /* Roomer+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Roomer+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 				76608BBB221459930023C29C /* Staff.swift */,
 				76608BC122146AC90023C29C /* EntityManager.swift */,
 				76608BC7221487B60023C29C /* Roomer.swift */,
+				76608BDA2214A08E0023C29C /* Roomer+Extensions.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				76608BCF22149A2E0023C29C /* RoomerAssistState.swift in Sources */,
 				76608BD522149AF40023C29C /* RoomerRoomServiceState.swift in Sources */,
 				76608BBC221459930023C29C /* Staff.swift in Sources */,
+				76608BDB2214A08E0023C29C /* Roomer+Extensions.swift in Sources */,
 				76608BCB221497190023C29C /* RoomerWaitState.swift in Sources */,
 				76608BC022145EA10023C29C /* MovementComponent.swift in Sources */,
 				76608BA022130E210023C29C /* AppDelegate.swift in Sources */,

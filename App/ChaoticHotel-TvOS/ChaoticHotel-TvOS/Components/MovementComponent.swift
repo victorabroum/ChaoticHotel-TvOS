@@ -24,7 +24,7 @@ class MovementComponent: GKComponent {
             return
         }
         
-        // TODO: Put Player Velocity in order to put a constant
+        // TODO: #04 Put Player Velocity in order to put a constant
         switch direction {
         case .rigth:
             print("GO TO Right")
@@ -32,6 +32,15 @@ class MovementComponent: GKComponent {
         case .left:
             print("GO TO Left")
             node.position.x -= 10
+        }
+    }
+    
+    func move(to point: CGPoint, withCompletion completion: @escaping () -> Void ) {
+        if let node = self.entity!.component(ofType: RenderComponent.self)?.node {
+            // TimeInterval, this time is to duration to arrive on reception
+            node.run(SKAction.move(to: point, duration: 3)) {
+                completion()
+            }
         }
     }
     

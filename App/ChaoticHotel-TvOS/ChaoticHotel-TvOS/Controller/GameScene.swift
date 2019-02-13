@@ -38,13 +38,18 @@ class GameScene: SKScene {
         
         // Test Roomer
         let roomer = Roomer(withImageNamed: "staff_placeHolder")
-        if let renderComponent = roomer.component(ofType: RenderComponent.self) {
-            print("tem render")
-            renderComponent.node?.xScale = 0.07
-            renderComponent.node?.yScale = 0.07
-            renderComponent.node?.run(SKAction.colorize(with: .blue, colorBlendFactor: 1, duration: 0))
+        guard let renderComponent = roomer.component(ofType: RenderComponent.self) else {
+            return
         }
+        renderComponent.node?.xScale = 0.07
+        renderComponent.node?.yScale = 0.07
+        renderComponent.node?.run(SKAction.colorize(with: .blue, colorBlendFactor: 1, duration: 0))
         self.entityManager.add(roomer)
+        
+        renderComponent.node?.position = (self.childNode(withName: "spawnRoomer")?.position)!
+        
+        // Poderia alguma lógica
+        roomer.walkTo(self.childNode(withName: "receptionPoint")!.position)
         
     }
 
