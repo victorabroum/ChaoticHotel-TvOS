@@ -15,11 +15,25 @@ class GameScene: SKScene {
     var graphs = [String: GKGraph]()
 
     private var lastUpdateTime: TimeInterval = 0
-    private var label: SKLabelNode?
-    private var spinnyNode: SKShapeNode?
+    
+    var staff: Staff!
+    var entityManager: EntityManager!
 
     override func sceneDidLoad() {
         self.lastUpdateTime = 0
+        
+        self.entityManager = EntityManager(scene: self)
+        
+        staff = Staff(withImageNamed: "staff_placeHolder")
+        // Change Sprite scale
+        if let renderComponent = staff.component(ofType: RenderComponent.self) {
+            print("tem render")
+            renderComponent.node?.xScale = 0.1
+            renderComponent.node?.yScale = 0.1
+        }
+        
+        self.entityManager.add(staff)
+        
     }
 
     override func update(_ currentTime: TimeInterval) {
@@ -40,4 +54,16 @@ class GameScene: SKScene {
 
         self.lastUpdateTime = currentTime
     }
+    
+//    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        for touch in touches {
+//            print("Location \(touch.location(in: self))")
+//
+//            let location = touch.location(in: self)
+//            if let moveComp = staff.component(ofType: MovementComponent.self) {
+//                moveComp.move(to: location)
+//            }
+//
+//        }
+//    }
 }

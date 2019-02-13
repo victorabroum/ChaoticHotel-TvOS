@@ -11,9 +11,21 @@ import SpriteKit
 import GameplayKit
 
 class GameViewController: UIViewController {
+    
+    var rootScene: GameScene!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Detect Swipe
+        
+        var swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(GameViewController.swipeRight))
+        swipeRecognizer.direction = .right
+        self.view.addGestureRecognizer(swipeRecognizer)
+        
+        swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(GameViewController.swipeLeft))
+        swipeRecognizer.direction = .left
+        self.view.addGestureRecognizer(swipeRecognizer)
 
         // Load 'GameScene.sks' as a GKScene. This provides gameplay related content
         // including entities and graphs.
@@ -21,6 +33,8 @@ class GameViewController: UIViewController {
 
             // Get the SKScene from the loaded GKScene
             if let sceneNode = scene.rootNode as? GameScene? {
+                
+                self.rootScene = sceneNode
 
                 // Copy gameplay related content over to the scene
                 sceneNode!.entities = scene.entities
@@ -39,6 +53,24 @@ class GameViewController: UIViewController {
                     view!.showsNodeCount = true
                 }
             }
+        }
+    }
+    
+    @objc func swipeRight() {
+        print("SWIPE RIGHT")
+        if let moveComp = self.rootScene.staff.component(ofType: MovementComponent.self) {
+            
+            moveComp.move(to: .rigth)
+            
+        }
+    }
+    
+    @objc func swipeLeft() {
+        print("SWIPE Left")
+        if let moveComp = self.rootScene.staff.component(ofType: MovementComponent.self) {
+            
+            moveComp.move(to: .left)
+            
         }
     }
 
