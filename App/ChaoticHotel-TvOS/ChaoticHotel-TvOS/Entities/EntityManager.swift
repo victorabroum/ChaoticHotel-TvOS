@@ -18,7 +18,8 @@ class EntityManager {
     let scene: SKScene
     
     lazy var componentSystems: [GKComponentSystem] = {
-        return []
+        let moveSystem = GKComponentSystem(componentClass: MovementComponent.self)
+        return [moveSystem]
     }()
     
     // Init with a Scene
