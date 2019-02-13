@@ -16,16 +16,7 @@ enum Direction {
 
 class MovementComponent: GKComponent {
     
-    var toPoint: CGPoint?
-    
-    // TODO: Don't need pass time interval
-//    func move(to point: CGPoint, duration: TimeInterval = 1.0) {
-//        guard let node = self.entity!.component(ofType: RenderComponent.self)?.node else {
-//            return
-//        }
-//        
-//        node.run(SKAction.move(to: point, duration: duration))
-//    }
+    var direction: Direction!
     
     func move(to direction: Direction) {
         
@@ -33,6 +24,7 @@ class MovementComponent: GKComponent {
             return
         }
         
+        // TODO: Put Player Velocity in order to put a constant
         switch direction {
         case .rigth:
             print("GO TO Right")

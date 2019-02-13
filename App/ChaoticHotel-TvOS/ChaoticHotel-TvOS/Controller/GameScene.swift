@@ -16,6 +16,8 @@ class GameScene: SKScene {
 
     private var lastUpdateTime: TimeInterval = 0
     
+    var lastPoint: CGPoint!
+    
     var staff: Staff!
     var entityManager: EntityManager!
 
@@ -53,17 +55,8 @@ class GameScene: SKScene {
         }
 
         self.lastUpdateTime = currentTime
+        
+        self.entityManager.update(deltaTime)
     }
     
-//    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        for touch in touches {
-//            print("Location \(touch.location(in: self))")
-//
-//            let location = touch.location(in: self)
-//            if let moveComp = staff.component(ofType: MovementComponent.self) {
-//                moveComp.move(to: location)
-//            }
-//
-//        }
-//    }
 }
