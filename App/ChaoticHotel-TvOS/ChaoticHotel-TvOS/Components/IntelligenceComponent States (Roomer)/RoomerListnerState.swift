@@ -34,24 +34,33 @@ class RoomerListnerState: GKState {
     }
     
     override func didEnter(from previousState: GKState?) {
+        var waitTimer: TimeInterval = WaitTimer.reception
+        var waitTextureBallon: SKTexture?
+        var textureName: String?
         
         if(previousState != nil) {
-            // TODO: Define timer
-            // TODO: Define image for icon wait
             switch previousState! {
             case is RoomerListnerState:
                 // Wait a time and Go Out
                 print("Wait a time and Go Out")
+                waitTimer = WaitTimer.bag
+                textureName = nil
             case is RoomerRoomState:
                 // Wait a time on room for bag
                 print("Wait a time on room for bag")
+                waitTimer = WaitTimer.bag
+                textureName = nil
             case is RoomerRoomServiceState:
                 // Wait a time on room for Room service
                 print("Wait a time on room for Room service")
+                waitTimer = WaitTimer.roomService
+                textureName = nil
             case is RoomerLeaveState:
                 // Wait a time on reception
                 // Go to RoomerListnerState
                 print("Wait a time on reception")
+                waitTimer = WaitTimer.reception
+                textureName = nil
             default:
                 break
             }
@@ -61,19 +70,21 @@ class RoomerListnerState: GKState {
             return
         }
         
-        // TODO: Pop up right Icon to wait
-        print("Ballon -> TO ESPERANDO")
+        guard let ballon = self.entity.component(ofType: BallonComponent.self) else {return}
         
-        // TODO: Attempt to count time, for time to wait
-        let upper = SKAction.moveBy(x: 0, y: 10, duration: 0.3)
-        let idleWait = SKAction.repeat(SKAction.sequence([upper, upper.reversed()]), count: 5)
+        if let texture = textureName {
+            waitTextureBallon = SKTexture.init(
+                imageNamed: texture)
+            ballon.changeTexture(forTexture: waitTextureBallon)
+        }
+        ballon.showBallon()
+
+        let idleWait = SKAction.wait(forDuration: waitTimer)
         
         node.run(idleWait) {
-            print("TO CHATEADO VOU EMBORA")
             node.removeAllActions()
+            ballon.dismissBallon()
             self.stateMachine?.enter(RoomerGiveUpState.self)
         }
-        
     }
-
 }
