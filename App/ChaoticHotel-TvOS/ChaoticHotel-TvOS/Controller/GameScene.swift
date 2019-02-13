@@ -26,6 +26,7 @@ class GameScene: SKScene {
         
         self.entityManager = EntityManager(scene: self)
         
+        // Test Staff Entity
         staff = Staff(withImageNamed: "staff_placeHolder")
         // Change Sprite scale
         if let renderComponent = staff.component(ofType: RenderComponent.self) {
@@ -33,8 +34,17 @@ class GameScene: SKScene {
             renderComponent.node?.xScale = 0.1
             renderComponent.node?.yScale = 0.1
         }
-        
         self.entityManager.add(staff)
+        
+        // Test Roomer
+        let roomer = Roomer(withImageNamed: "staff_placeHolder")
+        if let renderComponent = roomer.component(ofType: RenderComponent.self) {
+            print("tem render")
+            renderComponent.node?.xScale = 0.07
+            renderComponent.node?.yScale = 0.07
+            renderComponent.node?.run(SKAction.colorize(with: .blue, colorBlendFactor: 1, duration: 0))
+        }
+        self.entityManager.add(roomer)
         
     }
 

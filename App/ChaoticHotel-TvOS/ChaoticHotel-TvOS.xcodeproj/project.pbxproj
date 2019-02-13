@@ -19,6 +19,15 @@
 		76608BC222146AC90023C29C /* EntityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76608BC122146AC90023C29C /* EntityManager.swift */; };
 		76608BC4221478BE0023C29C /* MoveSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76608BC3221478BE0023C29C /* MoveSystem.swift */; };
 		76608BC622147ACF0023C29C /* GameScene+Extesions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76608BC522147ACF0023C29C /* GameScene+Extesions.swift */; };
+		76608BC8221487B60023C29C /* Roomer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76608BC7221487B60023C29C /* Roomer.swift */; };
+		76608BCB221497190023C29C /* RoomerWaitState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76608BCA221497190023C29C /* RoomerWaitState.swift */; };
+		76608BCD2214996C0023C29C /* RoomerGiveUpState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76608BCC2214996C0023C29C /* RoomerGiveUpState.swift */; };
+		76608BCF22149A2E0023C29C /* RoomerAssistState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76608BCE22149A2E0023C29C /* RoomerAssistState.swift */; };
+		76608BD122149A7D0023C29C /* RoomerRoomState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76608BD022149A7D0023C29C /* RoomerRoomState.swift */; };
+		76608BD322149ACC0023C29C /* RoomerListnerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76608BD222149ACC0023C29C /* RoomerListnerState.swift */; };
+		76608BD522149AF40023C29C /* RoomerRoomServiceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76608BD422149AF40023C29C /* RoomerRoomServiceState.swift */; };
+		76608BD722149B2D0023C29C /* RoomerLeaveState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76608BD622149B2D0023C29C /* RoomerLeaveState.swift */; };
+		76608BD922149B520023C29C /* RoomerGoOutState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76608BD822149B520023C29C /* RoomerGoOutState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +45,15 @@
 		76608BC122146AC90023C29C /* EntityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityManager.swift; sourceTree = "<group>"; };
 		76608BC3221478BE0023C29C /* MoveSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveSystem.swift; sourceTree = "<group>"; };
 		76608BC522147ACF0023C29C /* GameScene+Extesions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Extesions.swift"; sourceTree = "<group>"; };
+		76608BC7221487B60023C29C /* Roomer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roomer.swift; sourceTree = "<group>"; };
+		76608BCA221497190023C29C /* RoomerWaitState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomerWaitState.swift; sourceTree = "<group>"; };
+		76608BCC2214996C0023C29C /* RoomerGiveUpState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomerGiveUpState.swift; sourceTree = "<group>"; };
+		76608BCE22149A2E0023C29C /* RoomerAssistState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomerAssistState.swift; sourceTree = "<group>"; };
+		76608BD022149A7D0023C29C /* RoomerRoomState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomerRoomState.swift; sourceTree = "<group>"; };
+		76608BD222149ACC0023C29C /* RoomerListnerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomerListnerState.swift; sourceTree = "<group>"; };
+		76608BD422149AF40023C29C /* RoomerRoomServiceState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomerRoomServiceState.swift; sourceTree = "<group>"; };
+		76608BD622149B2D0023C29C /* RoomerLeaveState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomerLeaveState.swift; sourceTree = "<group>"; };
+		76608BD822149B520023C29C /* RoomerGoOutState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomerGoOutState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +137,7 @@
 			children = (
 				76608BBB221459930023C29C /* Staff.swift */,
 				76608BC122146AC90023C29C /* EntityManager.swift */,
+				76608BC7221487B60023C29C /* Roomer.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -126,11 +145,27 @@
 		76608BB922130F360023C29C /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				76608BC92214968F0023C29C /* IntelligenceComponent States (Roomer) */,
 				76608BBD22145A780023C29C /* RenderComponent.swift */,
 				76608BBF22145EA10023C29C /* MovementComponent.swift */,
 				76608BC3221478BE0023C29C /* MoveSystem.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		76608BC92214968F0023C29C /* IntelligenceComponent States (Roomer) */ = {
+			isa = PBXGroup;
+			children = (
+				76608BD222149ACC0023C29C /* RoomerListnerState.swift */,
+				76608BCC2214996C0023C29C /* RoomerGiveUpState.swift */,
+				76608BCE22149A2E0023C29C /* RoomerAssistState.swift */,
+				76608BD022149A7D0023C29C /* RoomerRoomState.swift */,
+				76608BCA221497190023C29C /* RoomerWaitState.swift */,
+				76608BD422149AF40023C29C /* RoomerRoomServiceState.swift */,
+				76608BD622149B2D0023C29C /* RoomerLeaveState.swift */,
+				76608BD822149B520023C29C /* RoomerGoOutState.swift */,
+			);
+			path = "IntelligenceComponent States (Roomer)";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,9 +263,18 @@
 				76608BC622147ACF0023C29C /* GameScene+Extesions.swift in Sources */,
 				76608BA622130E210023C29C /* GameScene.swift in Sources */,
 				76608BC222146AC90023C29C /* EntityManager.swift in Sources */,
+				76608BCD2214996C0023C29C /* RoomerGiveUpState.swift in Sources */,
 				76608BBE22145A780023C29C /* RenderComponent.swift in Sources */,
+				76608BD322149ACC0023C29C /* RoomerListnerState.swift in Sources */,
+				76608BD922149B520023C29C /* RoomerGoOutState.swift in Sources */,
+				76608BD722149B2D0023C29C /* RoomerLeaveState.swift in Sources */,
 				76608BA822130E210023C29C /* GameViewController.swift in Sources */,
+				76608BD122149A7D0023C29C /* RoomerRoomState.swift in Sources */,
+				76608BC8221487B60023C29C /* Roomer.swift in Sources */,
+				76608BCF22149A2E0023C29C /* RoomerAssistState.swift in Sources */,
+				76608BD522149AF40023C29C /* RoomerRoomServiceState.swift in Sources */,
 				76608BBC221459930023C29C /* Staff.swift in Sources */,
+				76608BCB221497190023C29C /* RoomerWaitState.swift in Sources */,
 				76608BC022145EA10023C29C /* MovementComponent.swift in Sources */,
 				76608BA022130E210023C29C /* AppDelegate.swift in Sources */,
 				76608BC4221478BE0023C29C /* MoveSystem.swift in Sources */,
