@@ -9,6 +9,18 @@
 import Foundation
 import GameplayKit
 
-class Staff: GKEntity{
+class Staff: GKEntity {
+    
+    init(withImageNamed imageNamed: String) {
+        super.init()
+        
+        // Add RenderComponent
+        let renderComponent = RenderComponent(imageNamed: imageNamed)
+        self.addComponent(renderComponent)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
 }
