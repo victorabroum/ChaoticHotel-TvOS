@@ -21,6 +21,10 @@ class Roomer: GKEntity {
         
         // Add RenderComponent
         let renderComponent = RenderComponent(imageNamed: imageNamed)
+        // Add BallonComponent for show icons
+        let ballonComponent = BallonComponent.init(nodeSuper: renderComponent.node!, andTexture: nil)
+        
+        self.addComponent(ballonComponent)
         self.addComponent(renderComponent)
         self.addComponent(MovementComponent())
     }
