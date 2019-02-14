@@ -41,4 +41,8 @@ extension Roomer {
             self.stateMachine.enter(RoomerListnerState.self)
         }
     }
+    
+    func changeWaitingFor(_ wait: WaitingFor!) {
+        self.waitingFor = wait
+    }
 }
