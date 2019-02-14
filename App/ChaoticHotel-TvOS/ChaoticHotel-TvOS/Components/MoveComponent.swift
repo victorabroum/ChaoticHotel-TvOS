@@ -24,15 +24,14 @@ class MoveComponent: GKComponent {
             return
         }
         
-        // TODO: #04 Put Player Velocity in order to put a constant
         // TODO: Change orientation of Controller, x to y
         switch direction {
         case .rigth:
             print("GO TO Right")
-            node.position.x += 10
+            node.position.x += PlayerConstants.velocity
         case .left:
             print("GO TO Left")
-            node.position.x -= 10
+            node.position.x -= PlayerConstants.velocity
         }
     }
     
