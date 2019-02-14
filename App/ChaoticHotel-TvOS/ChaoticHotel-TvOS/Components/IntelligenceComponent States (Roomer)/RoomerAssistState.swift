@@ -26,30 +26,27 @@ class RoomerAssistState: GKState {
             return true
         case is RoomerListnerState.Type:
             return true
+        case is RoomerGoOutState.Type:
+            return true
         default:
             return false
         }
     }
     
     override func didEnter(from previousState: GKState?) {
-        print("RoomerAssistState didEnter")
-        
         guard let ballonNode = self.entity.component(ofType: BallonComponent.self) else { return }
         
         ballonNode.dismissBallon()
         
-        print("WAITING FOR \(self.entity.waitingFor!)")
-        
-        if self.entity.isInRoom {
+        if (self.entity.isLeaving) {
+            self.stateMachine?.enter(RoomerGoOutState.self)
+        } else if (self.entity.waitingFor == .checkOut) {
+            self.stateMachine?.enter(RoomerListnerState.self)
+        } else if self.entity.isInRoom {
             self.stateMachine?.enter(RoomerWaitState.self)
         } else {
             self.entity.isInRoom  = true
-            
-            if (self.entity.waitingFor! == .checkOut) {
-                self.stateMachine?.enter(RoomerListnerState.self)
-            } else {
-                self.stateMachine?.enter(RoomerRoomState.self)
-            }
+            self.stateMachine?.enter(RoomerRoomState.self)
         }
     }
 

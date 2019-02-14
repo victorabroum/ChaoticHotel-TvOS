@@ -9,13 +9,6 @@
 import Foundation
 import GameplayKit
 
-enum WaitingFor {
-    case bag
-    case food
-    case checkIn
-    case checkOut
-}
-
 extension Roomer {
     
     func prepareStateMachine() {
@@ -45,11 +38,20 @@ extension Roomer {
         }
     }
     
-    func changeWaitingFor(_ wait: WaitingFor!) {
+    func changeWaitingFor(_ wait: ServiceCategory!) {
         self.waitingFor = wait
     }
     
     func changeRoom(_ room: SKNode!) {
         self.room = room
+    }
+    
+    func deliverService(ofCategory category: ServiceCategory) {
+        if (category == self.waitingFor) {
+            print("Roomer - Thank you, pick a Tip")
+            self.stateMachine.enter(RoomerAssistState.self)
+        } else {
+            print("Wrong Service Baby")
+        }
     }
 }
