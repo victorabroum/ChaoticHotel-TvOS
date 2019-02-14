@@ -35,9 +35,10 @@ class RoomerListnerState: GKState {
     
     override func didEnter(from previousState: GKState?) {
         var waitTimer: TimeInterval = WaitTimer.reception
-        var waitTextureBallon: SKTexture?
         var textureName: String?
+        var waitingFor: WaitingFor = .checkIn
         
+        // TODO: Put right textureName
         if(previousState != nil) {
             switch previousState! {
             case is RoomerListnerState:
@@ -45,26 +46,37 @@ class RoomerListnerState: GKState {
                 print("Wait a time and Go Out")
                 waitTimer = WaitTimer.bag
                 textureName = nil
+                waitingFor = .bag
             case is RoomerRoomState:
                 // Wait a time on room for bag
                 print("Wait a time on room for bag")
                 waitTimer = WaitTimer.bag
                 textureName = nil
+                waitingFor = .bag
             case is RoomerRoomServiceState:
                 // Wait a time on room for Room service
                 print("Wait a time on room for Room service")
                 waitTimer = WaitTimer.roomService
                 textureName = nil
+                waitingFor = .food
             case is RoomerLeaveState:
                 // Wait a time on reception
                 // Go to RoomerListnerState
                 print("Wait a time on reception")
                 waitTimer = WaitTimer.reception
                 textureName = nil
+                waitingFor = .checkOut
             default:
                 break
             }
         }
+        
+        self.entity.changeWaitingFor(waitingFor)
+        
+        self.animate(imageNamed: textureName, duration: waitTimer)
+    }
+    
+    func animate(imageNamed: String?, duration: TimeInterval) {
         
         guard let node = self.entity.component(ofType: RenderComponent.self)?.node else {
             return
@@ -72,14 +84,13 @@ class RoomerListnerState: GKState {
         
         guard let ballon = self.entity.component(ofType: BallonComponent.self) else {return}
         
-        if let texture = textureName {
-            waitTextureBallon = SKTexture.init(
-                imageNamed: texture)
-            ballon.changeTexture(forTexture: waitTextureBallon)
+        if (imageNamed != nil) {
+            ballon.changeTexture(forTexture: SKTexture(imageNamed: imageNamed!))
         }
+        
         ballon.showBallon()
-
-        let idleWait = SKAction.wait(forDuration: waitTimer)
+        
+        let idleWait = SKAction.wait(forDuration: duration)
         
         node.run(idleWait) {
             node.removeAllActions()
