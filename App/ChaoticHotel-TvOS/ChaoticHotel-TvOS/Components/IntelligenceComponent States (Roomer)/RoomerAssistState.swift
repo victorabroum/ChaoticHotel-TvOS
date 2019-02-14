@@ -24,6 +24,8 @@ class RoomerAssistState: GKState {
             return true
         case is RoomerWaitState.Type:
             return true
+        case is RoomerListnerState.Type:
+            return true
         default:
             return false
         }
@@ -36,11 +38,18 @@ class RoomerAssistState: GKState {
         
         ballonNode.dismissBallon()
         
+        print("WAITING FOR \(self.entity.waitingFor!)")
+        
         if self.entity.isInRoom {
             self.stateMachine?.enter(RoomerWaitState.self)
         } else {
             self.entity.isInRoom  = true
-            self.stateMachine?.enter(RoomerRoomState.self)
+            
+            if (self.entity.waitingFor! == .checkOut) {
+                self.stateMachine?.enter(RoomerListnerState.self)
+            } else {
+                self.stateMachine?.enter(RoomerRoomState.self)
+            }
         }
     }
 

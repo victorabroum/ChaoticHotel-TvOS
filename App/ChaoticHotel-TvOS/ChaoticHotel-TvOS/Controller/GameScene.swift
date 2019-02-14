@@ -65,7 +65,7 @@ class GameScene: SKScene {
         
         // Just for Spawn Roomer
         // TODO: Improve Spawn Logic
-        let spawnRoomerInterval = TimeInterval(10)
+        let spawnRoomerInterval = TimeInterval(50)
         if (CACurrentMediaTime() - lastSpawn > spawnRoomerInterval) {
             lastSpawn = CACurrentMediaTime()
             print("De \(spawnRoomerInterval) em \(spawnRoomerInterval) segundos")
