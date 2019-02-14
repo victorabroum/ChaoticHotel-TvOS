@@ -30,7 +30,13 @@ class RoomerWaitState: GKState {
     }
     
     override func didEnter(from previousState: GKState?) {
-        // TODO: #01 Logic to choose between RoomServie or LeaveHotel
+        
+        // Has 60% of chance to ask for Room Service
+        if (Int.random(in: 0...10) >= 4) {
+            self.stateMachine?.enter(RoomerRoomServiceState.self)
+        } else {
+            self.stateMachine?.enter(RoomerLeaveState.self)
+        }
     }
 
 }
