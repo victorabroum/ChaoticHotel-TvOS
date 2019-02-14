@@ -9,6 +9,13 @@
 import Foundation
 import GameplayKit
 
+enum WaitingFor {
+    case bag
+    case food
+    case checkIn
+    case checkOut
+}
+
 extension Roomer {
     
     func prepareStateMachine() {
