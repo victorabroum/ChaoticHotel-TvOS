@@ -30,7 +30,7 @@ class RoomerWaitState: GKState {
     }
     
     override func didEnter(from previousState: GKState?) {
-        
+        print("RoomerWaitState didEnter")
         // Has 60% of chance to ask for Room Service
         if (Int.random(in: 0...10) >= 4) {
             self.stateMachine?.enter(RoomerRoomServiceState.self)

@@ -30,7 +30,12 @@ class RoomerAssistState: GKState {
     }
     
     override func didEnter(from previousState: GKState?) {
-
+        print("RoomerAssistState didEnter")
+        
+        guard let ballonNode = self.entity.component(ofType: BallonComponent.self) else { return }
+        
+        ballonNode.dismissBallon()
+        
         if self.entity.isInRoom {
             self.stateMachine?.enter(RoomerWaitState.self)
         } else {

@@ -28,7 +28,18 @@ class RoomerRoomState: GKState {
     }
     
     override func didEnter(from previousState: GKState?) {
-        self.stateMachine?.enter(RoomerListnerState.self)
+        print("RoomerRoomState didEnter")
+    
+        guard let node = self.entity.component(ofType: RenderComponent.self)?.node else { return }
+        
+        guard let scene = node.scene as? GameScene else { return }
+        
+        scene.hotel.enterOnRoom(roomer: self.entity)
+        
+        // TODO: Choose right time to Go to ListnerState
+        node.run(SKAction.wait(forDuration: 3)) {
+            self.stateMachine?.enter(RoomerListnerState.self)
+        }
     }
 
 }

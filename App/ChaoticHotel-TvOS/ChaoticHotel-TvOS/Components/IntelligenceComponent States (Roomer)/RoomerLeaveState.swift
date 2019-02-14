@@ -28,6 +28,7 @@ class RoomerLeaveState: GKState {
     }
     
     override func didEnter(from previousState: GKState?) {
+        print("RoomerLeaveState didEnter")
         self.stateMachine?.enter(RoomerListnerState.self)
     }
 
