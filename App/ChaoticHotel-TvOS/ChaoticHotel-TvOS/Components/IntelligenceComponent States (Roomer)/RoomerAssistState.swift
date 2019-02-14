@@ -40,16 +40,13 @@ class RoomerAssistState: GKState {
         
         print("WAITING FOR \(self.entity.waitingFor!)")
         
-        if self.entity.isInRoom {
+        if (self.entity.waitingFor == .checkOut) {
+            self.stateMachine?.enter(RoomerListnerState.self)
+        } else if self.entity.isInRoom {
             self.stateMachine?.enter(RoomerWaitState.self)
         } else {
             self.entity.isInRoom  = true
-            
-            if (self.entity.waitingFor! == .checkOut) {
-                self.stateMachine?.enter(RoomerListnerState.self)
-            } else {
-                self.stateMachine?.enter(RoomerRoomState.self)
-            }
+            self.stateMachine?.enter(RoomerRoomState.self)
         }
     }
 

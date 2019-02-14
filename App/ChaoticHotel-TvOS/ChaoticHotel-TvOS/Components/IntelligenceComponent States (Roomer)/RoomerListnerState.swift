@@ -71,18 +71,26 @@ class RoomerListnerState: GKState {
                 waitTimer = WaitTimer.reception
                 textureName = nil
                 waitingFor = .checkOut
+            case is RoomerAssistState:
+                // Wait a time on reception for a Bag
+                print("Wait a time for a bag to Go out")
+                waitTimer = WaitTimer.bag
+                textureName = nil
+                waitingFor = .bag
+                self.stateMachine?.enter(RoomerGoOutState.self)
             default:
                 break
             }
         }
         
         self.entity.changeWaitingFor(waitingFor)
-        
-        guard let node = self.entity.component(ofType: RenderComponent.self)?.node else { return }
-        
-        node.run(SKAction.wait(forDuration: 2)) {
-            self.entity.stateMachine.enter(RoomerAssistState.self)
-        }
+
+        // To test if Roomer is Assisted
+//        guard let node = self.entity.component(ofType: RenderComponent.self)?.node else { return }
+//
+//        node.run(SKAction.wait(forDuration: 2)) {
+//            self.entity.stateMachine.enter(RoomerAssistState.self)
+//        }
         
         self.animate(imageNamed: textureName, duration: waitTimer)
     }
