@@ -20,8 +20,6 @@ class RoomerListnerState: GKState {
 
    override func isValidNextState(_ stateClass: AnyClass) -> Bool {
         switch stateClass {
-        case is RoomerListnerState.Type:
-            return true
         case is RoomerAssistState.Type:
             return true
         case is RoomerGiveUpState.Type:
@@ -54,10 +52,6 @@ class RoomerListnerState: GKState {
                 waitTimer = WaitTimer.bag
                 textureName = nil
                 waitingFor = .bag
-                
-                // TODO: Put on right place
-                // It is just for test in here
-                self.stateMachine?.enter(RoomerGoOutState.self)
             case is RoomerRoomState:
                 // Wait a time on room for bag
                 print("Wait a time on room for bag")
@@ -77,10 +71,6 @@ class RoomerListnerState: GKState {
                 waitTimer = WaitTimer.reception
                 textureName = nil
                 waitingFor = .checkOut
-                
-                // TODO: Put on right place
-                // It is just for test in here
-                self.stateMachine?.enter(RoomerListnerState.self)
             default:
                 break
             }
@@ -88,17 +78,12 @@ class RoomerListnerState: GKState {
         
         self.entity.changeWaitingFor(waitingFor)
         
-        // Test
-        // If the Roomer is Assisted
-        guard let node = self.entity.component(ofType: RenderComponent.self)?.node else {
-            return
-        }
-        // After 3 seconds the Roomer is assisted
-        node.run(SKAction.wait(forDuration: 3)) {
-            self.stateMachine?.enter(RoomerAssistState.self)
+        guard let node = self.entity.component(ofType: RenderComponent.self)?.node else { return }
+        
+        node.run(SKAction.wait(forDuration: 2)) {
+            self.entity.stateMachine.enter(RoomerAssistState.self)
         }
         
-        // End Test
         self.animate(imageNamed: textureName, duration: waitTimer)
     }
     

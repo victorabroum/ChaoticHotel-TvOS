@@ -31,14 +31,17 @@ extension Roomer {
             ])
     }
     
-    func walkTo(_ point: CGPoint) {
+    func walkTo(_ point: CGPoint,
+                withDuration duration: TimeInterval = 0,
+                withCompletion completion: (() -> Void)? = nil) {
         guard let moveComp = self.component(ofType: MoveComponent.self) else {
             return
         }
         
-        moveComp.move(to: point) {
-            print("Enter on First state")
-            self.stateMachine.enter(RoomerListnerState.self)
+        moveComp.move(to: point, withDuration: duration) {
+            if (completion != nil) {
+                completion!()
+            }
         }
     }
     

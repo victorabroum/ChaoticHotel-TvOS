@@ -31,11 +31,17 @@ class RoomerWaitState: GKState {
     
     override func didEnter(from previousState: GKState?) {
         print("RoomerWaitState didEnter")
-        // Has 60% of chance to ask for Room Service
-        if (Int.random(in: 0...10) >= 4) {
-            self.stateMachine?.enter(RoomerRoomServiceState.self)
-        } else {
-            self.stateMachine?.enter(RoomerLeaveState.self)
+        // TODO: Logic to wait a time and after call random service
+        
+        guard let node = self.entity.component(ofType: RenderComponent.self)?.node else { return }
+        
+        node.run(SKAction.wait(forDuration: 2)) {
+            // Has 60% of chance to ask for Room Service
+            if (Int.random(in: 0...10) >= 3) {
+                self.stateMachine?.enter(RoomerRoomServiceState.self)
+            } else {
+                self.stateMachine?.enter(RoomerLeaveState.self)
+            }
         }
     }
 

@@ -29,8 +29,7 @@ class Hotel: GKEntity {
             // Change Roomer position to right Room
             let room = self.availableRooms.first!
             roomer.changeRoom(room)
-            roomer.walkTo(room.position)
-            
+            roomer.walkTo(room.position, withDuration: 0)
             
             // Remove this room for available
             self.availableRooms.removeFirst()

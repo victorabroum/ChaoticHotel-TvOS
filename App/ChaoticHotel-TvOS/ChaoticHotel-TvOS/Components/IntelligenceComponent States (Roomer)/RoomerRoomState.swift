@@ -37,7 +37,7 @@ class RoomerRoomState: GKState {
         scene.hotel.enterOnRoom(roomer: self.entity)
         
         // TODO: Choose right time to Go to ListnerState
-        node.run(SKAction.wait(forDuration: 3)) {
+        node.run(SKAction.wait(forDuration: 1)) {
             self.stateMachine?.enter(RoomerListnerState.self)
         }
     }
