@@ -24,3 +24,7 @@ struct BallonSize {
 struct AnimationDuration {
     static let roomerGoOut: TimeInterval = 3
 }
+
+struct PlayerConstants {
+    static let velocity: CGFloat = 10
+}
