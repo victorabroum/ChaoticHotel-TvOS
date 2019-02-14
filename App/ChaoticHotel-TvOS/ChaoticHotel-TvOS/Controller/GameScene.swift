@@ -55,6 +55,17 @@ class GameScene: SKScene {
         // Entity Hotel
         self.hotel = Hotel(availableRooms: self.childNode(withName: "rooms")!.children)
         self.entityManager.add(self.hotel)
+        
+        //Teste Slime Entity
+        let slime = Slime.init(withImageNamed: "staff_placeHolder")
+        
+        guard let renderComponentSlime = slime.component(ofType: RenderComponent.self) else {return}
+        
+        renderComponentSlime.node?.xScale = 0.07
+        renderComponentSlime.node?.yScale = 0.07
+        renderComponentSlime.node?.position = (self.childNode(withName: "elevatorGoDown")?.position)!
+        self.entityManager.add(slime)
+        
     }
 
     override func update(_ currentTime: TimeInterval) {
