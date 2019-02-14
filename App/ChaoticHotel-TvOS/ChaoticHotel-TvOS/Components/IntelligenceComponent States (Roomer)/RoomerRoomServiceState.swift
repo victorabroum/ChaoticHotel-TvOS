@@ -28,7 +28,7 @@ class RoomerRoomServiceState: GKState {
     }
     
     override func didEnter(from previousState: GKState?) {
-        // TODO: #02 Go back to Listner
+        self.stateMachine?.enter(RoomerListnerState.self)
     }
 
 }
