@@ -29,6 +29,10 @@ class RoomerGoOutState: GKState {
         
         print("RoomerGoOutState didEnter")
         
+        // To dissmis the ballon
+        guard let ballonNode = self.entity.component(ofType: BallonComponent.self) else { return }
+        ballonNode.dismissBallon()
+        
         guard let node = self.entity.component(ofType: RenderComponent.self)?.node else {
             return
         }
