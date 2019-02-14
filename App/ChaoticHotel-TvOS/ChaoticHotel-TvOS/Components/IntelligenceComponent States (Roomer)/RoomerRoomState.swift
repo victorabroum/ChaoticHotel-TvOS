@@ -11,9 +11,9 @@ import GameplayKit
 
 class RoomerRoomState: GKState {
     
-    var entity: GKEntity!
+    var entity: Roomer!
     
-    init(_ entity: GKEntity) {
+    init(_ entity: Roomer) {
         self.entity = entity
         super.init()
     }

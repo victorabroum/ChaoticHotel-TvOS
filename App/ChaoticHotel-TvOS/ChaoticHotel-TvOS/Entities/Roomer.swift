@@ -12,6 +12,7 @@ import GameplayKit
 class Roomer: GKEntity {
     
     var stateMachine: GKStateMachine!
+    var isInRoom: Bool = false
     
     init(withImageNamed imageNamed: String) {
         super.init()
