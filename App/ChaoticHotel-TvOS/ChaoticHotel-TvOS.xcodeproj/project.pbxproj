@@ -32,6 +32,7 @@
 		76608BDB2214A08E0023C29C /* Roomer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76608BDA2214A08E0023C29C /* Roomer+Extensions.swift */; };
 		FDFF24C72214BB4B00BF8593 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF24C62214BB4B00BF8593 /* Constants.swift */; };
 		FDFF24C92214C6B900BF8593 /* BallonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF24C82214C6B900BF8593 /* BallonComponent.swift */; };
+		FDFF24CB2215E18D00BF8593 /* Slime.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF24CA2215E18D00BF8593 /* Slime.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		76608BDA2214A08E0023C29C /* Roomer+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Roomer+Extensions.swift"; sourceTree = "<group>"; };
 		FDFF24C62214BB4B00BF8593 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FDFF24C82214C6B900BF8593 /* BallonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallonComponent.swift; sourceTree = "<group>"; };
+		FDFF24CA2215E18D00BF8593 /* Slime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slime.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 				76608BC122146AC90023C29C /* EntityManager.swift */,
 				76608BC7221487B60023C29C /* Roomer.swift */,
 				76608BDA2214A08E0023C29C /* Roomer+Extensions.swift */,
+				FDFF24CA2215E18D00BF8593 /* Slime.swift */,
 				7650285D2215BB9E009A5CE4 /* Hotel.swift */,
 			);
 			path = Entities;
@@ -272,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDFF24CB2215E18D00BF8593 /* Slime.swift in Sources */,
 				76608BC622147ACF0023C29C /* GameScene+Extesions.swift in Sources */,
 				76608BA622130E210023C29C /* GameScene.swift in Sources */,
 				76608BC222146AC90023C29C /* EntityManager.swift in Sources */,
