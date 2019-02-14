@@ -20,3 +20,7 @@ struct BallonSize {
     static let height: Double = 300.00
     static let posY: CGFloat = 400.00
 }
+
+struct AnimationDuration {
+    static let roomerGoOut: TimeInterval = 3
+}
