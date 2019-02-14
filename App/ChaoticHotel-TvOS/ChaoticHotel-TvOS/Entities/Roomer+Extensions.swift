@@ -45,4 +45,8 @@ extension Roomer {
     func changeWaitingFor(_ wait: WaitingFor!) {
         self.waitingFor = wait
     }
+    
+    func changeRoom(_ room: SKNode!) {
+        self.room = room
+    }
 }

@@ -19,6 +19,9 @@ class Roomer: GKEntity {
     // To track what the Entity is waiting
     var waitingFor: WaitingFor! = nil
     
+    // To track what room Roomer is allocated
+    var room: SKNode! = nil
+    
     init(withImageNamed imageNamed: String) {
         super.init()
         
