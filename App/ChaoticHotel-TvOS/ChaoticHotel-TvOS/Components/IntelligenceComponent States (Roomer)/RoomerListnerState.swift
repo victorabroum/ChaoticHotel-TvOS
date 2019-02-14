@@ -45,6 +45,10 @@ class RoomerListnerState: GKState {
         var textureName: String?
         var waitingFor: WaitingFor = .checkIn
         
+        guard let node = self.entity.component(ofType: RenderComponent.self)?.node else {
+            return
+        }
+        
         // TODO: Put right textureName
         if(previousState != nil) {
             switch previousState! {
@@ -57,7 +61,9 @@ class RoomerListnerState: GKState {
                 
                 // TODO: Put on right place
                 // It is just for test in here
-                self.stateMachine?.enter(RoomerGoOutState.self)
+                node.run(SKAction.wait(forDuration: 2)) {
+                    self.stateMachine?.enter(RoomerGoOutState.self)
+                }
             case is RoomerRoomState:
                 // Wait a time on room for bag
                 print("Wait a time on room for bag")
@@ -80,7 +86,10 @@ class RoomerListnerState: GKState {
                 
                 // TODO: Put on right place
                 // It is just for test in here
-                self.stateMachine?.enter(RoomerListnerState.self)
+                node.run(SKAction.wait(forDuration: 2)) {
+                    self.stateMachine?.enter(RoomerListnerState.self)
+                }
+                
             default:
                 break
             }
@@ -90,9 +99,6 @@ class RoomerListnerState: GKState {
         
         // Test
         // If the Roomer is Assisted
-        guard let node = self.entity.component(ofType: RenderComponent.self)?.node else {
-            return
-        }
         // After 3 seconds the Roomer is assisted
         node.run(SKAction.wait(forDuration: 3)) {
             self.stateMachine?.enter(RoomerAssistState.self)

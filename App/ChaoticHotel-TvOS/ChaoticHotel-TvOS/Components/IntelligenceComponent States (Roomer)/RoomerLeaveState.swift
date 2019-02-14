@@ -29,7 +29,30 @@ class RoomerLeaveState: GKState {
     
     override func didEnter(from previousState: GKState?) {
         print("RoomerLeaveState didEnter")
-        self.stateMachine?.enter(RoomerListnerState.self)
+        
+        // TODO: SPAWN Bag on front of Room postion
+        
+        // Go to Reception
+        guard let node = self.entity.component(ofType: RenderComponent.self)?.node else {
+            return
+        }
+        
+        guard let scene = node.scene as? GameScene else { return }
+        
+        let spawnPosition = scene.childNode(withName: "receptionPoint")?.position
+        
+        // Roomer go to Reception
+        self.entity.walkTo(spawnPosition!, withDuration: 0) {
+            
+            // Available one Room
+            scene.hotel.addAvailableRoom(self.entity.room)
+            
+            // Change to none room for the Roomer
+            self.entity.changeRoom(nil)
+            
+            self.stateMachine?.enter(RoomerListnerState.self)
+        }
+        
     }
 
 }

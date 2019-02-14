@@ -35,10 +35,12 @@ class MoveComponent: GKComponent {
         }
     }
     
-    func move(to point: CGPoint, withCompletion completion: @escaping () -> Void ) {
+    func move(to point: CGPoint,
+              withDuration duration: TimeInterval,
+              withCompletion completion: @escaping () -> Void ) {
         if let node = self.entity!.component(ofType: RenderComponent.self)?.node {
             // TimeInterval, this time is to duration to arrive on reception
-            node.run(SKAction.move(to: point, duration: 3)) {
+            node.run(SKAction.move(to: point, duration: duration)) {
                 completion()
             }
         }
