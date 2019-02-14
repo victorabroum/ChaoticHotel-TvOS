@@ -24,8 +24,6 @@ class RoomerListnerState: GKState {
             return true
         case is RoomerGiveUpState.Type:
             return true
-        case is RoomerGoOutState.Type:
-            return true
         default:
             return false
         }
@@ -41,7 +39,7 @@ class RoomerListnerState: GKState {
     override func didEnter(from previousState: GKState?) {
         var waitTimer: TimeInterval = WaitTimer.reception
         var textureName: String?
-        var waitingFor: WaitingFor = .checkIn
+        var waitingFor: ServiceCategory = .checkIn
         
         // TODO: Put right textureName
         if(previousState != nil) {
@@ -77,20 +75,13 @@ class RoomerListnerState: GKState {
                 waitTimer = WaitTimer.bag
                 textureName = nil
                 waitingFor = .bag
-                self.stateMachine?.enter(RoomerGoOutState.self)
+                self.entity.isLeaving = true
             default:
                 break
             }
         }
         
         self.entity.changeWaitingFor(waitingFor)
-
-        // To test if Roomer is Assisted
-//        guard let node = self.entity.component(ofType: RenderComponent.self)?.node else { return }
-//
-//        node.run(SKAction.wait(forDuration: 2)) {
-//            self.entity.stateMachine.enter(RoomerAssistState.self)
-//        }
         
         self.animate(imageNamed: textureName, duration: waitTimer)
     }

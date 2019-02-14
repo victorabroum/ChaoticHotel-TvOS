@@ -30,7 +30,6 @@ class RoomerWaitState: GKState {
     }
     
     override func didEnter(from previousState: GKState?) {
-        print("RoomerWaitState didEnter")
         // TODO: Logic to wait a time and after call random service
         
         guard let node = self.entity.component(ofType: RenderComponent.self)?.node else { return }

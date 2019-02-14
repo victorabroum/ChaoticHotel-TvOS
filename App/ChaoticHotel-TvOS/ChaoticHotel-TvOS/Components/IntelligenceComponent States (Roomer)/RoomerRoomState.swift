@@ -28,8 +28,7 @@ class RoomerRoomState: GKState {
     }
     
     override func didEnter(from previousState: GKState?) {
-        print("RoomerRoomState didEnter")
-    
+        
         guard let node = self.entity.component(ofType: RenderComponent.self)?.node else { return }
         
         guard let scene = node.scene as? GameScene else { return }

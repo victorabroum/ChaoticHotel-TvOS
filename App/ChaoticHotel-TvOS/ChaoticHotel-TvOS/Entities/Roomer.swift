@@ -15,9 +15,10 @@ class Roomer: GKEntity {
     
     // Flag to track if Entity is in Room
     var isInRoom: Bool = false
+    var isLeaving: Bool = false
     
     // To track what the Entity is waiting
-    var waitingFor: WaitingFor! = nil
+    var waitingFor: ServiceCategory! = nil
     
     // To track what room Roomer is allocated
     var room: SKNode! = nil
