@@ -19,6 +19,7 @@ class GameScene: SKScene {
     var lastPoint: CGPoint!
     
     var staff: Staff!
+    var hotel: Hotel!
     var entityManager: EntityManager!
 
     override func sceneDidLoad() {
@@ -51,6 +52,9 @@ class GameScene: SKScene {
         // Poderia alguma lógica
         roomer.walkTo(self.childNode(withName: "receptionPoint")!.position)
         
+        // Entity Hotel
+        self.hotel = Hotel(availableRooms: self.childNode(withName: "rooms")!.children)
+        self.entityManager.add(self.hotel)
     }
 
     override func update(_ currentTime: TimeInterval) {

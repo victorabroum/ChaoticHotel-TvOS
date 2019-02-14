@@ -11,9 +11,9 @@ import GameplayKit
 
 class RoomerWaitState: GKState {
     
-    var entity: GKEntity!
+    var entity: Roomer!
     
-    init(_ entity: GKEntity) {
+    init(_ entity: Roomer) {
         self.entity = entity
         super.init()
     }
@@ -30,7 +30,13 @@ class RoomerWaitState: GKState {
     }
     
     override func didEnter(from previousState: GKState?) {
-        // TODO: #01 Logic to choose between RoomServie or LeaveHotel
+        print("RoomerWaitState didEnter")
+        // Has 60% of chance to ask for Room Service
+        if (Int.random(in: 0...10) >= 4) {
+            self.stateMachine?.enter(RoomerRoomServiceState.self)
+        } else {
+            self.stateMachine?.enter(RoomerLeaveState.self)
+        }
     }
 
 }

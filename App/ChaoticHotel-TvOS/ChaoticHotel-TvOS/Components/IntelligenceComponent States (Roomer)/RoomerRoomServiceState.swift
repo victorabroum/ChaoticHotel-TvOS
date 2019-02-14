@@ -11,9 +11,9 @@ import GameplayKit
 
 class RoomerRoomServiceState: GKState {
     
-    var entity: GKEntity!
+    var entity: Roomer!
     
-    init(_ entity: GKEntity) {
+    init(_ entity: Roomer) {
         self.entity = entity
         super.init()
     }
@@ -28,7 +28,8 @@ class RoomerRoomServiceState: GKState {
     }
     
     override func didEnter(from previousState: GKState?) {
-        // TODO: #02 Go back to Listner
+        print("RoomerRoomServiceState didEnter")
+        self.stateMachine?.enter(RoomerListnerState.self)
     }
 
 }

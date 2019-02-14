@@ -13,6 +13,15 @@ class Roomer: GKEntity {
     
     var stateMachine: GKStateMachine!
     
+    // Flag to track if Entity is in Room
+    var isInRoom: Bool = false
+    
+    // To track what the Entity is waiting
+    var waitingFor: WaitingFor! = nil
+    
+    // To track what room Roomer is allocated
+    var room: SKNode! = nil
+    
     init(withImageNamed imageNamed: String) {
         super.init()
         
@@ -26,7 +35,7 @@ class Roomer: GKEntity {
         
         self.addComponent(ballonComponent)
         self.addComponent(renderComponent)
-        self.addComponent(MovementComponent())
+        self.addComponent(MoveComponent())
     }
     
     required init?(coder aDecoder: NSCoder) {

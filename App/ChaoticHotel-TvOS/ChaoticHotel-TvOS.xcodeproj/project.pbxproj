@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7650285E2215BB9E009A5CE4 /* Hotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7650285D2215BB9E009A5CE4 /* Hotel.swift */; };
 		76608BA022130E210023C29C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76608B9F22130E210023C29C /* AppDelegate.swift */; };
 		76608BA222130E210023C29C /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 76608BA122130E210023C29C /* GameScene.sks */; };
 		76608BA622130E210023C29C /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76608BA522130E210023C29C /* GameScene.swift */; };
@@ -15,7 +16,7 @@
 		76608BAD22130E230023C29C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76608BAC22130E230023C29C /* Assets.xcassets */; };
 		76608BBC221459930023C29C /* Staff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76608BBB221459930023C29C /* Staff.swift */; };
 		76608BBE22145A780023C29C /* RenderComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76608BBD22145A780023C29C /* RenderComponent.swift */; };
-		76608BC022145EA10023C29C /* MovementComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76608BBF22145EA10023C29C /* MovementComponent.swift */; };
+		76608BC022145EA10023C29C /* MoveComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76608BBF22145EA10023C29C /* MoveComponent.swift */; };
 		76608BC222146AC90023C29C /* EntityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76608BC122146AC90023C29C /* EntityManager.swift */; };
 		76608BC4221478BE0023C29C /* MoveSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76608BC3221478BE0023C29C /* MoveSystem.swift */; };
 		76608BC622147ACF0023C29C /* GameScene+Extesions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76608BC522147ACF0023C29C /* GameScene+Extesions.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7650285D2215BB9E009A5CE4 /* Hotel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hotel.swift; sourceTree = "<group>"; };
 		76608B9C22130E210023C29C /* ChaoticHotel-TvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ChaoticHotel-TvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		76608B9F22130E210023C29C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76608BA122130E210023C29C /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -44,7 +46,7 @@
 		76608BAE22130E230023C29C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		76608BBB221459930023C29C /* Staff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Staff.swift; sourceTree = "<group>"; };
 		76608BBD22145A780023C29C /* RenderComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderComponent.swift; sourceTree = "<group>"; };
-		76608BBF22145EA10023C29C /* MovementComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementComponent.swift; sourceTree = "<group>"; };
+		76608BBF22145EA10023C29C /* MoveComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveComponent.swift; sourceTree = "<group>"; };
 		76608BC122146AC90023C29C /* EntityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityManager.swift; sourceTree = "<group>"; };
 		76608BC3221478BE0023C29C /* MoveSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveSystem.swift; sourceTree = "<group>"; };
 		76608BC522147ACF0023C29C /* GameScene+Extesions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Extesions.swift"; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				76608BC122146AC90023C29C /* EntityManager.swift */,
 				76608BC7221487B60023C29C /* Roomer.swift */,
 				76608BDA2214A08E0023C29C /* Roomer+Extensions.swift */,
+				7650285D2215BB9E009A5CE4 /* Hotel.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -155,7 +158,7 @@
 			children = (
 				76608BC92214968F0023C29C /* IntelligenceComponent States (Roomer) */,
 				76608BBD22145A780023C29C /* RenderComponent.swift */,
-				76608BBF22145EA10023C29C /* MovementComponent.swift */,
+				76608BBF22145EA10023C29C /* MoveComponent.swift */,
 				76608BC3221478BE0023C29C /* MoveSystem.swift */,
 				FDFF24C82214C6B900BF8593 /* BallonComponent.swift */,
 			);
@@ -279,6 +282,7 @@
 				76608BD722149B2D0023C29C /* RoomerLeaveState.swift in Sources */,
 				FDFF24C92214C6B900BF8593 /* BallonComponent.swift in Sources */,
 				76608BA822130E210023C29C /* GameViewController.swift in Sources */,
+				7650285E2215BB9E009A5CE4 /* Hotel.swift in Sources */,
 				76608BD122149A7D0023C29C /* RoomerRoomState.swift in Sources */,
 				76608BC8221487B60023C29C /* Roomer.swift in Sources */,
 				76608BCF22149A2E0023C29C /* RoomerAssistState.swift in Sources */,
@@ -287,7 +291,7 @@
 				76608BDB2214A08E0023C29C /* Roomer+Extensions.swift in Sources */,
 				FDFF24C72214BB4B00BF8593 /* Constants.swift in Sources */,
 				76608BCB221497190023C29C /* RoomerWaitState.swift in Sources */,
-				76608BC022145EA10023C29C /* MovementComponent.swift in Sources */,
+				76608BC022145EA10023C29C /* MoveComponent.swift in Sources */,
 				76608BA022130E210023C29C /* AppDelegate.swift in Sources */,
 				76608BC4221478BE0023C29C /* MoveSystem.swift in Sources */,
 			);

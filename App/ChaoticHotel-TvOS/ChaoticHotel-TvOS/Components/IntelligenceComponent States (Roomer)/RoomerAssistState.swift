@@ -10,10 +10,10 @@ import Foundation
 import GameplayKit
 
 class RoomerAssistState: GKState {
-    var isInRoom: Bool = false
-    var entity: GKEntity!
     
-    init(_ entity: GKEntity) {
+    var entity: Roomer!
+    
+    init(_ entity: Roomer) {
         self.entity = entity
         super.init()
     }
@@ -30,11 +30,16 @@ class RoomerAssistState: GKState {
     }
     
     override func didEnter(from previousState: GKState?) {
-
-        if isInRoom {
+        print("RoomerAssistState didEnter")
+        
+        guard let ballonNode = self.entity.component(ofType: BallonComponent.self) else { return }
+        
+        ballonNode.dismissBallon()
+        
+        if self.entity.isInRoom {
             self.stateMachine?.enter(RoomerWaitState.self)
         } else {
-            self.isInRoom = true
+            self.entity.isInRoom  = true
             self.stateMachine?.enter(RoomerRoomState.self)
         }
     }

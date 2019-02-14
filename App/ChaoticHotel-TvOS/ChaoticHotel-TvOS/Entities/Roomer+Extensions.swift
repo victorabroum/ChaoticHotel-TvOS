@@ -9,6 +9,13 @@
 import Foundation
 import GameplayKit
 
+enum WaitingFor {
+    case bag
+    case food
+    case checkIn
+    case checkOut
+}
+
 extension Roomer {
     
     func prepareStateMachine() {
@@ -25,7 +32,7 @@ extension Roomer {
     }
     
     func walkTo(_ point: CGPoint) {
-        guard let moveComp = self.component(ofType: MovementComponent.self) else {
+        guard let moveComp = self.component(ofType: MoveComponent.self) else {
             return
         }
         
@@ -33,5 +40,13 @@ extension Roomer {
             print("Enter on First state")
             self.stateMachine.enter(RoomerListnerState.self)
         }
+    }
+    
+    func changeWaitingFor(_ wait: WaitingFor!) {
+        self.waitingFor = wait
+    }
+    
+    func changeRoom(_ room: SKNode!) {
+        self.room = room
     }
 }
