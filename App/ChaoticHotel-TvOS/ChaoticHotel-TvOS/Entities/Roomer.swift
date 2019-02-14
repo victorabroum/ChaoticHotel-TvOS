@@ -26,7 +26,7 @@ class Roomer: GKEntity {
         
         self.addComponent(ballonComponent)
         self.addComponent(renderComponent)
-        self.addComponent(MovementComponent())
+        self.addComponent(MoveComponent())
     }
     
     required init?(coder aDecoder: NSCoder) {

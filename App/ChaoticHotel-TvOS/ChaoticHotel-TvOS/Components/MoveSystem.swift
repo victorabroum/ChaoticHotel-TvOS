@@ -9,7 +9,7 @@
 import Foundation
 import GameplayKit
 
-extension MovementComponent {
+extension MoveComponent {
     override func update(deltaTime seconds: TimeInterval) {
         if (self.direction != nil) {
             self.move(to: self.direction)

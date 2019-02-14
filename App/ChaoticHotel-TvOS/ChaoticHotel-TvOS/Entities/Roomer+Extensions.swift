@@ -25,7 +25,7 @@ extension Roomer {
     }
     
     func walkTo(_ point: CGPoint) {
-        guard let moveComp = self.component(ofType: MovementComponent.self) else {
+        guard let moveComp = self.component(ofType: MoveComponent.self) else {
             return
         }
         

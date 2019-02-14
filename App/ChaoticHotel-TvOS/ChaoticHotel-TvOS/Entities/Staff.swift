@@ -17,7 +17,7 @@ class Staff: GKEntity {
         // Add RenderComponent
         let renderComponent = RenderComponent(imageNamed: imageNamed)
         self.addComponent(renderComponent)
-        self.addComponent(MovementComponent())
+        self.addComponent(MoveComponent())
     }
     
     required init?(coder aDecoder: NSCoder) {

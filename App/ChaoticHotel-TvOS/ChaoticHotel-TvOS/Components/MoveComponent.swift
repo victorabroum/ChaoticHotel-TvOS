@@ -14,7 +14,7 @@ enum Direction {
     case left
 }
 
-class MovementComponent: GKComponent {
+class MoveComponent: GKComponent {
     
     var direction: Direction!
     
@@ -25,6 +25,7 @@ class MovementComponent: GKComponent {
         }
         
         // TODO: #04 Put Player Velocity in order to put a constant
+        // TODO: Change orientation of Controller, x to y
         switch direction {
         case .rigth:
             print("GO TO Right")
