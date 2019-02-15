@@ -37,45 +37,37 @@ class RoomerListnerState: GKState {
     }
     
     override func didEnter(from previousState: GKState?) {
+        
         var waitTimer: TimeInterval = WaitTimer.reception
         var textureName: String?
         var waitingFor: ServiceCategory = .checkIn
+        var colorService: UIColor = .green
         
         // TODO: Put right textureName
         if(previousState != nil) {
             switch previousState! {
-            case is RoomerListnerState:
-                // Wait a time and Go Out
-                print("Wait a time and Go Out")
-                waitTimer = WaitTimer.bag
-                textureName = nil
-                waitingFor = .bag
             case is RoomerRoomState:
                 // Wait a time on room for bag
                 print("Wait a time on room for bag")
                 waitTimer = WaitTimer.bag
                 textureName = nil
                 waitingFor = .bag
+                colorService = .orange
             case is RoomerRoomServiceState:
                 // Wait a time on room for Room service
                 print("Wait a time on room for Room service")
                 waitTimer = WaitTimer.roomService
                 textureName = nil
                 waitingFor = .food
+                colorService = .red
             case is RoomerLeaveState:
                 // Wait a time on reception
                 // Go to RoomerListnerState
-                print("Wait a time on reception")
+                print("Wait a time to Check Out")
                 waitTimer = WaitTimer.reception
                 textureName = nil
                 waitingFor = .checkOut
-            case is RoomerAssistState:
-                // Wait a time on reception for a Bag
-                print("Wait a time for a bag to Go out")
-                waitTimer = WaitTimer.bag
-                textureName = nil
-                waitingFor = .bag
-                self.entity.isLeaving = true
+                colorService = .blue
             default:
                 break
             }
@@ -83,10 +75,12 @@ class RoomerListnerState: GKState {
         
         self.entity.changeWaitingFor(waitingFor)
         
-        self.animate(imageNamed: textureName, duration: waitTimer)
+        self.animate(imageNamed: textureName, duration: waitTimer, color: colorService)
     }
     
-    func animate(imageNamed: String?, duration: TimeInterval) {
+    func animate(imageNamed: String?,
+                 duration: TimeInterval,
+                 color: UIColor) {
         
         guard let node = self.entity.component(ofType: RenderComponent.self)?.node else {
             return
@@ -99,6 +93,7 @@ class RoomerListnerState: GKState {
         }
         
         ballon.showBallon()
+        ballon.changeColor(color)
         
         let idleWait = SKAction.wait(forDuration: duration)
         

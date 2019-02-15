@@ -39,6 +39,9 @@ class Hotel: GKEntity {
             
             // Remove this room for available
             self.availableRooms.removeFirst()
+            
+            // Roomer leave the queue
+            self.exitQueue()
         }
     }
     

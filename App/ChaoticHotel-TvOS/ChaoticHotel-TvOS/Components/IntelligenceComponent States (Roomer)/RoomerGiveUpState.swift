@@ -38,10 +38,15 @@ class RoomerGiveUpState: GKState {
         
         guard let scene = node.scene as? GameScene else { return }
         
-        let spawnPosition = scene.childNode(withName: "receptionPoint")?.position
+        if (self.entity.room != nil) {
+            scene.hotel.addAvailableRoom(self.entity.room)
+        }
         
-        // Roomer go to Reception
-        self.entity.walkTo(spawnPosition!, withDuration: 0) {
+        if (self.entity.waitingFor == .checkIn) {
+            scene.hotel.exitQueue()
+        }
+        
+        node.run(SKAction.scale(by: 0.5, duration: AnimationDuration.roomerGoOut)) {
             self.stateMachine!.enter(RoomerGoOutState.self)
         }
     }

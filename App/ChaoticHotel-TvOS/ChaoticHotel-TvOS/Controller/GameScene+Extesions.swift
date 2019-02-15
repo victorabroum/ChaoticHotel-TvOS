@@ -15,10 +15,14 @@ extension GameScene {
     
     // TODO: Just for test Interaction with Roomer
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.roomer.deliverService(ofCategory: .checkIn)
-        self.roomer.deliverService(ofCategory: .bag)
-        self.roomer.deliverService(ofCategory: .food)
-        self.roomer.deliverService(ofCategory: .checkOut)
+        
+        for roomer in self.listOfRoomers {
+            roomer.deliverService(ofCategory: .checkIn)
+            roomer.deliverService(ofCategory: .bag)
+            roomer.deliverService(ofCategory: .food)
+            roomer.deliverService(ofCategory: .checkOut)
+        }
+        
     }
     // End test
     

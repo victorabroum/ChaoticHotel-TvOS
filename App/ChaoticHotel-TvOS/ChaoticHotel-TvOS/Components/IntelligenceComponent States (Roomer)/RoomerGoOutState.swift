@@ -34,9 +34,8 @@ class RoomerGoOutState: GKState {
             return
         }
         
-        let spawnPosition = node.scene?.childNode(withName: "spawnRoomer")?.position
-        
-        node.run(SKAction.move(to: spawnPosition!, duration: AnimationDuration.roomerGoOut)) {
+        node.run(SKAction.rotate(byAngle: 1000, duration: AnimationDuration.roomerGoOut)) {
+            
             node.removeFromParent()
         }
     }

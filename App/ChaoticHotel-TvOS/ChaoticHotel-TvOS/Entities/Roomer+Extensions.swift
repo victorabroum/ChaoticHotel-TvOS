@@ -13,6 +13,7 @@ extension Roomer {
     
     func prepareStateMachine() {
         self.stateMachine = GKStateMachine(states: [
+            RoomerArriveState(self),
             RoomerListnerState(self),
             RoomerGiveUpState(self),
             RoomerAssistState(self),
@@ -48,10 +49,8 @@ extension Roomer {
     
     func deliverService(ofCategory category: ServiceCategory) {
         if (category == self.waitingFor) {
-            print("Roomer - Thank you, pick a Tip")
             self.stateMachine.enter(RoomerAssistState.self)
         } else {
-            print("Wrong Service Baby")
         }
     }
 }

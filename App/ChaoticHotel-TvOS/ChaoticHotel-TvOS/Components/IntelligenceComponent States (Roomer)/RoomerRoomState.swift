@@ -33,6 +33,7 @@ class RoomerRoomState: GKState {
         
         guard let scene = node.scene as? GameScene else { return }
         
+        print("ENTRANDO NO QUARTO")
         scene.hotel.enterOnRoom(roomer: self.entity)
         
         // TODO: Choose right time to Go to ListnerState

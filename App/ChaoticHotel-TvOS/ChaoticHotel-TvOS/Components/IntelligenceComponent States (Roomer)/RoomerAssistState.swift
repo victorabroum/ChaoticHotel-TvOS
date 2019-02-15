@@ -38,10 +38,8 @@ class RoomerAssistState: GKState {
         
         ballonNode.dismissBallon()
         
-        if (self.entity.isLeaving) {
+        if (self.entity.waitingFor == .checkOut) {
             self.stateMachine?.enter(RoomerGoOutState.self)
-        } else if (self.entity.waitingFor == .checkOut) {
-            self.stateMachine?.enter(RoomerListnerState.self)
         } else if self.entity.isInRoom {
             self.stateMachine?.enter(RoomerWaitState.self)
         } else {
