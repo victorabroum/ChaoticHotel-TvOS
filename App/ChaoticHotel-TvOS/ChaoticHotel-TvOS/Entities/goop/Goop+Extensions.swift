@@ -12,7 +12,10 @@ import GameplayKit
 extension Goop {
     
     func prepateStateMachine() {
-        
+        self.stateMachine = GKStateMachine.init(states: [
+                GoopIdleState.init(self),
+                GoopCleanerState.init(self)
+            ])
     }
     
 }
