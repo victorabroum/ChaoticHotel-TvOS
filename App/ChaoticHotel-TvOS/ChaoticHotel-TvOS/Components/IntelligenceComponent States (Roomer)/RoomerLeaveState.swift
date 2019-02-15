@@ -28,8 +28,6 @@ class RoomerLeaveState: GKState {
     }
     
     override func didEnter(from previousState: GKState?) {
-        print("RoomerLeaveState didEnter")
-        
         // TODO: SPAWN Bag on front of Room postion
         
         // Go to Reception

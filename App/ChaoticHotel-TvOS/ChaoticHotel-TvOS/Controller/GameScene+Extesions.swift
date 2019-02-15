@@ -13,6 +13,15 @@ import GameplayKit
 // MARK: TouchMoved and Ended
 extension GameScene {
     
+    // TODO: Just for test Interaction with Roomer
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.roomer.deliverService(ofCategory: .checkIn)
+        self.roomer.deliverService(ofCategory: .bag)
+        self.roomer.deliverService(ofCategory: .food)
+        self.roomer.deliverService(ofCategory: .checkOut)
+    }
+    // End test
+    
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         let location = touches.first!.location(in: self)

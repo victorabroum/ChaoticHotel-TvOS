@@ -26,9 +26,6 @@ class RoomerGoOutState: GKState {
     }
     
     override func didEnter(from previousState: GKState?) {
-        
-        print("RoomerGoOutState didEnter")
-        
         // To dissmis the ballon
         guard let ballonNode = self.entity.component(ofType: BallonComponent.self) else { return }
         ballonNode.dismissBallon()

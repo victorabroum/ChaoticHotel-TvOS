@@ -28,11 +28,22 @@ class RoomerGiveUpState: GKState {
     }
     
     override func didEnter(from previousState: GKState?) {
-        print("RoomerGiveUpState didEnter")
         
         // TODO: #06 Logic to lost some points
         
-        self.stateMachine!.enter(RoomerGoOutState.self)
+        // Go to Reception
+        guard let node = self.entity.component(ofType: RenderComponent.self)?.node else {
+            return
+        }
+        
+        guard let scene = node.scene as? GameScene else { return }
+        
+        let spawnPosition = scene.childNode(withName: "receptionPoint")?.position
+        
+        // Roomer go to Reception
+        self.entity.walkTo(spawnPosition!, withDuration: 0) {
+            self.stateMachine!.enter(RoomerGoOutState.self)
+        }
     }
 
 }
