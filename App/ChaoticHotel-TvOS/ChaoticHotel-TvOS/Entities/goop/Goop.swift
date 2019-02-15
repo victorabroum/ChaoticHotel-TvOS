@@ -10,6 +10,7 @@ import GameplayKit
 import SpriteKit
 
 class Goop: GKEntity {
+    var stateMachine: GKStateMachine!
     
     init(withImage image: String) {
         super.init()
@@ -19,6 +20,7 @@ class Goop: GKEntity {
         
         self.addComponent(renderComponent)
         self.addComponent(ballonComponent)
+        self.prepateStateMachine()
         
     }
     
