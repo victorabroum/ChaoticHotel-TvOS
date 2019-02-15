@@ -13,6 +13,8 @@ struct WaitTimer {
     static let reception: TimeInterval = 10
     static let roomService: TimeInterval = 20
     static let bag: TimeInterval = 10
+    static let slimeSleep: TimeInterval = 30
+    static let crawling: TimeInterval = 40
 }
 
 struct BallonSize {

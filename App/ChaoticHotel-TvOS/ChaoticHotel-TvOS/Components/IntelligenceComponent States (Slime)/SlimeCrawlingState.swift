@@ -31,12 +31,12 @@ class SlimeCrawlingState: GKState {
         
         let movement = self.entity.component(ofType: MoveComponent.self)
         
-        let pointRight = CGPoint.init(x: (node.scene?.size.width)! / 2, y: node.position.y)
+        let pointRight = CGPoint.init(x: (node.scene?.size.width)! / 2 + 20, y: node.position.y)
         
-        let pointLeft = CGPoint.init(x: -((node.scene?.size.width)! / 2), y: node.position.y)
+        let pointLeft = CGPoint.init(x: -((node.scene?.size.width)! / 2) - 20, y: node.position.y)
         
-        movement?.move(to: pointRight, withDuration: 20, withCompletion: {
-            movement?.move(to: pointLeft, withDuration: 20, withCompletion: {
+        movement?.move(to: pointRight, withDuration: WaitTimer.crawling, withCompletion: {
+            movement?.move(to: pointLeft, withDuration: WaitTimer.crawling, withCompletion: {
                 self.entity.stateMachine.enter(SlimeIdleState.self)
             })
         })

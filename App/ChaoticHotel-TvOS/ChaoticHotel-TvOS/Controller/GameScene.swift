@@ -52,7 +52,12 @@ class GameScene: SKScene {
         
         renderComponentSlime.node?.xScale = 0.07
         renderComponentSlime.node?.yScale = 0.07
-        renderComponentSlime.node?.position = (self.childNode(withName: "elevatorGoDown")?.position)!
+        let ySlime = self.childNode(withName: "elevatorGoDown")?.position
+        
+        renderComponentSlime.node?.position = CGPoint.init(
+            x: -(self.size.width / 2) - 40,
+            y: ySlime?.y ?? 0)
+        
         self.entityManager.add(slime)
         slime.crawlingInFloor()
         

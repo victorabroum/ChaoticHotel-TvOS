@@ -29,7 +29,7 @@ class SlimeIdleState: GKState {
     
     override func didEnter(from previousState: GKState?) {
        
-        self.entity.waitForCrawling(withDuration: 5) {
+        self.entity.waitForCrawling(withDuration: WaitTimer.slimeSleep) {
             self.entity.stateMachine.enter(SlimeCrawlingState.self)
             print("5 seg depois... volte a andar")
         }
