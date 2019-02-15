@@ -28,18 +28,19 @@ class BallonComponent: GKComponent {
         super.init()
     }
     func showBallon() {
-        print("Change Alpha 1.0")
-
         self.ballon.alpha = 1.0
     }
     
     func dismissBallon() {
-        print("Change Alpha 0.0")
         self.ballon.alpha = 0.0
     }
     
     func changeTexture(forTexture texture: SKTexture?) {
         self.ballon.texture = texture
+    }
+    
+    func changeColor(_ color: UIColor) {
+        self.ballon.color = color
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -15,7 +15,6 @@ class Roomer: GKEntity {
     
     // Flag to track if Entity is in Room
     var isInRoom: Bool = false
-    var isLeaving: Bool = false
     
     // To track what the Entity is waiting
     var waitingFor: ServiceCategory! = nil

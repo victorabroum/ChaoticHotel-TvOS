@@ -1,23 +1,23 @@
 //
-//  RoomerLeaveState.swift
+//  RoomerArriveState.swift
 //  ChaoticHotel-TvOS
 //
-//  Created by Victor Vasconcelos on 13/02/19.
+//  Created by Victor Vasconcelos on 15/02/19.
 //  Copyright © 2019 FF Studio. All rights reserved.
 //
 
 import Foundation
 import GameplayKit
 
-class RoomerLeaveState: GKState {
-    
+class RoomerArriveState: GKState {
+
     var entity: Roomer!
-    
+
     init(_ entity: Roomer) {
         self.entity = entity
         super.init()
     }
-
+    
    override func isValidNextState(_ stateClass: AnyClass) -> Bool {
         switch stateClass {
         case is RoomerListnerState.Type:
@@ -28,18 +28,13 @@ class RoomerLeaveState: GKState {
     }
     
     override func didEnter(from previousState: GKState?) {
-        
+        // Find the Hotel
         guard let node = self.entity.component(ofType: RenderComponent.self)?.node else { return }
-        
         guard let scene = node.scene as? GameScene else { return }
         
-        // Roomer leave the room
-        scene.hotel.addAvailableRoom(self.entity.room)
-        
-        // Change to none room for the Roomer
-        self.entity.changeRoom(nil)
-        
-        self.stateMachine?.enter(RoomerListnerState.self)
+        scene.hotel.enterOnQueue(self.entity) {
+            self.entity.stateMachine.enter(RoomerListnerState.self)
+        }
     }
 
 }

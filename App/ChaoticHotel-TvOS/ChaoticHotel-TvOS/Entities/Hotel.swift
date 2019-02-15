@@ -13,8 +13,15 @@ class Hotel: GKEntity {
     
     var availableRooms = [SKNode]()
     
-    init(availableRooms: [SKNode]) {
+    // Track queue of Roomers
+    var receptionQueue = [Roomer]()
+    
+    // Position inital for roomer wait on reception
+    var receptionPoint: CGPoint
+    
+    init(availableRooms: [SKNode], receptionPoint: CGPoint) {
         self.availableRooms = availableRooms
+        self.receptionPoint = receptionPoint
         super.init()
     }
     
@@ -24,7 +31,6 @@ class Hotel: GKEntity {
     
     func enterOnRoom(roomer: Roomer) {
         if (!availableRooms.isEmpty) {
-            // TODO: Logic to allocate a Roomer in a room
             
             // Change Roomer position to right Room
             let room = self.availableRooms.first!
@@ -33,6 +39,9 @@ class Hotel: GKEntity {
             
             // Remove this room for available
             self.availableRooms.removeFirst()
+            
+            // Roomer leave the queue
+            self.exitQueue()
         }
     }
     

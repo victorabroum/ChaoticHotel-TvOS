@@ -23,6 +23,8 @@ class GameScene: SKScene {
     var hotel: Hotel!
     var entityManager: EntityManager!
     
+    var listOfRoomers = [Roomer]()
+    
     // Test
     var roomer: Roomer!
 
@@ -42,7 +44,9 @@ class GameScene: SKScene {
         self.entityManager.add(staff)
         
         // Entity Hotel
-        self.hotel = Hotel(availableRooms: self.childNode(withName: "rooms")!.children)
+        self.hotel = Hotel(
+            availableRooms: self.childNode(withName: "rooms")!.children,
+            receptionPoint: self.childNode(withName: "receptionPoint")!.position)
         self.entityManager.add(self.hotel)
         
         //Teste Slime Entity
@@ -81,7 +85,7 @@ class GameScene: SKScene {
         
         // Just for Spawn Roomer
         // TODO: Improve Spawn Logic
-        let spawnRoomerInterval = TimeInterval(50)
+        let spawnRoomerInterval = TimeInterval(5)
         if (CACurrentMediaTime() - lastSpawn > spawnRoomerInterval) {
             lastSpawn = CACurrentMediaTime()
             print("De \(spawnRoomerInterval) em \(spawnRoomerInterval) segundos")
@@ -91,18 +95,16 @@ class GameScene: SKScene {
             guard let renderComponent = roomer.component(ofType: RenderComponent.self) else {
                 return
             }
-            renderComponent.node?.xScale = 0.07
-            renderComponent.node?.yScale = 0.07
-            renderComponent.node?.run(SKAction.colorize(with: .blue, colorBlendFactor: 1, duration: 0))
+            renderComponent.node?.xScale = 0.1
+            renderComponent.node?.yScale = 0.1
+            renderComponent.node?.run(SKAction.colorize(with: .blue, colorBlendFactor: 0.3, duration: 0))
             self.entityManager.add(roomer)
             
             renderComponent.node?.position = (self.childNode(withName: "spawnRoomer")?.position)!
             
-            // Poderia alguma lógica
-            roomer.walkTo(self.childNode(withName: "receptionPoint")!.position, withDuration: 3) {
-                print("Enter on First state")
-                self.roomer.stateMachine.enter(RoomerListnerState.self)
-            }
+            self.roomer.stateMachine.enter(RoomerArriveState.self)
+            
+            self.listOfRoomers.append(roomer)
             
         }
         
