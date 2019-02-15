@@ -29,19 +29,9 @@ class SlimeIdleState: GKState {
     
     override func didEnter(from previousState: GKState?) {
        
-        //TODO Slime - Aguardar o tempo para voltar a andar
-        guard previousState != nil else{
-            print("Bora correeeeer!")
+        self.entity.waitForCrawling(withDuration: 5) {
             self.entity.stateMachine.enter(SlimeCrawlingState.self)
-            return
+            print("5 seg depois... volte a andar")
         }
-        
-        print("Cansei de andar")
-        let slimeComponent = self.entity.component(ofType: RenderComponent.self)
-        guard let slimeNode = slimeComponent?.node else {return}
-        
-        //Esperar para voltar a andar
-        slimeNode.run(SKAction.wait(forDuration: 5))
-        print("Action Wait")
     }
 }

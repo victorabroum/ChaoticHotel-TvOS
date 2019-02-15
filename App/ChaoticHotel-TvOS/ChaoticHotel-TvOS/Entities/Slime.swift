@@ -21,6 +21,7 @@ class Slime: GKEntity {
         // Add components to Entity
         self.addComponent(moveComponent)
         self.addComponent(renderComponent)
+        self.prepareStateMachine()
         
     }
     

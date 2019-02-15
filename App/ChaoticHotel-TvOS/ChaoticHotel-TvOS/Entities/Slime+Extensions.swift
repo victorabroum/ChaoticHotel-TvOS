@@ -18,7 +18,17 @@ extension Slime {
             ])
     }
     
-    func crawlingInFloor(){
+    func crawlingInFloor() {
+        self.stateMachine.enter(SlimeIdleState.self)
+    }
+    
+    func waitForCrawling(withDuration duration: TimeInterval, withCompletion completion: @escaping () -> Void ) {
+        print("Node andar function")
+
+        let slime = self.component(ofType: RenderComponent.self)
+        slime?.node?.run(SKAction.wait(forDuration: duration)) {
+            completion()
+        }        
         
     }
     

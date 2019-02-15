@@ -54,6 +54,7 @@ class GameScene: SKScene {
         renderComponentSlime.node?.yScale = 0.07
         renderComponentSlime.node?.position = (self.childNode(withName: "elevatorGoDown")?.position)!
         self.entityManager.add(slime)
+        slime.crawlingInFloor()
         
     }
 

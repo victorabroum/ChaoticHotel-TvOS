@@ -26,7 +26,20 @@ class SlimeCrawlingState: GKState {
     }
 
     override func didEnter(from previousState: GKState?) {
-        print("Anda seu doido")
-        self.entity.stateMachine.enter(SlimeIdleState.self)
+        
+        guard let node = self.entity.component(ofType: RenderComponent.self)?.node else {return}
+        
+        let movement = self.entity.component(ofType: MoveComponent.self)
+        
+        let pointRight = CGPoint.init(x: (node.scene?.size.width)! / 2, y: node.position.y)
+        
+        let pointLeft = CGPoint.init(x: -((node.scene?.size.width)! / 2), y: node.position.y)
+        
+        movement?.move(to: pointRight, withDuration: 20, withCompletion: {
+            movement?.move(to: pointLeft, withDuration: 20, withCompletion: {
+                self.entity.stateMachine.enter(SlimeIdleState.self)
+            })
+        })
+        
     }
 }
