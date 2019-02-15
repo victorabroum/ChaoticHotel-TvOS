@@ -46,6 +46,8 @@ class RoomerGiveUpState: GKState {
             scene.hotel.exitQueue()
         }
         
+        // TODO: Feedback Roomer is angry
+        print("QUE HOTEL MERDA")
         node.run(SKAction.scale(by: 0.5, duration: AnimationDuration.roomerGoOut)) {
             self.stateMachine!.enter(RoomerGoOutState.self)
         }

@@ -16,18 +16,18 @@ extension Hotel {
         
         if (self.receptionQueueHasSpace()) {
             
-            self.receptionQueue.append(roomer)
-            
             guard let node = roomer.component(ofType: RenderComponent.self)?.node else { return }
             guard let moveComp = roomer.component(ofType: MoveComponent.self) else { return }
             let point = self.receptionPoint.x -
                 (((node.size.width) *
-                    (CGFloat(integerLiteral: self.receptionQueue.count - 1))) + 10)
+                    (CGFloat(integerLiteral: self.receptionQueue.count))) + 10)
             moveComp.move(to: CGPoint(x: point, y: node.position.y),
                           withDuration: 2) {
                             if(completion != nil) {
                                 completion!()
                             }
+                            self.receptionQueue.append(roomer)
+                            self.ornagizeQueue()
             }
         }
     }

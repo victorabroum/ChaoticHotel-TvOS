@@ -34,6 +34,11 @@ class RoomerGoOutState: GKState {
             return
         }
         
+        if (previousState is RoomerAssistState) {
+            // TODO: Feedback Roomer is happy
+            print("AMEI O HOTEL")
+        }
+        
         node.run(SKAction.rotate(byAngle: 1000, duration: AnimationDuration.roomerGoOut)) {
             
             node.removeFromParent()
