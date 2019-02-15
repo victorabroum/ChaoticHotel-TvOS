@@ -56,7 +56,7 @@ class GameScene: SKScene {
         
         renderComponentSlime.node?.position = CGPoint.init(
             x: -(self.size.width / 2) - 40,
-            y: ySlime?.y ?? 0)
+                y: ySlime?.y ?? 0)
         
         self.entityManager.add(slime)
         slime.crawlingInFloor()

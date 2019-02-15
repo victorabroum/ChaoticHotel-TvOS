@@ -36,6 +36,8 @@
 		FDFF24CE2215EAEB00BF8593 /* SlimeIdleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF24CD2215EAEB00BF8593 /* SlimeIdleState.swift */; };
 		FDFF24D02215EB9500BF8593 /* SlimeCrawlingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF24CF2215EB9500BF8593 /* SlimeCrawlingState.swift */; };
 		FDFF24D22215EE8900BF8593 /* Slime+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF24D12215EE8900BF8593 /* Slime+Extensions.swift */; };
+		FDFF24F5221738EF00BF8593 /* Goop.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF24F4221738EF00BF8593 /* Goop.swift */; };
+		FDFF24FB221739A400BF8593 /* Goop+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF24FA221739A400BF8593 /* Goop+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,8 @@
 		FDFF24CD2215EAEB00BF8593 /* SlimeIdleState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlimeIdleState.swift; sourceTree = "<group>"; };
 		FDFF24CF2215EB9500BF8593 /* SlimeCrawlingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlimeCrawlingState.swift; sourceTree = "<group>"; };
 		FDFF24D12215EE8900BF8593 /* Slime+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Slime+Extensions.swift"; sourceTree = "<group>"; };
+		FDFF24F4221738EF00BF8593 /* Goop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goop.swift; sourceTree = "<group>"; };
+		FDFF24FA221739A400BF8593 /* Goop+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goop+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,12 +156,12 @@
 		76608BB822130F300023C29C /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				FDFF24F82217398900BF8593 /* goop */,
+				FDFF24F62217396A00BF8593 /* slime */,
 				76608BBB221459930023C29C /* Staff.swift */,
 				76608BC122146AC90023C29C /* EntityManager.swift */,
 				76608BC7221487B60023C29C /* Roomer.swift */,
 				76608BDA2214A08E0023C29C /* Roomer+Extensions.swift */,
-				FDFF24CA2215E18D00BF8593 /* Slime.swift */,
-				FDFF24D12215EE8900BF8593 /* Slime+Extensions.swift */,
 				7650285D2215BB9E009A5CE4 /* Hotel.swift */,
 			);
 			path = Entities;
@@ -198,6 +202,24 @@
 				FDFF24CF2215EB9500BF8593 /* SlimeCrawlingState.swift */,
 			);
 			path = "IntelligenceComponent States (Slime)";
+			sourceTree = "<group>";
+		};
+		FDFF24F62217396A00BF8593 /* slime */ = {
+			isa = PBXGroup;
+			children = (
+				FDFF24D12215EE8900BF8593 /* Slime+Extensions.swift */,
+				FDFF24CA2215E18D00BF8593 /* Slime.swift */,
+			);
+			path = slime;
+			sourceTree = "<group>";
+		};
+		FDFF24F82217398900BF8593 /* goop */ = {
+			isa = PBXGroup;
+			children = (
+				FDFF24F4221738EF00BF8593 /* Goop.swift */,
+				FDFF24FA221739A400BF8593 /* Goop+Extensions.swift */,
+			);
+			path = goop;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,7 +322,9 @@
 				76608BCD2214996C0023C29C /* RoomerGiveUpState.swift in Sources */,
 				76608BBE22145A780023C29C /* RenderComponent.swift in Sources */,
 				76608BD322149ACC0023C29C /* RoomerListnerState.swift in Sources */,
+				FDFF24FB221739A400BF8593 /* Goop+Extensions.swift in Sources */,
 				76608BD922149B520023C29C /* RoomerGoOutState.swift in Sources */,
+				FDFF24F5221738EF00BF8593 /* Goop.swift in Sources */,
 				76608BD722149B2D0023C29C /* RoomerLeaveState.swift in Sources */,
 				FDFF24C92214C6B900BF8593 /* BallonComponent.swift in Sources */,
 				76608BA822130E210023C29C /* GameViewController.swift in Sources */,
