@@ -42,7 +42,9 @@ class GameScene: SKScene {
         self.entityManager.add(staff)
         
         // Entity Hotel
-        self.hotel = Hotel(availableRooms: self.childNode(withName: "rooms")!.children)
+        self.hotel = Hotel(
+            availableRooms: self.childNode(withName: "rooms")!.children,
+            receptionPoint: self.childNode(withName: "receptionPoint")!.position)
         self.entityManager.add(self.hotel)
         
         //Teste Slime Entity
