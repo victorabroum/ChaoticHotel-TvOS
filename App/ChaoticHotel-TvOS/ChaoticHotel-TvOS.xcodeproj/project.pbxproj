@@ -221,8 +221,8 @@
 		FDFF24F62217396A00BF8593 /* slime */ = {
 			isa = PBXGroup;
 			children = (
-				FDFF24D12215EE8900BF8593 /* Slime+Extensions.swift */,
 				FDFF24CA2215E18D00BF8593 /* Slime.swift */,
+				FDFF24D12215EE8900BF8593 /* Slime+Extensions.swift */,
 			);
 			path = slime;
 			sourceTree = "<group>";

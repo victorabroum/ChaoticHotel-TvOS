@@ -54,8 +54,8 @@ class GameScene: SKScene {
         
         guard let renderComponentSlime = slime.component(ofType: RenderComponent.self) else {return}
         
-        renderComponentSlime.node?.xScale = 0.07
-        renderComponentSlime.node?.yScale = 0.07
+        renderComponentSlime.node?.xScale = 0.13
+        renderComponentSlime.node?.yScale = 0.13
         let ySlime = self.childNode(withName: "elevatorGoDown")?.position
         
         renderComponentSlime.node?.position = CGPoint.init(
@@ -69,7 +69,8 @@ class GameScene: SKScene {
 
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
-
+        //Slime shot goop in hotel - Teste
+        
         // Initialize _lastUpdateTime if it has not already been
         if (self.lastUpdateTime == 0) {
             self.lastUpdateTime = currentTime
@@ -79,7 +80,7 @@ class GameScene: SKScene {
         let deltaTime = currentTime - self.lastUpdateTime
 
         // Update entities
-        for entity in self.entities {
+        for entity in self.entityManager.entities {
             entity.update(deltaTime: deltaTime)
         }
         

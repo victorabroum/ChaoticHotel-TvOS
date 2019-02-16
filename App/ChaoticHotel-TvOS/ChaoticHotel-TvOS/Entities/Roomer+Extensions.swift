@@ -51,6 +51,7 @@ extension Roomer {
         if (category == self.waitingFor) {
             self.stateMachine.enter(RoomerAssistState.self)
         } else {
+            
         }
     }
 }

@@ -11,6 +11,7 @@ import GameplayKit
 
 class Slime: GKEntity {
     var stateMachine: GKStateMachine!
+    var oldDeltaTimer: TimeInterval = 0.0
     
     init(withImageNamed name: String) {
         super.init()
@@ -21,6 +22,7 @@ class Slime: GKEntity {
         // Add components to Entity
         self.addComponent(moveComponent)
         self.addComponent(renderComponent)
+        
         self.prepareStateMachine()
         
     }

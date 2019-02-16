@@ -32,4 +32,25 @@ extension Slime {
         
     }
     
+    func shootGoop() {
+        let goopEntity = Goop.init(withImage: "staff_placeHolder")
+        
+        goopEntity.spwanInScene(inPositionToSlime: self)
+    }
+    
+    override func update(deltaTime seconds: TimeInterval) {
+        
+        guard self.stateMachine.currentState != nil else {
+            return
+        }
+        
+        self.oldDeltaTimer += seconds
+        if self.oldDeltaTimer >= WaitTimer.spwanGoop {
+            let isValidShoot = (Int.random(in: 0...10) >= 7)
+            if isValidShoot {
+                self.shootGoop()
+            }
+            self.oldDeltaTimer = 0.0
+        }
+    }
 }

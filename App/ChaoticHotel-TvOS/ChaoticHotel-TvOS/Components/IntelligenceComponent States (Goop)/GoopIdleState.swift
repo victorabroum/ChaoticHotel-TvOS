@@ -16,18 +16,21 @@ class GoopIdleState: GKState {
     }
     
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {
-        return false
+        switch stateClass {
+        case is GoopCleanerState.Type:
+            return true
+        default:
+            return false
+        }
     }
     
     override func didEnter(from previousState: GKState?) {
-        
-        //TODO - Adificionar a logica de mostrar o balão
+        print("Goop em idle")
+
         let ballon = self.entity.component(ofType: BallonComponent.self)
         ballon?.showBallon()
-        
+        ballon?.changeColor(#colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1))
         //TODO - Adicionar a logica de interação
-
-//        self.entity.stateMachine.enter(GoopCleanerState.self)
     }
     
 }
