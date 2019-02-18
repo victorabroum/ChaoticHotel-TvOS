@@ -21,8 +21,6 @@ extension GameScene {
             guard let contact =
                 staffBodyComp.physicBody.allContactedBodies().first else { return }
             
-            print("CONTATO COM \(contact)")
-            
             if (contact.node != nil) {
                 if ((contact.node!.entity?.component(ofType: HoldComponent.self)) != nil) {
                     // Contact with a Holdable item
@@ -37,7 +35,11 @@ extension GameScene {
                 } else if let interaction =
                     contact.node?.entity?.component(ofType: InteractionComponent.self) {
                     print("INTERACT \(interaction)")
-                    if let interact = interaction.entity as? InteractEntity {
+                    
+                    if let elevtor = interaction.entity as? Elevator {
+                        elevtor.transport = staff
+                        elevtor.interactionAction()
+                    } else if let interact = interaction.entity as? InteractEntity {
                         interact.interactDelegate?.interactionAction()
                     }
                 }

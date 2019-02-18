@@ -46,6 +46,8 @@
 		76D62B18221B4463006A03DA /* InteractDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62B17221B4463006A03DA /* InteractDelegate.swift */; };
 		76D62B1B221B44CA006A03DA /* Reception.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62B1A221B44CA006A03DA /* Reception.swift */; };
 		76D62B1D221B45C6006A03DA /* Reception+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62B1C221B45C6006A03DA /* Reception+Protocols.swift */; };
+		76D62B20221B4F2E006A03DA /* Elevator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62B1F221B4F2E006A03DA /* Elevator.swift */; };
+		76D62B22221B4FA8006A03DA /* Elevator+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62B21221B4FA8006A03DA /* Elevator+Protocols.swift */; };
 		FDFF24C72214BB4B00BF8593 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF24C62214BB4B00BF8593 /* Constants.swift */; };
 		FDFF24C92214C6B900BF8593 /* BallonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF24C82214C6B900BF8593 /* BallonComponent.swift */; };
 		FDFF24CB2215E18D00BF8593 /* Slime.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF24CA2215E18D00BF8593 /* Slime.swift */; };
@@ -100,6 +102,8 @@
 		76D62B17221B4463006A03DA /* InteractDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractDelegate.swift; sourceTree = "<group>"; };
 		76D62B1A221B44CA006A03DA /* Reception.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reception.swift; sourceTree = "<group>"; };
 		76D62B1C221B45C6006A03DA /* Reception+Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reception+Protocols.swift"; sourceTree = "<group>"; };
+		76D62B1F221B4F2E006A03DA /* Elevator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Elevator.swift; sourceTree = "<group>"; };
+		76D62B21221B4FA8006A03DA /* Elevator+Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Elevator+Protocols.swift"; sourceTree = "<group>"; };
 		FDFF24C62214BB4B00BF8593 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FDFF24C82214C6B900BF8593 /* BallonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallonComponent.swift; sourceTree = "<group>"; };
 		FDFF24CA2215E18D00BF8593 /* Slime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slime.swift; sourceTree = "<group>"; };
@@ -196,6 +200,7 @@
 		76608BB822130F300023C29C /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				76D62B1E221B4F1D006A03DA /* elevator */,
 				76608BC122146AC90023C29C /* EntityManager.swift */,
 				76D62B19221B44BF006A03DA /* reception */,
 				FDFF24F82217398900BF8593 /* goop */,
@@ -302,6 +307,15 @@
 				76D62B1C221B45C6006A03DA /* Reception+Protocols.swift */,
 			);
 			path = reception;
+			sourceTree = "<group>";
+		};
+		76D62B1E221B4F1D006A03DA /* elevator */ = {
+			isa = PBXGroup;
+			children = (
+				76D62B1F221B4F2E006A03DA /* Elevator.swift */,
+				76D62B21221B4FA8006A03DA /* Elevator+Protocols.swift */,
+			);
+			path = elevator;
 			sourceTree = "<group>";
 		};
 		FDFF24CC2215E98F00BF8593 /* IntelligenceComponent States (Slime) */ = {
@@ -432,6 +446,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76D62B20221B4F2E006A03DA /* Elevator.swift in Sources */,
 				76D62AF722172CFA006A03DA /* RoomerArriveState.swift in Sources */,
 				76D62AF32216F82B006A03DA /* Hotel+ControlQueue.swift in Sources */,
 				76D62B1B221B44CA006A03DA /* Reception.swift in Sources */,
@@ -468,6 +483,7 @@
 				76608BD522149AF40023C29C /* RoomerRoomServiceState.swift in Sources */,
 				FDFF24CE2215EAEB00BF8593 /* SlimeIdleState.swift in Sources */,
 				76608BBC221459930023C29C /* Staff.swift in Sources */,
+				76D62B22221B4FA8006A03DA /* Elevator+Protocols.swift in Sources */,
 				76608BDB2214A08E0023C29C /* Roomer+Extensions.swift in Sources */,
 				76D62B00221AF13A006A03DA /* GameWorld.swift in Sources */,
 				FDFF24C72214BB4B00BF8593 /* Constants.swift in Sources */,
