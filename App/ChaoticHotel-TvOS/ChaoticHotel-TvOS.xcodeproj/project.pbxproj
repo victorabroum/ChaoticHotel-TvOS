@@ -35,6 +35,7 @@
 		76D62AF722172CFA006A03DA /* RoomerArriveState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62AF622172CFA006A03DA /* RoomerArriveState.swift */; };
 		76D62AFC221AE495006A03DA /* CategoryMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62AFB221AE495006A03DA /* CategoryMask.swift */; };
 		76D62AFE221AE8DC006A03DA /* PhysicsBoydComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62AFD221AE8DC006A03DA /* PhysicsBoydComponent.swift */; };
+		76D62B00221AF13A006A03DA /* GameWorld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62AFF221AF13A006A03DA /* GameWorld.swift */; };
 		FDFF24C72214BB4B00BF8593 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF24C62214BB4B00BF8593 /* Constants.swift */; };
 		FDFF24C92214C6B900BF8593 /* BallonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF24C82214C6B900BF8593 /* BallonComponent.swift */; };
 		FDFF24CB2215E18D00BF8593 /* Slime.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF24CA2215E18D00BF8593 /* Slime.swift */; };
@@ -78,6 +79,7 @@
 		76D62AF622172CFA006A03DA /* RoomerArriveState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomerArriveState.swift; sourceTree = "<group>"; };
 		76D62AFB221AE495006A03DA /* CategoryMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMask.swift; sourceTree = "<group>"; };
 		76D62AFD221AE8DC006A03DA /* PhysicsBoydComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsBoydComponent.swift; sourceTree = "<group>"; };
+		76D62AFF221AF13A006A03DA /* GameWorld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameWorld.swift; sourceTree = "<group>"; };
 		FDFF24C62214BB4B00BF8593 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FDFF24C82214C6B900BF8593 /* BallonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallonComponent.swift; sourceTree = "<group>"; };
 		FDFF24CA2215E18D00BF8593 /* Slime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slime.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				76608BB422130E4F0023C29C /* View */,
 				76608BB522130E580023C29C /* Controller */,
 				76608BB822130F300023C29C /* Entities */,
+				76608BC122146AC90023C29C /* EntityManager.swift */,
 				76608BB922130F360023C29C /* Components */,
 				76608BB622130F120023C29C /* Settings */,
 				76608BAC22130E230023C29C /* Assets.xcassets */,
@@ -174,12 +177,10 @@
 			children = (
 				FDFF24F82217398900BF8593 /* goop */,
 				FDFF24F62217396A00BF8593 /* slime */,
-				76608BBB221459930023C29C /* Staff.swift */,
-				76608BC122146AC90023C29C /* EntityManager.swift */,
-				76608BC7221487B60023C29C /* Roomer.swift */,
-				76608BDA2214A08E0023C29C /* Roomer+Extensions.swift */,
-				7650285D2215BB9E009A5CE4 /* Hotel.swift */,
-				76D62AF22216F82B006A03DA /* Hotel+ControlQueue.swift */,
+				76D62B04221AF33A006A03DA /* staff */,
+				76D62B01221AF317006A03DA /* roomer */,
+				76D62B02221AF326006A03DA /* hotel */,
+				76D62B03221AF32F006A03DA /* game world */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -213,6 +214,40 @@
 				76D62AF622172CFA006A03DA /* RoomerArriveState.swift */,
 			);
 			path = "IntelligenceComponent States (Roomer)";
+			sourceTree = "<group>";
+		};
+		76D62B01221AF317006A03DA /* roomer */ = {
+			isa = PBXGroup;
+			children = (
+				76608BC7221487B60023C29C /* Roomer.swift */,
+				76608BDA2214A08E0023C29C /* Roomer+Extensions.swift */,
+			);
+			path = roomer;
+			sourceTree = "<group>";
+		};
+		76D62B02221AF326006A03DA /* hotel */ = {
+			isa = PBXGroup;
+			children = (
+				7650285D2215BB9E009A5CE4 /* Hotel.swift */,
+				76D62AF22216F82B006A03DA /* Hotel+ControlQueue.swift */,
+			);
+			path = hotel;
+			sourceTree = "<group>";
+		};
+		76D62B03221AF32F006A03DA /* game world */ = {
+			isa = PBXGroup;
+			children = (
+				76D62AFF221AF13A006A03DA /* GameWorld.swift */,
+			);
+			path = "game world";
+			sourceTree = "<group>";
+		};
+		76D62B04221AF33A006A03DA /* staff */ = {
+			isa = PBXGroup;
+			children = (
+				76608BBB221459930023C29C /* Staff.swift */,
+			);
+			path = staff;
 			sourceTree = "<group>";
 		};
 		FDFF24CC2215E98F00BF8593 /* IntelligenceComponent States (Slime) */ = {
@@ -371,6 +406,7 @@
 				FDFF24CE2215EAEB00BF8593 /* SlimeIdleState.swift in Sources */,
 				76608BBC221459930023C29C /* Staff.swift in Sources */,
 				76608BDB2214A08E0023C29C /* Roomer+Extensions.swift in Sources */,
+				76D62B00221AF13A006A03DA /* GameWorld.swift in Sources */,
 				FDFF24C72214BB4B00BF8593 /* Constants.swift in Sources */,
 				76608BCB221497190023C29C /* RoomerWaitState.swift in Sources */,
 				76608BC022145EA10023C29C /* MoveComponent.swift in Sources */,
