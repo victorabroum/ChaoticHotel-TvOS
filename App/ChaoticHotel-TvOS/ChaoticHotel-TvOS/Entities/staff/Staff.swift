@@ -11,11 +11,18 @@ import GameplayKit
 
 class Staff: GKEntity {
     
+    var service: ServiceCategory! = nil
+    
+    var holdItem: Itens! = nil
+    
     init(withImageNamed imageNamed: String) {
         super.init()
         
         // Add RenderComponent
         let renderComponent = RenderComponent(imageNamed: imageNamed)
+        
+        renderComponent.node?.entity = self
+        
         self.addComponent(renderComponent)
        
         // Add MoveComponent

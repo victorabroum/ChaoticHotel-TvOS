@@ -25,8 +25,6 @@ class PhysicsBoydComponent: GKComponent {
         self.physicBody.affectedByGravity = false
         // Default is not rotate
         self.physicBody.allowsRotation = false
-        // Default is not Dynamic
-        self.physicBody.isDynamic = false
         
         self.physicBody.categoryBitMask = categoryMask.rawValue
         

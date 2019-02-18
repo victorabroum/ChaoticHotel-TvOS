@@ -36,6 +36,16 @@
 		76D62AFC221AE495006A03DA /* CategoryMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62AFB221AE495006A03DA /* CategoryMask.swift */; };
 		76D62AFE221AE8DC006A03DA /* PhysicsBoydComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62AFD221AE8DC006A03DA /* PhysicsBoydComponent.swift */; };
 		76D62B00221AF13A006A03DA /* GameWorld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62AFF221AF13A006A03DA /* GameWorld.swift */; };
+		76D62B06221AF49E006A03DA /* GameWorld+SKPhysicsContactDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62B05221AF49E006A03DA /* GameWorld+SKPhysicsContactDelegate.swift */; };
+		76D62B0A221B211A006A03DA /* HoldComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62B09221B211A006A03DA /* HoldComponent.swift */; };
+		76D62B0C221B2D89006A03DA /* ServiceComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62B0B221B2D89006A03DA /* ServiceComponent.swift */; };
+		76D62B0E221B2D96006A03DA /* InteractionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62B0D221B2D96006A03DA /* InteractionComponent.swift */; };
+		76D62B10221B38DF006A03DA /* AssistProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62B0F221B38DF006A03DA /* AssistProtocol.swift */; };
+		76D62B12221B3BD9006A03DA /* AssistEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62B11221B3BD9006A03DA /* AssistEntity.swift */; };
+		76D62B16221B444C006A03DA /* InteractEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62B15221B444C006A03DA /* InteractEntity.swift */; };
+		76D62B18221B4463006A03DA /* InteractDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62B17221B4463006A03DA /* InteractDelegate.swift */; };
+		76D62B1B221B44CA006A03DA /* Reception.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62B1A221B44CA006A03DA /* Reception.swift */; };
+		76D62B1D221B45C6006A03DA /* Reception+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62B1C221B45C6006A03DA /* Reception+Protocols.swift */; };
 		FDFF24C72214BB4B00BF8593 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF24C62214BB4B00BF8593 /* Constants.swift */; };
 		FDFF24C92214C6B900BF8593 /* BallonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF24C82214C6B900BF8593 /* BallonComponent.swift */; };
 		FDFF24CB2215E18D00BF8593 /* Slime.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF24CA2215E18D00BF8593 /* Slime.swift */; };
@@ -80,6 +90,16 @@
 		76D62AFB221AE495006A03DA /* CategoryMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMask.swift; sourceTree = "<group>"; };
 		76D62AFD221AE8DC006A03DA /* PhysicsBoydComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsBoydComponent.swift; sourceTree = "<group>"; };
 		76D62AFF221AF13A006A03DA /* GameWorld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameWorld.swift; sourceTree = "<group>"; };
+		76D62B05221AF49E006A03DA /* GameWorld+SKPhysicsContactDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameWorld+SKPhysicsContactDelegate.swift"; sourceTree = "<group>"; };
+		76D62B09221B211A006A03DA /* HoldComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoldComponent.swift; sourceTree = "<group>"; };
+		76D62B0B221B2D89006A03DA /* ServiceComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceComponent.swift; sourceTree = "<group>"; };
+		76D62B0D221B2D96006A03DA /* InteractionComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractionComponent.swift; sourceTree = "<group>"; };
+		76D62B0F221B38DF006A03DA /* AssistProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistProtocol.swift; sourceTree = "<group>"; };
+		76D62B11221B3BD9006A03DA /* AssistEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistEntity.swift; sourceTree = "<group>"; };
+		76D62B15221B444C006A03DA /* InteractEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractEntity.swift; sourceTree = "<group>"; };
+		76D62B17221B4463006A03DA /* InteractDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractDelegate.swift; sourceTree = "<group>"; };
+		76D62B1A221B44CA006A03DA /* Reception.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reception.swift; sourceTree = "<group>"; };
+		76D62B1C221B45C6006A03DA /* Reception+Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reception+Protocols.swift"; sourceTree = "<group>"; };
 		FDFF24C62214BB4B00BF8593 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FDFF24C82214C6B900BF8593 /* BallonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallonComponent.swift; sourceTree = "<group>"; };
 		FDFF24CA2215E18D00BF8593 /* Slime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slime.swift; sourceTree = "<group>"; };
@@ -168,6 +188,8 @@
 		76608BB722130F2B0023C29C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				76D62B14221B4434006A03DA /* interact */,
+				76D62B13221B442A006A03DA /* assist */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -175,6 +197,7 @@
 		76608BB822130F300023C29C /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				76D62B19221B44BF006A03DA /* reception */,
 				FDFF24F82217398900BF8593 /* goop */,
 				FDFF24F62217396A00BF8593 /* slime */,
 				76D62B04221AF33A006A03DA /* staff */,
@@ -196,6 +219,9 @@
 				76608BC3221478BE0023C29C /* MoveSystem.swift */,
 				FDFF24C82214C6B900BF8593 /* BallonComponent.swift */,
 				76D62AFD221AE8DC006A03DA /* PhysicsBoydComponent.swift */,
+				76D62B09221B211A006A03DA /* HoldComponent.swift */,
+				76D62B0B221B2D89006A03DA /* ServiceComponent.swift */,
+				76D62B0D221B2D96006A03DA /* InteractionComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -238,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				76D62AFF221AF13A006A03DA /* GameWorld.swift */,
+				76D62B05221AF49E006A03DA /* GameWorld+SKPhysicsContactDelegate.swift */,
 			);
 			path = "game world";
 			sourceTree = "<group>";
@@ -248,6 +275,33 @@
 				76608BBB221459930023C29C /* Staff.swift */,
 			);
 			path = staff;
+			sourceTree = "<group>";
+		};
+		76D62B13221B442A006A03DA /* assist */ = {
+			isa = PBXGroup;
+			children = (
+				76D62B0F221B38DF006A03DA /* AssistProtocol.swift */,
+				76D62B11221B3BD9006A03DA /* AssistEntity.swift */,
+			);
+			path = assist;
+			sourceTree = "<group>";
+		};
+		76D62B14221B4434006A03DA /* interact */ = {
+			isa = PBXGroup;
+			children = (
+				76D62B15221B444C006A03DA /* InteractEntity.swift */,
+				76D62B17221B4463006A03DA /* InteractDelegate.swift */,
+			);
+			path = interact;
+			sourceTree = "<group>";
+		};
+		76D62B19221B44BF006A03DA /* reception */ = {
+			isa = PBXGroup;
+			children = (
+				76D62B1A221B44CA006A03DA /* Reception.swift */,
+				76D62B1C221B45C6006A03DA /* Reception+Protocols.swift */,
+			);
+			path = reception;
 			sourceTree = "<group>";
 		};
 		FDFF24CC2215E98F00BF8593 /* IntelligenceComponent States (Slime) */ = {
@@ -380,19 +434,26 @@
 			files = (
 				76D62AF722172CFA006A03DA /* RoomerArriveState.swift in Sources */,
 				76D62AF32216F82B006A03DA /* Hotel+ControlQueue.swift in Sources */,
+				76D62B1B221B44CA006A03DA /* Reception.swift in Sources */,
 				FDFF24CB2215E18D00BF8593 /* Slime.swift in Sources */,
 				76608BC622147ACF0023C29C /* GameScene+Extesions.swift in Sources */,
 				FDFF24D02215EB9500BF8593 /* SlimeCrawlingState.swift in Sources */,
 				76608BA622130E210023C29C /* GameScene.swift in Sources */,
 				76608BC222146AC90023C29C /* EntityManager.swift in Sources */,
+				76D62B12221B3BD9006A03DA /* AssistEntity.swift in Sources */,
 				FDFF24FE221740EF00BF8593 /* GoopIdleState.swift in Sources */,
 				76608BCD2214996C0023C29C /* RoomerGiveUpState.swift in Sources */,
 				76D62AFC221AE495006A03DA /* CategoryMask.swift in Sources */,
 				76D62AF52216FD50006A03DA /* CGPoint+Extensions.swift in Sources */,
+				76D62B1D221B45C6006A03DA /* Reception+Protocols.swift in Sources */,
 				76608BBE22145A780023C29C /* RenderComponent.swift in Sources */,
+				76D62B0C221B2D89006A03DA /* ServiceComponent.swift in Sources */,
+				76D62B18221B4463006A03DA /* InteractDelegate.swift in Sources */,
+				76D62B16221B444C006A03DA /* InteractEntity.swift in Sources */,
 				76608BD322149ACC0023C29C /* RoomerListnerState.swift in Sources */,
 				FDFF24FB221739A400BF8593 /* Goop+Extensions.swift in Sources */,
 				76D62AFE221AE8DC006A03DA /* PhysicsBoydComponent.swift in Sources */,
+				76D62B0E221B2D96006A03DA /* InteractionComponent.swift in Sources */,
 				76608BD922149B520023C29C /* RoomerGoOutState.swift in Sources */,
 				FDFF24F5221738EF00BF8593 /* Goop.swift in Sources */,
 				76608BD722149B2D0023C29C /* RoomerLeaveState.swift in Sources */,
@@ -402,6 +463,8 @@
 				76608BD122149A7D0023C29C /* RoomerRoomState.swift in Sources */,
 				76608BC8221487B60023C29C /* Roomer.swift in Sources */,
 				76608BCF22149A2E0023C29C /* RoomerAssistState.swift in Sources */,
+				76D62B0A221B211A006A03DA /* HoldComponent.swift in Sources */,
+				76D62B06221AF49E006A03DA /* GameWorld+SKPhysicsContactDelegate.swift in Sources */,
 				76608BD522149AF40023C29C /* RoomerRoomServiceState.swift in Sources */,
 				FDFF24CE2215EAEB00BF8593 /* SlimeIdleState.swift in Sources */,
 				76608BBC221459930023C29C /* Staff.swift in Sources */,
@@ -411,6 +474,7 @@
 				76608BCB221497190023C29C /* RoomerWaitState.swift in Sources */,
 				76608BC022145EA10023C29C /* MoveComponent.swift in Sources */,
 				76608BA022130E210023C29C /* AppDelegate.swift in Sources */,
+				76D62B10221B38DF006A03DA /* AssistProtocol.swift in Sources */,
 				FDFF25002217414100BF8593 /* GoopCleanerState.swift in Sources */,
 				FDFF24D22215EE8900BF8593 /* Slime+Extensions.swift in Sources */,
 				76608BC4221478BE0023C29C /* MoveSystem.swift in Sources */,
@@ -551,7 +615,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Launch Image";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FCZ6JTPKG7;
+				DEVELOPMENT_TEAM = AYH9NYMQ3Y;
 				INFOPLIST_FILE = "ChaoticHotel-TvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -570,7 +634,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Launch Image";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FCZ6JTPKG7;
+				DEVELOPMENT_TEAM = AYH9NYMQ3Y;
 				INFOPLIST_FILE = "ChaoticHotel-TvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

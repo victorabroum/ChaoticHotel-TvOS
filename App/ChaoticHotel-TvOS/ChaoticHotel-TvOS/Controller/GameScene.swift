@@ -21,6 +21,8 @@ class GameScene: SKScene {
     
     var staff: Staff!
     var hotel: Hotel!
+    var gameWorld: GameWorld!
+    var receptionTable: Reception!
     var entityManager: EntityManager!
     
     var listOfRoomers = [Roomer]()
@@ -38,24 +40,25 @@ class GameScene: SKScene {
         // Change Sprite scale
         if let renderComponent = staff.component(ofType: RenderComponent.self) {
             print("tem render")
-            renderComponent.node?.xScale = 0.1
-            renderComponent.node?.yScale = 0.1
+            renderComponent.node?.xScale = 0.3
+            renderComponent.node?.yScale = 0.3
+            renderComponent.node?.position = (self.childNode(withName: "elevatorGoUp")?.position)!
         }
         self.entityManager.add(staff)
         
-        // Entity Hotel
-        self.hotel = Hotel(
-            availableRooms: self.childNode(withName: "rooms")!.children,
-            receptionPoint: self.childNode(withName: "receptionPoint")!.position)
-        self.entityManager.add(self.hotel)
+        // GameWorld
+        self.gameWorld = GameWorld(scene: self)
+        self.hotel = self.gameWorld.hotelEntity
+        
+        self.physicsWorld.contactDelegate = self.gameWorld
         
         //Teste Slime Entity
         let slime = Slime.init(withImageNamed: "staff_placeHolder")
         
         guard let renderComponentSlime = slime.component(ofType: RenderComponent.self) else {return}
         
-        renderComponentSlime.node?.xScale = 0.13
-        renderComponentSlime.node?.yScale = 0.13
+        renderComponentSlime.node?.xScale = 0.35
+        renderComponentSlime.node?.yScale = 0.35
         let ySlime = self.childNode(withName: "elevatorGoDown")?.position
         
         renderComponentSlime.node?.position = CGPoint.init(
@@ -64,6 +67,13 @@ class GameScene: SKScene {
         
         self.entityManager.add(slime)
         slime.crawlingInFloor()
+        
+        // Reception Table Entity
+        self.receptionTable = Reception(hotel: self.hotel)
+        if let renderComp = self.receptionTable.component(ofType: RenderComponent.self) {
+            renderComp.node?.position = self.childNode(withName: "reception")!.position
+        }
+        self.entityManager.add(self.receptionTable)
         
     }
 
@@ -96,8 +106,8 @@ class GameScene: SKScene {
             guard let renderComponent = roomer.component(ofType: RenderComponent.self) else {
                 return
             }
-            renderComponent.node?.xScale = 0.1
-            renderComponent.node?.yScale = 0.1
+            renderComponent.node?.xScale = 0.35
+            renderComponent.node?.yScale = 0.35
             renderComponent.node?.run(SKAction.colorize(with: .blue, colorBlendFactor: 0.3, duration: 0))
             self.entityManager.add(roomer)
             

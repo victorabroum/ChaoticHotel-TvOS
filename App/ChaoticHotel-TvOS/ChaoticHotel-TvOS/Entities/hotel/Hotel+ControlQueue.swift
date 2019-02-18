@@ -55,6 +55,9 @@ extension Hotel {
     
     func ornagizeQueue() {
         var index: CGFloat = 0
+        // TODO: Ajust Bug on queue
+        // Quando tem alguem entrando e eu atendo outro alguem, ele buga
+        print("QTD ON RECEP QUEUE \(self.receptionQueue.count)")
         for roomer in self.receptionQueue {
             guard let node = roomer.component(ofType: RenderComponent.self)?.node else { return }
             guard let moveComp = roomer.component(ofType: MoveComponent.self) else { return }

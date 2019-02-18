@@ -42,7 +42,7 @@ class RoomerGiveUpState: GKState {
             scene.hotel.addAvailableRoom(self.entity.room)
         }
         
-        if (self.entity.waitingFor == .checkIn) {
+        if (self.entity.isInRoom) {
             scene.hotel.exitQueue()
         }
         

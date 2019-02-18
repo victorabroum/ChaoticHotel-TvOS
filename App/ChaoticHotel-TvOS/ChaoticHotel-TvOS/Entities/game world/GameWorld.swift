@@ -27,6 +27,9 @@ class GameWorld: GKEntity {
         // Add Hotel to EntityManager
         self.scene.entityManager.add(self.hotelEntity)
         
+        // Set ContactDelegate
+        self.scene.physicsWorld.contactDelegate = self
+        
     }
     
     required init?(coder aDecoder: NSCoder) {

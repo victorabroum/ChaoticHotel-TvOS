@@ -33,6 +33,8 @@ class RoomerLeaveState: GKState {
         
         guard let scene = node.scene as? GameScene else { return }
         
+        self.entity.wantLeave = true
+        
         // Roomer leave the room
         scene.hotel.addAvailableRoom(self.entity.room)
         

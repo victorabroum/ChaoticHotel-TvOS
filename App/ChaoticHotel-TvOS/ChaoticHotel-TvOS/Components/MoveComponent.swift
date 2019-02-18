@@ -26,10 +26,8 @@ class MoveComponent: GKComponent {
         // TODO: Change orientation of Controller, x to y
         switch direction {
         case .rigth:
-            print("GO TO Right")
             node.position.x += PlayerConstants.velocity
         case .left:
-            print("GO TO Left")
             node.position.x -= PlayerConstants.velocity
         }
     }

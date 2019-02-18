@@ -9,15 +9,14 @@
 import Foundation
 import GameplayKit
 
-class Roomer: GKEntity {
+class Roomer: AssistEntity {
     
     var stateMachine: GKStateMachine!
     
     // Flag to track if Entity is in Room
     var isInRoom: Bool = false
     
-    // To track what the Entity is waiting
-    var waitingFor: ServiceCategory! = nil
+    var wantLeave: Bool = false
     
     // To track what room Roomer is allocated
     var room: SKNode! = nil
@@ -28,8 +27,12 @@ class Roomer: GKEntity {
         // Preapre State Machine
         self.prepareStateMachine()
         
+        // Service Delegate
+        self.assistDelegate = self
+        
         // Add RenderComponent
         let renderComponent = RenderComponent(imageNamed: imageNamed)
+        renderComponent.node?.entity = self
         // Add BallonComponent for show icons
         let ballonComponent = BallonComponent.init(nodeSuper: renderComponent.node!, andTexture: nil)
         
