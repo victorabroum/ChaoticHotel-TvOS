@@ -13,7 +13,8 @@ class GameScene: SKScene {
 
     var entities = [GKEntity]()
     var graphs = [String: GKGraph]()
-
+    let service = EasyMultiPeerService.init(serviceType: "chaotic-hotel")
+    
     private var lastUpdateTime: TimeInterval = 0
     private var lastSpawn: TimeInterval = 0
     
@@ -29,6 +30,7 @@ class GameScene: SKScene {
     var roomer: Roomer!
 
     override func sceneDidLoad() {
+        service.delegate = self
         self.lastUpdateTime = 0
         
         self.entityManager = EntityManager(scene: self)

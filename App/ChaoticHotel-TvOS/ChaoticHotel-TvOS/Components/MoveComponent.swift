@@ -9,9 +9,20 @@
 import Foundation
 import GameplayKit
 
-enum Direction {
-    case rigth
-    case left
+enum Direction: String, CaseIterable {
+    case rigth =  "rigth-direction"
+    case left  =  "left-direction"
+    case idle  =  "idle-direction"
+    
+    static func getDirection(withValue value: String) -> Direction {
+        for direction in Direction.allCases {
+            if value == direction.rawValue {
+                return direction
+            }
+        }
+        return Direction.idle
+    }
+    
 }
 
 class MoveComponent: GKComponent {
@@ -31,6 +42,8 @@ class MoveComponent: GKComponent {
         case .left:
             print("GO TO Left")
             node.position.x -= PlayerConstants.velocity
+        case .idle:
+            return
         }
     }
     

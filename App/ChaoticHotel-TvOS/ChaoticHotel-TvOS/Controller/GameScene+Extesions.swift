@@ -58,4 +58,30 @@ extension GameScene {
             moveComp.direction = nil
         }
     }
+    //Teste Function
+    func moveStaff(forDirection direction: Direction) {
+        if let moveComp = staff.component(ofType: MoveComponent.self) {
+            moveComp.direction = direction
+        }
+    }
+    
+    func tapStaff() {
+        
+    }
+}
+
+extension GameScene: EasyMultiPeerDelegate {
+    func connectedDevicesChanged(manager: EasyMultiPeerService, connectedDevices: [String]) {
+        
+    }
+    
+    func didRecived(manager: EasyMultiPeerService, message: String) {
+        print("Recebeu => \(message)")
+        switch message {
+        case JoystickAction.tap.rawValue:
+            self.tapStaff()
+        default:
+            self.moveStaff(forDirection: Direction.getDirection(withValue: message))
+        }
+    }
 }
