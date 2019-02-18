@@ -34,6 +34,7 @@
 		76D62AF52216FD50006A03DA /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62AF42216FD50006A03DA /* CGPoint+Extensions.swift */; };
 		76D62AF722172CFA006A03DA /* RoomerArriveState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62AF622172CFA006A03DA /* RoomerArriveState.swift */; };
 		76D62AFC221AE495006A03DA /* CategoryMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62AFB221AE495006A03DA /* CategoryMask.swift */; };
+		76D62AFE221AE8DC006A03DA /* PhysicsBoydComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62AFD221AE8DC006A03DA /* PhysicsBoydComponent.swift */; };
 		FDFF24C72214BB4B00BF8593 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF24C62214BB4B00BF8593 /* Constants.swift */; };
 		FDFF24C92214C6B900BF8593 /* BallonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF24C82214C6B900BF8593 /* BallonComponent.swift */; };
 		FDFF24CB2215E18D00BF8593 /* Slime.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF24CA2215E18D00BF8593 /* Slime.swift */; };
@@ -76,6 +77,7 @@
 		76D62AF42216FD50006A03DA /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
 		76D62AF622172CFA006A03DA /* RoomerArriveState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomerArriveState.swift; sourceTree = "<group>"; };
 		76D62AFB221AE495006A03DA /* CategoryMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMask.swift; sourceTree = "<group>"; };
+		76D62AFD221AE8DC006A03DA /* PhysicsBoydComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsBoydComponent.swift; sourceTree = "<group>"; };
 		FDFF24C62214BB4B00BF8593 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FDFF24C82214C6B900BF8593 /* BallonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallonComponent.swift; sourceTree = "<group>"; };
 		FDFF24CA2215E18D00BF8593 /* Slime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slime.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				76608BBF22145EA10023C29C /* MoveComponent.swift */,
 				76608BC3221478BE0023C29C /* MoveSystem.swift */,
 				FDFF24C82214C6B900BF8593 /* BallonComponent.swift */,
+				76D62AFD221AE8DC006A03DA /* PhysicsBoydComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				76608BBE22145A780023C29C /* RenderComponent.swift in Sources */,
 				76608BD322149ACC0023C29C /* RoomerListnerState.swift in Sources */,
 				FDFF24FB221739A400BF8593 /* Goop+Extensions.swift in Sources */,
+				76D62AFE221AE8DC006A03DA /* PhysicsBoydComponent.swift in Sources */,
 				76608BD922149B520023C29C /* RoomerGoOutState.swift in Sources */,
 				FDFF24F5221738EF00BF8593 /* Goop.swift in Sources */,
 				76608BD722149B2D0023C29C /* RoomerLeaveState.swift in Sources */,

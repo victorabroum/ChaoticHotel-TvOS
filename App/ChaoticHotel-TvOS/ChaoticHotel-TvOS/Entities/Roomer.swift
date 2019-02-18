@@ -36,6 +36,19 @@ class Roomer: GKEntity {
         self.addComponent(ballonComponent)
         self.addComponent(renderComponent)
         self.addComponent(MoveComponent())
+        
+        // Add Physics Body
+        let physicsBodyComponent = PhysicsBoydComponent(node: renderComponent.node!, categoryMask: CategoryMask.roomer)
+        
+        // Roomer don't contact nobody
+        physicsBodyComponent.physicBody.contactTestBitMask =
+            ~(CategoryMask.contactWithAllCategory())
+        
+        // Roomer don't collide nobody
+        physicsBodyComponent.physicBody.collisionBitMask =
+            ~(CategoryMask.contactWithAllCategory())
+        
+        self.addComponent(physicsBodyComponent)
     }
     
     required init?(coder aDecoder: NSCoder) {

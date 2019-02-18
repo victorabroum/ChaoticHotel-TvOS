@@ -17,7 +17,22 @@ class Staff: GKEntity {
         // Add RenderComponent
         let renderComponent = RenderComponent(imageNamed: imageNamed)
         self.addComponent(renderComponent)
+       
+        // Add MoveComponent
         self.addComponent(MoveComponent())
+        
+        // Add PhysicsBodyComponent
+        let physicsBodyComponent = PhysicsBoydComponent(node: renderComponent.node!, categoryMask: CategoryMask.staff)
+        
+        // Staff contact with all Entity less him self
+        physicsBodyComponent.physicBody.contactTestBitMask =
+            CategoryMask.contactWithAllCategory(less: [CategoryMask.staff])
+        
+        // Staff don't collide with nobody
+        physicsBodyComponent.physicBody.collisionBitMask =
+            ~(CategoryMask.contactWithAllCategory())
+        
+        self.addComponent(physicsBodyComponent)
     }
     
     required init?(coder aDecoder: NSCoder) {
