@@ -33,6 +33,7 @@
 		76D62AF32216F82B006A03DA /* Hotel+ControlQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62AF22216F82B006A03DA /* Hotel+ControlQueue.swift */; };
 		76D62AF52216FD50006A03DA /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62AF42216FD50006A03DA /* CGPoint+Extensions.swift */; };
 		76D62AF722172CFA006A03DA /* RoomerArriveState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62AF622172CFA006A03DA /* RoomerArriveState.swift */; };
+		76D62AFC221AE495006A03DA /* CategoryMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62AFB221AE495006A03DA /* CategoryMask.swift */; };
 		FDFF24C72214BB4B00BF8593 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF24C62214BB4B00BF8593 /* Constants.swift */; };
 		FDFF24C92214C6B900BF8593 /* BallonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF24C82214C6B900BF8593 /* BallonComponent.swift */; };
 		FDFF24CB2215E18D00BF8593 /* Slime.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF24CA2215E18D00BF8593 /* Slime.swift */; };
@@ -74,6 +75,7 @@
 		76D62AF22216F82B006A03DA /* Hotel+ControlQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Hotel+ControlQueue.swift"; sourceTree = "<group>"; };
 		76D62AF42216FD50006A03DA /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
 		76D62AF622172CFA006A03DA /* RoomerArriveState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomerArriveState.swift; sourceTree = "<group>"; };
+		76D62AFB221AE495006A03DA /* CategoryMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMask.swift; sourceTree = "<group>"; };
 		FDFF24C62214BB4B00BF8593 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FDFF24C82214C6B900BF8593 /* BallonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallonComponent.swift; sourceTree = "<group>"; };
 		FDFF24CA2215E18D00BF8593 /* Slime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slime.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				76608B9F22130E210023C29C /* AppDelegate.swift */,
 				FDFF24C62214BB4B00BF8593 /* Constants.swift */,
 				76D62AF42216FD50006A03DA /* CGPoint+Extensions.swift */,
+				76D62AFB221AE495006A03DA /* CategoryMask.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				76608BC222146AC90023C29C /* EntityManager.swift in Sources */,
 				FDFF24FE221740EF00BF8593 /* GoopIdleState.swift in Sources */,
 				76608BCD2214996C0023C29C /* RoomerGiveUpState.swift in Sources */,
+				76D62AFC221AE495006A03DA /* CategoryMask.swift in Sources */,
 				76D62AF52216FD50006A03DA /* CGPoint+Extensions.swift in Sources */,
 				76608BBE22145A780023C29C /* RenderComponent.swift in Sources */,
 				76608BD322149ACC0023C29C /* RoomerListnerState.swift in Sources */,
