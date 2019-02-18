@@ -15,6 +15,8 @@ enum CategoryMask: UInt32, CaseIterable {
     case reception = 0b100
     case mop = 0b1000 // Esfregão
     case bag = 0b10000
+    case roomService = 0b100000
+    case elevator = 0b1000000
     
     // Do an OR operation to all categories you want collide or contact
     public static func contactWithAllCategory(less: [CategoryMask] = []) -> UInt32 {
