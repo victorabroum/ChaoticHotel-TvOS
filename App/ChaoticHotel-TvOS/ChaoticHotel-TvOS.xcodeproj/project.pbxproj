@@ -146,7 +146,6 @@
 				76608BB422130E4F0023C29C /* View */,
 				76608BB522130E580023C29C /* Controller */,
 				76608BB822130F300023C29C /* Entities */,
-				76608BC122146AC90023C29C /* EntityManager.swift */,
 				76608BB922130F360023C29C /* Components */,
 				76608BB622130F120023C29C /* Settings */,
 				76608BAC22130E230023C29C /* Assets.xcassets */,
@@ -197,6 +196,7 @@
 		76608BB822130F300023C29C /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				76608BC122146AC90023C29C /* EntityManager.swift */,
 				76D62B19221B44BF006A03DA /* reception */,
 				FDFF24F82217398900BF8593 /* goop */,
 				FDFF24F62217396A00BF8593 /* slime */,
