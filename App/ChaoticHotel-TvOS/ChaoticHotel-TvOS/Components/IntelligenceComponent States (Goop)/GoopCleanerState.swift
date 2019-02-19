@@ -28,7 +28,7 @@ class GoopCleanerState: GKState {
         
         let spriteNode = self.entity.component(ofType: RenderComponent.self)
         guard let node = spriteNode?.node else {return}
-        
+        PlayerConstants.velocity = PlayerConstants.normal
         node.removeFromParent()
         
         //TODO - Liberar pontuação para o usuário
