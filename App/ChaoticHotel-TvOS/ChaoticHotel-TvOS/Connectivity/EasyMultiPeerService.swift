@@ -31,7 +31,7 @@ public class EasyMultiPeerService: NSObject {
     }()
     
     // Delegate
-    public var delegate: EasyMultiPeerDelegate?
+    public weak var delegate: EasyMultiPeerDelegate?
     
     public init(serviceType: String) {
         self.easyMultiPeerServiceType = serviceType

@@ -9,7 +9,7 @@
 import Foundation
 import MultipeerConnectivity
 
-public protocol EasyMultiPeerDelegate {
+public protocol EasyMultiPeerDelegate: class {
     
     func connectedDevicesChanged(manager: EasyMultiPeerService, connectedDevices: [String])
     func didRecived(manager: EasyMultiPeerService, message: String)
