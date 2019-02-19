@@ -50,6 +50,10 @@
 		76D62B22221B4FA8006A03DA /* Elevator+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62B21221B4FA8006A03DA /* Elevator+Protocols.swift */; };
 		76D62B25221C3B74006A03DA /* Kitchen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62B24221C3B74006A03DA /* Kitchen.swift */; };
 		76D62B27221C3CC6006A03DA /* Kitchen+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62B26221C3CC6006A03DA /* Kitchen+Protocols.swift */; };
+		76D62B2B221C4074006A03DA /* Staff+HoldItens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62B2A221C4074006A03DA /* Staff+HoldItens.swift */; };
+		76D62B2D221C49BF006A03DA /* LifeTimeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62B2C221C49BF006A03DA /* LifeTimeComponent.swift */; };
+		76D62B30221C4BE8006A03DA /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62B2F221C4BE8006A03DA /* Items.swift */; };
+		76D62B32221C4D92006A03DA /* Items+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62B31221C4D92006A03DA /* Items+Protocols.swift */; };
 		FDFF24C72214BB4B00BF8593 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF24C62214BB4B00BF8593 /* Constants.swift */; };
 		FDFF24C92214C6B900BF8593 /* BallonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF24C82214C6B900BF8593 /* BallonComponent.swift */; };
 		FDFF24CB2215E18D00BF8593 /* Slime.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF24CA2215E18D00BF8593 /* Slime.swift */; };
@@ -108,6 +112,10 @@
 		76D62B21221B4FA8006A03DA /* Elevator+Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Elevator+Protocols.swift"; sourceTree = "<group>"; };
 		76D62B24221C3B74006A03DA /* Kitchen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kitchen.swift; sourceTree = "<group>"; };
 		76D62B26221C3CC6006A03DA /* Kitchen+Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Kitchen+Protocols.swift"; sourceTree = "<group>"; };
+		76D62B2A221C4074006A03DA /* Staff+HoldItens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Staff+HoldItens.swift"; sourceTree = "<group>"; };
+		76D62B2C221C49BF006A03DA /* LifeTimeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeTimeComponent.swift; sourceTree = "<group>"; };
+		76D62B2F221C4BE8006A03DA /* Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
+		76D62B31221C4D92006A03DA /* Items+Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Items+Protocols.swift"; sourceTree = "<group>"; };
 		FDFF24C62214BB4B00BF8593 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FDFF24C82214C6B900BF8593 /* BallonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallonComponent.swift; sourceTree = "<group>"; };
 		FDFF24CA2215E18D00BF8593 /* Slime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slime.swift; sourceTree = "<group>"; };
@@ -204,6 +212,7 @@
 		76608BB822130F300023C29C /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				76D62B2E221C4BC5006A03DA /* items */,
 				76D62B23221C3B4E006A03DA /* kitchen */,
 				76D62B1E221B4F1D006A03DA /* elevator */,
 				76608BC122146AC90023C29C /* EntityManager.swift */,
@@ -232,6 +241,7 @@
 				76D62B09221B211A006A03DA /* HoldComponent.swift */,
 				76D62B0B221B2D89006A03DA /* ServiceComponent.swift */,
 				76D62B0D221B2D96006A03DA /* InteractionComponent.swift */,
+				76D62B2C221C49BF006A03DA /* LifeTimeComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -283,6 +293,7 @@
 			isa = PBXGroup;
 			children = (
 				76608BBB221459930023C29C /* Staff.swift */,
+				76D62B2A221C4074006A03DA /* Staff+HoldItens.swift */,
 			);
 			path = staff;
 			sourceTree = "<group>";
@@ -330,6 +341,15 @@
 				76D62B26221C3CC6006A03DA /* Kitchen+Protocols.swift */,
 			);
 			path = kitchen;
+			sourceTree = "<group>";
+		};
+		76D62B2E221C4BC5006A03DA /* items */ = {
+			isa = PBXGroup;
+			children = (
+				76D62B2F221C4BE8006A03DA /* Items.swift */,
+				76D62B31221C4D92006A03DA /* Items+Protocols.swift */,
+			);
+			path = items;
 			sourceTree = "<group>";
 		};
 		FDFF24CC2215E98F00BF8593 /* IntelligenceComponent States (Slime) */ = {
@@ -476,8 +496,10 @@
 				76D62AFC221AE495006A03DA /* CategoryMask.swift in Sources */,
 				76D62AF52216FD50006A03DA /* CGPoint+Extensions.swift in Sources */,
 				76D62B1D221B45C6006A03DA /* Reception+Protocols.swift in Sources */,
+				76D62B2D221C49BF006A03DA /* LifeTimeComponent.swift in Sources */,
 				76608BBE22145A780023C29C /* RenderComponent.swift in Sources */,
 				76D62B0C221B2D89006A03DA /* ServiceComponent.swift in Sources */,
+				76D62B30221C4BE8006A03DA /* Items.swift in Sources */,
 				76D62B18221B4463006A03DA /* InteractDelegate.swift in Sources */,
 				76D62B16221B444C006A03DA /* InteractEntity.swift in Sources */,
 				76608BD322149ACC0023C29C /* RoomerListnerState.swift in Sources */,
@@ -490,6 +512,7 @@
 				76608BD722149B2D0023C29C /* RoomerLeaveState.swift in Sources */,
 				FDFF24C92214C6B900BF8593 /* BallonComponent.swift in Sources */,
 				76608BA822130E210023C29C /* GameViewController.swift in Sources */,
+				76D62B32221C4D92006A03DA /* Items+Protocols.swift in Sources */,
 				7650285E2215BB9E009A5CE4 /* Hotel.swift in Sources */,
 				76608BD122149A7D0023C29C /* RoomerRoomState.swift in Sources */,
 				76608BC8221487B60023C29C /* Roomer.swift in Sources */,
@@ -500,6 +523,7 @@
 				FDFF24CE2215EAEB00BF8593 /* SlimeIdleState.swift in Sources */,
 				76608BBC221459930023C29C /* Staff.swift in Sources */,
 				76D62B22221B4FA8006A03DA /* Elevator+Protocols.swift in Sources */,
+				76D62B2B221C4074006A03DA /* Staff+HoldItens.swift in Sources */,
 				76608BDB2214A08E0023C29C /* Roomer+Extensions.swift in Sources */,
 				76D62B00221AF13A006A03DA /* GameWorld.swift in Sources */,
 				FDFF24C72214BB4B00BF8593 /* Constants.swift in Sources */,

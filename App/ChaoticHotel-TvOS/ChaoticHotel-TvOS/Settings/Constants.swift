@@ -37,6 +37,7 @@ enum ServiceCategory {
     case food
     case checkIn
     case checkOut
+    case clean
 }
 
 enum Itens {
