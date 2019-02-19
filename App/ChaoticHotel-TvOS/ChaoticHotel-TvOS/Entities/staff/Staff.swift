@@ -11,7 +11,7 @@ import GameplayKit
 
 class Staff: GKEntity {
     
-    var service: ServiceCategory! = nil
+    var service: ServiceCategory = .listen
     
     var holdItem: Items!
     

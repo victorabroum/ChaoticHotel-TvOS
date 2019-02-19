@@ -16,6 +16,7 @@ struct WaitTimer {
     static let slimeSleep: TimeInterval = 5
     static let crawling: TimeInterval = 40
     static let spwanGoop: TimeInterval = 5.0
+    static let foodLifeTime: TimeInterval = 5.0
 }
 
 struct BallonSize {
@@ -35,8 +36,7 @@ struct PlayerConstants {
 enum ServiceCategory {
     case bag
     case food
-    case checkIn
-    case checkOut
+    case listen
     case clean
 }
 

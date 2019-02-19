@@ -59,7 +59,7 @@ extension Items {
         
         if let staff = owner as? Staff {
             staff.holdItem = nil
-            staff.service = nil
+            staff.service = .listen
         }
         
         guard let itemNode = self.component(ofType: RenderComponent.self)?.node else { return }

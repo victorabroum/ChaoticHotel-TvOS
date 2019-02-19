@@ -46,26 +46,6 @@ extension Roomer {
 
 extension Roomer: AssistDelegate {
     func assisted() {
-        if (self.component(ofType: ServiceComponent.self)!.waitForServiceType == .checkIn) {
-            
-            // Spawn Bag only if need
-            
-            guard let node = self.component(ofType: RenderComponent.self)?.node else { return }
-            guard let gameScene = node.scene as? GameScene else { return }
-            
-            let bag = Items(
-                imageNamed: "",
-                serviceCategory: .bag,
-                isHold: false,
-                categoryMask: .bag,
-                lifeTime: WaitTimer.bag - 3
-            )
-            guard let bagNode = bag.component(ofType: RenderComponent.self)?.node else { return }
-            bagNode.color = UIColor(red: 0.03, green: 0.74, blue: 0.56, alpha: 1.0)
-            bagNode.position = gameScene.childNode(withName: "luggagedCart")!.position
-            gameScene.entityManager.add(bag)
-        }
-        
         self.stateMachine.enter(RoomerAssistState.self)
     }
 }
