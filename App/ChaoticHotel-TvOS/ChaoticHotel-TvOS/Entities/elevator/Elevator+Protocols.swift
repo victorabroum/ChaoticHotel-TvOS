@@ -7,18 +7,18 @@
 //
 
 import Foundation
+import GameplayKit
 
 extension Elevator: InteractDelegate {
     // TODO: Use Constants
-    func interactionAction() {
-        if (self.transport != nil) {
-            guard let node = self.transport.component(ofType: RenderComponent.self)?.node else { return }
-            switch self.goTo {
-            case .down:
-                node.position.y -= 450
-            case .upper:
-                node.position.y += 450
-            }
+    func action(callBy owner: GKEntity) {
+        guard let node = owner.component(ofType: RenderComponent.self)?.node else { return }
+        switch self.goTo {
+        case .down:
+            node.position.y -= 450
+        case .upper:
+            node.position.y += 450
         }
     }
+    
 }

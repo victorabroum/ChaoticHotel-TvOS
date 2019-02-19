@@ -7,7 +7,8 @@
 //
 
 import Foundation
+import GameplayKit
 
 protocol InteractDelegate: class {
-    func interactionAction()
+    func action(callBy owner: GKEntity)
 }

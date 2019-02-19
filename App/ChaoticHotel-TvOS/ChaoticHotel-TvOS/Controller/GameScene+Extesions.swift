@@ -36,11 +36,8 @@ extension GameScene {
                     contact.node?.entity?.component(ofType: InteractionComponent.self) {
                     print("INTERACT \(interaction)")
                     
-                    if let elevtor = interaction.entity as? Elevator {
-                        elevtor.transport = staff
-                        elevtor.interactionAction()
-                    } else if let interact = interaction.entity as? InteractEntity {
-                        interact.interactDelegate?.interactionAction()
+                    if let interactionEntity = interaction.entity as? InteractEntity {
+                        interactionEntity.interactDelegate?.action(callBy: staff)
                     }
                 }
             }

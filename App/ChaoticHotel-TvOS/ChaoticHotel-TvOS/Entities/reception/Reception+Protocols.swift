@@ -7,14 +7,17 @@
 //
 
 import Foundation
+import GameplayKit
 
 extension Reception: InteractDelegate {
-    func interactionAction() {
+    func action(callBy owner: GKEntity) {
         if (!self.hotel.receptionQueue.isEmpty) {
             // TODO: Add animation to check in
+            print("Animation on reception")
             // And to teleport Roomer
             print("RECEption assisted")
             self.hotel.receptionQueue.first!.assisted()
         }
     }
+    
 }

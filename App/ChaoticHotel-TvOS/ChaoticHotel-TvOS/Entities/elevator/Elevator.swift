@@ -16,11 +16,12 @@ enum ElevatorDirection {
 
 class Elevator: InteractEntity {
     var goTo: ElevatorDirection
-    var transport: GKEntity!
     
     init(goTo: ElevatorDirection) {
         self.goTo = goTo
         super.init()
+        
+        self.interactDelegate = self
         
         // Add RenderComponent
         let renderComponent = RenderComponent(imageNamed: "")
