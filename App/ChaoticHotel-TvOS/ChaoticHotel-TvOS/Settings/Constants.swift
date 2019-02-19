@@ -29,7 +29,7 @@ struct AnimationDuration {
 }
 
 struct PlayerConstants {
-    static let velocity: CGFloat = 10
+    static let velocity: CGFloat = 20
 }
 
 enum ServiceCategory {
@@ -37,6 +37,7 @@ enum ServiceCategory {
     case food
     case checkIn
     case checkOut
+    case clean
 }
 
 enum Itens {

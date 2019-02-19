@@ -11,10 +11,17 @@ import GameplayKit
 
 extension Kitchen: InteractDelegate {
     func action(callBy owner: GKEntity) {
-        print("Give a plate of Food")
         
         if let staff = owner as? Staff {
-            print("É um Staff \(staff)")
+            if (staff.isholdItem) { return }
+            
+            print("Give a plate of Food")
+            
+            if let staff = owner as? Staff {
+                print("É um Staff \(staff)")
+            }
         }
+        
+        
     }
 }

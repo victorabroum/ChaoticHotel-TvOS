@@ -48,6 +48,7 @@ class RoomerAssistState: GKState {
         } else {
             self.entity.isInRoom  = true
             self.stateMachine?.enter(RoomerRoomState.self)
+            // TODO: Spawn Bag
         }
     }
 

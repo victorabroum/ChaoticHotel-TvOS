@@ -71,7 +71,6 @@ class RoomerListnerState: GKState {
                 colorService = .blue
                 self.entity.addComponent(ServiceComponent(owner: self.entity, serviceCategory: .checkOut))
             default:
-                print("Wait to Check In")
                 self.entity.addComponent(ServiceComponent(owner: self.entity, serviceCategory: .checkIn))
             }
         }

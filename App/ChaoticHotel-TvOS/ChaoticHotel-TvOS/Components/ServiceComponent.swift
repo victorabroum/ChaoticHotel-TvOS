@@ -18,7 +18,6 @@ class ServiceComponent: GKComponent {
         self.owner = owner
         self.waitForServiceType = serviceCategory
         super.init()
-        print("ESPERO POR \(waitForServiceType)")
     }
     
     required init?(coder aDecoder: NSCoder) {
