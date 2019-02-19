@@ -12,7 +12,7 @@ import GameplayKit
 extension Reception: InteractDelegate {
     func action(callBy owner: GKEntity) {
         if let staff = owner as? Staff {
-            if (staff.isholdItem) { return }
+            if (staff.holdItem != nil) { return }
         }
         if (!self.hotel.receptionQueue.isEmpty) {
             // TODO: Add animation to check in

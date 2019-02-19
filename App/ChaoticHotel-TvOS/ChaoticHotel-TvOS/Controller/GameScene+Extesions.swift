@@ -29,6 +29,10 @@ extension GameScene {
                     // Try to deliver a service
                     print("DELIVER")
                     if (staff.service != nil) {
+                        if(staff.holdItem != nil) {
+                            self.entityManager.remove(staff.holdItem)
+                            staff.holdItem = nil
+                        }
                         serviceComponent.deliverService(ofType: staff.service)
                     }
                     

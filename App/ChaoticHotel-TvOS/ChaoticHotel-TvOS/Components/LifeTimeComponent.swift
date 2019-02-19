@@ -38,7 +38,11 @@ extension LifeTimeComponent {
             }
             
             if (self.remainingTime <= 0) {
-                print("SUMIU")
+                if let gameScene = self.entity?.component(ofType: RenderComponent.self)?.node?.scene as? GameScene {
+                    print("SUMIU")
+                    gameScene.entityManager.remove(self.entity!)
+                }
+                
             }
         }
     }

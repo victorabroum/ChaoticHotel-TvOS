@@ -13,7 +13,7 @@ import GameplayKit
 extension Items: InteractDelegate {
     func action(callBy owner: GKEntity) {
         if let staff = owner as? Staff {
-            if (staff.isholdItem) {
+            if (staff.holdItem != nil) {
                 self.drop(callBy: owner)
             } else {
                 self.hold(callBy: owner)
@@ -34,7 +34,7 @@ extension Items {
         
         // Set staff to hold
         if let staff = owner as? Staff {
-            staff.isholdItem = true
+            staff.holdItem = self
             staff.service = self.serviceCategory
         }
         
@@ -58,7 +58,7 @@ extension Items {
         }
         
         if let staff = owner as? Staff {
-            staff.isholdItem = false
+            staff.holdItem = nil
             staff.service = nil
         }
         
