@@ -42,7 +42,8 @@ class RoomerGiveUpState: GKState {
             scene.hotel.addAvailableRoom(self.entity.room)
         }
         
-        if (self.entity.isInRoom) {
+        if (!self.entity.isInRoom) {
+            print("SAIU DO QUARTO")
             scene.hotel.exitQueue()
         }
         
