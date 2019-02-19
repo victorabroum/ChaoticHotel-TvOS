@@ -59,7 +59,7 @@ extension GameScene {
     }
     
     func tapStaff() {
-        
+        self.staff.action()
     }
 }
 
