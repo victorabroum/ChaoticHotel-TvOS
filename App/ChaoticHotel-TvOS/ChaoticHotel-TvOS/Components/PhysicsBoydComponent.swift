@@ -32,6 +32,25 @@ class PhysicsBoydComponent: GKComponent {
         
     }
     
+    init(node: SKSpriteNode,
+         categoryMask: CategoryMask,
+         physicBody: SKPhysicsBody) {
+        self.node = node
+        super.init()
+        
+        // ADD PhysicsBody
+        self.physicBody = physicBody
+        
+        // Default is not affected by gravity
+        self.physicBody.affectedByGravity = false
+        // Default is not rotate
+        self.physicBody.allowsRotation = false
+        
+        self.physicBody.categoryBitMask = categoryMask.rawValue
+        
+        self.node.physicsBody = self.physicBody
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

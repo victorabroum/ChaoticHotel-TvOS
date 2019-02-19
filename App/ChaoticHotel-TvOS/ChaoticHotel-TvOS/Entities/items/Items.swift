@@ -26,15 +26,18 @@ class Items: InteractEntity {
         
         // ADD Render
         let renderComp = RenderComponent(imageNamed: imageNamed)
-        renderComp.node?.entity = self
         renderComp.node = SKSpriteNode(
             texture: nil,
             color: .orange,
-            size: CGSize(width: 75, height: 75))
+            size: CGSize(width: 29, height: 220))
+        renderComp.node?.entity = self
         self.addComponent(renderComp)
         
         // ADD Physics Body
-        let physicsComp = PhysicsBoydComponent(node: renderComp.node!, categoryMask: categoryMask)
+        let physicsComp = PhysicsBoydComponent(
+            node: renderComp.node!,
+            categoryMask: categoryMask,
+            physicBody: SKPhysicsBody(rectangleOf: renderComp.node!.size))
         physicsComp.physicBody.contactTestBitMask =
             ~(CategoryMask.contactWithAllCategory())
         physicsComp.physicBody.collisionBitMask =
@@ -43,12 +46,16 @@ class Items: InteractEntity {
         
         // ADD Life Time
         // -1 Interval means infinity lifetime
-        if (lifeTime != -1){
+        if (lifeTime != -1) {
             let lifeComp = LifeTimeComponent(lifeDuration: lifeTime)
             self.addComponent(lifeComp)
         } else {
             print("TEMPO INFINITO")
         }
+        
+        // ADD Interction
+        let interaction = InteractionComponent()
+        self.addComponent(interaction)
         
     }
     

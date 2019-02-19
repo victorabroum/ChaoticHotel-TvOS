@@ -12,8 +12,9 @@ import GameplayKit
 class LifeTimeComponent: GKComponent {
     var remainingTime: TimeInterval
     var lastTime: TimeInterval = 0
+    var isHold: Bool = false
     
-    init(lifeDuration: TimeInterval) {
+    init(lifeDuration: TimeInterval, isHold: Bool = false) {
         self.remainingTime = lifeDuration
         super.init()
     }
@@ -27,17 +28,18 @@ class LifeTimeComponent: GKComponent {
 extension LifeTimeComponent {
     override func update(deltaTime seconds: TimeInterval) {
         super.update(deltaTime: seconds)
-        
-        let interval: TimeInterval = 1
-        
-        if (CACurrentMediaTime() - lastTime > interval) {
-            lastTime = CACurrentMediaTime()
-            self.remainingTime -= 1
+        if (!isHold) {
+            let interval: TimeInterval = 1
+            
+            if (CACurrentMediaTime() - lastTime > interval) {
+                lastTime = CACurrentMediaTime()
+                self.remainingTime -= 1
+                print("RemainingTime \(self.remainingTime)")
+            }
+            
+            if (self.remainingTime <= 0) {
+                print("SUMIU")
+            }
         }
-        
-        if (self.remainingTime <= 0) {
-            print("SUMIU")
-        }
-        
     }
 }
