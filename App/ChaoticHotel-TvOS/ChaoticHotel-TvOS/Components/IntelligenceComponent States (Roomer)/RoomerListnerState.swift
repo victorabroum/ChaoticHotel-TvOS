@@ -38,9 +38,10 @@ class RoomerListnerState: GKState {
     
     override func didEnter(from previousState: GKState?) {
         
+        self.entity.removeComponent(ofType: ServiceComponent.self)
+        
         var waitTimer: TimeInterval = WaitTimer.reception
         var textureName: String?
-        var waitingFor: ServiceCategory = .checkIn
         var colorService: UIColor = .green
         
         // TODO: Put right textureName
@@ -51,29 +52,29 @@ class RoomerListnerState: GKState {
                 print("Wait a time on room for bag")
                 waitTimer = WaitTimer.bag
                 textureName = nil
-                waitingFor = .bag
                 colorService = .orange
+                // Add Service component
+                self.entity.addComponent(ServiceComponent(owner: self.entity, serviceCategory: .bag))
             case is RoomerRoomServiceState:
                 // Wait a time on room for Room service
                 print("Wait a time on room for Room service")
                 waitTimer = WaitTimer.roomService
                 textureName = nil
-                waitingFor = .food
                 colorService = .red
+                self.entity.addComponent(ServiceComponent(owner: self.entity, serviceCategory: .food))
             case is RoomerLeaveState:
                 // Wait a time on reception
                 // Go to RoomerListnerState
                 print("Wait a time to Check Out")
                 waitTimer = WaitTimer.reception
                 textureName = nil
-                waitingFor = .checkOut
                 colorService = .blue
+                self.entity.addComponent(ServiceComponent(owner: self.entity, serviceCategory: .checkOut))
             default:
-                break
+                print("Wait to Check In")
+                self.entity.addComponent(ServiceComponent(owner: self.entity, serviceCategory: .checkIn))
             }
         }
-        
-        self.entity.changeWaitingFor(waitingFor)
         
         self.animate(imageNamed: textureName, duration: waitTimer, color: colorService)
     }

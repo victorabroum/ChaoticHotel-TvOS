@@ -39,19 +39,13 @@ extension Roomer {
         }
     }
     
-    func changeWaitingFor(_ wait: ServiceCategory!) {
-        self.waitingFor = wait
-    }
-    
     func changeRoom(_ room: SKNode!) {
         self.room = room
     }
-    
-    func deliverService(ofCategory category: ServiceCategory) {
-        if (category == self.waitingFor) {
-            self.stateMachine.enter(RoomerAssistState.self)
-        } else {
-            
-        }
+}
+
+extension Roomer: AssistDelegate {
+    func assisted() {
+        self.stateMachine.enter(RoomerAssistState.self)
     }
 }

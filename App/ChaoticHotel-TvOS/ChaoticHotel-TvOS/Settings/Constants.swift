@@ -38,3 +38,9 @@ enum ServiceCategory {
     case checkIn
     case checkOut
 }
+
+enum Itens {
+    case bag
+    case mop // Esfregão
+    case food
+}

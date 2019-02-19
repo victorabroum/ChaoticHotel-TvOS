@@ -21,6 +21,7 @@ class RenderComponent: GKComponent {
         
         // Initiliaze the node with rigth texture
         self.node = SKSpriteNode(texture: texture, color: .clear, size: texture.size())
+        self.node?.name = "\(imageNamed)"
         
         // Initiliaze the positon
         self.position = pos

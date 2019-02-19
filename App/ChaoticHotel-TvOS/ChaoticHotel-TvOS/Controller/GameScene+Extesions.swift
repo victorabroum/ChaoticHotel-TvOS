@@ -16,11 +16,32 @@ extension GameScene {
     // TODO: Just for test Interaction with Roomer
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        for roomer in self.listOfRoomers {
-            roomer.deliverService(ofCategory: .checkIn)
-            roomer.deliverService(ofCategory: .bag)
-            roomer.deliverService(ofCategory: .food)
-            roomer.deliverService(ofCategory: .checkOut)
+        if let staffBodyComp = self.staff.component(ofType: PhysicsBoydComponent.self) {
+            
+            guard let contact =
+                staffBodyComp.physicBody.allContactedBodies().first else { return }
+            
+            if (contact.node != nil) {
+                if ((contact.node!.entity?.component(ofType: HoldComponent.self)) != nil) {
+                    // Contact with a Holdable item
+                    print("HOLDDD")
+                } else if let serviceComponent = (contact.node!.entity?.component(ofType: ServiceComponent.self)) {
+                    // Try to deliver a service
+                    print("DELIVER")
+                    if (staff.service != nil) {
+                        serviceComponent.deliverService(ofType: staff.service)
+                    }
+                    
+                } else if let interaction =
+                    contact.node?.entity?.component(ofType: InteractionComponent.self) {
+                    print("INTERACT \(interaction)")
+                    
+                    if let interactionEntity = interaction.entity as? InteractEntity {
+                        interactionEntity.interactDelegate?.action(callBy: staff)
+                    }
+                }
+            }
+            
         }
         
     }
