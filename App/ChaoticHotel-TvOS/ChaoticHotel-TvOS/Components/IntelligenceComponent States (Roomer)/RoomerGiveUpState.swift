@@ -42,13 +42,13 @@ class RoomerGiveUpState: GKState {
             scene.hotel.addAvailableRoom(self.entity.room)
         }
         
-        if (self.entity.isInRoom) {
+        if (!self.entity.isInRoom) {
             scene.hotel.exitQueue()
         }
         
         // TODO: Feedback Roomer is angry
         print("QUE HOTEL MERDA")
-        node.run(SKAction.scale(by: 0.5, duration: AnimationDuration.roomerGoOut)) {
+        node.run(SKAction.scale(by: 0.5, duration: 0.5)) {
             self.stateMachine!.enter(RoomerGoOutState.self)
         }
     }
