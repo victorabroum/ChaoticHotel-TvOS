@@ -30,7 +30,9 @@ struct AnimationDuration {
 }
 
 struct PlayerConstants {
-    static let velocity: CGFloat = 20
+    static var velocity: CGFloat = PlayerConstants.normal
+    static let slow: CGFloat = 2
+    static let normal: CGFloat = 20
 }
 
 enum ServiceCategory {

@@ -54,7 +54,7 @@ class GameScene: SKScene {
         self.physicsWorld.contactDelegate = self.gameWorld
         
         //Teste Slime Entity
-        let slime = Slime.init(withImageNamed: "staff_placeHolder")
+        let slime = Slime.init(withImageNamed: "staff_placeHolder", entityManager: self.entityManager)
         
         guard let renderComponentSlime = slime.component(ofType: RenderComponent.self) else {return}
         
@@ -124,7 +124,7 @@ class GameScene: SKScene {
         
         // Just for Spawn Roomer
         // TODO: Improve Spawn Logic
-        let spawnRoomerInterval = TimeInterval(5)
+        let spawnRoomerInterval = TimeInterval(15)
         if (CACurrentMediaTime() - lastSpawn > spawnRoomerInterval) {
             lastSpawn = CACurrentMediaTime()
             print("De \(spawnRoomerInterval) em \(spawnRoomerInterval) segundos")

@@ -9,18 +9,33 @@
 import GameplayKit
 import SpriteKit
 
-class Goop: GKEntity {
+class Goop: AssistEntity {
     var stateMachine: GKStateMachine!
     
     init(withImage image: String) {
         super.init()
         
+        self.assistDelegate = self
+        
         let renderComponent = RenderComponent.init(imageNamed: image)
+        renderComponent.node?.entity = self
         let ballonComponent = BallonComponent.init(nodeSuper: renderComponent.node!, andTexture: nil)
         
         self.addComponent(renderComponent)
         self.addComponent(ballonComponent)
         self.prepateStateMachine()
+        
+        // ADD Physics
+        let physicsComp = PhysicsBoydComponent(node: renderComponent.node!, categoryMask: .goop)
+        physicsComp.physicBody.contactTestBitMask =
+            ~(CategoryMask.contactWithAllCategory())
+        physicsComp.physicBody.collisionBitMask =
+            ~(CategoryMask.contactWithAllCategory())
+        self.addComponent(physicsComp)
+        
+        // ADD Service
+        let serviceComp = ServiceComponent(owner: self, serviceCategory: .clean)
+        self.addComponent(serviceComp)
         
     }
     

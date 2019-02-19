@@ -22,18 +22,9 @@ extension GameScene {
                 staffBodyComp.physicBody.allContactedBodies().first else { return }
             
             if (contact.node != nil) {
-                if ((contact.node!.entity?.component(ofType: HoldComponent.self)) != nil) {
-                    // Contact with a Holdable item
-                    print("HOLDDD")
-                } else if let serviceComponent = (contact.node!.entity?.component(ofType: ServiceComponent.self)) {
+                if let serviceComponent = (contact.node!.entity?.component(ofType: ServiceComponent.self)) {
                     // Try to deliver a service
-                    print("DELIVER")
-                    if(staff.holdItem != nil) {
-                        self.entityManager.remove(staff.holdItem)
-                        staff.holdItem = nil
-                    }
-                    serviceComponent.deliverService(ofType: staff.service)
-                    staff.service = .listen
+                    staff.deliver(entityManager: self.entityManager, aService: serviceComponent)
                     
                 } else if let interaction =
                     contact.node?.entity?.component(ofType: InteractionComponent.self) {

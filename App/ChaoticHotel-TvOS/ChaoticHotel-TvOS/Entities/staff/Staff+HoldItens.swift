@@ -11,6 +11,14 @@ import SpriteKit
 import GameplayKit
 
 extension Staff {
-    // Hold Food
-    
+    func deliver(entityManager: EntityManager, aService service: ServiceComponent) {
+        print("DELIVER")
+        
+        service.deliverService(ofType: self.service)
+        if (self.holdItem != nil && self.service != .clean) {
+            entityManager.remove(self.holdItem)
+            self.holdItem = nil
+            self.service = .listen
+        }
+    }
 }

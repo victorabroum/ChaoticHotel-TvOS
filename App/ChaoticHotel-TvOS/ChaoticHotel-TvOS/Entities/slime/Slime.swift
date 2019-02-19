@@ -12,8 +12,10 @@ import GameplayKit
 class Slime: GKEntity {
     var stateMachine: GKStateMachine!
     var oldDeltaTimer: TimeInterval = 0.0
+    var entityManager: EntityManager
     
-    init(withImageNamed name: String) {
+    init(withImageNamed name: String, entityManager: EntityManager) {
+        self.entityManager = entityManager
         super.init()
         // Created instance components
         let renderComponent = RenderComponent.init(imageNamed: name)
