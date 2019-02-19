@@ -19,7 +19,8 @@ class EntityManager {
     
     lazy var componentSystems: [GKComponentSystem] = {
         let moveSystem = GKComponentSystem(componentClass: MoveComponent.self)
-        return [moveSystem]
+        let lifeSytem = GKComponentSystem(componentClass: LifeTimeComponent.self)
+        return [moveSystem, lifeSytem]
     }()
     
     // Init with a Scene

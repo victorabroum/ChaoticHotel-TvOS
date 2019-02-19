@@ -41,7 +41,6 @@ class GameScene: SKScene {
         staff = Staff(withImageNamed: "staff_placeHolder")
         // Change Sprite scale
         if let renderComponent = staff.component(ofType: RenderComponent.self) {
-            print("tem render")
             renderComponent.node?.xScale = 0.3
             renderComponent.node?.yScale = 0.3
             renderComponent.node?.position = (self.childNode(withName: "elevatorGoUp")?.position)!
@@ -89,6 +88,20 @@ class GameScene: SKScene {
             renderComp.node?.position = self.childNode(withName: "elevatorGoUp")!.position
         }
         self.entityManager.add(elevator)
+        
+        // Kitchen Entity
+        let kitchen = Kitchen()
+        if let renderComp = kitchen.component(ofType: RenderComponent.self) {
+            renderComp.node?.position = self.childNode(withName: "roomServiceStation")!.position
+        }
+        self.entityManager.add(kitchen)
+        
+        // Items Entity
+        let itemMop = Items(imageNamed: "", serviceCategory: .clean, isHold: false, categoryMask: .mop, lifeTime: -1)
+        if let renderComp = itemMop.component(ofType: RenderComponent.self) {
+            renderComp.node?.position = self.childNode(withName: "rubber")!.position
+        }
+        self.entityManager.add(itemMop)
         
     }
 

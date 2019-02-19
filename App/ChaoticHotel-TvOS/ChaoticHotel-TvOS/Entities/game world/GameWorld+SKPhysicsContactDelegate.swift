@@ -11,7 +11,6 @@ import SpriteKit
 
 extension GameWorld: SKPhysicsContactDelegate {
     func didBegin(_ contact: SKPhysicsContact) {
-        print("Contato")
     }
     
     func didEnd(_ contact: SKPhysicsContact) {

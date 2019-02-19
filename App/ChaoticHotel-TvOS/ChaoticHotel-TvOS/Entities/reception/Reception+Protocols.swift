@@ -11,6 +11,9 @@ import GameplayKit
 
 extension Reception: InteractDelegate {
     func action(callBy owner: GKEntity) {
+        if let staff = owner as? Staff {
+            if (staff.isholdItem) { return }
+        }
         if (!self.hotel.receptionQueue.isEmpty) {
             // TODO: Add animation to check in
             print("Animation on reception")
