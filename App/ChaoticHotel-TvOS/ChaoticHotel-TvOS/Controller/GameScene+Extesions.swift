@@ -72,7 +72,7 @@ extension GameScene {
 
 extension GameScene: EasyMultiPeerDelegate {
     func connectedDevicesChanged(manager: EasyMultiPeerService, connectedDevices: [String]) {
-        
+        print("Devices changed // \(connectedDevices)")
     }
     
     func didRecived(manager: EasyMultiPeerService, message: String) {
