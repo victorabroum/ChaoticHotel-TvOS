@@ -14,8 +14,11 @@ class Kitchen: InteractEntity {
     override init() {
         super.init()
         
+        self.interactDelegate = self
+        
         // TODO: Review the renderComp
         // I think it's need to be alpha = 0
+        
         // Add render
         let renderComp = RenderComponent(imageNamed: "")
         renderComp.node = SKSpriteNode(
