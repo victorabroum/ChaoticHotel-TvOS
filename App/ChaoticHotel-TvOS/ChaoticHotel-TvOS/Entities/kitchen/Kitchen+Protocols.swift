@@ -16,13 +16,17 @@ extension Kitchen: InteractDelegate {
             if (staff.holdItem != nil) { return }
             
             if let staff = owner as? Staff {
-                print("É um Staff \(staff)")
                 let foodPlate = Items(
                     imageNamed: "",
                     serviceCategory: .food,
                     isHold: true,
                     categoryMask: .food,
                     lifeTime: WaitTimer.foodLifeTime)
+                guard let gameScene =
+                    staff.component(ofType: RenderComponent.self)!.node?.scene as? GameScene else { return }
+                gameScene.entityManager.add(foodPlate)
+                let node = foodPlate.component(ofType: RenderComponent.self)!.node
+                node!.color = UIColor(red: 0.79, green: 0.15, blue: 0.15, alpha: 1.0)
                 staff.holdItem = foodPlate
                 foodPlate.hold(callBy: staff)
             }
