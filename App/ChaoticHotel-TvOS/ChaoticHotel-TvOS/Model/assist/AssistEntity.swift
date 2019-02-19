@@ -10,5 +10,5 @@ import Foundation
 import GameplayKit
 
 class AssistEntity: GKEntity {
-    var assistDelegate: AssistDelegate?
+    weak var assistDelegate: AssistDelegate?
 }

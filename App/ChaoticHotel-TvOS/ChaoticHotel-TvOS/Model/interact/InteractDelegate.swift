@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol InteractDelegate {
+protocol InteractDelegate: class {
     func interactionAction()
 }

@@ -42,7 +42,6 @@ class Elevator: InteractEntity {
         let interactComp = InteractionComponent()
         self.addComponent(interactComp)
         
-        
     }
     
     required init?(coder aDecoder: NSCoder) {

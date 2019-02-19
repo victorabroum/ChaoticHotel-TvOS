@@ -10,5 +10,5 @@ import Foundation
 import GameplayKit
 
 class InteractEntity: GKEntity {
-    var interactDelegate: InteractDelegate?
+    weak var interactDelegate: InteractDelegate?
 }
