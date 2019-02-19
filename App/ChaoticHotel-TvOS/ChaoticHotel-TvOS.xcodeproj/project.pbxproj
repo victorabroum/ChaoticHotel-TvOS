@@ -35,9 +35,9 @@
 		76D62AF722172CFA006A03DA /* RoomerArriveState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62AF622172CFA006A03DA /* RoomerArriveState.swift */; };
 		76D62AFC221AE495006A03DA /* CategoryMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62AFB221AE495006A03DA /* CategoryMask.swift */; };
 		76D62AFE221AE8DC006A03DA /* PhysicsBoydComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62AFD221AE8DC006A03DA /* PhysicsBoydComponent.swift */; };
-		FDA177AF221B2F7300A8663D /* EasyMultiPeerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA177AC221B2F7300A8663D /* EasyMultiPeerService.swift */; };
-		FDA177B0221B2F7300A8663D /* EasyMultiPeerService+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA177AD221B2F7300A8663D /* EasyMultiPeerService+Protocols.swift */; };
-		FDA177B1221B2F7300A8663D /* EasyMultiPeerService+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA177AE221B2F7300A8663D /* EasyMultiPeerService+Extensions.swift */; };
+		FD0F59CD221C7BAD00856B2F /* EasyMultiPeerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0F59CA221C7BAD00856B2F /* EasyMultiPeerService.swift */; };
+		FD0F59CE221C7BAD00856B2F /* EasyMultiPeerService+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0F59CB221C7BAD00856B2F /* EasyMultiPeerService+Extensions.swift */; };
+		FD0F59CF221C7BAD00856B2F /* EasyMultiPeerService+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0F59CC221C7BAD00856B2F /* EasyMultiPeerService+Protocols.swift */; };
 		FDA177C1221B42A600A8663D /* JoystickAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA177C0221B42A600A8663D /* JoystickAction.swift */; };
 		FDFF24C72214BB4B00BF8593 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF24C62214BB4B00BF8593 /* Constants.swift */; };
 		FDFF24C92214C6B900BF8593 /* BallonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF24C82214C6B900BF8593 /* BallonComponent.swift */; };
@@ -82,9 +82,9 @@
 		76D62AF622172CFA006A03DA /* RoomerArriveState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomerArriveState.swift; sourceTree = "<group>"; };
 		76D62AFB221AE495006A03DA /* CategoryMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMask.swift; sourceTree = "<group>"; };
 		76D62AFD221AE8DC006A03DA /* PhysicsBoydComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsBoydComponent.swift; sourceTree = "<group>"; };
-		FDA177AC221B2F7300A8663D /* EasyMultiPeerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EasyMultiPeerService.swift; path = ../../../../../../../../../../Downloads/EasyMultiPeer/EasyMultiPeer/EasyMultiPeerService.swift; sourceTree = "<group>"; };
-		FDA177AD221B2F7300A8663D /* EasyMultiPeerService+Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "EasyMultiPeerService+Protocols.swift"; path = "../../../../../../../../../../Downloads/EasyMultiPeer/EasyMultiPeer/EasyMultiPeerService+Protocols.swift"; sourceTree = "<group>"; };
-		FDA177AE221B2F7300A8663D /* EasyMultiPeerService+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "EasyMultiPeerService+Extensions.swift"; path = "../../../../../../../../../../Downloads/EasyMultiPeer/EasyMultiPeer/EasyMultiPeerService+Extensions.swift"; sourceTree = "<group>"; };
+		FD0F59CA221C7BAD00856B2F /* EasyMultiPeerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasyMultiPeerService.swift; sourceTree = "<group>"; };
+		FD0F59CB221C7BAD00856B2F /* EasyMultiPeerService+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EasyMultiPeerService+Extensions.swift"; sourceTree = "<group>"; };
+		FD0F59CC221C7BAD00856B2F /* EasyMultiPeerService+Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EasyMultiPeerService+Protocols.swift"; sourceTree = "<group>"; };
 		FDA177C0221B42A600A8663D /* JoystickAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoystickAction.swift; sourceTree = "<group>"; };
 		FDFF24C62214BB4B00BF8593 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FDFF24C82214C6B900BF8593 /* BallonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallonComponent.swift; sourceTree = "<group>"; };
@@ -128,7 +128,7 @@
 		76608B9E22130E210023C29C /* ChaoticHotel-TvOS */ = {
 			isa = PBXGroup;
 			children = (
-				FDA177AB221B2F6700A8663D /* connectivity */,
+				FD0F59C3221C7B5F00856B2F /* Connectivity */,
 				76608BB722130F2B0023C29C /* Model */,
 				76608BB422130E4F0023C29C /* View */,
 				76608BB522130E580023C29C /* Controller */,
@@ -225,14 +225,14 @@
 			path = "IntelligenceComponent States (Roomer)";
 			sourceTree = "<group>";
 		};
-		FDA177AB221B2F6700A8663D /* connectivity */ = {
+		FD0F59C3221C7B5F00856B2F /* Connectivity */ = {
 			isa = PBXGroup;
 			children = (
-				FDA177AC221B2F7300A8663D /* EasyMultiPeerService.swift */,
-				FDA177AE221B2F7300A8663D /* EasyMultiPeerService+Extensions.swift */,
-				FDA177AD221B2F7300A8663D /* EasyMultiPeerService+Protocols.swift */,
+				FD0F59CA221C7BAD00856B2F /* EasyMultiPeerService.swift */,
+				FD0F59CB221C7BAD00856B2F /* EasyMultiPeerService+Extensions.swift */,
+				FD0F59CC221C7BAD00856B2F /* EasyMultiPeerService+Protocols.swift */,
 			);
-			path = connectivity;
+			path = Connectivity;
 			sourceTree = "<group>";
 		};
 		FDA177BF221B429A00A8663D /* joystick */ = {
@@ -371,6 +371,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD0F59CF221C7BAD00856B2F /* EasyMultiPeerService+Protocols.swift in Sources */,
 				76D62AF722172CFA006A03DA /* RoomerArriveState.swift in Sources */,
 				76D62AF32216F82B006A03DA /* Hotel+ControlQueue.swift in Sources */,
 				FDFF24CB2215E18D00BF8593 /* Slime.swift in Sources */,
@@ -378,10 +379,10 @@
 				FDFF24D02215EB9500BF8593 /* SlimeCrawlingState.swift in Sources */,
 				76608BA622130E210023C29C /* GameScene.swift in Sources */,
 				76608BC222146AC90023C29C /* EntityManager.swift in Sources */,
-				FDA177AF221B2F7300A8663D /* EasyMultiPeerService.swift in Sources */,
 				FDFF24FE221740EF00BF8593 /* GoopIdleState.swift in Sources */,
 				76608BCD2214996C0023C29C /* RoomerGiveUpState.swift in Sources */,
 				76D62AFC221AE495006A03DA /* CategoryMask.swift in Sources */,
+				FD0F59CD221C7BAD00856B2F /* EasyMultiPeerService.swift in Sources */,
 				76D62AF52216FD50006A03DA /* CGPoint+Extensions.swift in Sources */,
 				76608BBE22145A780023C29C /* RenderComponent.swift in Sources */,
 				76608BD322149ACC0023C29C /* RoomerListnerState.swift in Sources */,
@@ -398,8 +399,7 @@
 				76608BCF22149A2E0023C29C /* RoomerAssistState.swift in Sources */,
 				76608BD522149AF40023C29C /* RoomerRoomServiceState.swift in Sources */,
 				FDFF24CE2215EAEB00BF8593 /* SlimeIdleState.swift in Sources */,
-				FDA177B1221B2F7300A8663D /* EasyMultiPeerService+Extensions.swift in Sources */,
-				FDA177B0221B2F7300A8663D /* EasyMultiPeerService+Protocols.swift in Sources */,
+				FD0F59CE221C7BAD00856B2F /* EasyMultiPeerService+Extensions.swift in Sources */,
 				FDA177C1221B42A600A8663D /* JoystickAction.swift in Sources */,
 				76608BBC221459930023C29C /* Staff.swift in Sources */,
 				76608BDB2214A08E0023C29C /* Roomer+Extensions.swift in Sources */,
