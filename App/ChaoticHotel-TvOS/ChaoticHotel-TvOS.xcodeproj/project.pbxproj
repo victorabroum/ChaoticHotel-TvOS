@@ -53,6 +53,7 @@
 		76D62B2D221C49BF006A03DA /* LifeTimeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62B2C221C49BF006A03DA /* LifeTimeComponent.swift */; };
 		76D62B30221C4BE8006A03DA /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62B2F221C4BE8006A03DA /* Items.swift */; };
 		76D62B32221C4D92006A03DA /* Items+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62B31221C4D92006A03DA /* Items+Extensions.swift */; };
+		76F618A0221CA45700B92A74 /* Staff+Control.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F6189F221CA45700B92A74 /* Staff+Control.swift */; };
 		FD0F59CD221C7BAD00856B2F /* EasyMultiPeerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0F59CA221C7BAD00856B2F /* EasyMultiPeerService.swift */; };
 		FD0F59CE221C7BAD00856B2F /* EasyMultiPeerService+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0F59CB221C7BAD00856B2F /* EasyMultiPeerService+Extensions.swift */; };
 		FD0F59CF221C7BAD00856B2F /* EasyMultiPeerService+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0F59CC221C7BAD00856B2F /* EasyMultiPeerService+Protocols.swift */; };
@@ -118,6 +119,7 @@
 		76D62B2C221C49BF006A03DA /* LifeTimeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeTimeComponent.swift; sourceTree = "<group>"; };
 		76D62B2F221C4BE8006A03DA /* Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
 		76D62B31221C4D92006A03DA /* Items+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Items+Extensions.swift"; sourceTree = "<group>"; };
+		76F6189F221CA45700B92A74 /* Staff+Control.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Staff+Control.swift"; sourceTree = "<group>"; };
 		FD0F59CA221C7BAD00856B2F /* EasyMultiPeerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasyMultiPeerService.swift; sourceTree = "<group>"; };
 		FD0F59CB221C7BAD00856B2F /* EasyMultiPeerService+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EasyMultiPeerService+Extensions.swift"; sourceTree = "<group>"; };
 		FD0F59CC221C7BAD00856B2F /* EasyMultiPeerService+Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EasyMultiPeerService+Protocols.swift"; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 			children = (
 				76608BBB221459930023C29C /* Staff.swift */,
 				76D62B2A221C4074006A03DA /* Staff+HoldItens.swift */,
+				76F6189F221CA45700B92A74 /* Staff+Control.swift */,
 			);
 			path = staff;
 			sourceTree = "<group>";
@@ -505,6 +508,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76F618A0221CA45700B92A74 /* Staff+Control.swift in Sources */,
 				76D62B20221B4F2E006A03DA /* Elevator.swift in Sources */,
 				FD0F59CF221C7BAD00856B2F /* EasyMultiPeerService+Protocols.swift in Sources */,
 				76D62AF722172CFA006A03DA /* RoomerArriveState.swift in Sources */,

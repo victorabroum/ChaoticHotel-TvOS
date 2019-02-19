@@ -15,29 +15,7 @@ extension GameScene {
     
     // TODO: Just for test Interaction with Roomer
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-        if let staffBodyComp = self.staff.component(ofType: PhysicsBoydComponent.self) {
-            
-            guard let contact =
-                staffBodyComp.physicBody.allContactedBodies().first else { return }
-            
-            if (contact.node != nil) {
-                if let serviceComponent = (contact.node!.entity?.component(ofType: ServiceComponent.self)) {
-                    // Try to deliver a service
-                    staff.deliver(entityManager: self.entityManager, aService: serviceComponent)
-                    
-                } else if let interaction =
-                    contact.node?.entity?.component(ofType: InteractionComponent.self) {
-                    print("INTERACT \(interaction)")
-                    
-                    if let interactionEntity = interaction.entity as? InteractEntity {
-                        interactionEntity.interactDelegate?.action(callBy: staff)
-                    }
-                }
-            }
-            
-        }
-        
+        staff.action()
     }
     // End test
     
