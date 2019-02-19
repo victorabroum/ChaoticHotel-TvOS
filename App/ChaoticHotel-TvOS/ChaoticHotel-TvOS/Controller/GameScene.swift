@@ -88,6 +88,13 @@ class GameScene: SKScene {
         }
         self.entityManager.add(elevator)
         
+        // Kitchen Entity
+        let kitchen = Kitchen()
+        if let renderComp = kitchen.component(ofType: RenderComponent.self) {
+            renderComp.node?.position = self.childNode(withName: "roomServiceStation")!.position
+        }
+        self.entityManager.add(kitchen)
+        
     }
 
     override func update(_ currentTime: TimeInterval) {
