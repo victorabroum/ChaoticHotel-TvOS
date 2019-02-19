@@ -13,7 +13,7 @@ class Staff: GKEntity {
     
     var service: ServiceCategory! = nil
     
-    var isholdItem: Bool = false
+    var holdItem: Items!
     
     init(withImageNamed imageNamed: String) {
         super.init()

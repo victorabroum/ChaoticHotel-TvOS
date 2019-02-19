@@ -13,7 +13,7 @@ extension Kitchen: InteractDelegate {
     func action(callBy owner: GKEntity) {
         
         if let staff = owner as? Staff {
-            if (staff.isholdItem) { return }
+            if (staff.holdItem != nil) { return }
             
             print("Give a plate of Food")
             
