@@ -69,9 +69,9 @@ class RoomerListnerState: GKState {
                 waitTimer = WaitTimer.reception
                 textureName = nil
                 colorService = .blue
-                self.entity.addComponent(ServiceComponent(owner: self.entity, serviceCategory: .checkOut))
+                self.entity.addComponent(ServiceComponent(owner: self.entity, serviceCategory: .listen))
             default:
-                self.entity.addComponent(ServiceComponent(owner: self.entity, serviceCategory: .checkIn))
+                self.entity.addComponent(ServiceComponent(owner: self.entity, serviceCategory: .listen))
             }
         }
         

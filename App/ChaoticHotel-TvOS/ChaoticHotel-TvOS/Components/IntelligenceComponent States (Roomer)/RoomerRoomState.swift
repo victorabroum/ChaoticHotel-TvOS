@@ -33,6 +33,20 @@ class RoomerRoomState: GKState {
         
         guard let scene = node.scene as? GameScene else { return }
         
+        // Spawn Bag
+        
+        let bag = Items(
+            imageNamed: "",
+            serviceCategory: .bag,
+            isHold: false,
+            categoryMask: .bag,
+            lifeTime: WaitTimer.bag + 3
+        )
+        guard let bagNode = bag.component(ofType: RenderComponent.self)?.node else { return }
+        bagNode.color = UIColor(red: 0.03, green: 0.74, blue: 0.56, alpha: 1.0)
+        bagNode.position = scene.childNode(withName: "luggagedCart")!.position
+        scene.entityManager.add(bag)
+    
         scene.hotel.enterOnRoom(roomer: self.entity)
         
         // TODO: Choose right time to Go to ListnerState

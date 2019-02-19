@@ -15,13 +15,18 @@ extension Kitchen: InteractDelegate {
         if let staff = owner as? Staff {
             if (staff.holdItem != nil) { return }
             
-            print("Give a plate of Food")
-            
             if let staff = owner as? Staff {
                 print("É um Staff \(staff)")
+                let foodPlate = Items(
+                    imageNamed: "",
+                    serviceCategory: .food,
+                    isHold: true,
+                    categoryMask: .food,
+                    lifeTime: WaitTimer.foodLifeTime)
+                staff.holdItem = foodPlate
+                foodPlate.hold(callBy: staff)
             }
         }
-        
         
     }
 }

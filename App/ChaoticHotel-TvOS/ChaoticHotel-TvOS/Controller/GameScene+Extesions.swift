@@ -28,13 +28,12 @@ extension GameScene {
                 } else if let serviceComponent = (contact.node!.entity?.component(ofType: ServiceComponent.self)) {
                     // Try to deliver a service
                     print("DELIVER")
-                    if (staff.service != nil) {
-                        if(staff.holdItem != nil) {
-                            self.entityManager.remove(staff.holdItem)
-                            staff.holdItem = nil
-                        }
-                        serviceComponent.deliverService(ofType: staff.service)
+                    if(staff.holdItem != nil) {
+                        self.entityManager.remove(staff.holdItem)
+                        staff.holdItem = nil
                     }
+                    serviceComponent.deliverService(ofType: staff.service)
+                    staff.service = .listen
                     
                 } else if let interaction =
                     contact.node?.entity?.component(ofType: InteractionComponent.self) {
