@@ -63,7 +63,7 @@ class GameScene: SKScene {
         let ySlime = self.childNode(withName: "elevatorGoDown")?.position
         
         renderComponentSlime.node?.position = CGPoint.init(
-            x: -(self.size.width / 2) - 40,
+            x: -(self.size.width / 2) - 100,
                 y: ySlime?.y ?? 0)
         
         self.entityManager.add(slime)
