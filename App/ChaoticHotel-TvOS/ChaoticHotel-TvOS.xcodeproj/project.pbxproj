@@ -54,6 +54,9 @@
 		76D62B30221C4BE8006A03DA /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62B2F221C4BE8006A03DA /* Items.swift */; };
 		76D62B32221C4D92006A03DA /* Items+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62B31221C4D92006A03DA /* Items+Extensions.swift */; };
 		76F618A0221CA45700B92A74 /* Staff+Control.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F6189F221CA45700B92A74 /* Staff+Control.swift */; };
+		76F618A2221DDA4D00B92A74 /* ZPositions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F618A1221DDA4D00B92A74 /* ZPositions.swift */; };
+		76F618A5221DE0DB00B92A74 /* BackgroundHotelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F618A4221DE0DB00B92A74 /* BackgroundHotelNode.swift */; };
+		76F618A7221DE13A00B92A74 /* LugaggeCartNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F618A6221DE13A00B92A74 /* LugaggeCartNode.swift */; };
 		FD0F59CD221C7BAD00856B2F /* EasyMultiPeerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0F59CA221C7BAD00856B2F /* EasyMultiPeerService.swift */; };
 		FD0F59CE221C7BAD00856B2F /* EasyMultiPeerService+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0F59CB221C7BAD00856B2F /* EasyMultiPeerService+Extensions.swift */; };
 		FD0F59CF221C7BAD00856B2F /* EasyMultiPeerService+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0F59CC221C7BAD00856B2F /* EasyMultiPeerService+Protocols.swift */; };
@@ -120,6 +123,9 @@
 		76D62B2F221C4BE8006A03DA /* Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
 		76D62B31221C4D92006A03DA /* Items+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Items+Extensions.swift"; sourceTree = "<group>"; };
 		76F6189F221CA45700B92A74 /* Staff+Control.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Staff+Control.swift"; sourceTree = "<group>"; };
+		76F618A1221DDA4D00B92A74 /* ZPositions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZPositions.swift; sourceTree = "<group>"; };
+		76F618A4221DE0DB00B92A74 /* BackgroundHotelNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundHotelNode.swift; sourceTree = "<group>"; };
+		76F618A6221DE13A00B92A74 /* LugaggeCartNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LugaggeCartNode.swift; sourceTree = "<group>"; };
 		FD0F59CA221C7BAD00856B2F /* EasyMultiPeerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasyMultiPeerService.swift; sourceTree = "<group>"; };
 		FD0F59CB221C7BAD00856B2F /* EasyMultiPeerService+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EasyMultiPeerService+Extensions.swift"; sourceTree = "<group>"; };
 		FD0F59CC221C7BAD00856B2F /* EasyMultiPeerService+Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EasyMultiPeerService+Protocols.swift"; sourceTree = "<group>"; };
@@ -206,6 +212,7 @@
 				FDFF24C62214BB4B00BF8593 /* Constants.swift */,
 				76D62AF42216FD50006A03DA /* CGPoint+Extensions.swift */,
 				76D62AFB221AE495006A03DA /* CategoryMask.swift */,
+				76F618A1221DDA4D00B92A74 /* ZPositions.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -213,6 +220,7 @@
 		76608BB722130F2B0023C29C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				76F618A3221DE0B100B92A74 /* customNodes */,
 				76D62B14221B4434006A03DA /* interact */,
 				76D62B13221B442A006A03DA /* assist */,
 			);
@@ -360,6 +368,15 @@
 				76D62B31221C4D92006A03DA /* Items+Extensions.swift */,
 			);
 			path = items;
+			sourceTree = "<group>";
+		};
+		76F618A3221DE0B100B92A74 /* customNodes */ = {
+			isa = PBXGroup;
+			children = (
+				76F618A4221DE0DB00B92A74 /* BackgroundHotelNode.swift */,
+				76F618A6221DE13A00B92A74 /* LugaggeCartNode.swift */,
+			);
+			path = customNodes;
 			sourceTree = "<group>";
 		};
 		FD0F59C3221C7B5F00856B2F /* Connectivity */ = {
@@ -513,6 +530,7 @@
 				FD0F59CF221C7BAD00856B2F /* EasyMultiPeerService+Protocols.swift in Sources */,
 				76D62AF722172CFA006A03DA /* RoomerArriveState.swift in Sources */,
 				76D62AF32216F82B006A03DA /* Hotel+ControlQueue.swift in Sources */,
+				76F618A7221DE13A00B92A74 /* LugaggeCartNode.swift in Sources */,
 				76D62B1B221B44CA006A03DA /* Reception.swift in Sources */,
 				FDFF24CB2215E18D00BF8593 /* Slime.swift in Sources */,
 				76608BC622147ACF0023C29C /* GameScene+Extesions.swift in Sources */,
@@ -526,6 +544,7 @@
 				76D62AFC221AE495006A03DA /* CategoryMask.swift in Sources */,
 				FD0F59CD221C7BAD00856B2F /* EasyMultiPeerService.swift in Sources */,
 				76D62AF52216FD50006A03DA /* CGPoint+Extensions.swift in Sources */,
+				76F618A5221DE0DB00B92A74 /* BackgroundHotelNode.swift in Sources */,
 				76D62B1D221B45C6006A03DA /* Reception+Protocols.swift in Sources */,
 				76D62B2D221C49BF006A03DA /* LifeTimeComponent.swift in Sources */,
 				76608BBE22145A780023C29C /* RenderComponent.swift in Sources */,
@@ -546,6 +565,7 @@
 				76D62B32221C4D92006A03DA /* Items+Extensions.swift in Sources */,
 				7650285E2215BB9E009A5CE4 /* Hotel.swift in Sources */,
 				76608BD122149A7D0023C29C /* RoomerRoomState.swift in Sources */,
+				76F618A2221DDA4D00B92A74 /* ZPositions.swift in Sources */,
 				76608BC8221487B60023C29C /* Roomer.swift in Sources */,
 				76608BCF22149A2E0023C29C /* RoomerAssistState.swift in Sources */,
 				76D62B06221AF49E006A03DA /* GameWorld+SKPhysicsContactDelegate.swift in Sources */,
