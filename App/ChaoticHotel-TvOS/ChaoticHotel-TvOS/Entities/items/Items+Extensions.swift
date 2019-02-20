@@ -46,6 +46,8 @@ extension Items {
         itemNode.xScale = 2.5
         itemNode.yScale = 2.5
         itemNode.position = .zero
+        itemNode.physicsBody = nil
+        itemNode.entity?.removeComponent(ofType: PhysicsBoydComponent.self)
         
     }
     
@@ -67,6 +69,7 @@ extension Items {
         itemNode.move(toParent: itemNode.scene!)
         itemNode.xScale = 1
         itemNode.yScale = 1
+        itemNode.physicsBody = self.physicsBodyComp.physicBody
         
     }
 }

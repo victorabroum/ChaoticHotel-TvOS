@@ -106,7 +106,7 @@ class GameScene: SKScene {
     }
     
     override func didMove(to view: SKView) {
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(GameScene.tapped))
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(GameScene.playPauseClicked))
         tapRecognizer.allowedPressTypes = [UIPress.PressType.playPause.rawValue] as [NSNumber]
         self.view!.addGestureRecognizer(tapRecognizer)
     }
@@ -123,13 +123,13 @@ class GameScene: SKScene {
         // Calculate time since last update
         let deltaTime = currentTime - self.lastUpdateTime
 
-        // Update entities
+//        // Update entities
         for entity in self.entityManager.entities {
             entity.update(deltaTime: deltaTime)
         }
         
         // Just for Spawn Roomer
-        // TODO: Improve Spawn Logic
+        // TODO: Spawn Logic is in GameWorld Entity
         let spawnRoomerInterval = TimeInterval(15)
         if (CACurrentMediaTime() - lastSpawn > spawnRoomerInterval) {
             lastSpawn = CACurrentMediaTime()

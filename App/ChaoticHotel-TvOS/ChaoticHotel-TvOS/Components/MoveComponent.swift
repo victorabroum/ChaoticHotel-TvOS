@@ -37,8 +37,14 @@ class MoveComponent: GKComponent {
         
         switch direction {
         case .rigth:
+            if (node.xScale < 0) {
+                node.xScale *= -1
+            }
             node.position.x += PlayerConstants.velocity
         case .left:
+            if (node.xScale > 0) {
+                node.xScale *= -1
+            }
             node.position.x -= PlayerConstants.velocity
         case .idle:
             return

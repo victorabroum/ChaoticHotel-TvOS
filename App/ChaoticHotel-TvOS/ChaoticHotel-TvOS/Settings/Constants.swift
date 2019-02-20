@@ -39,6 +39,7 @@ enum ServiceCategory {
     case bag
     case food
     case listen
+    case checkIn
     case clean
 }
 

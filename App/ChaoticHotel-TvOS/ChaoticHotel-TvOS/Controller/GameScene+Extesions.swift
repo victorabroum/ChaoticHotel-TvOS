@@ -13,16 +13,9 @@ import GameplayKit
 // MARK: TouchMoved and Ended
 extension GameScene {
     
-    // TODO: Just for test Interaction with Roomer
-    
-    @objc func tapped() {
+    @objc func playPauseClicked() {
         staff.action()
     }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        staff.action()
-    }
-    // End test
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         

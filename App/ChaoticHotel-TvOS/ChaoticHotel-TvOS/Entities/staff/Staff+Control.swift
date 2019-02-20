@@ -13,15 +13,20 @@ extension Staff {
     func action() {
         if let staffBodyComp = self.component(ofType: PhysicsBoydComponent.self) {
             
-            guard let contact =
-                staffBodyComp.physicBody.allContactedBodies().first else { return }
-            
             guard let gameScene =
                 self.component(ofType: RenderComponent.self)?.node?.scene as? GameScene else { return }
             
-            if (contact.node != nil) {
+            if (staffBodyComp.physicBody.allContactedBodies().isEmpty) {
+                print("Tá vazio")
+                if (self.holdItem != nil) {
+                    self.holdItem.drop(callBy: self)
+                }
+            }
+            
+            for contact in staffBodyComp.physicBody.allContactedBodies() where contact.node != nil {
                 if let serviceComponent = (contact.node!.entity?.component(ofType: ServiceComponent.self)) {
                     // Try to deliver a service
+                    
                     self.deliver(entityManager: gameScene.entityManager, aService: serviceComponent)
                     
                 } else if let interaction =
@@ -33,7 +38,6 @@ extension Staff {
                     }
                 }
             }
-            
         }
     }
 }

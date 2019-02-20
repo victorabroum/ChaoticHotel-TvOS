@@ -71,7 +71,7 @@ class RoomerListnerState: GKState {
                 colorService = .blue
                 self.entity.addComponent(ServiceComponent(owner: self.entity, serviceCategory: .listen))
             default:
-                self.entity.addComponent(ServiceComponent(owner: self.entity, serviceCategory: .listen))
+                self.entity.addComponent(ServiceComponent(owner: self.entity, serviceCategory: .checkIn))
             }
         }
         

@@ -12,6 +12,7 @@ import GameplayKit
 class Items: InteractEntity {
     var serviceCategory: ServiceCategory
     var isHold: Bool = false
+    var physicsBodyComp: PhysicsBoydComponent!
     
     init(imageNamed: String,
          serviceCategory: ServiceCategory,
@@ -42,6 +43,7 @@ class Items: InteractEntity {
             ~(CategoryMask.contactWithAllCategory())
         physicsComp.physicBody.collisionBitMask =
             ~(CategoryMask.contactWithAllCategory())
+        self.physicsBodyComp = physicsComp
         self.addComponent(physicsComp)
         
         // ADD Life Time
