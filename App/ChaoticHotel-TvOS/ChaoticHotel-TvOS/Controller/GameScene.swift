@@ -13,7 +13,7 @@ class GameScene: SKScene {
 
     var entities = [GKEntity]()
     var graphs = [String: GKGraph]()
-    let service = EasyMultiPeerService.init(serviceType: "chaotic-hotel")
+    let service = EasyMultiPeerService.init(serviceType: "chaotic-hotelt")
     
     private var lastUpdateTime: TimeInterval = 0
     private var lastSpawn: TimeInterval = 0
