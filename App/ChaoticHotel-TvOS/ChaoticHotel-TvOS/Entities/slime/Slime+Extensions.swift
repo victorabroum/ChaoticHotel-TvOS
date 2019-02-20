@@ -27,7 +27,6 @@ extension Slime {
         slime?.node?.run(SKAction.wait(forDuration: duration)) {
             completion()
         }        
-        
     }
     
     func shootGoop() {

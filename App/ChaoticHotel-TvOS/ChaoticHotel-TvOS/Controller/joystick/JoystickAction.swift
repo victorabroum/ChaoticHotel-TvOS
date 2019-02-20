@@ -18,6 +18,8 @@ enum JoystickAction: String, CaseIterable {
         for action in JoystickAction.allCases {
             if action.rawValue == value {
                 return action
+            } else {
+                continue
             }
         }
         return JoystickAction.none
