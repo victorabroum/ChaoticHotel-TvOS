@@ -119,6 +119,8 @@ class GameScene: SKScene {
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(GameScene.playPauseClicked))
         tapRecognizer.allowedPressTypes = [UIPress.PressType.playPause.rawValue] as [NSNumber]
         self.view!.addGestureRecognizer(tapRecognizer)
+        
+        self.addChild(BackgroundHotelNode())
     }
 
     override func update(_ currentTime: TimeInterval) {
