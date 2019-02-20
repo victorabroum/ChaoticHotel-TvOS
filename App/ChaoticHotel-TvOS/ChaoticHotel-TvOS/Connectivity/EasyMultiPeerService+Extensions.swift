@@ -56,12 +56,12 @@ extension EasyMultiPeerService: MCSessionDelegate {
     public func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
         NSLog("%@", "peer \(peerID) didChangeState: \(state.rawValue)")
         self.delegate?.connectedDevicesChanged(manager: self, connectedDevices:
-        session.connectedPeers.map { $0.displayName })}
+        session.connectedPeers.map { $0 })}
     
     public func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
         NSLog("%@", "didReceiveData: \(data)")
         let str = String(data: data, encoding: .utf8)!
-        self.delegate?.didRecived(manager: self, message: str)
+        self.delegate?.didRecived(manager: self, message: str, peerID: peerID)
     }
     
     public func session(_ session: MCSession,

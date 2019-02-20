@@ -8,12 +8,14 @@
 
 import SpriteKit
 import GameplayKit
+import MultipeerConnectivity
 
 class GameScene: SKScene {
 
     var entities = [GKEntity]()
     var graphs = [String: GKGraph]()
-    let service = EasyMultiPeerService.init(serviceType: "chaotic-hotelt")
+    let service = EasyMultiPeerService.init(serviceType: "chaotic-hotelr")
+    var spawnStaff = CGPoint.init(x: 0, y: 0)
     
     private var lastUpdateTime: TimeInterval = 0
     private var lastSpawn: TimeInterval = 0
@@ -21,6 +23,7 @@ class GameScene: SKScene {
     var lastPoint: CGPoint!
     
     var staff: Staff!
+    var players: [MCPeerID: Staff]  = [:]
     var hotel: Hotel!
     var gameWorld: GameWorld!
     var receptionTable: Reception!
@@ -32,18 +35,24 @@ class GameScene: SKScene {
     var roomer: Roomer!
 
     override func sceneDidLoad() {
+        self.spawnStaff = (self.childNode(withName: "elevatorGoUp")?.position)!
+
         service.delegate = self
         self.lastUpdateTime = 0
         
         self.entityManager = EntityManager(scene: self)
         
         // Test Staff Entity
+        let peerTV = MCPeerID.init(displayName: "AppleTV-OS")
         staff = Staff(withImageNamed: "staff_placeHolder")
+        self.players = [peerTV: staff]
+        
         // Change Sprite scale
         if let renderComponent = staff.component(ofType: RenderComponent.self) {
             renderComponent.node?.xScale = 0.3
             renderComponent.node?.yScale = 0.3
-            renderComponent.node?.position = (self.childNode(withName: "elevatorGoUp")?.position)!
+            renderComponent.node?.position = spawnStaff
+            
         }
         self.entityManager.add(staff)
         
