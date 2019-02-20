@@ -14,8 +14,13 @@ import GameplayKit
 extension GameScene {
     
     // TODO: Just for test Interaction with Roomer
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    
+    @objc func tapped() {
         staff.action()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        staff.action()
     }
     // End test
     
@@ -29,7 +34,7 @@ extension GameScene {
             
             let direction: Direction
             
-            if(self.lastPoint.x > location.x) {
+            if(self.lastPoint.y < location.y) {
                 direction = .left
             } else {
                 direction = .rigth

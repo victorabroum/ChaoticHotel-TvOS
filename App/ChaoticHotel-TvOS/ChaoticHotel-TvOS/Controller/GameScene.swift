@@ -104,6 +104,12 @@ class GameScene: SKScene {
         self.entityManager.add(itemMop)
         
     }
+    
+    override func didMove(to view: SKView) {
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(GameScene.tapped))
+        tapRecognizer.allowedPressTypes = [UIPress.PressType.playPause.rawValue] as [NSNumber]
+        self.view!.addGestureRecognizer(tapRecognizer)
+    }
 
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered

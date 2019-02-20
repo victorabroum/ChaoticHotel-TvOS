@@ -34,7 +34,7 @@ class MoveComponent: GKComponent {
         guard let node = self.entity!.component(ofType: RenderComponent.self)?.node else {
             return
         }
-        // TODO: Change orientation of Controller, x to y
+        
         switch direction {
         case .rigth:
             node.position.x += PlayerConstants.velocity
