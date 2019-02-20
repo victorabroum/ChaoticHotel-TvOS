@@ -9,7 +9,7 @@
 import Foundation
 import SpriteKit
 import GameplayKit
-
+import MultipeerConnectivity
 // MARK: TouchMoved and Ended
 extension GameScene {
     
@@ -50,29 +50,71 @@ extension GameScene {
         }
     }
     //Teste Function
-    func moveStaff(forDirection direction: Direction) {
+    func move(staff: Staff, forDirection direction: Direction) {
+        
         if let moveComp = staff.component(ofType: MoveComponent.self) {
             moveComp.direction = direction
         }
     }
     
-    func tapStaff() {
-        self.staff.action()
+    func tap(staff: Staff) {
+        staff.action()
     }
 }
 
 extension GameScene: EasyMultiPeerDelegate {
-    func connectedDevicesChanged(manager: EasyMultiPeerService, connectedDevices: [String]) {
-        print("Devices changed // \(connectedDevices)")
+    func connectedDevicesChanged(manager: EasyMultiPeerService, connectedDevices: [MCPeerID]) {
+        self.createNewPlayer(forDevice: connectedDevices)
+        
     }
     
-    func didRecived(manager: EasyMultiPeerService, message: String) {
+    func createNewPlayer(forDevice device: [MCPeerID]) {
+        guard self.players.count <= 4 else {
+            return
+        }
+        let playerID = self.players.keys
+
+        for deviceID in device {
+            let exist = playerID.contains { (player) -> Bool in
+                return player === deviceID
+            }
+            
+            if exist {
+                print("Existe!")
+            } else {
+              let newStaff = Staff.init(withImageNamed: "staff_placeHolder")
+            if let renderComponent = newStaff.component(ofType: RenderComponent.self) {
+                    renderComponent.node?.xScale = 0.3
+                    renderComponent.node?.yScale = 0.3
+                    renderComponent.node?.position = spawnStaff
+            }
+                
+            self.players[deviceID] = newStaff
+              self.entityManager.add(newStaff)
+
+            }
+        }
+    }
+    
+    func didRecived(manager: EasyMultiPeerService, message: String, peerID: MCPeerID) {
         print("Recebeu => \(message)")
+        var staffRecived: Staff?
+        
+        for player in self.players {
+           if player.key == peerID {
+                staffRecived = player.value
+           } else {
+                continue
+           }
+        }
+        
+        guard let actionStaff = staffRecived else {return}
+        
         switch message {
         case JoystickAction.tap.rawValue:
-            self.tapStaff()
+            self.tap(staff: actionStaff)
         default:
-            self.moveStaff(forDirection: Direction.getDirection(withValue: message))
+            self.move(staff: actionStaff, forDirection: Direction.getDirection(withValue: message))
         }
     }
 }
