@@ -130,13 +130,12 @@ class GameScene: SKScene {
             print("De \(spawnRoomerInterval) em \(spawnRoomerInterval) segundos")
             
             // Test Roomer
-            roomer = Roomer(withImageNamed: "staff_placeHolder")
+            roomer = Roomer(withImageNamed: "placeHolder_reinaldo")
             guard let renderComponent = roomer.component(ofType: RenderComponent.self) else {
                 return
             }
-            renderComponent.node?.xScale = 0.35
-            renderComponent.node?.yScale = 0.35
-            renderComponent.node?.run(SKAction.colorize(with: .blue, colorBlendFactor: 0.3, duration: 0))
+            renderComponent.node?.xScale = 0.4
+            renderComponent.node?.yScale = 0.4
             self.entityManager.add(roomer)
             
             renderComponent.node?.position = (self.childNode(withName: "spawnRoomer")?.position)!
