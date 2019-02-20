@@ -41,10 +41,14 @@ extension Slime {
             return
         }
         
+        guard let node = self.component(ofType: RenderComponent.self)?.node else { return }
+        guard let slimeArea = node.scene?.childNode(withName: "slimeArea") else { return }
+        
         self.oldDeltaTimer += seconds
         if self.oldDeltaTimer >= WaitTimer.spwanGoop {
             let isValidShoot = (Int.random(in: 0...10) >= 7)
-            if isValidShoot {
+            if isValidShoot && slimeArea.contains(node.position) {
+                print("SLIME SHOOT GOOP")
                 self.shootGoop()
             }
             self.oldDeltaTimer = 0.0
