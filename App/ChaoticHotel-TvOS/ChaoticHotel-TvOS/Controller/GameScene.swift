@@ -23,7 +23,7 @@ class GameScene: SKScene {
     
     var lastPoint: CGPoint!
     
-    var players: [MCPeerID: Staff]  = [:]
+    var players: [Player] = []
     var gameWorld: GameWorld!
     var entityManager: EntityManager!
     
@@ -40,7 +40,8 @@ class GameScene: SKScene {
 
         // Test Staff Entity
         let staff = Staff(withImageNamed: "staff_placeHolder")
-        self.players = [peerTV: staff]
+        let playerTVOS = Player.init(idPeer: peerTV, entity: staff, colorPlayer: UIColor.black)
+        self.players.append(playerTVOS)
         // Change Sprite position
         if let renderComponent = staff.component(ofType: RenderComponent.self) {
             renderComponent.node.position = spawnStaff

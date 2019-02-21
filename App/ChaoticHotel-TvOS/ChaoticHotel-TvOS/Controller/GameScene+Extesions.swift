@@ -14,7 +14,7 @@ import MultipeerConnectivity
 extension GameScene {
     
     @objc func playPauseClicked() {
-        self.players[self.peerTV]!.action()
+       self.players.firstPlayerWhere(peerIsEqual: peerTV)?.entity.action()
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -32,10 +32,10 @@ extension GameScene {
             } else {
                 direction = .rigth
             }
-            
-            if let moveComp = self.players[self.peerTV]!.component(ofType: MoveComponent.self) {
+            if let moveComp = self.players.firstPlayerWhere(peerIsEqual: peerTV)?.entity.component(ofType: MoveComponent.self){
                 moveComp.direction = direction
             }
+           
         }
         
     }
@@ -45,7 +45,8 @@ extension GameScene {
         self.lastPoint = nil
         
         // Stop move
-        if let moveComp = self.players[self.peerTV]!.component(ofType: MoveComponent.self) {
+        
+        if let moveComp = self.players.firstPlayerWhere(peerIsEqual: peerTV)?.entity.component(ofType: MoveComponent.self) {
             moveComp.direction = nil
         }
     }
@@ -73,45 +74,47 @@ extension GameScene: EasyMultiPeerDelegate {
     }
     
     func createNewPlayer(forDevice device: [MCPeerID]) {
-        guard self.players.count <= 4 else {
+        guard self.players.count < 4 else {
             return
         }
-        let playerID = self.players.keys
+        
 
         for deviceID in device {
-            let exist = playerID.contains { (player) -> Bool in
-                return player === deviceID
-            }
+            let player = self.players.firstPlayerWhere(peerIsEqual: deviceID)
             
-            if exist {
+            if player != nil {
                 print("Existe!")
             } else {
               let newStaff = Staff.init(withImageNamed: "staff_placeHolder")
-            if let renderComponent = newStaff.component(ofType: RenderComponent.self) {
+                
+                
+             if let renderComponent = newStaff.component(ofType: RenderComponent.self) {
                     renderComponent.node.position = spawnStaff
             }
-                
-            self.players[deviceID] = newStaff
               self.entityManager.add(newStaff)
-
+             
+              let newPlayer = Player.init(
+                idPeer: deviceID,
+                entity: newStaff,
+                colorPlayer: UIColor.white)
+                self.players.append(newPlayer)
             }
         }
     }
     
     func deletePlayerToScene(peer: MCPeerID) {
-        var listOfPlayer = self.players
-        let players = self.players.keys
-        
-        for player in players {
-            if player === peer {
-              let staff = listOfPlayer.removeValue(forKey: peer)
-              guard let deleteStaff = staff else {return}
-              self.entityManager.remove(deleteStaff)
+        self.players.removeAll { (ply) -> Bool in
+            if ply.idPeer == peer {
+                let node = ply.entity.component(ofType: RenderComponent.self)
+                node?.node.isHidden = true
+                self.entityManager.remove(ply.entity)
+                return true
             } else {
-                print("It's not possible remove peer")
+                return false
             }
         }
-        print("Total player ->> \(listOfPlayer.count)")
+        
+        print("Total de players => \(self.players.count)")
     }
     
     func didRecived(manager: EasyMultiPeerService, message: String, peerID: MCPeerID) {
@@ -119,8 +122,8 @@ extension GameScene: EasyMultiPeerDelegate {
         var staffRecived: Staff?
         
         for player in self.players {
-           if player.key == peerID {
-                staffRecived = player.value
+           if player.idPeer == peerID {
+                staffRecived = player.entity
            } else {
                 continue
            }
