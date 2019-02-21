@@ -46,7 +46,7 @@ extension Slime {
         
         self.oldDeltaTimer += seconds
         if self.oldDeltaTimer >= WaitTimer.spwanGoop {
-            let isValidShoot = (Int.random(in: 0...10) >= 7)
+            let isValidShoot = (Int.random(in: 0...10) >= 0)
             if isValidShoot && slimeArea.contains(node.position) {
                 print("SLIME SHOOT GOOP")
                 self.shootGoop()
