@@ -34,7 +34,6 @@ class RoomerRoomState: GKState {
         guard let scene = node.scene as? GameScene else { return }
         
         // Spawn Bag
-        
         let bag = Items(
             imageNamed: "",
             serviceCategory: .bag,
@@ -47,9 +46,8 @@ class RoomerRoomState: GKState {
         bagNode.position = scene.childNode(withName: "luggagedCart")!.position
         scene.entityManager.add(bag)
     
-        scene.hotel.enterOnRoom(roomer: self.entity)
+        scene.gameWorld.hotelEntity.enterOnRoom(roomer: self.entity)
         
-        // TODO: Choose right time to Go to ListnerState
         node.run(SKAction.wait(forDuration: 1)) {
             self.stateMachine?.enter(RoomerListnerState.self)
         }

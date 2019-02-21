@@ -33,7 +33,7 @@ extension GameScene {
                 direction = .rigth
             }
             
-            if let moveComp = staff.component(ofType: MoveComponent.self) {
+            if let moveComp = self.players[self.peerTV]!.component(ofType: MoveComponent.self) {
                 moveComp.direction = direction
             }
         }
@@ -45,7 +45,7 @@ extension GameScene {
         self.lastPoint = nil
         
         // Stop move
-        if let moveComp = staff.component(ofType: MoveComponent.self) {
+        if let moveComp = self.players[self.peerTV]!.component(ofType: MoveComponent.self) {
             moveComp.direction = nil
         }
     }
