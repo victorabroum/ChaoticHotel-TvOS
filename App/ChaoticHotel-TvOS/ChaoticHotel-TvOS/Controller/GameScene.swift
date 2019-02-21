@@ -31,6 +31,7 @@ class GameScene: SKScene {
     var entityManager: EntityManager!
     
     var listOfRoomers = [Roomer]()
+    let peerTV = MCPeerID.init(displayName: "AppleTV-OS")
     
     // Test
     var roomer: Roomer!
@@ -44,7 +45,6 @@ class GameScene: SKScene {
         self.entityManager = EntityManager(scene: self)
         
         // Test Staff Entity
-        let peerTV = MCPeerID.init(displayName: "AppleTV-OS")
         staff = Staff(withImageNamed: "staff_placeHolder")
         self.players = [peerTV: staff]
         
@@ -120,7 +120,7 @@ class GameScene: SKScene {
         tapRecognizer.allowedPressTypes = [UIPress.PressType.playPause.rawValue] as [NSNumber]
         self.view!.addGestureRecognizer(tapRecognizer)
         
-        self.addChild(BackgroundHotelNode())
+//        self.addChild(BackgroundHotelNode())
     }
 
     override func update(_ currentTime: TimeInterval) {
@@ -134,11 +134,6 @@ class GameScene: SKScene {
 
         // Calculate time since last update
         let deltaTime = currentTime - self.lastUpdateTime
-
-//        // Update entities
-        for entity in self.entityManager.entities {
-            entity.update(deltaTime: deltaTime)
-        }
         
         // Just for Spawn Roomer
         // TODO: Spawn Logic is in GameWorld Entity

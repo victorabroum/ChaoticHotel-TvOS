@@ -14,7 +14,7 @@ import MultipeerConnectivity
 extension GameScene {
     
     @objc func playPauseClicked() {
-        staff.action()
+        self.players[self.peerTV]!.action()
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {

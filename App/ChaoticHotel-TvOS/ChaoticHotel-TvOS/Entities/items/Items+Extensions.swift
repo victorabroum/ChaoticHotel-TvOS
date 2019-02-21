@@ -15,6 +15,10 @@ extension Items: InteractDelegate {
         if let staff = owner as? Staff {
             if (staff.holdItem == nil) {
                 self.hold(callBy: owner)
+            } else if let body = staff.component(ofType: PhysicsBoydComponent.self)?.physicBody {
+                if (body.allContactedBodies().count <= 1) {
+                    self.drop(callBy: owner)
+                }
             }
         }
     }
@@ -23,12 +27,13 @@ extension Items: InteractDelegate {
 // Extnsion to lead with hold an item
 extension Items {
     func hold(callBy owner: GKEntity) {
-        self.isHold = true
-        
         // Stop LifeTime
+        
         if let lifeTime = self.component(ofType: LifeTimeComponent.self) {
             lifeTime.isHold = true
         }
+        
+        self.isHold = true
         
         // Set staff to hold
         if let staff = owner as? Staff {
@@ -40,13 +45,11 @@ extension Items {
         guard let itemNode = self.component(ofType: RenderComponent.self)?.node else { return }
         
         itemNode.move(toParent: node)
-        itemNode.zPosition = node.zPosition + 10
+//        itemNode.zPosition = node.zPosition + 10
         itemNode.xScale = 2.5
         itemNode.yScale = 2.5
         itemNode.position = .zero
         itemNode.physicsBody = nil
-        itemNode.entity?.removeComponent(ofType: PhysicsBoydComponent.self)
-        
     }
     
     func drop(callBy owner: GKEntity) {

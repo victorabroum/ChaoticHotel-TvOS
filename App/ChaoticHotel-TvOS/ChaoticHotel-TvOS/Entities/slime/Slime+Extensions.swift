@@ -31,7 +31,7 @@ extension Slime {
     
     func shootGoop() {
         let goopEntity = Goop.init(withImage: "staff_placeHolder")
-        self.entityManager.add(goopEntity)
+//        self.entityManager.add(goopEntity)
         goopEntity.spwanInScene(inPositionToSlime: self)
     }
     

@@ -17,6 +17,7 @@ extension Staff {
             print("DELIVER")
             service.deliverService(ofType: self.service)
             if (self.holdItem != nil && self.service != .clean) {
+                print("REMOVE ITEM")
                 entityManager.remove(self.holdItem)
                 self.holdItem = nil
                 self.service = .listen
