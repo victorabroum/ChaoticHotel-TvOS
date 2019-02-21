@@ -36,7 +36,7 @@ class RoomerLeaveState: GKState {
         self.entity.wantLeave = true
         
         // Roomer leave the room
-        scene.hotel.addAvailableRoom(self.entity.room)
+        scene.gameWorld.hotelEntity.addAvailableRoom(self.entity.room)
         
         // Change to none room for the Roomer
         self.entity.changeRoom(nil)

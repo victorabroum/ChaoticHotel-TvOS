@@ -23,18 +23,12 @@ class GameScene: SKScene {
     
     var lastPoint: CGPoint!
     
-    var staff: Staff!
     var players: [MCPeerID: Staff]  = [:]
-    var hotel: Hotel!
     var gameWorld: GameWorld!
-    var receptionTable: Reception!
     var entityManager: EntityManager!
     
     let peerTV = MCPeerID.init(displayName: "AppleTV-OS")
     
-    // Test
-    var roomer: Roomer!
-
     override func sceneDidLoad() {
         // Multipeer Service Delegate
         service.delegate = self
@@ -45,7 +39,7 @@ class GameScene: SKScene {
         self.spawnStaff = (self.childNode(withName: "elevatorGoUp")?.position)!
 
         // Test Staff Entity
-        staff = Staff(withImageNamed: "staff_placeHolder")
+        let staff = Staff(withImageNamed: "staff_placeHolder")
         self.players = [peerTV: staff]
         // Change Sprite position
         if let renderComponent = staff.component(ofType: RenderComponent.self) {
@@ -55,7 +49,6 @@ class GameScene: SKScene {
         
         // GameWorld
         self.gameWorld = GameWorld(scene: self)
-        self.hotel = self.gameWorld.hotelEntity
         
     }
     
