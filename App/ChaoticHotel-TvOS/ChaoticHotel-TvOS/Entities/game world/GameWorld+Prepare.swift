@@ -13,6 +13,7 @@ import GameplayKit
 extension GameWorld {
     
     func prepareLevel() {
+        self.prepareElevators()
         self.prepareSlime()
     }
     
@@ -33,5 +34,20 @@ extension GameWorld {
         
         self.scene.entityManager.add(slime)
         slime.crawlingInFloor()
+    }
+    
+    // Prepare Elevators
+    func prepareElevators() {
+        var elevator = Elevator(goTo: .down)
+        if let renderComp = elevator.component(ofType: RenderComponent.self) {
+            renderComp.node.position = self.scene.childNode(withName: "elevatorGoDown")!.position
+        }
+        self.scene.entityManager.add(elevator)
+        
+        elevator = Elevator(goTo: .upper)
+        if let renderComp = elevator.component(ofType: RenderComponent.self) {
+            renderComp.node.position = self.scene.childNode(withName: "elevatorGoUp")!.position
+        }
+        self.scene.entityManager.add(elevator)
     }
 }

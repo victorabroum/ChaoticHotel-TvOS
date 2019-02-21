@@ -64,18 +64,7 @@ class GameScene: SKScene {
         }
         self.entityManager.add(self.receptionTable)
         
-        // Elevator Entity
-        var elevator = Elevator(goTo: .down)
-        if let renderComp = elevator.component(ofType: RenderComponent.self) {
-            renderComp.node.position = self.childNode(withName: "elevatorGoDown")!.position
-        }
-        self.entityManager.add(elevator)
         
-        elevator = Elevator(goTo: .upper)
-        if let renderComp = elevator.component(ofType: RenderComponent.self) {
-            renderComp.node.position = self.childNode(withName: "elevatorGoUp")!.position
-        }
-        self.entityManager.add(elevator)
         
         // Kitchen Entity
         let kitchen = Kitchen()
