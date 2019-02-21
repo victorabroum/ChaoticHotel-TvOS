@@ -48,3 +48,10 @@ enum Itens {
     case mop // Esfregão
     case food
 }
+
+struct ListOfRoomers {
+    static let assests = [
+        "bichoDoPe_placeHolder",
+        "reinaldo_placeHolder"
+    ]
+}

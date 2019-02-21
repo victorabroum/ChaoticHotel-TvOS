@@ -21,7 +21,7 @@ class Roomer: AssistEntity {
     // To track what room Roomer is allocated
     var room: SKNode! = nil
     
-    init(withImageNamed imageNamed: String) {
+    init(withImageNamed imageNamed: String, inPosition position: CGPoint) {
         super.init()
         
         // Preapre State Machine
@@ -32,12 +32,14 @@ class Roomer: AssistEntity {
         
         // Add RenderComponent
         let renderComponent = RenderComponent(imageNamed: imageNamed)
+        renderComponent.node.position = position
         renderComponent.node.entity = self
+        self.addComponent(renderComponent)
+        
         // Add BallonComponent for show icons
         let ballonComponent = BallonComponent.init(nodeSuper: renderComponent.node, andTexture: nil)
         
         self.addComponent(ballonComponent)
-        self.addComponent(renderComponent)
         self.addComponent(MoveComponent(maxSpeed: Float.random(in: 5...9)))
         
         // Add Physics Body
