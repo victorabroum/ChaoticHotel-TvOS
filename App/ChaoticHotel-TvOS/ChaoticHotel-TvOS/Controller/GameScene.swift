@@ -63,14 +63,6 @@ class GameScene: SKScene {
             renderComp.node.position = self.childNode(withName: "reception")!.position
         }
         self.entityManager.add(self.receptionTable)
-        
-        // Items Entity
-        let itemMop = Items(imageNamed: "", serviceCategory: .clean, isHold: false, categoryMask: .mop, lifeTime: -1)
-        if let renderComp = itemMop.component(ofType: RenderComponent.self) {
-            renderComp.node.position = self.childNode(withName: "rubber")!.position
-        }
-        self.entityManager.add(itemMop)
-        
     }
     
     override func didMove(to view: SKView) {

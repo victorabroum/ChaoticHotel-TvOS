@@ -16,6 +16,7 @@ extension GameWorld {
         self.prepareElevators()
         self.prepareKitchen()
         self.prepareSlime()
+        self.prepareItems()
     }
     
     // Preapre Slime Enemy
@@ -59,5 +60,15 @@ extension GameWorld {
             renderComp.node.position = self.scene.childNode(withName: "roomServiceStation")!.position
         }
         self.scene.entityManager.add(kitchen)
+    }
+    
+    // Prepare Level itens
+    func prepareItems() {
+        // Mop
+        let itemMop = Items(imageNamed: "", serviceCategory: .clean, isHold: false, categoryMask: .mop, lifeTime: -1)
+        if let renderComp = itemMop.component(ofType: RenderComponent.self) {
+            renderComp.node.position = self.scene.childNode(withName: "rubber")!.position
+        }
+        self.scene.entityManager.add(itemMop)
     }
 }
