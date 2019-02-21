@@ -57,12 +57,6 @@ class GameScene: SKScene {
         self.gameWorld = GameWorld(scene: self)
         self.hotel = self.gameWorld.hotelEntity
         
-        // Reception Table Entity
-        self.receptionTable = Reception(hotel: self.hotel)
-        if let renderComp = self.receptionTable.component(ofType: RenderComponent.self) {
-            renderComp.node.position = self.childNode(withName: "reception")!.position
-        }
-        self.entityManager.add(self.receptionTable)
     }
     
     override func didMove(to view: SKView) {

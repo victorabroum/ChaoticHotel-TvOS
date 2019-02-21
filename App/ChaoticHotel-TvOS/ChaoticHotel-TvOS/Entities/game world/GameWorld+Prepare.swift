@@ -14,6 +14,7 @@ extension GameWorld {
     
     func prepareLevel() {
         self.prepareElevators()
+        self.prepareReceptionTable()
         self.prepareKitchen()
         self.prepareSlime()
         self.prepareItems()
@@ -70,5 +71,14 @@ extension GameWorld {
             renderComp.node.position = self.scene.childNode(withName: "rubber")!.position
         }
         self.scene.entityManager.add(itemMop)
+    }
+    
+    // Preprare Reception table entity
+    func prepareReceptionTable() {
+        let receptionTable = Reception(hotel: self.hotelEntity)
+        if let renderComp = receptionTable.component(ofType: RenderComponent.self) {
+            renderComp.node.position = self.scene.childNode(withName: "reception")!.position
+        }
+        self.scene.entityManager.add(receptionTable)
     }
 }
