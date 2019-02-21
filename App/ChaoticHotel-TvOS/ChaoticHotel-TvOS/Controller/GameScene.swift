@@ -60,7 +60,10 @@ class GameScene: SKScene {
         self.hotel = self.gameWorld.hotelEntity
         
         //Teste Slime Entity
-        let slime = Slime.init(withImageNamed: "slime_placeHolder", entityManager: self.entityManager)
+        let slime = Slime(
+            withImageNamed: "slime_placeHolder",
+            entityManager: self.entityManager,
+            possibleSpawnArea: self.childNode(withName: "slimeArea")!)
         
         guard let renderComponentSlime = slime.component(ofType: RenderComponent.self) else {return}
         

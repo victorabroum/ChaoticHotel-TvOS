@@ -14,7 +14,7 @@ class Slime: GKEntity {
     var oldDeltaTimer: TimeInterval = 0.0
     var entityManager: EntityManager
     
-    init(withImageNamed name: String, entityManager: EntityManager) {
+    init(withImageNamed name: String, entityManager: EntityManager, possibleSpawnArea: SKNode) {
         self.entityManager = entityManager
         super.init()
         // Created instance components
@@ -24,6 +24,10 @@ class Slime: GKEntity {
         // Add components to Entity
         self.addComponent(moveComponent)
         self.addComponent(renderComponent)
+        
+        // Add Spawn Goop Component
+        let spawnGoopComp = SpawnGoopComponent(spawnArea: possibleSpawnArea, entityManager: self.entityManager)
+        self.addComponent(spawnGoopComp)
         
         self.prepareStateMachine()
         

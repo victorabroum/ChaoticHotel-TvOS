@@ -29,29 +29,4 @@ extension Slime {
         }        
     }
     
-    func shootGoop() {
-        let goopEntity = Goop.init(withImage: "slime_placeHolder")
-//        self.entityManager.add(goopEntity)
-        goopEntity.spwanInScene(inPositionToSlime: self)
-    }
-    
-    override func update(deltaTime seconds: TimeInterval) {
-        
-        guard self.stateMachine.currentState != nil else {
-            return
-        }
-        
-        guard let node = self.component(ofType: RenderComponent.self)?.node else { return }
-        guard let slimeArea = node.scene?.childNode(withName: "slimeArea") else { return }
-        
-        self.oldDeltaTimer += seconds
-        if self.oldDeltaTimer >= WaitTimer.spwanGoop {
-            let isValidShoot = (Int.random(in: 0...10) >= 0)
-            if isValidShoot && slimeArea.contains(node.position) {
-                print("SLIME SHOOT GOOP")
-                self.shootGoop()
-            }
-            self.oldDeltaTimer = 0.0
-        }
-    }
 }

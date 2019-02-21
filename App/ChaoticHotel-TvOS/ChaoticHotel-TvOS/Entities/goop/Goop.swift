@@ -12,15 +12,20 @@ import SpriteKit
 class Goop: AssistEntity {
     var stateMachine: GKStateMachine!
     
-    init(withImage image: String) {
+    init(withImage image: String, parentNode: SKSpriteNode) {
         super.init()
         
         self.assistDelegate = self
         
         let renderComponent = RenderComponent.init(imageNamed: image)
         renderComponent.node?.entity = self
-        let ballonComponent = BallonComponent.init(nodeSuper: renderComponent.node!, andTexture: nil)
+        // TODO: JUST FOR TESTS
+        renderComponent.node?.position = parentNode.position
+        renderComponent.node?.position.y -= parentNode.size.height / 2 - 40
+        renderComponent.node?.xScale = 0.25
+        renderComponent.node?.yScale = 0.25
         
+        let ballonComponent = BallonComponent.init(nodeSuper: renderComponent.node!, andTexture: nil)
         self.addComponent(renderComponent)
         self.addComponent(ballonComponent)
         self.prepateStateMachine()
