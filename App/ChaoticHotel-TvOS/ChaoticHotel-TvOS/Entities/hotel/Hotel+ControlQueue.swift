@@ -33,13 +33,16 @@ extension Hotel {
     }
     
     // Exit from queue
-    func exitQueue() {
+    func exitQueue() -> Roomer! {
+        var roomer: Roomer! = nil
         if (!self.receptionQueue.isEmpty) {
+            roomer = self.receptionQueue.first!
             self.receptionQueue.removeFirst()
             
             // Now should update Nodes positions
             self.ornagizeQueue()
         }
+        return roomer
     }
     
     // Can Add new Roomer?
