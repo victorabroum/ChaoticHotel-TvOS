@@ -14,6 +14,7 @@ extension GameWorld {
     
     func prepareLevel() {
         self.prepareElevators()
+        self.prepareKitchen()
         self.prepareSlime()
     }
     
@@ -49,5 +50,14 @@ extension GameWorld {
             renderComp.node.position = self.scene.childNode(withName: "elevatorGoUp")!.position
         }
         self.scene.entityManager.add(elevator)
+    }
+    
+    // Preapre Kitchen
+    func prepareKitchen() {
+        let kitchen = Kitchen()
+        if let renderComp = kitchen.component(ofType: RenderComponent.self) {
+            renderComp.node.position = self.scene.childNode(withName: "roomServiceStation")!.position
+        }
+        self.scene.entityManager.add(kitchen)
     }
 }

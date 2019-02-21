@@ -64,15 +64,6 @@ class GameScene: SKScene {
         }
         self.entityManager.add(self.receptionTable)
         
-        
-        
-        // Kitchen Entity
-        let kitchen = Kitchen()
-        if let renderComp = kitchen.component(ofType: RenderComponent.self) {
-            renderComp.node.position = self.childNode(withName: "roomServiceStation")!.position
-        }
-        self.entityManager.add(kitchen)
-        
         // Items Entity
         let itemMop = Items(imageNamed: "", serviceCategory: .clean, isHold: false, categoryMask: .mop, lifeTime: -1)
         if let renderComp = itemMop.component(ofType: RenderComponent.self) {
