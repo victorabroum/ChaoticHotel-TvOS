@@ -44,7 +44,6 @@ class RoomerRoomState: GKState {
             lifeTime: WaitTimer.bag + 2
         )
         guard let bagNode = bag.component(ofType: RenderComponent.self)?.node else { return }
-        bagNode.color = UIColor(red: 0.03, green: 0.74, blue: 0.56, alpha: 1.0)
         bagNode.position = scene.childNode(withName: "luggagedCart")!.position
         scene.entityManager.add(bag)
         
