@@ -17,7 +17,7 @@ extension Kitchen: InteractDelegate {
             
             if let staff = owner as? Staff {
                 let foodPlate = Items(
-                    imageNamed: "",
+                    imageNamed: "food",
                     serviceCategory: .food,
                     isHold: true,
                     categoryMask: .food,

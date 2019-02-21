@@ -37,7 +37,7 @@ class RoomerRoomState: GKState {
         
         // Spawn Bag
         let bag = Items(
-            imageNamed: "",
+            imageNamed: "bag",
             serviceCategory: .bag,
             isHold: false,
             categoryMask: .bag,
