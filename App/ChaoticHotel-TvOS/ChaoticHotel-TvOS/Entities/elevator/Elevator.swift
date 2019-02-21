@@ -26,11 +26,11 @@ class Elevator: InteractEntity {
         // Add RenderComponent
         let renderComponent = RenderComponent(imageNamed: "")
         renderComponent.node = SKSpriteNode(texture: nil, color: .gray, size: CGSize(width: 135, height: 50))
-        renderComponent.node?.entity = self
+        renderComponent.node.entity = self
         self.addComponent(renderComponent)
         
         // Add Physic component
-        let physicsComponent = PhysicsBoydComponent(node: renderComponent.node!, categoryMask: .reception)
+        let physicsComponent = PhysicsBoydComponent(node: renderComponent.node, categoryMask: .reception)
         
         physicsComponent.physicBody.collisionBitMask =
             ~(CategoryMask.contactWithAllCategory())

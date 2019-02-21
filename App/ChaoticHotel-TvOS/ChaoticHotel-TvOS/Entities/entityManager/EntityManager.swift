@@ -20,7 +20,8 @@ class EntityManager {
     lazy var componentSystems: [GKComponentSystem] = {
         let moveSystem = GKComponentSystem(componentClass: MoveComponent.self)
         let lifeSytem = GKComponentSystem(componentClass: LifeTimeComponent.self)
-        return [moveSystem, lifeSytem]
+        let spawnGoopSystem = GKComponentSystem(componentClass: SpawnGoopComponent.self)
+        return [moveSystem, spawnGoopSystem, lifeSytem]
     }()
     
     // Init with a Scene
@@ -32,15 +33,16 @@ class EntityManager {
     func add(_ entity: GKEntity) {
         self.entities.insert(entity)
         
+        // Add rigth components systems
+        for componentSystem in componentSystems {
+            componentSystem.addComponent(foundIn: entity)
+        }
+        
         // If has SpriteComponent, so it's rendered on Scene
         if let spriteNode = entity.component(ofType: RenderComponent.self)?.node {
             scene.addChild(spriteNode)
         }
         
-        // Add rigth components systems
-        for componentSystem in componentSystems {
-            componentSystem.addComponent(foundIn: entity)
-        }
     }
     
     // Remove an Entity

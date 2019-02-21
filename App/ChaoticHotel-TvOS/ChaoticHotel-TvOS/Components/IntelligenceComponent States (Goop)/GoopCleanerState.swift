@@ -28,10 +28,13 @@ class GoopCleanerState: GKState {
         
         let spriteNode = self.entity.component(ofType: RenderComponent.self)
         guard let node = spriteNode?.node else {return}
-        PlayerConstants.velocity = PlayerConstants.normal
-        node.removeFromParent()
+        
+        if let gameScene = node.scene as? GameScene {
+            gameScene.entityManager.remove(self.entity)
+        }
         
         //TODO - Liberar pontuação para o usuário
+        PlayerConstants.velocity = PlayerConstants.normal
         
     }
 }
