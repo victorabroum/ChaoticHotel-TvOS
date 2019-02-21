@@ -11,7 +11,7 @@ import GameplayKit
 
 class RenderComponent: GKComponent {
     
-    var node: SKSpriteNode?
+    var node: SKSpriteNode
     var position: CGPoint = .zero
     
     init(imageNamed: String, onPosition pos: CGPoint = .zero) {
@@ -21,13 +21,13 @@ class RenderComponent: GKComponent {
         
         // Initiliaze the node with rigth texture
         self.node = SKSpriteNode(texture: texture, color: .clear, size: texture.size())
-        self.node?.name = "\(imageNamed)"
+        self.node.name = "\(imageNamed)"
         
         // Initiliaze the positon
         self.position = pos
         
         // Set initial position to Node
-        self.node!.position = pos
+        self.node.position = pos
         
         super.init()
         

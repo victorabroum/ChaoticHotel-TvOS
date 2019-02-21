@@ -50,7 +50,7 @@ class GameScene: SKScene {
         
         // Change Sprite scale
         if let renderComponent = staff.component(ofType: RenderComponent.self) {
-            renderComponent.node?.position = spawnStaff
+            renderComponent.node.position = spawnStaff
             
         }
         self.entityManager.add(staff)
@@ -69,7 +69,7 @@ class GameScene: SKScene {
         
         let ySlime = self.childNode(withName: "elevatorGoDown")?.position
         
-        renderComponentSlime.node?.position = CGPoint.init(
+        renderComponentSlime.node.position = CGPoint.init(
             x: -(self.size.width / 2) - 100,
                 y: ySlime!.y + 10)
         
@@ -79,34 +79,34 @@ class GameScene: SKScene {
         // Reception Table Entity
         self.receptionTable = Reception(hotel: self.hotel)
         if let renderComp = self.receptionTable.component(ofType: RenderComponent.self) {
-            renderComp.node?.position = self.childNode(withName: "reception")!.position
+            renderComp.node.position = self.childNode(withName: "reception")!.position
         }
         self.entityManager.add(self.receptionTable)
         
         // Elevator Entity
         var elevator = Elevator(goTo: .down)
         if let renderComp = elevator.component(ofType: RenderComponent.self) {
-            renderComp.node?.position = self.childNode(withName: "elevatorGoDown")!.position
+            renderComp.node.position = self.childNode(withName: "elevatorGoDown")!.position
         }
         self.entityManager.add(elevator)
         
         elevator = Elevator(goTo: .upper)
         if let renderComp = elevator.component(ofType: RenderComponent.self) {
-            renderComp.node?.position = self.childNode(withName: "elevatorGoUp")!.position
+            renderComp.node.position = self.childNode(withName: "elevatorGoUp")!.position
         }
         self.entityManager.add(elevator)
         
         // Kitchen Entity
         let kitchen = Kitchen()
         if let renderComp = kitchen.component(ofType: RenderComponent.self) {
-            renderComp.node?.position = self.childNode(withName: "roomServiceStation")!.position
+            renderComp.node.position = self.childNode(withName: "roomServiceStation")!.position
         }
         self.entityManager.add(kitchen)
         
         // Items Entity
         let itemMop = Items(imageNamed: "", serviceCategory: .clean, isHold: false, categoryMask: .mop, lifeTime: -1)
         if let renderComp = itemMop.component(ofType: RenderComponent.self) {
-            renderComp.node?.position = self.childNode(withName: "rubber")!.position
+            renderComp.node.position = self.childNode(withName: "rubber")!.position
         }
         self.entityManager.add(itemMop)
         
@@ -148,7 +148,7 @@ class GameScene: SKScene {
             }
             self.entityManager.add(roomer)
             
-            renderComponent.node?.position = (self.childNode(withName: "spawnRoomer")?.position)!
+            renderComponent.node.position = (self.childNode(withName: "spawnRoomer")?.position)!
             
             self.roomer.stateMachine.enter(RoomerArriveState.self)
             

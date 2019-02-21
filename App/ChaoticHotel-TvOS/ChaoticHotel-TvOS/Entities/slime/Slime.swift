@@ -19,7 +19,7 @@ class Slime: GKEntity {
         super.init()
         // Created instance components
         let renderComponent = RenderComponent.init(imageNamed: name)
-        let moveComponent = MoveComponent.init()
+        let moveComponent = MoveComponent(maxSpeed: 5)
         
         // Add components to Entity
         self.addComponent(moveComponent)

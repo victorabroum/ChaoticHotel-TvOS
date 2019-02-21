@@ -18,20 +18,20 @@ class Goop: AssistEntity {
         self.assistDelegate = self
         
         let renderComponent = RenderComponent.init(imageNamed: image)
-        renderComponent.node?.entity = self
+        renderComponent.node.entity = self
         // TODO: JUST FOR TESTS
-        renderComponent.node?.position = parentNode.position
-        renderComponent.node?.position.y -= parentNode.size.height / 2 - 40
-        renderComponent.node?.xScale = 0.25
-        renderComponent.node?.yScale = 0.25
+        renderComponent.node.position = parentNode.position
+        renderComponent.node.position.y -= parentNode.size.height / 2 - 40
+        renderComponent.node.xScale = 0.25
+        renderComponent.node.yScale = 0.25
         
-        let ballonComponent = BallonComponent.init(nodeSuper: renderComponent.node!, andTexture: nil)
+        let ballonComponent = BallonComponent.init(nodeSuper: renderComponent.node, andTexture: nil)
         self.addComponent(renderComponent)
         self.addComponent(ballonComponent)
         self.prepateStateMachine()
         
         // ADD Physics
-        let physicsComp = PhysicsBoydComponent(node: renderComponent.node!, categoryMask: .goop)
+        let physicsComp = PhysicsBoydComponent(node: renderComponent.node, categoryMask: .goop)
         physicsComp.physicBody.contactTestBitMask =
             ~(CategoryMask.contactWithAllCategory())
         physicsComp.physicBody.collisionBitMask =
