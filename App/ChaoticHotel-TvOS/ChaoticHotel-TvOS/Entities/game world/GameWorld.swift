@@ -21,6 +21,13 @@ class GameWorld: GKEntity {
         self.hotelEntity = Hotel(availableRooms: avaibaleRooms.children, receptionPoint: receptionPoint)
         super.init()
         
+        // Add Spawn Roomer component
+        let spawnPoint = self.scene.childNode(withName: "spawnRoomer")!.position
+        self.addComponent(
+            SpawnRoomerComponent(
+                entityManager: self.scene.entityManager,
+                onPoint: spawnPoint))
+        
         // Add GameWorld to EntityManager
         self.scene.entityManager.add(self)
         

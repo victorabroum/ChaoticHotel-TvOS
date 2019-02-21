@@ -17,4 +17,9 @@ extension EntityManager {
         goop.stateMachine.enter(GoopIdleState.self)
         self.add(goop)
     }
+    
+    func spawnRoomer(ofType roomer: Roomer) {
+        self.add(roomer)
+        roomer.stateMachine.enter(RoomerArriveState.self)
+    }
 }

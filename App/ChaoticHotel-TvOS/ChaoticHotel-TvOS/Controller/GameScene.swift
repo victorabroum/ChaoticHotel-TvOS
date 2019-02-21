@@ -30,28 +30,26 @@ class GameScene: SKScene {
     var receptionTable: Reception!
     var entityManager: EntityManager!
     
-    var listOfRoomers = [Roomer]()
     let peerTV = MCPeerID.init(displayName: "AppleTV-OS")
     
     // Test
     var roomer: Roomer!
 
     override func sceneDidLoad() {
-        self.spawnStaff = (self.childNode(withName: "elevatorGoUp")?.position)!
-
+        // Multipeer Service Delegate
         service.delegate = self
-        self.lastUpdateTime = 0
         
+        // Initiate entity manager
         self.entityManager = EntityManager(scene: self)
         
+        self.spawnStaff = (self.childNode(withName: "elevatorGoUp")?.position)!
+
         // Test Staff Entity
         staff = Staff(withImageNamed: "staff_placeHolder")
         self.players = [peerTV: staff]
-        
-        // Change Sprite scale
+        // Change Sprite position
         if let renderComponent = staff.component(ofType: RenderComponent.self) {
             renderComponent.node.position = spawnStaff
-            
         }
         self.entityManager.add(staff)
         
@@ -117,12 +115,10 @@ class GameScene: SKScene {
         tapRecognizer.allowedPressTypes = [UIPress.PressType.playPause.rawValue] as [NSNumber]
         self.view!.addGestureRecognizer(tapRecognizer)
         
-         self.addChild(BackgroundHotelNode())
+//         self.addChild(BackgroundHotelNode())
     }
 
     override func update(_ currentTime: TimeInterval) {
-        // Called before each frame is rendered
-        //Slime shot goop in hotel - Teste
         
         // Initialize _lastUpdateTime if it has not already been
         if (self.lastUpdateTime == 0) {
@@ -133,28 +129,6 @@ class GameScene: SKScene {
         let deltaTime = currentTime - self.lastUpdateTime
         
         self.entityManager.update(deltaTime)
-        
-        // Just for Spawn Roomer
-        // TODO: Spawn Logic is in GameWorld Entity
-        let spawnRoomerInterval = TimeInterval(15)
-        if (CACurrentMediaTime() - lastSpawn > spawnRoomerInterval) {
-            lastSpawn = CACurrentMediaTime()
-            print("De \(spawnRoomerInterval) em \(spawnRoomerInterval) segundos")
-            
-            // Test Roomer
-            roomer = Roomer(withImageNamed: ["bichoDoPe_placeHolder", "reinaldo_placeHolder"].randomElement()!)
-            guard let renderComponent = roomer.component(ofType: RenderComponent.self) else {
-                return
-            }
-            self.entityManager.add(roomer)
-            
-            renderComponent.node.position = (self.childNode(withName: "spawnRoomer")?.position)!
-            
-            self.roomer.stateMachine.enter(RoomerArriveState.self)
-            
-            self.listOfRoomers.append(roomer)
-            
-        }
         
         self.lastUpdateTime = currentTime
     }
