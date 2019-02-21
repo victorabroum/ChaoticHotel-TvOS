@@ -21,15 +21,15 @@ class Staff: GKEntity {
         // Add RenderComponent
         let renderComponent = RenderComponent(imageNamed: imageNamed)
         
-        renderComponent.node?.entity = self
+        renderComponent.node.entity = self
         
         self.addComponent(renderComponent)
        
         // Add MoveComponent
-        self.addComponent(MoveComponent())
+        self.addComponent(MoveComponent(maxSpeed: Float(PlayerConstants.normal)))
         
         // Add PhysicsBodyComponent
-        let physicsBodyComponent = PhysicsBoydComponent(node: renderComponent.node!, categoryMask: CategoryMask.staff)
+        let physicsBodyComponent = PhysicsBoydComponent(node: renderComponent.node, categoryMask: CategoryMask.staff)
         
         // Staff contact with all Entity less him self
         physicsBodyComponent.physicBody.contactTestBitMask =

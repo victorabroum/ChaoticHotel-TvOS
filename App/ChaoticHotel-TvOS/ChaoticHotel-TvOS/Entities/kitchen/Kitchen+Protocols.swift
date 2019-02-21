@@ -23,10 +23,10 @@ extension Kitchen: InteractDelegate {
                     categoryMask: .food,
                     lifeTime: WaitTimer.foodLifeTime)
                 guard let gameScene =
-                    staff.component(ofType: RenderComponent.self)!.node?.scene as? GameScene else { return }
+                    staff.component(ofType: RenderComponent.self)!.node.scene as? GameScene else { return }
                 gameScene.entityManager.add(foodPlate)
                 let node = foodPlate.component(ofType: RenderComponent.self)!.node
-                node!.color = UIColor(red: 0.79, green: 0.15, blue: 0.15, alpha: 1.0)
+                node.color = UIColor(red: 0.79, green: 0.15, blue: 0.15, alpha: 1.0)
                 staff.holdItem = foodPlate
                 foodPlate.hold(callBy: staff)
             }

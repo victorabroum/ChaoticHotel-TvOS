@@ -57,6 +57,9 @@
 		76F618A2221DDA4D00B92A74 /* ZPositions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F618A1221DDA4D00B92A74 /* ZPositions.swift */; };
 		76F618A5221DE0DB00B92A74 /* BackgroundHotelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F618A4221DE0DB00B92A74 /* BackgroundHotelNode.swift */; };
 		76F618A7221DE13A00B92A74 /* LugaggeCartNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F618A6221DE13A00B92A74 /* LugaggeCartNode.swift */; };
+		76F618AA221EE17600B92A74 /* SpawnGoopComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F618A9221EE17600B92A74 /* SpawnGoopComponent.swift */; };
+		76F618AD221EE2DB00B92A74 /* EntityManager+SpawnControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F618AC221EE2DB00B92A74 /* EntityManager+SpawnControl.swift */; };
+		76F618AF221F14C900B92A74 /* SpawnRoomerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F618AE221F14C900B92A74 /* SpawnRoomerComponent.swift */; };
 		FD0F59CD221C7BAD00856B2F /* EasyMultiPeerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0F59CA221C7BAD00856B2F /* EasyMultiPeerService.swift */; };
 		FD0F59CE221C7BAD00856B2F /* EasyMultiPeerService+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0F59CB221C7BAD00856B2F /* EasyMultiPeerService+Extensions.swift */; };
 		FD0F59CF221C7BAD00856B2F /* EasyMultiPeerService+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0F59CC221C7BAD00856B2F /* EasyMultiPeerService+Protocols.swift */; };
@@ -126,6 +129,9 @@
 		76F618A1221DDA4D00B92A74 /* ZPositions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZPositions.swift; sourceTree = "<group>"; };
 		76F618A4221DE0DB00B92A74 /* BackgroundHotelNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundHotelNode.swift; sourceTree = "<group>"; };
 		76F618A6221DE13A00B92A74 /* LugaggeCartNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LugaggeCartNode.swift; sourceTree = "<group>"; };
+		76F618A9221EE17600B92A74 /* SpawnGoopComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpawnGoopComponent.swift; sourceTree = "<group>"; };
+		76F618AC221EE2DB00B92A74 /* EntityManager+SpawnControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EntityManager+SpawnControl.swift"; sourceTree = "<group>"; };
+		76F618AE221F14C900B92A74 /* SpawnRoomerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpawnRoomerComponent.swift; sourceTree = "<group>"; };
 		FD0F59CA221C7BAD00856B2F /* EasyMultiPeerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasyMultiPeerService.swift; sourceTree = "<group>"; };
 		FD0F59CB221C7BAD00856B2F /* EasyMultiPeerService+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EasyMultiPeerService+Extensions.swift"; sourceTree = "<group>"; };
 		FD0F59CC221C7BAD00856B2F /* EasyMultiPeerService+Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EasyMultiPeerService+Protocols.swift"; sourceTree = "<group>"; };
@@ -233,7 +239,7 @@
 				76D62B2E221C4BC5006A03DA /* items */,
 				76D62B23221C3B4E006A03DA /* kitchen */,
 				76D62B1E221B4F1D006A03DA /* elevator */,
-				76608BC122146AC90023C29C /* EntityManager.swift */,
+				76F618AB221EE2B500B92A74 /* entityManager */,
 				76D62B19221B44BF006A03DA /* reception */,
 				FDFF24F82217398900BF8593 /* goop */,
 				FDFF24F62217396A00BF8593 /* slime */,
@@ -248,8 +254,8 @@
 		76608BB922130F360023C29C /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				76F618A8221EE16300B92A74 /* slime */,
 				FDFF24FC2217405800BF8593 /* IntelligenceComponent States (Goop) */,
-				FDFF24CC2215E98F00BF8593 /* IntelligenceComponent States (Slime) */,
 				76608BC92214968F0023C29C /* IntelligenceComponent States (Roomer) */,
 				76608BBD22145A780023C29C /* RenderComponent.swift */,
 				76608BBF22145EA10023C29C /* MoveComponent.swift */,
@@ -259,6 +265,7 @@
 				76D62B0B221B2D89006A03DA /* ServiceComponent.swift */,
 				76D62B0D221B2D96006A03DA /* InteractionComponent.swift */,
 				76D62B2C221C49BF006A03DA /* LifeTimeComponent.swift */,
+				76F618AE221F14C900B92A74 /* SpawnRoomerComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -377,6 +384,24 @@
 				76F618A6221DE13A00B92A74 /* LugaggeCartNode.swift */,
 			);
 			path = customNodes;
+			sourceTree = "<group>";
+		};
+		76F618A8221EE16300B92A74 /* slime */ = {
+			isa = PBXGroup;
+			children = (
+				FDFF24CC2215E98F00BF8593 /* IntelligenceComponent States (Slime) */,
+				76F618A9221EE17600B92A74 /* SpawnGoopComponent.swift */,
+			);
+			path = slime;
+			sourceTree = "<group>";
+		};
+		76F618AB221EE2B500B92A74 /* entityManager */ = {
+			isa = PBXGroup;
+			children = (
+				76608BC122146AC90023C29C /* EntityManager.swift */,
+				76F618AC221EE2DB00B92A74 /* EntityManager+SpawnControl.swift */,
+			);
+			path = entityManager;
 			sourceTree = "<group>";
 		};
 		FD0F59C3221C7B5F00856B2F /* Connectivity */ = {
@@ -568,10 +593,12 @@
 				76F618A2221DDA4D00B92A74 /* ZPositions.swift in Sources */,
 				76608BC8221487B60023C29C /* Roomer.swift in Sources */,
 				76608BCF22149A2E0023C29C /* RoomerAssistState.swift in Sources */,
+				76F618AF221F14C900B92A74 /* SpawnRoomerComponent.swift in Sources */,
 				76D62B06221AF49E006A03DA /* GameWorld+SKPhysicsContactDelegate.swift in Sources */,
 				76608BD522149AF40023C29C /* RoomerRoomServiceState.swift in Sources */,
 				FDFF24CE2215EAEB00BF8593 /* SlimeIdleState.swift in Sources */,
 				FD0F59CE221C7BAD00856B2F /* EasyMultiPeerService+Extensions.swift in Sources */,
+				76F618AA221EE17600B92A74 /* SpawnGoopComponent.swift in Sources */,
 				FDA177C1221B42A600A8663D /* JoystickAction.swift in Sources */,
 				76608BBC221459930023C29C /* Staff.swift in Sources */,
 				76D62B22221B4FA8006A03DA /* Elevator+Protocols.swift in Sources */,
@@ -586,6 +613,7 @@
 				FDFF25002217414100BF8593 /* GoopCleanerState.swift in Sources */,
 				FDFF24D22215EE8900BF8593 /* Slime+Extensions.swift in Sources */,
 				76608BC4221478BE0023C29C /* MoveSystem.swift in Sources */,
+				76F618AD221EE2DB00B92A74 /* EntityManager+SpawnControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

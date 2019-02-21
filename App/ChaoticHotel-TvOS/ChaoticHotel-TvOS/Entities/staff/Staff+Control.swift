@@ -14,29 +14,32 @@ extension Staff {
         if let staffBodyComp = self.component(ofType: PhysicsBoydComponent.self) {
             
             guard let gameScene =
-                self.component(ofType: RenderComponent.self)?.node?.scene as? GameScene else { return }
+                self.component(ofType: RenderComponent.self)?.node.scene as? GameScene else { return }
             
             if (staffBodyComp.physicBody.allContactedBodies().isEmpty) {
-                print("Tá vazio")
                 if (self.holdItem != nil) {
                     self.holdItem.drop(callBy: self)
                 }
-            }
-            
-            for contact in staffBodyComp.physicBody.allContactedBodies() where contact.node != nil {
-                if let serviceComponent = (contact.node!.entity?.component(ofType: ServiceComponent.self)) {
-                    // Try to deliver a service
+            } else {
+                
+                for contact in staffBodyComp.physicBody.allContactedBodies() where contact.node != nil {
                     
-                    self.deliver(entityManager: gameScene.entityManager, aService: serviceComponent)
-                    
-                } else if let interaction =
-                    contact.node?.entity?.component(ofType: InteractionComponent.self) {
-                    print("INTERACT \(interaction)")
-                    
-                    if let interactionEntity = interaction.entity as? InteractEntity {
-                        interactionEntity.interactDelegate?.action(callBy: self)
+                    if let serviceComponent = (contact.node!.entity?.component(ofType: ServiceComponent.self)) {
+                        // Try to deliver a service
+                        
+                        self.deliver(entityManager: gameScene.entityManager, aService: serviceComponent)
+                        
+                    } else if let interaction =
+                        contact.node?.entity?.component(ofType: InteractionComponent.self) {
+                        print("INTERACT \(interaction)")
+                        
+                        if let interactionEntity = interaction.entity as? InteractEntity {
+                            interactionEntity.interactDelegate?.action(callBy: self)
+                        }
                     }
+                    
                 }
+                
             }
         }
     }

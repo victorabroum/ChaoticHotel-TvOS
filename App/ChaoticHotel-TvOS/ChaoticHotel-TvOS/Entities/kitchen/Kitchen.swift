@@ -26,13 +26,13 @@ class Kitchen: InteractEntity {
             color: .purple,
             size: CGSize(width: 250, height: 250)
         )
-        renderComp.node?.alpha = 0.75
-        renderComp.node?.entity = self
+        renderComp.node.alpha = 0.75
+        renderComp.node.entity = self
         self.addComponent(renderComp)
         
         // Add Physicsc
         let physicsComp = PhysicsBoydComponent(
-            node: renderComp.node!,
+            node: renderComp.node,
             categoryMask: .reception
         )
         // Don't collide and contact with nobody

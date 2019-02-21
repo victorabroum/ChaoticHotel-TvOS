@@ -14,7 +14,7 @@ import MultipeerConnectivity
 extension GameScene {
     
     @objc func playPauseClicked() {
-        staff.action()
+        self.players[self.peerTV]!.action()
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -88,9 +88,7 @@ extension GameScene: EasyMultiPeerDelegate {
             } else {
               let newStaff = Staff.init(withImageNamed: "staff_placeHolder")
             if let renderComponent = newStaff.component(ofType: RenderComponent.self) {
-                    renderComponent.node?.xScale = 0.3
-                    renderComponent.node?.yScale = 0.3
-                    renderComponent.node?.position = spawnStaff
+                    renderComponent.node.position = spawnStaff
             }
                 
             self.players[deviceID] = newStaff

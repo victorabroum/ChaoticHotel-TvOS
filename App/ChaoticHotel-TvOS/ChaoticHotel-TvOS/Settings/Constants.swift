@@ -20,9 +20,9 @@ struct WaitTimer {
 }
 
 struct BallonSize {
-    static let width: Double = 300.00
-    static let height: Double = 300.00
-    static let posY: CGFloat = 400.00
+    static let width: Double = 100.00
+    static let height: Double = 100.00
+    static let posY: CGFloat = 40.00
 }
 
 struct AnimationDuration {
@@ -30,9 +30,9 @@ struct AnimationDuration {
 }
 
 struct PlayerConstants {
-    static var velocity: CGFloat = PlayerConstants.normal
-    static let slow: CGFloat = 2
-    static let normal: CGFloat = 5
+    static var velocity: Float = PlayerConstants.normal
+    static let slow: Float = 2
+    static let normal: Float = 5
 }
 
 enum ServiceCategory {
@@ -47,4 +47,11 @@ enum Itens {
     case bag
     case mop // Esfregão
     case food
+}
+
+struct ListOfRoomers {
+    static let assests = [
+        "bichoDoPe_placeHolder",
+        "reinaldo_placeHolder"
+    ]
 }
