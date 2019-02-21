@@ -29,6 +29,13 @@ class GoopCleanerState: GKState {
         let spriteNode = self.entity.component(ofType: RenderComponent.self)
         guard let node = spriteNode?.node else {return}
         
+        guard let body = node.physicsBody else { return }
+        
+        if let staff = body.allContactedBodies().first?.node?.entity as? Staff {
+            guard let moveComp = staff.component(ofType: MoveComponent.self) else { return }
+            moveComp.maxSpeed = PlayerConstants.normal
+        }
+        
         if let gameScene = node.scene as? GameScene {
             gameScene.entityManager.remove(self.entity)
         }
