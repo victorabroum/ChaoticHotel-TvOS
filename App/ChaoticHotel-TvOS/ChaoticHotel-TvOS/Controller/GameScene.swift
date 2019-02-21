@@ -23,18 +23,12 @@ class GameScene: SKScene {
     
     var lastPoint: CGPoint!
     
-    var staff: Staff!
     var players: [MCPeerID: Staff]  = [:]
-    var hotel: Hotel!
     var gameWorld: GameWorld!
-    var receptionTable: Reception!
     var entityManager: EntityManager!
     
     let peerTV = MCPeerID.init(displayName: "AppleTV-OS")
     
-    // Test
-    var roomer: Roomer!
-
     override func sceneDidLoad() {
         // Multipeer Service Delegate
         service.delegate = self
@@ -45,7 +39,7 @@ class GameScene: SKScene {
         self.spawnStaff = (self.childNode(withName: "elevatorGoUp")?.position)!
 
         // Test Staff Entity
-        staff = Staff(withImageNamed: "staff_placeHolder")
+        let staff = Staff(withImageNamed: "staff_placeHolder")
         self.players = [peerTV: staff]
         // Change Sprite position
         if let renderComponent = staff.component(ofType: RenderComponent.self) {
@@ -55,58 +49,6 @@ class GameScene: SKScene {
         
         // GameWorld
         self.gameWorld = GameWorld(scene: self)
-        self.hotel = self.gameWorld.hotelEntity
-        
-        //Teste Slime Entity
-        let slime = Slime(
-            withImageNamed: "slime_placeHolder",
-            entityManager: self.entityManager,
-            possibleSpawnArea: self.childNode(withName: "slimeArea")!)
-        
-        guard let renderComponentSlime = slime.component(ofType: RenderComponent.self) else {return}
-        
-        let ySlime = self.childNode(withName: "elevatorGoDown")?.position
-        
-        renderComponentSlime.node.position = CGPoint.init(
-            x: -(self.size.width / 2) - 100,
-                y: ySlime!.y + 10)
-        
-        self.entityManager.add(slime)
-        slime.crawlingInFloor()
-        
-        // Reception Table Entity
-        self.receptionTable = Reception(hotel: self.hotel)
-        if let renderComp = self.receptionTable.component(ofType: RenderComponent.self) {
-            renderComp.node.position = self.childNode(withName: "reception")!.position
-        }
-        self.entityManager.add(self.receptionTable)
-        
-        // Elevator Entity
-        var elevator = Elevator(goTo: .down)
-        if let renderComp = elevator.component(ofType: RenderComponent.self) {
-            renderComp.node.position = self.childNode(withName: "elevatorGoDown")!.position
-        }
-        self.entityManager.add(elevator)
-        
-        elevator = Elevator(goTo: .upper)
-        if let renderComp = elevator.component(ofType: RenderComponent.self) {
-            renderComp.node.position = self.childNode(withName: "elevatorGoUp")!.position
-        }
-        self.entityManager.add(elevator)
-        
-        // Kitchen Entity
-        let kitchen = Kitchen()
-        if let renderComp = kitchen.component(ofType: RenderComponent.self) {
-            renderComp.node.position = self.childNode(withName: "roomServiceStation")!.position
-        }
-        self.entityManager.add(kitchen)
-        
-        // Items Entity
-        let itemMop = Items(imageNamed: "", serviceCategory: .clean, isHold: false, categoryMask: .mop, lifeTime: -1)
-        if let renderComp = itemMop.component(ofType: RenderComponent.self) {
-            renderComp.node.position = self.childNode(withName: "rubber")!.position
-        }
-        self.entityManager.add(itemMop)
         
     }
     

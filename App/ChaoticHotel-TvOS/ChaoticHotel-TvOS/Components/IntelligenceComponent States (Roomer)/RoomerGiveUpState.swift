@@ -39,11 +39,11 @@ class RoomerGiveUpState: GKState {
         guard let scene = node.scene as? GameScene else { return }
         
         if (self.entity.room != nil) {
-            scene.hotel.addAvailableRoom(self.entity.room)
+            scene.gameWorld.hotelEntity.addAvailableRoom(self.entity.room)
         }
         
         if (!self.entity.isInRoom) {
-            scene.hotel.exitQueue()
+            scene.gameWorld.hotelEntity.exitQueue()
         }
         
         // TODO: Feedback Roomer is angry

@@ -32,7 +32,7 @@ class RoomerArriveState: GKState {
         guard let node = self.entity.component(ofType: RenderComponent.self)?.node else { return }
         guard let scene = node.scene as? GameScene else { return }
         
-        scene.hotel.enterOnQueue(self.entity) {
+        scene.gameWorld.hotelEntity.enterOnQueue(self.entity) {
             self.entity.stateMachine.enter(RoomerListnerState.self)
         }
     }
