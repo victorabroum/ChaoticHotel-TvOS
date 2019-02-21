@@ -63,6 +63,10 @@ extension GameScene {
 }
 
 extension GameScene: EasyMultiPeerDelegate {
+    func peerIsDisconnected(peer: MCPeerID) {
+        self.deletePlayerToScene(peer: peer)
+    }
+    
     func connectedDevicesChanged(manager: EasyMultiPeerService, connectedDevices: [MCPeerID]) {
         self.createNewPlayer(forDevice: connectedDevices)
         
@@ -94,6 +98,22 @@ extension GameScene: EasyMultiPeerDelegate {
 
             }
         }
+    }
+    
+    func deletePlayerToScene(peer: MCPeerID) {
+        var listOfPlayer = self.players
+        let players = self.players.keys
+        
+        for player in players {
+            if player === peer {
+              let staff = listOfPlayer.removeValue(forKey: peer)
+              guard let deleteStaff = staff else {return}
+              self.entityManager.remove(deleteStaff)
+            } else {
+                print("It's not possible remove peer")
+            }
+        }
+        print("Total player ->> \(listOfPlayer.count)")
     }
     
     func didRecived(manager: EasyMultiPeerService, message: String, peerID: MCPeerID) {

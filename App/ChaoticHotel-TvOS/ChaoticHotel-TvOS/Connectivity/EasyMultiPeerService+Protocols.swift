@@ -13,4 +13,5 @@ public protocol EasyMultiPeerDelegate: class {
     
     func connectedDevicesChanged(manager: EasyMultiPeerService, connectedDevices: [MCPeerID])
     func didRecived(manager: EasyMultiPeerService, message: String, peerID: MCPeerID)
+    func peerIsDisconnected(peer: MCPeerID)
 }
