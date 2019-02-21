@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SpriteKit
 import GameplayKit
 
 enum Direction: String, CaseIterable {
@@ -25,9 +26,40 @@ enum Direction: String, CaseIterable {
     
 }
 
-class MoveComponent: GKComponent {
+class MoveComponent: GKAgent2D, GKAgentDelegate {
     
-    var direction: Direction!
+    var direction: Direction! = nil
+    
+    init(maxSpeed: Float) {
+        super.init()
+        self.maxSpeed = maxSpeed
+        self.mass = 0.01
+        self.maxAcceleration = 100
+        delegate = self
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func agentWillUpdate(_ agent: GKAgent) {
+        guard let spriteComponent = entity?.component(ofType: RenderComponent.self) else {
+            return
+        }
+        print("WILL UPDATE AGENTE")
+        position = float2(
+            Float(spriteComponent.node.position.x),
+            Float(spriteComponent.node.position.y))
+    }
+    
+    func agentDidUpdate(_ agent: GKAgent) {
+        
+        guard let spriteComponent = entity?.component(ofType: RenderComponent.self) else {
+            return
+        }
+        print("DID UPDATE AGENTE")
+        spriteComponent.node.position = CGPoint(x: CGFloat(position.x), y: CGFloat(position.y))
+    }
     
     func move(to direction: Direction) {
         
@@ -40,12 +72,12 @@ class MoveComponent: GKComponent {
             if (node.xScale < 0) {
                 node.xScale *= -1
             }
-            node.position.x += PlayerConstants.velocity
+            node.position.x += CGFloat(self.maxSpeed)
         case .left:
             if (node.xScale > 0) {
                 node.xScale *= -1
             }
-            node.position.x -= PlayerConstants.velocity
+            node.position.x -= CGFloat(self.maxSpeed)
         case .idle:
             return
         }
@@ -61,5 +93,4 @@ class MoveComponent: GKComponent {
             }
         }
     }
-    
 }

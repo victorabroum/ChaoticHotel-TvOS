@@ -31,14 +31,14 @@ class Items: InteractEntity {
             texture: nil,
             color: .orange,
             size: CGSize(width: 29, height: 220))
-        renderComp.node?.entity = self
+        renderComp.node.entity = self
         self.addComponent(renderComp)
         
         // ADD Physics Body
         let physicsComp = PhysicsBoydComponent(
-            node: renderComp.node!,
+            node: renderComp.node,
             categoryMask: categoryMask,
-            physicBody: SKPhysicsBody(rectangleOf: renderComp.node!.size))
+            physicBody: SKPhysicsBody(rectangleOf: renderComp.node.size))
         physicsComp.physicBody.contactTestBitMask =
             ~(CategoryMask.contactWithAllCategory())
         physicsComp.physicBody.collisionBitMask =

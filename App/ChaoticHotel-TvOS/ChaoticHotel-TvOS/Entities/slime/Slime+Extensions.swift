@@ -24,7 +24,7 @@ extension Slime {
     
     func waitForCrawling(withDuration duration: TimeInterval, withCompletion completion: @escaping () -> Void ) {
         let slime = self.component(ofType: RenderComponent.self)
-        slime?.node?.run(SKAction.wait(forDuration: duration)) {
+        slime?.node.run(SKAction.wait(forDuration: duration)) {
             completion()
         }        
     }

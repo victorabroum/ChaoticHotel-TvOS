@@ -14,7 +14,7 @@ extension Staff {
         if let staffBodyComp = self.component(ofType: PhysicsBoydComponent.self) {
             
             guard let gameScene =
-                self.component(ofType: RenderComponent.self)?.node?.scene as? GameScene else { return }
+                self.component(ofType: RenderComponent.self)?.node.scene as? GameScene else { return }
             
             if (staffBodyComp.physicBody.allContactedBodies().isEmpty) {
                 if (self.holdItem != nil) {
