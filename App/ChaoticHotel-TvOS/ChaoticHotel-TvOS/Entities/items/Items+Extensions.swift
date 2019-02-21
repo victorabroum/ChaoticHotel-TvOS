@@ -45,9 +45,6 @@ extension Items {
         guard let itemNode = self.component(ofType: RenderComponent.self)?.node else { return }
         
         itemNode.move(toParent: node)
-//        itemNode.zPosition = node.zPosition + 10
-        itemNode.xScale = 2.5
-        itemNode.yScale = 2.5
         itemNode.position = .zero
         itemNode.physicsBody = nil
     }
@@ -68,8 +65,6 @@ extension Items {
         guard let itemNode = self.component(ofType: RenderComponent.self)?.node else { return }
         
         itemNode.move(toParent: itemNode.scene!)
-        itemNode.xScale = 1
-        itemNode.yScale = 1
         itemNode.physicsBody = self.physicsBodyComp.physicBody
         
     }

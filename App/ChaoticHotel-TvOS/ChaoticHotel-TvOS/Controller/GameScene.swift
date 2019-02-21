@@ -50,8 +50,6 @@ class GameScene: SKScene {
         
         // Change Sprite scale
         if let renderComponent = staff.component(ofType: RenderComponent.self) {
-            renderComponent.node?.xScale = 0.3
-            renderComponent.node?.yScale = 0.3
             renderComponent.node?.position = spawnStaff
             
         }
@@ -61,20 +59,16 @@ class GameScene: SKScene {
         self.gameWorld = GameWorld(scene: self)
         self.hotel = self.gameWorld.hotelEntity
         
-        self.physicsWorld.contactDelegate = self.gameWorld
-        
         //Teste Slime Entity
-        let slime = Slime.init(withImageNamed: "staff_placeHolder", entityManager: self.entityManager)
+        let slime = Slime.init(withImageNamed: "slime_placeHolder", entityManager: self.entityManager)
         
         guard let renderComponentSlime = slime.component(ofType: RenderComponent.self) else {return}
         
-        renderComponentSlime.node?.xScale = 0.35
-        renderComponentSlime.node?.yScale = 0.35
         let ySlime = self.childNode(withName: "elevatorGoDown")?.position
         
         renderComponentSlime.node?.position = CGPoint.init(
             x: -(self.size.width / 2) - 100,
-                y: ySlime?.y ?? 0)
+                y: ySlime!.y + 10)
         
         self.entityManager.add(slime)
         slime.crawlingInFloor()
@@ -120,7 +114,7 @@ class GameScene: SKScene {
         tapRecognizer.allowedPressTypes = [UIPress.PressType.playPause.rawValue] as [NSNumber]
         self.view!.addGestureRecognizer(tapRecognizer)
         
-//        self.addChild(BackgroundHotelNode())
+//         self.addChild(BackgroundHotelNode())
     }
 
     override func update(_ currentTime: TimeInterval) {
@@ -135,6 +129,8 @@ class GameScene: SKScene {
         // Calculate time since last update
         let deltaTime = currentTime - self.lastUpdateTime
         
+        self.entityManager.update(deltaTime)
+        
         // Just for Spawn Roomer
         // TODO: Spawn Logic is in GameWorld Entity
         let spawnRoomerInterval = TimeInterval(15)
@@ -143,12 +139,10 @@ class GameScene: SKScene {
             print("De \(spawnRoomerInterval) em \(spawnRoomerInterval) segundos")
             
             // Test Roomer
-            roomer = Roomer(withImageNamed: "placeHolder_reinaldo")
+            roomer = Roomer(withImageNamed: ["bichoDoPe_placeHolder", "reinaldo_placeHolder"].randomElement()!)
             guard let renderComponent = roomer.component(ofType: RenderComponent.self) else {
                 return
             }
-            renderComponent.node?.xScale = 0.4
-            renderComponent.node?.yScale = 0.4
             self.entityManager.add(roomer)
             
             renderComponent.node?.position = (self.childNode(withName: "spawnRoomer")?.position)!
@@ -160,9 +154,6 @@ class GameScene: SKScene {
         }
         
         self.lastUpdateTime = currentTime
-        
-        self.entityManager.update(deltaTime)
-        
     }
     
 }

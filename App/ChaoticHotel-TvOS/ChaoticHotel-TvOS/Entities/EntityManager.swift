@@ -20,8 +20,7 @@ class EntityManager {
     lazy var componentSystems: [GKComponentSystem] = {
         let moveSystem = GKComponentSystem(componentClass: MoveComponent.self)
         let lifeSytem = GKComponentSystem(componentClass: LifeTimeComponent.self)
-        let slimeSystem = GKComponentSystem(componentClass: Slime.self)
-        return [moveSystem, lifeSytem, slimeSystem]
+        return [moveSystem, lifeSytem]
     }()
     
     // Init with a Scene
@@ -56,7 +55,7 @@ class EntityManager {
     
     func update(_ deltaTime: CFTimeInterval) {
         
-        // Update entities
+//        // Update entities
         for entity in self.entities {
             entity.update(deltaTime: deltaTime)
         }

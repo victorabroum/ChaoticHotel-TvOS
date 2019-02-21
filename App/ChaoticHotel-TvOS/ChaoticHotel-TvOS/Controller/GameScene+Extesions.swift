@@ -84,8 +84,6 @@ extension GameScene: EasyMultiPeerDelegate {
             } else {
               let newStaff = Staff.init(withImageNamed: "staff_placeHolder")
             if let renderComponent = newStaff.component(ofType: RenderComponent.self) {
-                    renderComponent.node?.xScale = 0.3
-                    renderComponent.node?.yScale = 0.3
                     renderComponent.node?.position = spawnStaff
             }
                 
