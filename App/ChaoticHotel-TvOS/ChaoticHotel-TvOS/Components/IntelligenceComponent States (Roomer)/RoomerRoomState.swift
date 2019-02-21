@@ -33,6 +33,8 @@ class RoomerRoomState: GKState {
         
         guard let scene = node.scene as? GameScene else { return }
         
+        scene.gameWorld.hotelEntity.enterOnRoom(roomer: self.entity)
+        
         // Spawn Bag
         let bag = Items(
             imageNamed: "",
@@ -45,10 +47,8 @@ class RoomerRoomState: GKState {
         bagNode.color = UIColor(red: 0.03, green: 0.74, blue: 0.56, alpha: 1.0)
         bagNode.position = scene.childNode(withName: "luggagedCart")!.position
         scene.entityManager.add(bag)
-    
-        scene.gameWorld.hotelEntity.enterOnRoom(roomer: self.entity)
         
-        node.run(SKAction.wait(forDuration: 1)) {
+        node.run(SKAction.wait(forDuration: 2)) {
             self.stateMachine?.enter(RoomerListnerState.self)
         }
     }

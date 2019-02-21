@@ -54,9 +54,21 @@ extension EasyMultiPeerService: MCNearbyServiceBrowserDelegate {
 extension EasyMultiPeerService: MCSessionDelegate {
     
     public func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
-        NSLog("%@", "peer \(peerID) didChangeState: \(state.rawValue)")
-        self.delegate?.connectedDevicesChanged(manager: self, connectedDevices:
-        session.connectedPeers.map { $0 })}
+        
+        switch state {
+        case .connected:
+            print("Session Connected")
+            self.delegate?.connectedDevicesChanged(manager: self, connectedDevices:
+                [peerID])
+        case .notConnected:
+            print("Session NotConnected")
+            self.delegate?.peerIsDisconnected(peer: peerID)
+        case .connecting:
+            print("Session Connecting")
+        default:
+            print("Default")
+        }
+    }
     
     public func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
         NSLog("%@", "didReceiveData: \(data)")
