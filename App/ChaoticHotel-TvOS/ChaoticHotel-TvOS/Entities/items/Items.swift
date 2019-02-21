@@ -27,10 +27,6 @@ class Items: InteractEntity {
         
         // ADD Render
         let renderComp = RenderComponent(imageNamed: imageNamed)
-        renderComp.node = SKSpriteNode(
-            texture: nil,
-            color: .orange,
-            size: CGSize(width: 29, height: 220))
         renderComp.node.entity = self
         self.addComponent(renderComp)
         
