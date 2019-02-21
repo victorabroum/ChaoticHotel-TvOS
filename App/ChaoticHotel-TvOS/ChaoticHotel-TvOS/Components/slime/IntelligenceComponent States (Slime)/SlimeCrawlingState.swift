@@ -31,9 +31,10 @@ class SlimeCrawlingState: GKState {
         
         let movement = self.entity.component(ofType: MoveComponent.self)
         
-        let pointRight = CGPoint.init(x: (node.scene?.size.width)! / 2 + 100, y: node.position.y)
+        let offset = node.size.height + 100
+        let pointRight = CGPoint.init(x: (node.scene?.size.width)! / 2 + offset, y: node.position.y)
         
-        let pointLeft = CGPoint.init(x: -((node.scene?.size.width)! / 2) - 100, y: node.position.y)
+        let pointLeft = CGPoint.init(x: -((node.scene?.size.width)! / 2) - offset, y: node.position.y)
         
         movement?.move(to: pointRight, withDuration: WaitTimer.crawling, withCompletion: {            
             movement?.move(to: pointLeft, withDuration: WaitTimer.crawling, withCompletion: {

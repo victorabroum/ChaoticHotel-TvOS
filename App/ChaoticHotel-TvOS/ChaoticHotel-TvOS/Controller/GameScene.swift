@@ -57,23 +57,6 @@ class GameScene: SKScene {
         self.gameWorld = GameWorld(scene: self)
         self.hotel = self.gameWorld.hotelEntity
         
-        //Teste Slime Entity
-        let slime = Slime(
-            withImageNamed: "slime_placeHolder",
-            entityManager: self.entityManager,
-            possibleSpawnArea: self.childNode(withName: "slimeArea")!)
-        
-        guard let renderComponentSlime = slime.component(ofType: RenderComponent.self) else {return}
-        
-        let ySlime = self.childNode(withName: "elevatorGoDown")?.position
-        
-        renderComponentSlime.node.position = CGPoint.init(
-            x: -(self.size.width / 2) - 100,
-                y: ySlime!.y + 10)
-        
-        self.entityManager.add(slime)
-        slime.crawlingInFloor()
-        
         // Reception Table Entity
         self.receptionTable = Reception(hotel: self.hotel)
         if let renderComp = self.receptionTable.component(ofType: RenderComponent.self) {

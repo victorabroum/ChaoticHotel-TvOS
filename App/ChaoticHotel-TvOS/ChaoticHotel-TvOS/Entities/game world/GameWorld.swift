@@ -37,6 +37,9 @@ class GameWorld: GKEntity {
         // Set ContactDelegate
         self.scene.physicsWorld.contactDelegate = self
         
+        // Prepare Level
+        self.prepareLevel()
+        
     }
     
     required init?(coder aDecoder: NSCoder) {

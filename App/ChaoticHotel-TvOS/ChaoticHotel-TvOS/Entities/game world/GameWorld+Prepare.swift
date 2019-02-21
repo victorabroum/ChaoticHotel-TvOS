@@ -26,9 +26,9 @@ extension GameWorld {
         guard let renderComponentSlime = slime.component(ofType: RenderComponent.self) else {return}
         
         let ySlime = self.scene.childNode(withName: "elevatorGoDown")?.position
-        
+        let offset = renderComponentSlime.node.size.width + 100
         renderComponentSlime.node.position = CGPoint.init(
-            x: -(self.scene.size.width / 2) - 100,
+            x: -(self.scene.size.width / 2) - offset,
             y: ySlime!.y + 10)
         
         self.scene.entityManager.add(slime)
