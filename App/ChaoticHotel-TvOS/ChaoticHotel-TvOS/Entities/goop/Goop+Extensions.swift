@@ -31,6 +31,7 @@ extension Goop {
         goop?.xScale = 0.25
         goop?.yScale = 0.25
         goop?.position = position!
+        goop?.position.y -= slimeNode!.size.height / 2 - 40
         slimeNode?.scene?.addChild(goop!)
         
         self.stateMachine.enter(GoopIdleState.self)

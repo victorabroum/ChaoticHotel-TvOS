@@ -30,7 +30,7 @@ extension Slime {
     }
     
     func shootGoop() {
-        let goopEntity = Goop.init(withImage: "staff_placeHolder")
+        let goopEntity = Goop.init(withImage: "slime_placeHolder")
 //        self.entityManager.add(goopEntity)
         goopEntity.spwanInScene(inPositionToSlime: self)
     }
@@ -46,7 +46,7 @@ extension Slime {
         
         self.oldDeltaTimer += seconds
         if self.oldDeltaTimer >= WaitTimer.spwanGoop {
-            let isValidShoot = (Int.random(in: 0...10) >= 7)
+            let isValidShoot = (Int.random(in: 0...10) >= 0)
             if isValidShoot && slimeArea.contains(node.position) {
                 print("SLIME SHOOT GOOP")
                 self.shootGoop()
