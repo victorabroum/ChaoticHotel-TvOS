@@ -41,7 +41,6 @@ class Starff: GKEntity {
         
         self.addComponent(physicsBodyComponent)
         
-        // TODO: Test animate
         let animationComp = AnimationComponent(texturesAtlasName: "\(imageNamed)_starff")
         animationComp.nodeToAnimate = renderComponent.node
         animationComp.animateNode(withState: .idle)

@@ -58,7 +58,7 @@ enum PlayerColors: String, CaseIterable {
 
 struct ListOfRoomers {
     static let assests = [
-        "bichoDoPe_placeHolder",
-        "reinaldo_placeHolder"
+        "astro",
+        "krillbert"
     ]
 }
