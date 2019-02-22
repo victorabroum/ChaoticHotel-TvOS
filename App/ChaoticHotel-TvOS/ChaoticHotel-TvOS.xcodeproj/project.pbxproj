@@ -67,6 +67,9 @@
 		FD0F59CE221C7BAD00856B2F /* EasyMultiPeerService+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0F59CB221C7BAD00856B2F /* EasyMultiPeerService+Extensions.swift */; };
 		FD0F59CF221C7BAD00856B2F /* EasyMultiPeerService+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0F59CC221C7BAD00856B2F /* EasyMultiPeerService+Protocols.swift */; };
 		FD7025C5221F343300DA7100 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7025C4221F343300DA7100 /* Player.swift */; };
+		FD7F66C922207DC1002AE5E9 /* Slime.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD7F66C622207DC1002AE5E9 /* Slime.xcassets */; };
+		FD7F66CA22207DC1002AE5E9 /* StarffAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD7F66C722207DC1002AE5E9 /* StarffAssets.xcassets */; };
+		FD7F66CB22207DC1002AE5E9 /* Roomers.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD7F66C822207DC1002AE5E9 /* Roomers.xcassets */; };
 		FDA177C1221B42A600A8663D /* JoystickAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA177C0221B42A600A8663D /* JoystickAction.swift */; };
 		FDFF24C72214BB4B00BF8593 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF24C62214BB4B00BF8593 /* Constants.swift */; };
 		FDFF24C92214C6B900BF8593 /* BallonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF24C82214C6B900BF8593 /* BallonComponent.swift */; };
@@ -143,6 +146,9 @@
 		FD0F59CB221C7BAD00856B2F /* EasyMultiPeerService+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EasyMultiPeerService+Extensions.swift"; sourceTree = "<group>"; };
 		FD0F59CC221C7BAD00856B2F /* EasyMultiPeerService+Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EasyMultiPeerService+Protocols.swift"; sourceTree = "<group>"; };
 		FD7025C4221F343300DA7100 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		FD7F66C622207DC1002AE5E9 /* Slime.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Slime.xcassets; sourceTree = "<group>"; };
+		FD7F66C722207DC1002AE5E9 /* StarffAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = StarffAssets.xcassets; sourceTree = "<group>"; };
+		FD7F66C822207DC1002AE5E9 /* Roomers.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Roomers.xcassets; sourceTree = "<group>"; };
 		FDA177C0221B42A600A8663D /* JoystickAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoystickAction.swift; sourceTree = "<group>"; };
 		FDFF24C62214BB4B00BF8593 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FDFF24C82214C6B900BF8593 /* BallonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallonComponent.swift; sourceTree = "<group>"; };
@@ -167,13 +173,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7609482922203EC900C5B681 /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Assets;
-			sourceTree = "<group>";
-		};
 		7609482E2220496100C5B681 /* animationComponent */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,7 +201,7 @@
 		76608B9E22130E210023C29C /* ChaoticHotel-TvOS */ = {
 			isa = PBXGroup;
 			children = (
-				7609482922203EC900C5B681 /* Assets */,
+				FD7F66C522207DC1002AE5E9 /* Assets */,
 				FD0F59C3221C7B5F00856B2F /* Connectivity */,
 				76608BB722130F2B0023C29C /* Model */,
 				76608BB422130E4F0023C29C /* View */,
@@ -442,6 +441,16 @@
 			path = Connectivity;
 			sourceTree = "<group>";
 		};
+		FD7F66C522207DC1002AE5E9 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				FD7F66C622207DC1002AE5E9 /* Slime.xcassets */,
+				FD7F66C722207DC1002AE5E9 /* StarffAssets.xcassets */,
+				FD7F66C822207DC1002AE5E9 /* Roomers.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		FDA177BF221B429A00A8663D /* joystick */ = {
 			isa = PBXGroup;
 			children = (
@@ -545,6 +554,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD7F66CA22207DC1002AE5E9 /* StarffAssets.xcassets in Resources */,
+				FD7F66CB22207DC1002AE5E9 /* Roomers.xcassets in Resources */,
+				FD7F66C922207DC1002AE5E9 /* Slime.xcassets in Resources */,
 				76608BAB22130E210023C29C /* Main.storyboard in Resources */,
 				76608BA222130E210023C29C /* GameScene.sks in Resources */,
 				76608BAD22130E230023C29C /* Assets.xcassets in Resources */,
