@@ -32,7 +32,7 @@ class GoopCleanerState: GKState {
         guard let body = node.physicsBody else { return }
         
         for contactBody in body.allContactedBodies() {
-            if let staff = contactBody.node?.entity as? Staff {
+            if let staff = contactBody.node?.entity as? Starff {
                 guard let moveComp = staff.component(ofType: MoveComponent.self) else { return }
                 moveComp.maxSpeed = PlayerConstants.normal
             }

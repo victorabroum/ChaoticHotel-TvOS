@@ -9,7 +9,7 @@
 import Foundation
 import GameplayKit
 
-class Staff: GKEntity {
+class Starff: GKEntity {
     
     var service: ServiceCategory = .listen
     

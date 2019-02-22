@@ -51,14 +51,14 @@ extension GameScene {
         }
     }
     //Teste Function
-    func move(staff: Staff, forDirection direction: Direction) {
+    func move(staff: Starff, forDirection direction: Direction) {
         
         if let moveComp = staff.component(ofType: MoveComponent.self) {
             moveComp.direction = direction
         }
     }
     
-    func tap(staff: Staff) {
+    func tap(staff: Starff) {
         staff.action()
     }
 }
@@ -85,7 +85,7 @@ extension GameScene: EasyMultiPeerDelegate {
             if player != nil {
                 print("Existe!")
             } else {
-              let newStaff = Staff.init(withImageNamed: "staff_placeHolder")
+              let newStaff = Starff.init(withImageNamed: "staff_placeHolder")
                 
                 
              if let renderComponent = newStaff.component(ofType: RenderComponent.self) {
@@ -119,7 +119,7 @@ extension GameScene: EasyMultiPeerDelegate {
     
     func didRecived(manager: EasyMultiPeerService, message: String, peerID: MCPeerID) {
         print("Recebeu => \(message)")
-        var staffRecived: Staff?
+        var staffRecived: Starff?
         
         for player in self.players {
            if player.idPeer == peerID {
