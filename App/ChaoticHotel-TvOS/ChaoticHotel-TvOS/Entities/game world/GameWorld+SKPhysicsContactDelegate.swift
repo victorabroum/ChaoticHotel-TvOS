@@ -12,7 +12,7 @@ import GameplayKit
 
 extension GameWorld: SKPhysicsContactDelegate {
     func didBegin(_ contact: SKPhysicsContact) {
-        guard let staffEntity = contact.bodyA.node?.entity is Staff ?
+        guard let staffEntity = contact.bodyA.node?.entity is Starff ?
             contact.bodyA.node?.entity : contact.bodyB.node?.entity else { return }
        
         guard let moveComp = staffEntity.component(ofType: MoveComponent.self) else { return }
@@ -23,7 +23,7 @@ extension GameWorld: SKPhysicsContactDelegate {
     }
     
     func didEnd(_ contact: SKPhysicsContact) {
-        guard let staffEntity = contact.bodyA.node!.entity is Staff ?
+        guard let staffEntity = contact.bodyA.node!.entity is Starff ?
             contact.bodyA.node!.entity : contact.bodyB.node!.entity else { return }
         
         guard let moveComp = staffEntity.component(ofType: MoveComponent.self) else { return }

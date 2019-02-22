@@ -9,7 +9,7 @@
 import Foundation
 import SpriteKit
 
-extension Staff {
+extension Starff {
     func action() {
         if let staffBodyComp = self.component(ofType: PhysicsBoydComponent.self) {
             

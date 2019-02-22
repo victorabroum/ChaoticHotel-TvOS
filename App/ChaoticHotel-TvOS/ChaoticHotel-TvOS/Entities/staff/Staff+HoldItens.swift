@@ -10,7 +10,7 @@ import Foundation
 import SpriteKit
 import GameplayKit
 
-extension Staff {
+extension Starff {
     func deliver(entityManager: EntityManager, aService service: ServiceComponent) {
         
         if (service.waitForServiceType == self.service) {
