@@ -19,6 +19,7 @@ extension AnimationComponent {
                 print("Remove actions")
                 self.nodeToAnimate.removeAllActions()
             }
+            print("VOU ANIMAR \(state)")
             self.animationState = state
             let textures =
                 self.texturesToAnimate(withName: "\(self.textureAtlasName)")

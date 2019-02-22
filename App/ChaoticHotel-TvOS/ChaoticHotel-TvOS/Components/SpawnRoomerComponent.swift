@@ -31,7 +31,6 @@ extension SpawnRoomerComponent {
         let spawnRoomerInterval = TimeInterval(15)
         if (CACurrentMediaTime() - lastSpawn > spawnRoomerInterval) {
             lastSpawn = CACurrentMediaTime()
-            print("De \(spawnRoomerInterval) em \(spawnRoomerInterval) segundos")
             let roomer = Roomer(
                 withImageNamed: ListOfRoomers.assests.randomElement()!,
                 inPosition: self.spawnPoint)

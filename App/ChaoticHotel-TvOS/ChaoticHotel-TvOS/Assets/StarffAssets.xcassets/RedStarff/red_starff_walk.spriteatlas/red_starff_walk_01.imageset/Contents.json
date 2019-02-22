@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "astro.png",
+      "filename" : "red_staff_staff.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "astro@2x.png",
+      "filename" : "red_staff_staff@2x.png",
       "scale" : "2x"
     },
     {
