@@ -22,6 +22,7 @@ class Starff: GKEntity {
         let renderComponent = RenderComponent(imageNamed: "\(imageNamed)_starff_idle_01")
         
         renderComponent.node.entity = self
+        renderComponent.node.zPosition = ZPosition.starff
         
         self.addComponent(renderComponent)
        

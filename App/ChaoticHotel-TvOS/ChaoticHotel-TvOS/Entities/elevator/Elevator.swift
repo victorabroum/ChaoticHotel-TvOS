@@ -25,7 +25,7 @@ class Elevator: InteractEntity {
         
         // Add RenderComponent
         let renderComponent = RenderComponent(imageNamed: "")
-        renderComponent.node = SKSpriteNode(texture: nil, color: .gray, size: CGSize(width: 135, height: 50))
+        renderComponent.node = SKSpriteNode(texture: nil, color: .clear, size: CGSize(width: 135, height: 50))
         renderComponent.node.entity = self
         self.addComponent(renderComponent)
         
