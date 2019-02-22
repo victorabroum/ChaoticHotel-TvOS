@@ -11,6 +11,7 @@
 		7609482D22203FD900C5B681 /* AnimationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7609482C22203FD900C5B681 /* AnimationComponent.swift */; };
 		760948302220497F00C5B681 /* AnimationComponent+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7609482F2220497F00C5B681 /* AnimationComponent+Utils.swift */; };
 		76094832222070E500C5B681 /* Roomers.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76094831222070E500C5B681 /* Roomers.xcassets */; };
+		760948342220754300C5B681 /* Slime.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 760948332220754300C5B681 /* Slime.xcassets */; };
 		7650285E2215BB9E009A5CE4 /* Hotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7650285D2215BB9E009A5CE4 /* Hotel.swift */; };
 		76608BA022130E210023C29C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76608B9F22130E210023C29C /* AppDelegate.swift */; };
 		76608BA222130E210023C29C /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 76608BA122130E210023C29C /* GameScene.sks */; };
@@ -87,6 +88,7 @@
 		7609482C22203FD900C5B681 /* AnimationComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationComponent.swift; sourceTree = "<group>"; };
 		7609482F2220497F00C5B681 /* AnimationComponent+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnimationComponent+Utils.swift"; sourceTree = "<group>"; };
 		76094831222070E500C5B681 /* Roomers.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Roomers.xcassets; sourceTree = "<group>"; };
+		760948332220754300C5B681 /* Slime.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Slime.xcassets; sourceTree = "<group>"; };
 		7650285D2215BB9E009A5CE4 /* Hotel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hotel.swift; sourceTree = "<group>"; };
 		76608B9C22130E210023C29C /* ChaoticHotel-TvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ChaoticHotel-TvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		76608B9F22130E210023C29C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 			children = (
 				7609482A22203EE500C5B681 /* StarffAssets.xcassets */,
 				76094831222070E500C5B681 /* Roomers.xcassets */,
+				760948332220754300C5B681 /* Slime.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -553,6 +556,7 @@
 			files = (
 				76608BAB22130E210023C29C /* Main.storyboard in Resources */,
 				76608BA222130E210023C29C /* GameScene.sks in Resources */,
+				760948342220754300C5B681 /* Slime.xcassets in Resources */,
 				76094832222070E500C5B681 /* Roomers.xcassets in Resources */,
 				7609482B22203EE500C5B681 /* StarffAssets.xcassets in Resources */,
 				76608BAD22130E230023C29C /* Assets.xcassets in Resources */,

@@ -18,7 +18,7 @@ class Slime: GKEntity {
         self.entityManager = entityManager
         super.init()
         // Created instance components
-        let renderComponent = RenderComponent.init(imageNamed: name)
+        let renderComponent = RenderComponent.init(imageNamed: "\(name)_idle_01")
         let moveComponent = MoveComponent(maxSpeed: 5)
         
         // Add components to Entity
@@ -30,6 +30,12 @@ class Slime: GKEntity {
         self.addComponent(spawnGoopComp)
         
         self.prepareStateMachine()
+        
+        // Add Animation Comp
+        let animateComp = AnimationComponent(texturesAtlasName: "\(name)")
+        animateComp.nodeToAnimate = renderComponent.node
+        animateComp.animateNode(withState: .idle)
+        self.addComponent(animateComp)
         
     }
     
