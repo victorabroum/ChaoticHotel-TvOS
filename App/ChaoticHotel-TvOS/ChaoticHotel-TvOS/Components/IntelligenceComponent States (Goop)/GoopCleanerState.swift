@@ -31,9 +31,11 @@ class GoopCleanerState: GKState {
         
         guard let body = node.physicsBody else { return }
         
-        if let staff = body.allContactedBodies().first?.node?.entity as? Staff {
-            guard let moveComp = staff.component(ofType: MoveComponent.self) else { return }
-            moveComp.maxSpeed = PlayerConstants.normal
+        for contactBody in body.allContactedBodies() {
+            if let staff = contactBody.node?.entity as? Staff {
+                guard let moveComp = staff.component(ofType: MoveComponent.self) else { return }
+                moveComp.maxSpeed = PlayerConstants.normal
+            }
         }
         
         if let gameScene = node.scene as? GameScene {
@@ -41,7 +43,6 @@ class GoopCleanerState: GKState {
         }
         
         //TODO - Liberar pontuação para o usuário
-        PlayerConstants.velocity = PlayerConstants.normal
         
     }
 }
