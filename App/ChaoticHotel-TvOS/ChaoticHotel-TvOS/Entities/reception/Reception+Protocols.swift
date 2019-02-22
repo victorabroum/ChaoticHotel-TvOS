@@ -14,9 +14,14 @@ extension Reception: InteractDelegate {
         if let staff = owner as? Staff {
             if (staff.holdItem != nil) { return }
             if (!self.hotel.receptionQueue.isEmpty) {
-                // TODO: Add animation to check in
+                
                 let roomer = self.hotel.exitQueue()
+                
+                // Remove move component from Staff
+                staff.removeComponent(ofType: MoveComponent.self)
+                
                 guard let staffNode = staff.component(ofType: RenderComponent.self) else { return }
+                // TODO: Add RIGHT animation to check in
                 let colorize = SKAction.colorize(
                     with: .orange,
                     colorBlendFactor: 1,
@@ -25,6 +30,7 @@ extension Reception: InteractDelegate {
                     SKAction.sequence([colorize, colorize.reversed()])
                 staffNode.node.run(receptionAnimation) {
                     roomer!.assisted()
+                    staff.addComponent(MoveComponent(maxSpeed: PlayerConstants.normal))
                 }
             }
         }
