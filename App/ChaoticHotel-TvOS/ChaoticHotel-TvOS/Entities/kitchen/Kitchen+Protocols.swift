@@ -12,10 +12,10 @@ import GameplayKit
 extension Kitchen: InteractDelegate {
     func action(callBy owner: GKEntity) {
         
-        if let staff = owner as? Staff {
+        if let staff = owner as? Starff {
             if (staff.holdItem != nil) { return }
             
-            if let staff = owner as? Staff {
+            if let staff = owner as? Starff {
                 let foodPlate = Items(
                     imageNamed: "food",
                     serviceCategory: .food,
