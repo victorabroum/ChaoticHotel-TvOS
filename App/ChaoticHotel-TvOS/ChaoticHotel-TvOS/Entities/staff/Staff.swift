@@ -40,6 +40,12 @@ class Starff: GKEntity {
             ~(CategoryMask.contactWithAllCategory())
         
         self.addComponent(physicsBodyComponent)
+        
+        // TODO: Test animate
+        let animationComp = AnimationComponent(texturesAtlasName: "red_starff")
+        animationComp.nodeToAnimate = renderComponent.node
+        animationComp.animateNode(withState: .idle)
+        self.addComponent(animationComp)
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -47,7 +47,7 @@ extension GameScene {
         // Stop move
         
         if let moveComp = self.players.firstPlayerWhere(peerIsEqual: peerTV)?.entity.component(ofType: MoveComponent.self) {
-            moveComp.direction = nil
+            moveComp.direction = .idle
         }
     }
     //Teste Function
