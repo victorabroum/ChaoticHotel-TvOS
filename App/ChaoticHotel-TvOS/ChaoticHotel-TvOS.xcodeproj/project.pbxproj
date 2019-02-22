@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7609482D22203FD900C5B681 /* AnimationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7609482C22203FD900C5B681 /* AnimationComponent.swift */; };
+		760948302220497F00C5B681 /* AnimationComponent+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7609482F2220497F00C5B681 /* AnimationComponent+Utils.swift */; };
 		7650285E2215BB9E009A5CE4 /* Hotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7650285D2215BB9E009A5CE4 /* Hotel.swift */; };
 		76608BA022130E210023C29C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76608B9F22130E210023C29C /* AppDelegate.swift */; };
 		76608BA222130E210023C29C /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 76608BA122130E210023C29C /* GameScene.sks */; };
@@ -79,6 +81,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7609482C22203FD900C5B681 /* AnimationComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationComponent.swift; sourceTree = "<group>"; };
+		7609482F2220497F00C5B681 /* AnimationComponent+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnimationComponent+Utils.swift"; sourceTree = "<group>"; };
 		7650285D2215BB9E009A5CE4 /* Hotel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hotel.swift; sourceTree = "<group>"; };
 		76608B9C22130E210023C29C /* ChaoticHotel-TvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ChaoticHotel-TvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		76608B9F22130E210023C29C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -163,6 +167,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7609482922203EC900C5B681 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		7609482E2220496100C5B681 /* animationComponent */ = {
+			isa = PBXGroup;
+			children = (
+				7609482C22203FD900C5B681 /* AnimationComponent.swift */,
+				7609482F2220497F00C5B681 /* AnimationComponent+Utils.swift */,
+			);
+			path = animationComponent;
+			sourceTree = "<group>";
+		};
 		76608B9322130E210023C29C = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +202,7 @@
 		76608B9E22130E210023C29C /* ChaoticHotel-TvOS */ = {
 			isa = PBXGroup;
 			children = (
+				7609482922203EC900C5B681 /* Assets */,
 				FD0F59C3221C7B5F00856B2F /* Connectivity */,
 				76608BB722130F2B0023C29C /* Model */,
 				76608BB422130E4F0023C29C /* View */,
@@ -271,6 +292,7 @@
 				76D62B0D221B2D96006A03DA /* InteractionComponent.swift */,
 				76D62B2C221C49BF006A03DA /* LifeTimeComponent.swift */,
 				76F618AE221F14C900B92A74 /* SpawnRoomerComponent.swift */,
+				7609482E2220496100C5B681 /* animationComponent */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -572,6 +594,7 @@
 				FDFF24FE221740EF00BF8593 /* GoopIdleState.swift in Sources */,
 				76608BCD2214996C0023C29C /* RoomerGiveUpState.swift in Sources */,
 				76D62B25221C3B74006A03DA /* Kitchen.swift in Sources */,
+				760948302220497F00C5B681 /* AnimationComponent+Utils.swift in Sources */,
 				76D62AFC221AE495006A03DA /* CategoryMask.swift in Sources */,
 				FD0F59CD221C7BAD00856B2F /* EasyMultiPeerService.swift in Sources */,
 				76D62AF52216FD50006A03DA /* CGPoint+Extensions.swift in Sources */,
@@ -589,6 +612,7 @@
 				76D62AFE221AE8DC006A03DA /* PhysicsBoydComponent.swift in Sources */,
 				76D62B0E221B2D96006A03DA /* InteractionComponent.swift in Sources */,
 				76D62B27221C3CC6006A03DA /* Kitchen+Protocols.swift in Sources */,
+				7609482D22203FD900C5B681 /* AnimationComponent.swift in Sources */,
 				76608BD922149B520023C29C /* RoomerGoOutState.swift in Sources */,
 				FDFF24F5221738EF00BF8593 /* Goop.swift in Sources */,
 				76608BD722149B2D0023C29C /* RoomerLeaveState.swift in Sources */,

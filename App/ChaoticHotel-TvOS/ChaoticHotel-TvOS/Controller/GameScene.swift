@@ -37,17 +37,7 @@ class GameScene: SKScene {
         self.entityManager = EntityManager(scene: self)
         
         self.spawnStaff = (self.childNode(withName: "elevatorGoUp")?.position)!
-
-        // Test Staff Entity
-        let staff = Staff(withImageNamed: "staff_placeHolder")
-        let playerTVOS = Player.init(idPeer: peerTV, entity: staff, colorPlayer: UIColor.black)
-        self.players.append(playerTVOS)
-        // Change Sprite position
-        if let renderComponent = staff.component(ofType: RenderComponent.self) {
-            renderComponent.node.position = spawnStaff
-        }
-        self.entityManager.add(staff)
-        
+        self.createAllPlayers()
         // GameWorld
         self.gameWorld = GameWorld(scene: self)
         

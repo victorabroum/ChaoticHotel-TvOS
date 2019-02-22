@@ -11,12 +11,12 @@ import SpriteKit
 import MultipeerConnectivity
 
 class Player {
-    let idPeer: MCPeerID
-    let entity: Staff
-    let colorPlayer: UIColor
+    let idPeer: MCPeerID?
+    let entity: Starff
+    let colorPlayer: PlayerColors
     
     
-    init(idPeer: MCPeerID, entity: Staff, colorPlayer: UIColor) {
+    init(idPeer: MCPeerID? = nil, entity: Starff, colorPlayer: PlayerColors) {
         self.idPeer = idPeer
         self.entity = entity
         self.colorPlayer = colorPlayer

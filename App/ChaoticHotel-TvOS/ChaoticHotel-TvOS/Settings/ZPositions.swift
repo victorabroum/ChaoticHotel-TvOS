@@ -12,6 +12,7 @@ import SpriteKit
 struct ZPosition {
     static let staff: CGFloat = 10
     static let roomer: CGFloat = 11
+    static let items: CGFloat = ZPosition.staff + 2
     
     // About Background
     static let bgPortal: CGFloat = 11

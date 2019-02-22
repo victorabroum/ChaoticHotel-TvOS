@@ -63,9 +63,14 @@ class MoveComponent: GKAgent2D, GKAgentDelegate {
     
     func move(to direction: Direction) {
         
-        guard let node = self.entity!.component(ofType: RenderComponent.self)?.node else {
+        guard let starffEntity = self.entity as? Starff else { return }
+        
+        guard let node = starffEntity.component(ofType: RenderComponent.self)?.node else {
             return
         }
+        
+        guard let animationComp = starffEntity.component(ofType: AnimationComponent.self) else { return }
+        var animateState: AnimationState = .idle
         
         switch direction {
         case .rigth:
@@ -73,14 +78,18 @@ class MoveComponent: GKAgent2D, GKAgentDelegate {
                 node.xScale *= -1
             }
             node.position.x += CGFloat(self.maxSpeed)
+            animateState = .walk
         case .left:
             if (node.xScale > 0) {
                 node.xScale *= -1
             }
             node.position.x -= CGFloat(self.maxSpeed)
+            animateState = .walk
         case .idle:
-            return
+            animateState = .idle
         }
+        
+        animationComp.animateNode(withState: animateState)
     }
     
     func move(to point: CGPoint,

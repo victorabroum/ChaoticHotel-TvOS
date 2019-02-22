@@ -49,7 +49,7 @@ enum Itens {
     case food
 }
 
-enum PlayerColors: String {
+enum PlayerColors: String, CaseIterable {
     case red = "red-color"
     case yellow = "yellow-color"
     case blue = "blue-color"

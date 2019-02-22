@@ -12,26 +12,24 @@ import GameplayKit
 
 extension GameWorld: SKPhysicsContactDelegate {
     func didBegin(_ contact: SKPhysicsContact) {
-        guard let staffEntity = contact.bodyA.node?.entity is Staff ?
+        guard let staffEntity = contact.bodyA.node?.entity is Starff ?
             contact.bodyA.node?.entity : contact.bodyB.node?.entity else { return }
        
         guard let moveComp = staffEntity.component(ofType: MoveComponent.self) else { return }
         
-        if(contact.bodyB.node?.entity is Goop || contact.bodyB.node?.entity is Goop) {
+        if(contact.bodyA.node?.entity is Goop || contact.bodyB.node?.entity is Goop) {
             moveComp.maxSpeed = Float(PlayerConstants.slow)
         }
     }
     
     func didEnd(_ contact: SKPhysicsContact) {
-        if(contact.bodyB.node?.entity is Goop || contact.bodyB.node?.entity is Goop) {
-            guard let staffEntity = contact.bodyA.node!.entity is Staff ?
-                contact.bodyA.node!.entity : contact.bodyB.node!.entity else { return }
-            
-            guard let moveComp = staffEntity.component(ofType: MoveComponent.self) else { return }
-            
-            if(contact.bodyB.node?.entity is Goop || contact.bodyB.node?.entity is Goop) {
-                moveComp.maxSpeed = Float(PlayerConstants.normal)
-            }
+        guard let staffEntity = contact.bodyA.node!.entity is Starff ?
+            contact.bodyA.node!.entity : contact.bodyB.node!.entity else { return }
+        
+        guard let moveComp = staffEntity.component(ofType: MoveComponent.self) else { return }
+        
+        if(contact.bodyA.node?.entity is Goop || contact.bodyB.node?.entity is Goop) {
+            moveComp.maxSpeed = Float(PlayerConstants.normal)
         }
     }
 }

@@ -12,7 +12,7 @@ import GameplayKit
 // Protocol Action on interact
 extension Items: InteractDelegate {
     func action(callBy owner: GKEntity) {
-        if let staff = owner as? Staff {
+        if let staff = owner as? Starff {
             if (staff.holdItem == nil) {
                 self.hold(callBy: owner)
             } else if let body = staff.component(ofType: PhysicsBoydComponent.self)?.physicBody {
@@ -36,7 +36,7 @@ extension Items {
         self.isHold = true
         
         // Set staff to hold
-        if let staff = owner as? Staff {
+        if let staff = owner as? Starff {
             staff.holdItem = self
             staff.service = self.serviceCategory
         }
@@ -57,7 +57,7 @@ extension Items {
             lifeTime.isHold = false
         }
         
-        if let staff = owner as? Staff {
+        if let staff = owner as? Starff {
             staff.holdItem = nil
             staff.service = .listen
         }
