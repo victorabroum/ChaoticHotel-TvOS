@@ -19,7 +19,7 @@ class Starff: GKEntity {
         super.init()
         
         // Add RenderComponent
-        let renderComponent = RenderComponent(imageNamed: imageNamed)
+        let renderComponent = RenderComponent(imageNamed: "\(imageNamed)_starff_idle_01")
         
         renderComponent.node.entity = self
         
@@ -42,7 +42,7 @@ class Starff: GKEntity {
         self.addComponent(physicsBodyComponent)
         
         // TODO: Test animate
-        let animationComp = AnimationComponent(texturesAtlasName: "red_starff")
+        let animationComp = AnimationComponent(texturesAtlasName: "\(imageNamed)_starff")
         animationComp.nodeToAnimate = renderComponent.node
         animationComp.animateNode(withState: .idle)
         self.addComponent(animationComp)
