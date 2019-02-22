@@ -23,7 +23,7 @@ class Kitchen: InteractEntity {
         let renderComp = RenderComponent(imageNamed: "")
         renderComp.node = SKSpriteNode(
             texture: nil,
-            color: .purple,
+            color: .clear,
             size: CGSize(width: 250, height: 250)
         )
         renderComp.node.alpha = 0.75

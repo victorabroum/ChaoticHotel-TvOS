@@ -32,7 +32,9 @@ class Roomer: AssistEntity {
         
         // Add RenderComponent
         let renderComponent = RenderComponent(imageNamed: "\(imageNamed)_idle_01")
+        renderComponent.node.anchorPoint = CGPoint(x: 0.5, y: 0)
         renderComponent.node.position = position
+        renderComponent.node.zPosition = ZPosition.roomer
         renderComponent.node.entity = self
         self.addComponent(renderComponent)
         

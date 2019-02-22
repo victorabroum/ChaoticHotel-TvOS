@@ -19,7 +19,8 @@ class PhysicsBoydComponent: GKComponent {
         super.init()
         
         // ADD PhysicsBody
-        self.physicBody = SKPhysicsBody(circleOfRadius: self.node.size.width/2)
+        self.physicBody = SKPhysicsBody(rectangleOf: self.node.size)
+//        self.physicBody = SKPhysicsBody(circleOfRadius: self.node.size.width/2)
         
         // Default is not affected by gravity
         self.physicBody.affectedByGravity = false
