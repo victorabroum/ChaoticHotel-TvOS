@@ -43,7 +43,8 @@ class RoomerGiveUpState: GKState {
         }
         
         if (!self.entity.isInRoom) {
-            scene.gameWorld.hotelEntity.exitQueue()
+            _ = scene.gameWorld.hotelEntity.exitQueue()
+            
         }
         
         // TODO: Feedback Roomer is angry
