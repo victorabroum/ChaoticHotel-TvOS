@@ -49,6 +49,13 @@ enum Itens {
     case food
 }
 
+enum PlayerColors: String {
+    case red = "red-color"
+    case yellow = "yellow-color"
+    case blue = "blue-color"
+    case purple = "purple-color"
+}
+
 struct ListOfRoomers {
     static let assests = [
         "bichoDoPe_placeHolder",

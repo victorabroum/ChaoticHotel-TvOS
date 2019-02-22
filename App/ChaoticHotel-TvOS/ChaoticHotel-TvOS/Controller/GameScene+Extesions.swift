@@ -77,7 +77,6 @@ extension GameScene: EasyMultiPeerDelegate {
         guard self.players.count < 4 else {
             return
         }
-        
 
         for deviceID in device {
             let player = self.players.firstPlayerWhere(peerIsEqual: deviceID)
@@ -86,13 +85,13 @@ extension GameScene: EasyMultiPeerDelegate {
                 print("Existe!")
             } else {
               let newStaff = Staff.init(withImageNamed: "staff_placeHolder")
-                
-                
-             if let renderComponent = newStaff.component(ofType: RenderComponent.self) {
+              self.service.send(message: PlayerColors.yellow.rawValue, forPeer: deviceID)
+              if let renderComponent = newStaff.component(ofType: RenderComponent.self) {
                     renderComponent.node.position = spawnStaff
+                
             }
               self.entityManager.add(newStaff)
-             
+                
               let newPlayer = Player.init(
                 idPeer: deviceID,
                 entity: newStaff,

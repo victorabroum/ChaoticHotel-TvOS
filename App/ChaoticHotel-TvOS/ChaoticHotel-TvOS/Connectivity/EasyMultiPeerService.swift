@@ -55,12 +55,12 @@ public class EasyMultiPeerService: NSObject {
         self.serviceBrowser.stopBrowsingForPeers()
     }
     
-    public func send(message: String) {
+    public func send(message: String, forPeer peer: MCPeerID) {
         NSLog("%@", "sendColor: \(message) to \(session.connectedPeers.count) peers")
         
         if session.connectedPeers.count > 0 {
             do {
-                try self.session.send(message.data(using: .utf8)!, toPeers: session.connectedPeers, with: .reliable)
+                try self.session.send(message.data(using: .utf8)!, toPeers: [peer] , with: .reliable)
             } catch let error {
                 NSLog("%@", "Error for sending: \(error)")
             }
