@@ -51,7 +51,7 @@ enum Itens {
 
 struct ListOfRoomers {
     static let assests = [
-        "bichoDoPe_placeHolder",
-        "reinaldo_placeHolder"
+        "astro",
+        "krillbert"
     ]
 }

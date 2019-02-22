@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "red_staff_staff.png",
+      "filename" : "slime.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "red_staff_staff@2x.png",
+      "filename" : "slime@2x.png",
       "scale" : "2x"
     },
     {

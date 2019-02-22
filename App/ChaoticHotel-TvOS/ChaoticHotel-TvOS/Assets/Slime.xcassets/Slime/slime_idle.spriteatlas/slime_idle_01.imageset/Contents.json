@@ -2,11 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "mop.png",
+      "filename" : "slime.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "slime@2x.png",
       "scale" : "2x"
     },
     {

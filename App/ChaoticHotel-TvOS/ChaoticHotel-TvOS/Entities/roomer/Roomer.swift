@@ -31,7 +31,7 @@ class Roomer: AssistEntity {
         self.assistDelegate = self
         
         // Add RenderComponent
-        let renderComponent = RenderComponent(imageNamed: imageNamed)
+        let renderComponent = RenderComponent(imageNamed: "\(imageNamed)_idle_01")
         renderComponent.node.position = position
         renderComponent.node.entity = self
         self.addComponent(renderComponent)
@@ -54,6 +54,12 @@ class Roomer: AssistEntity {
             ~(CategoryMask.contactWithAllCategory())
         
         self.addComponent(physicsBodyComponent)
+        
+        // Add Animate Component
+        let animateComp = AnimationComponent(texturesAtlasName: "\(imageNamed)")
+        animateComp.nodeToAnimate = renderComponent.node
+        animateComp.animateNode(withState: .idle)
+        self.addComponent(animateComp)
     }
     
     required init?(coder aDecoder: NSCoder) {

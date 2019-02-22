@@ -97,7 +97,14 @@ class MoveComponent: GKAgent2D, GKAgentDelegate {
               withCompletion completion: @escaping () -> Void ) {
         if let node = self.entity!.component(ofType: RenderComponent.self)?.node {
             // TimeInterval, this time is to duration to arrive on reception
+            
+            guard let animateComp =
+                self.entity!.component(ofType: AnimationComponent.self) else { return }
+            
+            animateComp.animateNode(withState: .walk)
+            
             node.run(SKAction.move(to: point, duration: duration)) {
+                animateComp.animateNode(withState: .idle)
                 completion()
             }
         }

@@ -23,7 +23,7 @@ extension GameWorld {
     // Preapre Slime Enemy
     func prepareSlime() {
         let slime = Slime(
-            withImageNamed: "slime_placeHolder",
+            withImageNamed: "slime",
             entityManager: self.scene.entityManager,
             possibleSpawnArea: self.scene.childNode(withName: "slimeArea")!)
         
