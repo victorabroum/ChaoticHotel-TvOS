@@ -36,6 +36,7 @@ class BackgroundHotelNode: SKNode {
         self.receptionTable.zPosition = ZPosition.bgReceptionTable
         self.lugaggeCartNode.zPosition = ZPosition.bgLugaggeCart
         self.bgSceneNode.zPosition = ZPosition.bgScene
+        self.bgDoorNode.zPosition = ZPosition.bgDoor
         self.skyNode.zPosition = ZPosition.bgSky
         
         // Add Portals to SKNode
@@ -48,6 +49,7 @@ class BackgroundHotelNode: SKNode {
         self.addChild(self.receptionTable)
         self.addChild(self.lugaggeCartNode)
         self.addChild(self.bgSceneNode)
+        self.addChild(self.bgDoorNode)
         self.addChild(self.skyNode)
     }
     
