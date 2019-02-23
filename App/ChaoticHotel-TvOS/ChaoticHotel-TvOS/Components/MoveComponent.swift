@@ -19,7 +19,7 @@ enum Direction: String, CaseIterable {
         for direction in Direction.allCases {
             if value == direction.rawValue {
                 return direction
-            }
+            } else {}
         }
         return Direction.idle
     }

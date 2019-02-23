@@ -32,7 +32,8 @@ extension GameScene {
             } else {
                 direction = .rigth
             }
-            if let moveComp = self.players.firstPlayerWhere(peerIsEqual: peerTV)?.entity.component(ofType: MoveComponent.self){
+            if let moveComp = self.players.firstPlayerWhere(peerIsEqual: peerTV)?.entity.component(
+                ofType: MoveComponent.self) {
                 moveComp.direction = direction
             }
            
@@ -46,7 +47,8 @@ extension GameScene {
         
         // Stop move
         
-        if let moveComp = self.players.firstPlayerWhere(peerIsEqual: peerTV)?.entity.component(ofType: MoveComponent.self) {
+        if let moveComp = self.players.firstPlayerWhere(peerIsEqual: peerTV)?.entity.component(
+            ofType: MoveComponent.self) {
             moveComp.direction = .idle
         }
     }
@@ -114,24 +116,23 @@ extension GameScene: EasyMultiPeerDelegate {
                 
               }
                 
-                
             }
         }
     }
     
     func deletePlayerToScene(peer: MCPeerID) {
-        self.players.removeAll { (ply) -> Bool in
-            if ply.idPeer == peer {
-                let node = ply.entity.component(ofType: RenderComponent.self)
-                node?.node.isHidden = true
-                self.entityManager.remove(ply.entity)
-                return true
-            } else {
-                return false
-            }
-        }
+   
+            let firstPlayer = self.players.first(where: { (ply) -> Bool in
+                return ply.idPeer == peer
+            })
+            
+            guard let player = firstPlayer else {return}
         
-        print("Total de players => \(self.players.count)")
+            player.idPeer = nil
+            let entity = player.entity
+            self.entityManager.remove(entity)
+        
+            print("Total de players => \(self.players.count)")
     }
     
     func didRecived(manager: EasyMultiPeerService, message: String, peerID: MCPeerID) {

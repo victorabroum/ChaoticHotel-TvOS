@@ -60,7 +60,7 @@ public class EasyMultiPeerService: NSObject {
         
         if session.connectedPeers.count > 0 {
             do {
-                try self.session.send(message.data(using: .utf8)!, toPeers: [peer] , with: .reliable)
+                try self.session.send(message.data(using: .utf8)!, toPeers: [peer], with: .reliable)
             } catch let error {
                 NSLog("%@", "Error for sending: \(error)")
             }
