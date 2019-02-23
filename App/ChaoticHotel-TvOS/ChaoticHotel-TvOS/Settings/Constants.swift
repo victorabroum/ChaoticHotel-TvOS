@@ -22,7 +22,7 @@ struct WaitTimer {
 struct BallonSize {
     static let width: Double = 100.00
     static let height: Double = 100.00
-    static let posY: CGFloat = 40.00
+    static let posY: CGFloat = 55.00
 }
 
 struct AnimationDuration {

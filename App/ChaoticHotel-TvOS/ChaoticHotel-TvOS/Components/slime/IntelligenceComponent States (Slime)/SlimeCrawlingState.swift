@@ -38,7 +38,9 @@ class SlimeCrawlingState: GKState {
         
         movement?.move(to: pointRight, withDuration: WaitTimer.crawling, withCompletion: {
             node.run(SKAction.wait(forDuration: WaitTimer.slimeSleep)) {
+                node.xScale = -1
                 movement?.move(to: pointLeft, withDuration: WaitTimer.crawling, withCompletion: {
+                    node.xScale = 1
                     self.entity.stateMachine.enter(SlimeIdleState.self)
                 })
             }
