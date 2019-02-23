@@ -13,13 +13,16 @@ class Items: InteractEntity {
     var serviceCategory: ServiceCategory
     var isHold: Bool = false
     var physicsBodyComp: PhysicsBoydComponent!
+    var rotation: CGFloat!
     
     init(imageNamed: String,
          serviceCategory: ServiceCategory,
          isHold: Bool = false,
          categoryMask: UInt32,
-         lifeTime: TimeInterval = 20) {
+         lifeTime: TimeInterval = 20,
+         rotation: CGFloat? = nil) {
         
+        self.rotation = rotation
         self.serviceCategory = serviceCategory
         super.init()
         

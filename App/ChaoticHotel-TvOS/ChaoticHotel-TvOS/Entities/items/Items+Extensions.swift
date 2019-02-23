@@ -44,8 +44,13 @@ extension Items {
         guard let node = owner.component(ofType: RenderComponent.self)?.node else { return }
         guard let itemNode = self.component(ofType: RenderComponent.self)?.node else { return }
         
+        if (self.rotation != nil) {
+            itemNode.zRotation = self.rotation!
+        }
+        
         itemNode.move(toParent: node)
         itemNode.position = .zero
+        itemNode.position.y = (node.size.height/2)
         itemNode.physicsBody = nil
     }
     

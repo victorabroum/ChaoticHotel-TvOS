@@ -73,7 +73,8 @@ extension GameWorld {
             serviceCategory: .clean,
             isHold: false,
             categoryMask: CategoryMask.items,
-            lifeTime: -1)
+            lifeTime: -1,
+            rotation: CGFloat.pi/2)
         if let renderComp = itemMop.component(ofType: RenderComponent.self) {
             renderComp.node.position = self.scene.childNode(withName: "rubber")!.position
         }
