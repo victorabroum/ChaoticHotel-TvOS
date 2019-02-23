@@ -56,7 +56,7 @@
 		76D62B22221B4FA8006A03DA /* Elevator+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62B21221B4FA8006A03DA /* Elevator+Protocols.swift */; };
 		76D62B25221C3B74006A03DA /* Kitchen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62B24221C3B74006A03DA /* Kitchen.swift */; };
 		76D62B27221C3CC6006A03DA /* Kitchen+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62B26221C3CC6006A03DA /* Kitchen+Protocols.swift */; };
-		76D62B2B221C4074006A03DA /* Staff+HoldItens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62B2A221C4074006A03DA /* Staff+HoldItens.swift */; };
+		76D62B2B221C4074006A03DA /* Staff+DeliverService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62B2A221C4074006A03DA /* Staff+DeliverService.swift */; };
 		76D62B2D221C49BF006A03DA /* LifeTimeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62B2C221C49BF006A03DA /* LifeTimeComponent.swift */; };
 		76D62B30221C4BE8006A03DA /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62B2F221C4BE8006A03DA /* Items.swift */; };
 		76D62B32221C4D92006A03DA /* Items+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62B31221C4D92006A03DA /* Items+Extensions.swift */; };
@@ -140,7 +140,7 @@
 		76D62B21221B4FA8006A03DA /* Elevator+Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Elevator+Protocols.swift"; sourceTree = "<group>"; };
 		76D62B24221C3B74006A03DA /* Kitchen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kitchen.swift; sourceTree = "<group>"; };
 		76D62B26221C3CC6006A03DA /* Kitchen+Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Kitchen+Protocols.swift"; sourceTree = "<group>"; };
-		76D62B2A221C4074006A03DA /* Staff+HoldItens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Staff+HoldItens.swift"; sourceTree = "<group>"; };
+		76D62B2A221C4074006A03DA /* Staff+DeliverService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Staff+DeliverService.swift"; sourceTree = "<group>"; };
 		76D62B2C221C49BF006A03DA /* LifeTimeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeTimeComponent.swift; sourceTree = "<group>"; };
 		76D62B2F221C4BE8006A03DA /* Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
 		76D62B31221C4D92006A03DA /* Items+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Items+Extensions.swift"; sourceTree = "<group>"; };
@@ -355,7 +355,7 @@
 			isa = PBXGroup;
 			children = (
 				76608BBB221459930023C29C /* Staff.swift */,
-				76D62B2A221C4074006A03DA /* Staff+HoldItens.swift */,
+				76D62B2A221C4074006A03DA /* Staff+DeliverService.swift */,
 				76F6189F221CA45700B92A74 /* Staff+Control.swift */,
 			);
 			path = staff;
@@ -673,7 +673,7 @@
 				FDA177C1221B42A600A8663D /* JoystickAction.swift in Sources */,
 				76608BBC221459930023C29C /* Staff.swift in Sources */,
 				76D62B22221B4FA8006A03DA /* Elevator+Protocols.swift in Sources */,
-				76D62B2B221C4074006A03DA /* Staff+HoldItens.swift in Sources */,
+				76D62B2B221C4074006A03DA /* Staff+DeliverService.swift in Sources */,
 				76608BDB2214A08E0023C29C /* Roomer+Extensions.swift in Sources */,
 				76D62B00221AF13A006A03DA /* GameWorld.swift in Sources */,
 				FDFF24C72214BB4B00BF8593 /* Constants.swift in Sources */,

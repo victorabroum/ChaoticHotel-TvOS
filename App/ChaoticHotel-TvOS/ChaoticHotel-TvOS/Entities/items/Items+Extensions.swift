@@ -49,6 +49,7 @@ extension Items {
         }
         
         itemNode.move(toParent: node)
+        itemNode.zPosition = 2
         itemNode.position = .zero
         itemNode.position.y = (node.size.height/2)
         itemNode.physicsBody = nil
@@ -70,6 +71,7 @@ extension Items {
         guard let itemNode = self.component(ofType: RenderComponent.self)?.node else { return }
         
         itemNode.move(toParent: itemNode.scene!)
+        itemNode.zPosition = ZPosition.items
         itemNode.physicsBody = self.physicsBodyComp.physicBody
         
     }
