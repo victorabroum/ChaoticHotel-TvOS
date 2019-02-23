@@ -35,11 +35,11 @@ class Items: InteractEntity {
         let physicsComp = PhysicsBoydComponent(
             node: renderComp.node,
             categoryMask: categoryMask,
-            physicBody: SKPhysicsBody(rectangleOf: renderComp.node.size))
+            affectedByGravity: true)
         physicsComp.physicBody.contactTestBitMask =
             ~(CategoryMask.contactWithAllCategories())
         physicsComp.physicBody.collisionBitMask =
-            ~(CategoryMask.contactWithAllCategories())
+            ~(CategoryMask.contactWithAllCategories(less: [CategoryMask.floor]))
         self.physicsBodyComp = physicsComp
         self.addComponent(physicsComp)
         
