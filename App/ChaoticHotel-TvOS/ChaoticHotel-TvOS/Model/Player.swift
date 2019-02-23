@@ -11,10 +11,9 @@ import SpriteKit
 import MultipeerConnectivity
 
 class Player {
-    let idPeer: MCPeerID?
+    var idPeer: MCPeerID?
     let entity: Starff
     let colorPlayer: PlayerColors
-    
     
     init(idPeer: MCPeerID? = nil, entity: Starff, colorPlayer: PlayerColors) {
         self.idPeer = idPeer
@@ -23,10 +22,9 @@ class Player {
     }
 }
 
-
 extension Array where Element == Player {
     
-    func firstPlayerWhere(peerIsEqual peer: MCPeerID) -> Player?{
+    func firstPlayerWhere(peerIsEqual peer: MCPeerID) -> Player? {
         let tvPlayer = self.first { (player) -> Bool in
             return player.idPeer == peer
         }

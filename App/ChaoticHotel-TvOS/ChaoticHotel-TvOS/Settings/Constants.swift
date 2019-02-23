@@ -50,10 +50,10 @@ enum Itens {
 }
 
 enum PlayerColors: String, CaseIterable {
-    case red = "red-color"
-    case yellow = "yellow-color"
-    case blue = "blue-color"
-    case purple = "purple-color"
+    case red = "red"
+    case yellow = "yellow"
+    case blue = "blue"
+    case pink = "pink"
 }
 
 struct ListOfRoomers {

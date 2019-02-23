@@ -73,8 +73,12 @@ extension GameScene: EasyMultiPeerDelegate {
             let starff = Starff.init(withImageNamed: color.rawValue)
             var player: Player
             
-            if color == PlayerColors.purple {
-               player = Player.init(idPeer: peerTV ,entity: starff, colorPlayer: color)
+            if color == PlayerColors.pink {
+               player = Player.init(idPeer: peerTV, entity: starff, colorPlayer: color)
+                let node = player.entity.component(ofType: RenderComponent.self)?.node
+                node?.position = spawnStaff
+                self.entityManager.add(starff)
+                
             } else {
                player = Player.init(entity: starff, colorPlayer: color)
             }
@@ -88,9 +92,6 @@ extension GameScene: EasyMultiPeerDelegate {
     }
     
     func createNewPlayer(forDevice device: [MCPeerID]) {
-        guard self.players.count < 4 else {
-            return
-        }
 
         for deviceID in device {
             let player = self.players.firstPlayerWhere(peerIsEqual: deviceID)
@@ -103,15 +104,16 @@ extension GameScene: EasyMultiPeerDelegate {
                 }
                 guard let player = getPlayer else {return}
                 let entity = player.entity
-                
+                player.idPeer = deviceID
                 self.service.send(message: player.colorPlayer.rawValue, forPeer: deviceID)
                 
                 if let renderComponent = entity.component(ofType: RenderComponent.self) {
                 
                     renderComponent.node.position = spawnStaff
+                    self.entityManager.add(entity)
                 
               }
-                self.entityManager.add(entity)
+                
                 
             }
         }
