@@ -22,7 +22,7 @@ class BallonComponent: GKComponent {
         nodeSuper.addChild(ballon)
         
         ballon.zPosition = nodeSuper.zPosition + 10
-        ballon.position.y = (nodeSuper.size.height/2) + BallonSize.posY
+        ballon.position.y = (nodeSuper.size.height) + BallonSize.posY
         ballon.alpha = 0.0
         
         super.init()
