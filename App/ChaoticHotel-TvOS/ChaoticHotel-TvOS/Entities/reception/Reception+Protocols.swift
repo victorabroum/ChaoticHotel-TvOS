@@ -24,8 +24,12 @@ extension Reception: InteractDelegate {
                 guard let roomerNode = roomer?.component(ofType: RenderComponent.self)?.node else { return }
                 guard let recepetionNode = self.component(ofType: RenderComponent.self)?.node else { return }
                 
+                // Ajust Starff on Reception Table
                 staffNode.node.xScale = -1
                 staffNode.node.position = recepetionNode.position
+                
+                // Remove wait timer from roomer
+                roomerNode.removeAllActions()
                 
                 // TODO: Add RIGHT animation to check in
                 let colorize = SKAction.colorize(
