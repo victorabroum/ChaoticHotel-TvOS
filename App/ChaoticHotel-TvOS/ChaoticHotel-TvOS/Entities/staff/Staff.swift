@@ -38,7 +38,8 @@ class Starff: GKEntity {
         
         // Staff don't collide with nobody
         physicsBodyComponent.physicBody.collisionBitMask =
-            ~(CategoryMask.contactWithAllCategory())
+            ~(CategoryMask.contactWithAllCategory(
+                less: [CategoryMask.walls]))
         
         self.addComponent(physicsBodyComponent)
         

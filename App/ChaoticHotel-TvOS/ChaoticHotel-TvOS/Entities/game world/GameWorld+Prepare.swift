@@ -18,6 +18,7 @@ extension GameWorld {
         self.prepareKitchen()
         self.prepareSlime()
         self.prepareItems()
+        self.prepareWalls()
     }
     
     // Preapre Slime Enemy
@@ -80,5 +81,40 @@ extension GameWorld {
             renderComp.node.position = self.scene.childNode(withName: "reception")!.position
         }
         self.scene.entityManager.add(receptionTable)
+    }
+    
+    func prepareWalls() {
+        // Right wall
+        var wall = SKSpriteNode(
+            texture: nil,
+            color: .clear,
+            size: CGSize(width: 100, height: self.scene.frame.height))
+        // Physics
+        wall.physicsBody = SKPhysicsBody(rectangleOf: wall.size)
+        wall.physicsBody!.affectedByGravity = false
+        wall.physicsBody!.allowsRotation = false
+        wall.physicsBody!.pinned = true
+        wall.physicsBody!.categoryBitMask = CategoryMask.walls.rawValue
+        wall.physicsBody!.collisionBitMask = CategoryMask.staff.rawValue
+        // Position
+        wall.position.x = self.scene.frame.width / 2
+        self.scene.addChild(wall)
+        
+        // Left wall
+        wall = SKSpriteNode(
+            texture: nil,
+            color: .clear,
+            size: CGSize(width: 100, height: self.scene.frame.height))
+        // Physics
+        wall.physicsBody = SKPhysicsBody(rectangleOf: wall.size)
+        wall.physicsBody!.affectedByGravity = false
+        wall.physicsBody!.allowsRotation = false
+        wall.physicsBody!.pinned = true
+        wall.physicsBody!.categoryBitMask = CategoryMask.walls.rawValue
+        wall.physicsBody!.collisionBitMask = CategoryMask.staff.rawValue
+        // Position
+        wall.position.x = -(self.scene.frame.width / 2)
+        self.scene.addChild(wall)
+        
     }
 }
