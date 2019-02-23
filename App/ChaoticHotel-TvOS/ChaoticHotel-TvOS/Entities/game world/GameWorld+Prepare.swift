@@ -67,7 +67,12 @@ extension GameWorld {
     // Prepare Level itens
     func prepareItems() {
         // Mop
-        let itemMop = Items(imageNamed: "mop", serviceCategory: .clean, isHold: false, categoryMask: .mop, lifeTime: -1)
+        let itemMop = Items(
+            imageNamed: "mop",
+            serviceCategory: .clean,
+            isHold: false,
+            categoryMask: CategoryMask.items,
+            lifeTime: -1)
         if let renderComp = itemMop.component(ofType: RenderComponent.self) {
             renderComp.node.position = self.scene.childNode(withName: "rubber")!.position
         }
@@ -94,8 +99,8 @@ extension GameWorld {
         wall.physicsBody!.affectedByGravity = false
         wall.physicsBody!.allowsRotation = false
         wall.physicsBody!.pinned = true
-        wall.physicsBody!.categoryBitMask = CategoryMask.walls.rawValue
-        wall.physicsBody!.collisionBitMask = CategoryMask.staff.rawValue
+        wall.physicsBody!.categoryBitMask = CategoryMask.walls
+        wall.physicsBody!.collisionBitMask = CategoryMask.starff
         // Position
         wall.position.x = self.scene.frame.width / 2
         self.scene.addChild(wall)
@@ -110,8 +115,8 @@ extension GameWorld {
         wall.physicsBody!.affectedByGravity = false
         wall.physicsBody!.allowsRotation = false
         wall.physicsBody!.pinned = true
-        wall.physicsBody!.categoryBitMask = CategoryMask.walls.rawValue
-        wall.physicsBody!.collisionBitMask = CategoryMask.staff.rawValue
+        wall.physicsBody!.categoryBitMask = CategoryMask.walls
+        wall.physicsBody!.collisionBitMask = CategoryMask.starff
         // Position
         wall.position.x = -(self.scene.frame.width / 2)
         self.scene.addChild(wall)

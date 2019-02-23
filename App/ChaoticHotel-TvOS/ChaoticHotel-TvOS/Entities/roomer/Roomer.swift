@@ -49,11 +49,11 @@ class Roomer: AssistEntity {
         
         // Roomer don't contact nobody
         physicsBodyComponent.physicBody.contactTestBitMask =
-            ~(CategoryMask.contactWithAllCategory())
+            ~(CategoryMask.contactWithAllCategories())
         
         // Roomer don't collide nobody
         physicsBodyComponent.physicBody.collisionBitMask =
-            ~(CategoryMask.contactWithAllCategory())
+            ~(CategoryMask.contactWithAllCategories())
         
         self.addComponent(physicsBodyComponent)
         

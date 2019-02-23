@@ -33,13 +33,13 @@ class Kitchen: InteractEntity {
         // Add Physicsc
         let physicsComp = PhysicsBoydComponent(
             node: renderComp.node,
-            categoryMask: .reception
+            categoryMask: CategoryMask.interaction
         )
         // Don't collide and contact with nobody
         physicsComp.physicBody.collisionBitMask =
-            ~(CategoryMask.contactWithAllCategory())
+            ~(CategoryMask.contactWithAllCategories())
         physicsComp.physicBody.contactTestBitMask =
-            ~(CategoryMask.contactWithAllCategory())
+            ~(CategoryMask.contactWithAllCategories())
         self.addComponent(physicsComp)
         
         // Add Interaction

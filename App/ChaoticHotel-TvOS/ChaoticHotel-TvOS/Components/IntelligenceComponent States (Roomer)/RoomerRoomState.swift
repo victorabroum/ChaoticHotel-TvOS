@@ -40,7 +40,7 @@ class RoomerRoomState: GKState {
             imageNamed: "bag",
             serviceCategory: .bag,
             isHold: false,
-            categoryMask: .bag,
+            categoryMask: CategoryMask.items,
             lifeTime: WaitTimer.bag + 2
         )
         guard let bagNode = bag.component(ofType: RenderComponent.self)?.node else { return }

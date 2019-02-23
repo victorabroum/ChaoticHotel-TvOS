@@ -31,11 +31,11 @@ class Goop: AssistEntity {
         self.prepateStateMachine()
         
         // ADD Physics
-        let physicsComp = PhysicsBoydComponent(node: renderComponent.node, categoryMask: .goop)
+        let physicsComp = PhysicsBoydComponent(node: renderComponent.node, categoryMask: CategoryMask.interaction)
         physicsComp.physicBody.contactTestBitMask =
-            ~(CategoryMask.contactWithAllCategory())
+            ~(CategoryMask.contactWithAllCategories())
         physicsComp.physicBody.collisionBitMask =
-            ~(CategoryMask.contactWithAllCategory())
+            ~(CategoryMask.contactWithAllCategories())
         self.addComponent(physicsComp)
         
         // ADD Service

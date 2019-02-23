@@ -30,15 +30,15 @@ class Starff: GKEntity {
         self.addComponent(MoveComponent(maxSpeed: Float(PlayerConstants.normal)))
         
         // Add PhysicsBodyComponent
-        let physicsBodyComponent = PhysicsBoydComponent(node: renderComponent.node, categoryMask: CategoryMask.staff)
+        let physicsBodyComponent = PhysicsBoydComponent(node: renderComponent.node, categoryMask: CategoryMask.starff)
         
         // Staff contact with all Entity less him self
         physicsBodyComponent.physicBody.contactTestBitMask =
-            CategoryMask.contactWithAllCategory(less: [CategoryMask.staff])
+            CategoryMask.contactWithAllCategories(less: [CategoryMask.starff])
         
         // Staff don't collide with nobody
         physicsBodyComponent.physicBody.collisionBitMask =
-            ~(CategoryMask.contactWithAllCategory(
+            ~(CategoryMask.contactWithAllCategories(
                 less: [CategoryMask.walls]))
         
         self.addComponent(physicsBodyComponent)
