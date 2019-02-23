@@ -14,7 +14,7 @@ class PhysicsBoydComponent: GKComponent {
     var node: SKSpriteNode!
     var physicBody: SKPhysicsBody!
     
-    init(node: SKSpriteNode, categoryMask: CategoryMask) {
+    init(node: SKSpriteNode, categoryMask: UInt32, affectedByGravity: Bool = false) {
         self.node = node
         super.init()
         
@@ -23,18 +23,18 @@ class PhysicsBoydComponent: GKComponent {
 //        self.physicBody = SKPhysicsBody(circleOfRadius: self.node.size.width/2)
         
         // Default is not affected by gravity
-        self.physicBody.affectedByGravity = false
+        self.physicBody.affectedByGravity = affectedByGravity
         // Default is not rotate
         self.physicBody.allowsRotation = false
         
-        self.physicBody.categoryBitMask = categoryMask.rawValue
+        self.physicBody.categoryBitMask = categoryMask
         
         self.node.physicsBody = self.physicBody
         
     }
     
     init(node: SKSpriteNode,
-         categoryMask: CategoryMask,
+         categoryMask: UInt32,
          physicBody: SKPhysicsBody) {
         self.node = node
         super.init()
@@ -47,7 +47,7 @@ class PhysicsBoydComponent: GKComponent {
         // Default is not rotate
         self.physicBody.allowsRotation = false
         
-        self.physicBody.categoryBitMask = categoryMask.rawValue
+        self.physicBody.categoryBitMask = categoryMask
         
         self.node.physicsBody = self.physicBody
     }

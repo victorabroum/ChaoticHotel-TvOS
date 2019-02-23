@@ -17,7 +17,7 @@ class Items: InteractEntity {
     init(imageNamed: String,
          serviceCategory: ServiceCategory,
          isHold: Bool = false,
-         categoryMask: CategoryMask,
+         categoryMask: UInt32,
          lifeTime: TimeInterval = 20) {
         
         self.serviceCategory = serviceCategory
@@ -35,11 +35,11 @@ class Items: InteractEntity {
         let physicsComp = PhysicsBoydComponent(
             node: renderComp.node,
             categoryMask: categoryMask,
-            physicBody: SKPhysicsBody(rectangleOf: renderComp.node.size))
+            affectedByGravity: true)
         physicsComp.physicBody.contactTestBitMask =
-            ~(CategoryMask.contactWithAllCategory())
+            ~(CategoryMask.contactWithAllCategories())
         physicsComp.physicBody.collisionBitMask =
-            ~(CategoryMask.contactWithAllCategory())
+            ~(CategoryMask.contactWithAllCategories(less: [CategoryMask.floor]))
         self.physicsBodyComp = physicsComp
         self.addComponent(physicsComp)
         

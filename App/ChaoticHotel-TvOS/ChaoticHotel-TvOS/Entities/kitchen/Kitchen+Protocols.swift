@@ -20,7 +20,7 @@ extension Kitchen: InteractDelegate {
                     imageNamed: "food",
                     serviceCategory: .food,
                     isHold: true,
-                    categoryMask: .food,
+                    categoryMask: CategoryMask.items,
                     lifeTime: WaitTimer.foodLifeTime)
                 guard let gameScene =
                     staff.component(ofType: RenderComponent.self)!.node.scene as? GameScene else { return }

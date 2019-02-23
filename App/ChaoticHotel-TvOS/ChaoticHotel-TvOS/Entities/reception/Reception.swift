@@ -25,12 +25,12 @@ class Reception: InteractEntity {
         self.addComponent(renderComponent)
         
         // Add Physic component
-        let physicsComponent = PhysicsBoydComponent(node: renderComponent.node, categoryMask: .reception)
+        let physicsComponent = PhysicsBoydComponent(node: renderComponent.node, categoryMask: CategoryMask.interaction)
         
         physicsComponent.physicBody.collisionBitMask =
-            ~(CategoryMask.contactWithAllCategory())
+            ~(CategoryMask.contactWithAllCategories())
         physicsComponent.physicBody.contactTestBitMask =
-            ~(CategoryMask.contactWithAllCategory())
+            ~(CategoryMask.contactWithAllCategories())
         
         self.addComponent(physicsComponent)
         
