@@ -21,14 +21,27 @@ extension Reception: InteractDelegate {
                 staff.removeComponent(ofType: MoveComponent.self)
                 
                 guard let staffNode = staff.component(ofType: RenderComponent.self) else { return }
+                guard let roomerNode = roomer?.component(ofType: RenderComponent.self)?.node else { return }
+                guard let recepetionNode = self.component(ofType: RenderComponent.self)?.node else { return }
+                
+                staffNode.node.xScale = -1
+                staffNode.node.position = recepetionNode.position
+                
                 // TODO: Add RIGHT animation to check in
                 let colorize = SKAction.colorize(
                     with: .orange,
                     colorBlendFactor: 1,
-                    duration: 0.75)
+                    duration: 1.25)
+                // Duration 2.50
                 let receptionAnimation =
                     SKAction.sequence([colorize, colorize.reversed()])
+                let emitter = SKEmitterNode(fileNamed: "TeleportParticle")
+                roomerNode.run(SKAction.run {
+                    roomerNode.addChild(emitter!)
+                })
+                
                 staffNode.node.run(receptionAnimation) {
+                    roomerNode.removeChildren(in: [emitter!])
                     roomer!.assisted()
                     staff.addComponent(MoveComponent(maxSpeed: PlayerConstants.normal))
                 }

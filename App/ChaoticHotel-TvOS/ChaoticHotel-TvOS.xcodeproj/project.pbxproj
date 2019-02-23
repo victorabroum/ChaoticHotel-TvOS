@@ -11,6 +11,8 @@
 		760948302220497F00C5B681 /* AnimationComponent+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7609482F2220497F00C5B681 /* AnimationComponent+Utils.swift */; };
 		76094832222070E500C5B681 /* Roomers.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76094831222070E500C5B681 /* Roomers.xcassets */; };
 		760948342220754300C5B681 /* Slime.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 760948332220754300C5B681 /* Slime.xcassets */; };
+		760948372220F0FB00C5B681 /* TeleportParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 760948352220F0FB00C5B681 /* TeleportParticle.sks */; };
+		760948382220F0FB00C5B681 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 760948362220F0FB00C5B681 /* Assets.xcassets */; };
 		7650285E2215BB9E009A5CE4 /* Hotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7650285D2215BB9E009A5CE4 /* Hotel.swift */; };
 		76608BA022130E210023C29C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76608B9F22130E210023C29C /* AppDelegate.swift */; };
 		76608BA222130E210023C29C /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 76608BA122130E210023C29C /* GameScene.sks */; };
@@ -90,6 +92,8 @@
 		7609482F2220497F00C5B681 /* AnimationComponent+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnimationComponent+Utils.swift"; sourceTree = "<group>"; };
 		76094831222070E500C5B681 /* Roomers.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Roomers.xcassets; sourceTree = "<group>"; };
 		760948332220754300C5B681 /* Slime.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Slime.xcassets; sourceTree = "<group>"; };
+		760948352220F0FB00C5B681 /* TeleportParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TeleportParticle.sks; sourceTree = "<group>"; };
+		760948362220F0FB00C5B681 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7650285D2215BB9E009A5CE4 /* Hotel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hotel.swift; sourceTree = "<group>"; };
 		76608B9C22130E210023C29C /* ChaoticHotel-TvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ChaoticHotel-TvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		76608B9F22130E210023C29C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -461,6 +465,8 @@
 				FD7F66C622207DC1002AE5E9 /* Slime.xcassets */,
 				FD7F66C722207DC1002AE5E9 /* StarffAssets.xcassets */,
 				FD7F66C822207DC1002AE5E9 /* Roomers.xcassets */,
+				760948352220F0FB00C5B681 /* TeleportParticle.sks */,
+				760948362220F0FB00C5B681 /* Assets.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -569,8 +575,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD7F66CA22207DC1002AE5E9 /* StarffAssets.xcassets in Resources */,
+				760948372220F0FB00C5B681 /* TeleportParticle.sks in Resources */,
 				FD7F66CB22207DC1002AE5E9 /* Roomers.xcassets in Resources */,
 				FD7F66C922207DC1002AE5E9 /* Slime.xcassets in Resources */,
+				760948382220F0FB00C5B681 /* Assets.xcassets in Resources */,
 				76608BAB22130E210023C29C /* Main.storyboard in Resources */,
 				76608BA222130E210023C29C /* GameScene.sks in Resources */,
 				760948342220754300C5B681 /* Slime.xcassets in Resources */,
