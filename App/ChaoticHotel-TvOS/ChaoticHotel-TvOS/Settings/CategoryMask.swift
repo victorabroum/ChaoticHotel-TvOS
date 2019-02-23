@@ -27,7 +27,7 @@ struct CategoryMask {
         CategoryMask.floor
     ]
     
-    static func contactWithAllCategories(less:[UInt32] = []) -> UInt32{
+    static func contactWithAllCategories(less: [UInt32] = []) -> UInt32 {
         var result: UInt32 = 0b00
         
         for category in CategoryMask.allMasks {

@@ -36,6 +36,7 @@
 		76608BD722149B2D0023C29C /* RoomerLeaveState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76608BD622149B2D0023C29C /* RoomerLeaveState.swift */; };
 		76608BD922149B520023C29C /* RoomerGoOutState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76608BD822149B520023C29C /* RoomerGoOutState.swift */; };
 		76608BDB2214A08E0023C29C /* Roomer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76608BDA2214A08E0023C29C /* Roomer+Extensions.swift */; };
+		7679F6072221A38F00E3C15E /* Items+Mop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7679F6062221A38F00E3C15E /* Items+Mop.swift */; };
 		76D62AF32216F82B006A03DA /* Hotel+ControlQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62AF22216F82B006A03DA /* Hotel+ControlQueue.swift */; };
 		76D62AF52216FD50006A03DA /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62AF42216FD50006A03DA /* CGPoint+Extensions.swift */; };
 		76D62AF722172CFA006A03DA /* RoomerArriveState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62AF622172CFA006A03DA /* RoomerArriveState.swift */; };
@@ -119,6 +120,7 @@
 		76608BD622149B2D0023C29C /* RoomerLeaveState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomerLeaveState.swift; sourceTree = "<group>"; };
 		76608BD822149B520023C29C /* RoomerGoOutState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomerGoOutState.swift; sourceTree = "<group>"; };
 		76608BDA2214A08E0023C29C /* Roomer+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Roomer+Extensions.swift"; sourceTree = "<group>"; };
+		7679F6062221A38F00E3C15E /* Items+Mop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Items+Mop.swift"; sourceTree = "<group>"; };
 		76D62AF22216F82B006A03DA /* Hotel+ControlQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Hotel+ControlQueue.swift"; sourceTree = "<group>"; };
 		76D62AF42216FD50006A03DA /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
 		76D62AF622172CFA006A03DA /* RoomerArriveState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomerArriveState.swift; sourceTree = "<group>"; };
@@ -409,6 +411,7 @@
 			children = (
 				76D62B2F221C4BE8006A03DA /* Items.swift */,
 				76D62B31221C4D92006A03DA /* Items+Extensions.swift */,
+				7679F6062221A38F00E3C15E /* Items+Mop.swift */,
 			);
 			path = items;
 			sourceTree = "<group>";
@@ -619,6 +622,7 @@
 				FD0F59CF221C7BAD00856B2F /* EasyMultiPeerService+Protocols.swift in Sources */,
 				76D62AF722172CFA006A03DA /* RoomerArriveState.swift in Sources */,
 				76D62AF32216F82B006A03DA /* Hotel+ControlQueue.swift in Sources */,
+				7679F6072221A38F00E3C15E /* Items+Mop.swift in Sources */,
 				76F618A7221DE13A00B92A74 /* LugaggeCartNode.swift in Sources */,
 				76D62B1B221B44CA006A03DA /* Reception.swift in Sources */,
 				FDFF24CB2215E18D00BF8593 /* Slime.swift in Sources */,

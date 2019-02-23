@@ -68,13 +68,14 @@ extension GameWorld {
     // Prepare Level itens
     func prepareItems() {
         // Mop
-        let itemMop = Items(
-            imageNamed: "mop",
-            serviceCategory: .clean,
-            isHold: false,
-            categoryMask: CategoryMask.items,
-            lifeTime: -1,
-            rotation: CGFloat.pi/2)
+//        let itemMop = Items(
+//            imageNamed: "mop",
+//            serviceCategory: .clean,
+//            isHold: false,
+//            categoryMask: CategoryMask.items,
+//            lifeTime: -1,
+//            rotation: CGFloat.pi/2)
+        let itemMop = Mop()
         if let renderComp = itemMop.component(ofType: RenderComponent.self) {
             renderComp.node.position = self.scene.childNode(withName: "rubber")!.position
         }

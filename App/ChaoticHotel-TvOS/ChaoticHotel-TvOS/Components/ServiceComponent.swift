@@ -24,7 +24,6 @@ class ServiceComponent: GKComponent {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // TODO: Is not finish
     func deliverService(ofType service: ServiceCategory) {
         
         if (self.waitForServiceType == service) {

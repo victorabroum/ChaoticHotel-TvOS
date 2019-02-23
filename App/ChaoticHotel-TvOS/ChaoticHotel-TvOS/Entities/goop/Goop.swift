@@ -19,7 +19,6 @@ class Goop: AssistEntity {
         
         let renderComponent = RenderComponent.init(imageNamed: image)
         renderComponent.node.entity = self
-        // TODO: JUST FOR TESTS
         renderComponent.node.position = parentNode.position
         renderComponent.node.position.y -= parentNode.size.height / 2 - 40
         renderComponent.node.xScale = 0.25
