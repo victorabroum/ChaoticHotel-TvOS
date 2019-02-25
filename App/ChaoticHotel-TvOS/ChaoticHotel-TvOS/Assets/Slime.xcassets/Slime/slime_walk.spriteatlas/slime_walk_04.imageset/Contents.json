@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "slime_walk_01.png",
+      "filename" : "slime_walk_04.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "slime_walk_01@2x.png",
+      "filename" : "slime_walk_04@2x.png",
       "scale" : "2x"
     },
     {
