@@ -10,8 +10,8 @@ import Foundation
 import GameplayKit
 
 enum ElevatorDirection {
-    case upper
-    case down
+    case goUp
+    case goDown
 }
 
 class Elevator: InteractEntity {

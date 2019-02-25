@@ -48,7 +48,7 @@ class GameScene: SKScene {
         tapRecognizer.allowedPressTypes = [UIPress.PressType.playPause.rawValue] as [NSNumber]
         self.view!.addGestureRecognizer(tapRecognizer)
         
-//        self.addChild(BackgroundHotelNode())
+        self.addChild(BackgroundHotelNode())
 
     }
 
