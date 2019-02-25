@@ -14,7 +14,7 @@ struct WaitTimer {
     static let roomService: TimeInterval = 20
     static let bag: TimeInterval = 10
     static let slimeSleep: TimeInterval = 5
-    static let crawling: TimeInterval = 40
+    static let crawling: TimeInterval = 50
     static let spwanGoop: TimeInterval = 5.0
     static let foodLifeTime: TimeInterval = 5.0
 }

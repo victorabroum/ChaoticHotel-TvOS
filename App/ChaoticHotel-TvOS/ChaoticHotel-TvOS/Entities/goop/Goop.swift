@@ -17,12 +17,10 @@ class Goop: AssistEntity {
         
         self.assistDelegate = self
         
-        let renderComponent = RenderComponent.init(imageNamed: image)
+        let renderComponent = RenderComponent.init(imageNamed: "\(image)_idle_01")
         renderComponent.node.entity = self
         renderComponent.node.position = parentNode.position
-        renderComponent.node.position.y -= parentNode.size.height / 2 - 40
-        renderComponent.node.xScale = 0.25
-        renderComponent.node.yScale = 0.25
+        renderComponent.node.position.y -= parentNode.size.height / 2 - 10
         
         let ballonComponent = BallonComponent.init(nodeSuper: renderComponent.node, andTexture: nil)
         self.addComponent(renderComponent)
@@ -40,6 +38,11 @@ class Goop: AssistEntity {
         // ADD Service
         let serviceComp = ServiceComponent(owner: self, serviceCategory: .clean)
         self.addComponent(serviceComp)
+        
+        // Add Animation
+        let animateComp = AnimationComponent(texturesAtlasName: image)
+        animateComp.nodeToAnimate = renderComponent.node
+        animateComp.animateNode(withState: .idle)
         
     }
     
