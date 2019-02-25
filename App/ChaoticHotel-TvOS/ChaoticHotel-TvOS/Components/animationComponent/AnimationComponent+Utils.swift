@@ -16,11 +16,9 @@ extension AnimationComponent {
     
         if (state != self.animationState) {
             if(self.nodeToAnimate.hasActions()) {
-                print("Remove actions")
                 self.nodeToAnimate.removeAction(
                     forKey: AnimationComponent.animationKey)
             }
-            print("VOU ANIMAR \(state)")
             self.animationState = state
             let textures =
                 self.texturesToAnimate(withName: "\(self.textureAtlasName)")
