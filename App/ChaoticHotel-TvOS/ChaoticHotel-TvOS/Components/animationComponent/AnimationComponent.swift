@@ -15,6 +15,8 @@ enum AnimationState: String {
     case walk
     case inactive
     case interactDesk
+    case walkHandsUp
+    case idleHandsUp
 }
 
 class AnimationComponent: GKComponent {
