@@ -17,6 +17,7 @@ struct WaitTimer {
     static let crawling: TimeInterval = 50
     static let spwanGoop: TimeInterval = 5.0
     static let foodLifeTime: TimeInterval = 5.0
+    static let spawnRoomer: TimeInterval = 15.0
 }
 
 struct BallonSize {

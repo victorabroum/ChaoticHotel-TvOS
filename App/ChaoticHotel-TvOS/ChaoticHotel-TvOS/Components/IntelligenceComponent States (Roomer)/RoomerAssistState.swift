@@ -37,6 +37,8 @@ class RoomerAssistState: GKState {
         
         self.entity.removeComponent(ofType: ServiceComponent.self)
         
+        guard let roomerNode = self.entity.component(ofType: RenderComponent.self)?.node else { return }
+        
         guard let ballonNode = self.entity.component(ofType: BallonComponent.self) else { return }
         
         ballonNode.dismissBallon()
@@ -44,6 +46,7 @@ class RoomerAssistState: GKState {
         if (self.entity.wantLeave) {
             self.stateMachine?.enter(RoomerGoOutState.self)
         } else if self.entity.isInRoom {
+            roomerNode.run(SKAction.playSoundFileNamed("door_knock", waitForCompletion: false))
             self.stateMachine?.enter(RoomerWaitState.self)
         } else {
             self.entity.isInRoom  = true
