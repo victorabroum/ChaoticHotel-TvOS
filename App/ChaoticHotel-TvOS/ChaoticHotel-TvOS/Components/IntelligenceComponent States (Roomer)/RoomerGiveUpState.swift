@@ -49,6 +49,7 @@ class RoomerGiveUpState: GKState {
         
         // TODO: Feedback Roomer is angry
         print("QUE HOTEL MERDA")
+        node.run(SKAction.playSoundFileNamed("angry_voice", waitForCompletion: false))
         node.run(SKAction.scale(by: 0.5, duration: 0.5)) {
             self.stateMachine!.enter(RoomerGoOutState.self)
         }
