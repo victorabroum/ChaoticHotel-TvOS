@@ -70,7 +70,7 @@ class MoveComponent: GKAgent2D, GKAgentDelegate {
         }
         
         guard let animationComp = starffEntity.component(ofType: AnimationComponent.self) else { return }
-        var animateState: AnimationState = starffEntity.holdItem != nil ? .walkHandsUp : .idle
+        var animateState: AnimationState = starffEntity.holdItem != nil ? .idleHandsUp : .idle
         
         switch direction {
         case .rigth:
@@ -78,15 +78,15 @@ class MoveComponent: GKAgent2D, GKAgentDelegate {
                 node.xScale *= -1
             }
             node.position.x += CGFloat(self.maxSpeed)
-            animateState = .walk
+            animateState = starffEntity.holdItem != nil ? .walkHandsUp : .walk
         case .left:
             if (node.xScale > 0) {
                 node.xScale *= -1
             }
             node.position.x -= CGFloat(self.maxSpeed)
-            animateState = .walk
+            animateState = starffEntity.holdItem != nil ? .walkHandsUp : .walk
         case .idle:
-            animateState = .idle
+            animateState = starffEntity.holdItem != nil ? .idleHandsUp : .idle
         }
         
         animationComp.animateNode(withState: animateState)
