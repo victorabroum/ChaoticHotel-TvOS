@@ -33,6 +33,8 @@ struct PlayerConstants {
     static var velocity: Float = PlayerConstants.normal
     static let slow: Float = 2
     static let normal: Float = 5
+    static let width: CGFloat = 115
+    static let height: CGFloat = 155
 }
 
 enum ServiceCategory {

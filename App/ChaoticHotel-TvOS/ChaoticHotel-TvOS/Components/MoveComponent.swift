@@ -70,7 +70,7 @@ class MoveComponent: GKAgent2D, GKAgentDelegate {
         }
         
         guard let animationComp = starffEntity.component(ofType: AnimationComponent.self) else { return }
-        var animateState: AnimationState = .idle
+        var animateState: AnimationState = starffEntity.holdItem != nil ? .walkHandsUp : .idle
         
         switch direction {
         case .rigth:

@@ -50,8 +50,8 @@ extension Items {
         
         itemNode.move(toParent: node)
         itemNode.zPosition = 2
-        itemNode.position = .zero
-        itemNode.position.y = (node.size.height/2)
+        itemNode.position.x = -PlayerConstants.width/2
+        itemNode.position.y = (PlayerConstants.height/2)
         itemNode.physicsBody = nil
     }
     

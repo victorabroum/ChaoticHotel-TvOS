@@ -31,8 +31,6 @@ extension Starff {
                         
                     } else if let interaction =
                         contact.node?.entity?.component(ofType: InteractionComponent.self) {
-                        print("INTERACT \(interaction)")
-                        
                         if let interactionEntity = interaction.entity as? InteractEntity {
                             interactionEntity.interactDelegate?.action(callBy: self)
                         }
