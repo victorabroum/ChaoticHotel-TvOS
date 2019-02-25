@@ -49,10 +49,11 @@ class RoomerGiveUpState: GKState {
         
         // TODO: Feedback Roomer is angry
         print("QUE HOTEL MERDA")
+        guard let baloon = self.entity.component(ofType: BallonComponent.self) else { return }
+        baloon.changeTexture(forTexture: SKTexture(imageNamed: "baloon_angry"))
+        baloon.showBallon()
         node.run(SKAction.playSoundFileNamed("angry_voice", waitForCompletion: false))
-        node.run(SKAction.scale(by: 0.5, duration: 0.5)) {
-            self.stateMachine!.enter(RoomerGoOutState.self)
-        }
+        self.stateMachine!.enter(RoomerGoOutState.self)
     }
 
 }

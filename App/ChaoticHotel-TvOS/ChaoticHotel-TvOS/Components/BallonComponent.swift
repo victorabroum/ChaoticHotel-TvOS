@@ -13,11 +13,11 @@ class BallonComponent: GKComponent {
     let ballon: SKSpriteNode!
     init(nodeSuper: SKSpriteNode,
          andTexture texture: SKTexture?) {
-         ballon = SKSpriteNode.init(texture: texture,
-                                       color: #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1), size:
-                    CGSize.init(width: BallonSize.width,
-                                height: BallonSize.height)
-                    )
+        
+        ballon = SKSpriteNode(
+            texture: texture,
+            color: .clear,
+            size: texture!.size())
     
         nodeSuper.addChild(ballon)
         

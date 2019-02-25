@@ -33,7 +33,8 @@ extension Starff {
                             aService: serviceComponent
                         )
                     } else if let interactComp = contact.node?.entity?.component(ofType: InteractionComponent.self),
-                        let interactEntity = interactComp.entity as? InteractEntity {
+                        let interactEntity = interactComp.entity as? InteractEntity,
+                        !(interactEntity is Items) {
                         interactEntity.interactDelegate?.action(callBy: self)
                     }
                 }

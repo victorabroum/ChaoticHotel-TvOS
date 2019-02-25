@@ -41,46 +41,40 @@ class RoomerListnerState: GKState {
         self.entity.removeComponent(ofType: ServiceComponent.self)
         
         var waitTimer: TimeInterval = WaitTimer.reception
-        var textureName: String?
-        var colorService: UIColor = .green
+        var textureName: String = "baloon_checkIn"
         
-        // TODO: Put right textureName
         if(previousState != nil) {
             switch previousState! {
             case is RoomerRoomState:
                 // Wait a time on room for bag
                 print("Wait a time on room for bag")
                 waitTimer = WaitTimer.bag
-                textureName = nil
-                colorService = .orange
+                textureName = "baloon_bag"
                 // Add Service component
                 self.entity.addComponent(ServiceComponent(owner: self.entity, serviceCategory: .bag))
             case is RoomerRoomServiceState:
                 // Wait a time on room for Room service
                 print("Wait a time on room for Room service")
                 waitTimer = WaitTimer.roomService
-                textureName = nil
-                colorService = .red
+                textureName = "baloon_roomService"
                 self.entity.addComponent(ServiceComponent(owner: self.entity, serviceCategory: .food))
             case is RoomerLeaveState:
                 // Wait a time on reception
                 // Go to RoomerListnerState
                 print("Wait a time to Check Out")
                 waitTimer = WaitTimer.reception
-                textureName = nil
-                colorService = .blue
+                textureName = "baloon_checkOut"
                 self.entity.addComponent(ServiceComponent(owner: self.entity, serviceCategory: .listen))
             default:
                 self.entity.addComponent(ServiceComponent(owner: self.entity, serviceCategory: .checkIn))
             }
         }
         
-        self.animate(imageNamed: textureName, duration: waitTimer, color: colorService)
+        self.animate(imageNamed: textureName, duration: waitTimer)
     }
     
     func animate(imageNamed: String?,
-                 duration: TimeInterval,
-                 color: UIColor) {
+                 duration: TimeInterval) {
         
         guard let node = self.entity.component(ofType: RenderComponent.self)?.node else {
             return
@@ -93,7 +87,6 @@ class RoomerListnerState: GKState {
         }
         
         ballon.showBallon()
-        ballon.changeColor(color)
         
         let idleWait = SKAction.wait(forDuration: duration)
         

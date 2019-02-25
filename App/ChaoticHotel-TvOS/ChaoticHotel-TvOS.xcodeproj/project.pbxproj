@@ -22,6 +22,7 @@
 		7622D3D922246592008AA2B2 /* door_knock.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7622D3D222246592008AA2B2 /* door_knock.wav */; };
 		7622D3DA22246592008AA2B2 /* teleport_sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7622D3D322246592008AA2B2 /* teleport_sound.wav */; };
 		7622D3DB22246592008AA2B2 /* roomService_voice.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7622D3D422246592008AA2B2 /* roomService_voice.wav */; };
+		7622D3DD22248497008AA2B2 /* GameWorld+Baloons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7622D3DC22248497008AA2B2 /* GameWorld+Baloons.swift */; };
 		7650285E2215BB9E009A5CE4 /* Hotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7650285D2215BB9E009A5CE4 /* Hotel.swift */; };
 		76608BA022130E210023C29C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76608B9F22130E210023C29C /* AppDelegate.swift */; };
 		76608BA222130E210023C29C /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 76608BA122130E210023C29C /* GameScene.sks */; };
@@ -113,6 +114,7 @@
 		7622D3D222246592008AA2B2 /* door_knock.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = door_knock.wav; path = ../../../../Desing/Sounds/door_knock.wav; sourceTree = "<group>"; };
 		7622D3D322246592008AA2B2 /* teleport_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = teleport_sound.wav; path = ../../../../Desing/Sounds/teleport_sound.wav; sourceTree = "<group>"; };
 		7622D3D422246592008AA2B2 /* roomService_voice.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = roomService_voice.wav; path = ../../../../Desing/Sounds/roomService_voice.wav; sourceTree = "<group>"; };
+		7622D3DC22248497008AA2B2 /* GameWorld+Baloons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameWorld+Baloons.swift"; sourceTree = "<group>"; };
 		7650285D2215BB9E009A5CE4 /* Hotel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hotel.swift; sourceTree = "<group>"; };
 		76608B9C22130E210023C29C /* ChaoticHotel-TvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ChaoticHotel-TvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		76608B9F22130E210023C29C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -382,6 +384,7 @@
 				76D62AFF221AF13A006A03DA /* GameWorld.swift */,
 				76D62B05221AF49E006A03DA /* GameWorld+SKPhysicsContactDelegate.swift */,
 				76F618B0221F212500B92A74 /* GameWorld+Prepare.swift */,
+				7622D3DC22248497008AA2B2 /* GameWorld+Baloons.swift */,
 			);
 			path = "game world";
 			sourceTree = "<group>";
@@ -666,6 +669,7 @@
 				FD0F59CF221C7BAD00856B2F /* EasyMultiPeerService+Protocols.swift in Sources */,
 				76D62AF722172CFA006A03DA /* RoomerArriveState.swift in Sources */,
 				76D62AF32216F82B006A03DA /* Hotel+ControlQueue.swift in Sources */,
+				7622D3DD22248497008AA2B2 /* GameWorld+Baloons.swift in Sources */,
 				7679F6072221A38F00E3C15E /* Items+Mop.swift in Sources */,
 				76F618A7221DE13A00B92A74 /* LugaggeCartNode.swift in Sources */,
 				76D62B1B221B44CA006A03DA /* Reception.swift in Sources */,
@@ -867,7 +871,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Launch Image";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FCZ6JTPKG7;
+				DEVELOPMENT_TEAM = AYH9NYMQ3Y;
 				INFOPLIST_FILE = "ChaoticHotel-TvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -886,7 +890,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Launch Image";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FCZ6JTPKG7;
+				DEVELOPMENT_TEAM = AYH9NYMQ3Y;
 				INFOPLIST_FILE = "ChaoticHotel-TvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
