@@ -37,8 +37,12 @@ class RoomerWaitState: GKState {
         node.run(SKAction.wait(forDuration: 2)) {
             // Has 60% of chance to ask for Room Service
             if (Int.random(in: 0...10) >= 3) {
+                node.run(
+                    SKAction.playSoundFileNamed("roomService_voice", waitForCompletion: false))
                 self.stateMachine?.enter(RoomerRoomServiceState.self)
             } else {
+                node.run(
+                    SKAction.playSoundFileNamed("checkOut_voice", waitForCompletion: false))
                 self.stateMachine?.enter(RoomerLeaveState.self)
             }
         }

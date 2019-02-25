@@ -28,7 +28,7 @@ class SpawnRoomerComponent: GKComponent {
 // SpawnSystem
 extension SpawnRoomerComponent {
     override func update(deltaTime seconds: TimeInterval) {
-        let spawnRoomerInterval = TimeInterval(15)
+        let spawnRoomerInterval = WaitTimer.spawnRoomer
         if (CACurrentMediaTime() - lastSpawn > spawnRoomerInterval) {
             lastSpawn = CACurrentMediaTime()
             let roomer = Roomer(

@@ -23,6 +23,7 @@ extension Hotel {
                     (CGFloat(integerLiteral: self.receptionQueue.count))) + 10)
             moveComp.move(to: CGPoint(x: point, y: node.position.y),
                           withDuration: 5) {
+                            node.run(SKAction.playSoundFileNamed("checkIn_bell", waitForCompletion: false))
                             if(completion != nil) {
                                 completion!()
                             }
