@@ -39,7 +39,8 @@ class Roomer: AssistEntity {
         self.addComponent(renderComponent)
         
         // Add BallonComponent for show icons
-        let ballonComponent = BallonComponent.init(nodeSuper: renderComponent.node, andTexture: nil)
+        let ballonTexture = SKTexture(imageNamed: "baloon_checkIn")
+        let ballonComponent = BallonComponent.init(nodeSuper: renderComponent.node, andTexture: ballonTexture)
         
         self.addComponent(ballonComponent)
         self.addComponent(MoveComponent(maxSpeed: Float.random(in: 5...9)))

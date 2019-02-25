@@ -28,19 +28,25 @@ class RoomerGoOutState: GKState {
     override func didEnter(from previousState: GKState?) {
         // To dissmis the ballon
         guard let ballonNode = self.entity.component(ofType: BallonComponent.self) else { return }
-        ballonNode.dismissBallon()
-        
         guard let node = self.entity.component(ofType: RenderComponent.self)?.node else {
             return
         }
+        node.xScale = -1
+        
+        guard let gameScene = node.scene as? GameScene else { return }
+        guard let position = gameScene.childNode(withName: "spawnRoomer")?.position else { return }
+        
+        // TODO: Leave for to states Second Floor or First Floor
         
         if (previousState is RoomerAssistState) {
-            // TODO: Feedback Roomer is happy
+            ballonNode.changeTexture(forTexture: SKTexture(imageNamed: "baloon_happy"))
+            ballonNode.showBallon()
             print("AMEI O HOTEL")
         }
         
-        node.run(SKAction.rotate(byAngle: 1000, duration: AnimationDuration.roomerGoOut)) {
-            
+        guard let animateRoomer = self.entity.component(ofType: AnimationComponent.self) else { return }
+        animateRoomer.animateNode(withState: .walk)
+        node.run(SKAction.move(to: position, duration: AnimationDuration.roomerGoOut)) {
             node.removeFromParent()
         }
     }
