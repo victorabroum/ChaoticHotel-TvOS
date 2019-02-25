@@ -37,7 +37,10 @@ class AnimationComponent: GKComponent {
         let atlas = SKTextureAtlas(named: "\(name)_\(self.animationState)")
         
         for index in 1...atlas.textureNames.count {
-            let frameTexture = SKTexture(imageNamed: "\(name)_\(self.animationState)_0\(index)")
+            
+            let frameName = "\(name)_\(self.animationState)_\(index <= 9 ? "0" : "")\(index)"
+            
+            let frameTexture = SKTexture(imageNamed: frameName)
             textures.append(frameTexture)
         }
         

@@ -34,7 +34,7 @@ extension SpawnGoopComponent {
             
             guard let slimeNode = self.entity?.component(ofType: RenderComponent.self)?.node else { return }
             
-            if ((Int.random(in: 0...10) >= 7) && self.spawnArea.contains(slimeNode.position)) {
+            if ((Int.random(in: 0...10) >= 0) && self.spawnArea.contains(slimeNode.position)) {
                 self.entityManager.spawnGoop(onParentNode: slimeNode)
             }
             
