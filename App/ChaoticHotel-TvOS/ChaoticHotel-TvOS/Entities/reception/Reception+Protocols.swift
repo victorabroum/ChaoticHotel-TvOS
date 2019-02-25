@@ -37,6 +37,9 @@ extension Reception: InteractDelegate {
                     roomerNode.addChild(emitter!)
                 })
                 
+                // Play teleport Sound
+                recepetionNode.run(SKAction.playSoundFileNamed("teleport_sound", waitForCompletion: false))
+                
                 guard let starffAnimateComp = staff.component(ofType: AnimationComponent.self) else { return }
                 starffAnimateComp.animateNode(withState: .interactDesk)
                 
