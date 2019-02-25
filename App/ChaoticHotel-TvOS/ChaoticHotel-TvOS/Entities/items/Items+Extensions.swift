@@ -15,11 +15,15 @@ extension Items: InteractDelegate {
         if let staff = owner as? Starff {
             if (staff.holdItem == nil) {
                 self.hold(callBy: owner)
-            } else if let body = staff.component(ofType: PhysicsBoydComponent.self)?.physicBody {
-                if (body.allContactedBodies().count <= 1) {
-                    self.drop(callBy: owner)
-                }
+            } else {
+                self.drop(callBy: owner)
             }
+            
+//            else if let body = staff.component(ofType: PhysicsBoydComponent.self)?.physicBody {
+//                if (body.allContactedBodies().count <= 1) {
+//                    self.drop(callBy: owner)
+//                }
+//            }
         }
     }
 }
