@@ -25,14 +25,20 @@ extension Starff {
                 self.holdItem.drop(callBy: self)
             } else if let contact =
                 physicsBody.allContactedBodies().first {
-                if (contact.node != nil),
-                    let serviceComponent =
+                if (contact.node != nil) {
+                    if let serviceComponent =
                     contact.node?.entity?.component(ofType: ServiceComponent.self) {
-                    self.deliver(entityManager: gameScene.entityManager, aService: serviceComponent)
+                        self.deliver(
+                            entityManager: gameScene.entityManager,
+                            aService: serviceComponent
+                        )
+                    } else if let interactComp = contact.node?.entity?.component(ofType: InteractionComponent.self),
+                        let interactEntity = interactComp.entity as? InteractEntity {
+                        interactEntity.interactDelegate?.action(callBy: self)
+                    }
                 }
             }
-        } else if let contact =
-            physicsBody.allContactedBodies().first {
+        } else if let contact = physicsBody.allContactedBodies().first {
             if (contact.node != nil), let interactComp =
                 contact.node!.entity?.component(
                     ofType: InteractionComponent.self), let interactEntity =
