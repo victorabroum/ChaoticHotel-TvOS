@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "blue_staff.png",
+      "filename" : "blue_starff_walk_01.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "blue_staff@2x.png",
+      "filename" : "blue_starff_walk_01@2x.png",
       "scale" : "2x"
     },
     {

@@ -31,22 +31,19 @@ extension Reception: InteractDelegate {
                 // Remove wait timer from roomer
                 roomerNode.removeAllActions()
                 
-                // TODO: Add RIGHT animation to check in
-                let colorize = SKAction.colorize(
-                    with: .orange,
-                    colorBlendFactor: 1,
-                    duration: 1.25)
                 // Duration 2.50
-                let receptionAnimation =
-                    SKAction.sequence([colorize, colorize.reversed()])
                 let emitter = SKEmitterNode(fileNamed: "TeleportParticle")
                 roomerNode.run(SKAction.run {
                     roomerNode.addChild(emitter!)
                 })
                 
-                staffNode.node.run(receptionAnimation) {
+                guard let starffAnimateComp = staff.component(ofType: AnimationComponent.self) else { return }
+                starffAnimateComp.animateNode(withState: .interactDesk)
+                
+                staffNode.node.run(SKAction.wait(forDuration: 2.5)) {
                     roomerNode.removeChildren(in: [emitter!])
                     roomer!.assisted()
+                    starffAnimateComp.animateNode(withState: .idle)
                     staff.addComponent(MoveComponent(maxSpeed: PlayerConstants.normal))
                 }
             }

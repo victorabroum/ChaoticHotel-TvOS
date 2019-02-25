@@ -30,7 +30,12 @@ class Starff: GKEntity {
         self.addComponent(MoveComponent(maxSpeed: Float(PlayerConstants.normal)))
         
         // Add PhysicsBodyComponent
-        let physicsBodyComponent = PhysicsBoydComponent(node: renderComponent.node, categoryMask: CategoryMask.starff)
+        let physicBody = SKPhysicsBody(rectangleOf: CGSize(width: 115, height: 155), center: CGPoint(x: -30, y: -40))
+//        let physicsBodyComponent = PhysicsBoydComponent(node: renderComponent.node, categoryMask: CategoryMask.starff)
+        let physicsBodyComponent = PhysicsBoydComponent(
+            node: renderComponent.node,
+            categoryMask: CategoryMask.starff,
+            physicBody: physicBody)
         
         // Staff contact with all Entity less him self
         physicsBodyComponent.physicBody.contactTestBitMask =
