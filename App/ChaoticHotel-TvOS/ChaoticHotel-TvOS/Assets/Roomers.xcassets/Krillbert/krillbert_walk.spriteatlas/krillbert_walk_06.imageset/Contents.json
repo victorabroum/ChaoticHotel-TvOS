@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "krillbert_walk_01.png",
+      "filename" : "krillbert_walk_06.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "krillbert_walk_01@2x.png",
+      "filename" : "krillbert_walk_06@2x.png",
       "scale" : "2x"
     },
     {
