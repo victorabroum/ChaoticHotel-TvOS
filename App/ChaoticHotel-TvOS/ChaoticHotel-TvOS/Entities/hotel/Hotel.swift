@@ -34,8 +34,14 @@ class Hotel: GKEntity {
             
             // Change Roomer position to right Room
             let room = self.availableRooms.first!
+            room.run(SKAction(named: "closeDoor")!)
             roomer.changeRoom(room)
-            roomer.walkTo(room.position, withDuration: 0)
+            
+            guard let node = roomer.component(ofType: RenderComponent.self)?.node else { return }
+            
+            node.run(SKAction.move(to: room.position, duration: 0)) {
+                node.position.y -= node.size.height / 1.6
+            }
             
             // Remove this room for available
             self.availableRooms.removeFirst()
@@ -43,6 +49,7 @@ class Hotel: GKEntity {
     }
     
     func addAvailableRoom(_ room: SKNode) {
+        room.run(SKAction(named: "closeDoor")!.reversed())
         self.availableRooms.append(room)
     }
     

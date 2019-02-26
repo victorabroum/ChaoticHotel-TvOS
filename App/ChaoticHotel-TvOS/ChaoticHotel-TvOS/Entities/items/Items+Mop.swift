@@ -22,6 +22,8 @@ class Mop: Items {
         
         guard let node = self.component(ofType: RenderComponent.self)?.node else { return }
         
+        node.zRotation = 0
+        
         self.removeComponent(ofType: PhysicsBoydComponent.self)
         
         let physicsBody = SKPhysicsBody(texture: node.texture!, size: node.size)

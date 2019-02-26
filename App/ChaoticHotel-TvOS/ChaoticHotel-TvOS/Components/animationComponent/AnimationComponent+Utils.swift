@@ -30,6 +30,31 @@ extension AnimationComponent {
                 withKey: AnimationComponent.animationKey)
         }
     }
+    
+    func animateNode(
+        withState state: AnimationState!,
+        completion: @escaping () -> Void) {
+        
+        if (state != nil && state != self.animationState) {
+            if(self.nodeToAnimate.hasActions()) {
+                self.nodeToAnimate.removeAction(
+                    forKey: AnimationComponent.animationKey)
+            }
+            self.animationState = state
+            
+            let textures =
+                self.texturesToAnimate(withName: "\(self.textureAtlasName)")
+            
+            self.nodeToAnimate.run(SKAction.animate(
+                with: textures,
+                timePerFrame: 0.1)) {
+                    completion()
+            }
+        } else {
+            completion()
+        }
+        
+    }
 }
 
 // Actions Keys constants

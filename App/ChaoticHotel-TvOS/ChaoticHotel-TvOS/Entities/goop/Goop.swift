@@ -20,7 +20,8 @@ class Goop: AssistEntity {
         let renderComponent = RenderComponent.init(imageNamed: "\(image)_idle_01")
         renderComponent.node.entity = self
         renderComponent.node.position = parentNode.position
-        renderComponent.node.position.y -= parentNode.size.height / 2 - 10
+        renderComponent.node.position.y -= parentNode.size.height / 2 
+        renderComponent.node.zPosition = ZPosition.goop
         
         let texture = SKTexture(imageNamed: "baloon_mop")
         let ballonComponent = BallonComponent.init(nodeSuper: renderComponent.node, andTexture: texture)
