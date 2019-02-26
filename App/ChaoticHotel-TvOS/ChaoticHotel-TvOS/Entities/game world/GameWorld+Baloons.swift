@@ -25,23 +25,26 @@ extension GameWorld {
         
         var textureName = ""
         
-        // If contact with elevator
-        switch entity {
-        case is Elevator:
-            guard let elevatorEntity = entity as? Elevator else { return }
-            textureName = "baloon_\(elevatorEntity.goTo)"
-        case is Items:
-            textureName = "baloon_grab"
-        default:
-            textureName = ""
-        }
-        
-        if (textureName != "") {
-            let baloonComp = BallonComponent(
-                nodeSuper: entityNode,
-                andTexture: SKTexture(imageNamed: textureName))
-            baloonComp.showBallon()
-            entity?.addComponent(baloonComp)
+        if !(entity?.component(ofType: BallonComponent.self) != nil) {
+            // If contact with elevator
+            switch entity {
+            case is Elevator:
+                guard let elevatorEntity = entity as? Elevator else { return }
+                textureName = "baloon_\(elevatorEntity.goTo)"
+            case is Items:
+                textureName = "baloon_grab"
+            default:
+                textureName = ""
+            }
+            
+            if (textureName != "") {
+                let baloonComp = BallonComponent(
+                    nodeSuper: entityNode,
+                    andTexture: SKTexture(imageNamed: textureName))
+                baloonComp.showBallon()
+                entity?.addComponent(baloonComp)
+            }
+
         }
         
     }
@@ -50,8 +53,11 @@ extension GameWorld {
         let entity = contact.bodyA.node?.entity is Starff ? contact.bodyB.node?.entity : contact.bodyA.node?.entity
         
         guard let ballon = entity?.component(ofType: BallonComponent.self) else { return }
-        ballon.dismissBallon()
         
-        entity?.removeComponent(ofType: BallonComponent.self)
+        if (entity is Elevator || entity is Items) {
+            ballon.dismissBallon()
+            
+            entity?.removeComponent(ofType: BallonComponent.self)
+        }
     }
 }
