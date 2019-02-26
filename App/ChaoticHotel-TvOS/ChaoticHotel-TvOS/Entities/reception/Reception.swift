@@ -11,7 +11,7 @@ import GameplayKit
 
 class Reception: InteractEntity {
     var hotel: Hotel
-    
+    var physicBody: SKPhysicsBody!
     init (hotel: Hotel) {
         self.hotel = hotel
         super.init()
@@ -31,7 +31,7 @@ class Reception: InteractEntity {
             ~(CategoryMask.contactWithAllCategories())
         physicsComponent.physicBody.contactTestBitMask =
             ~(CategoryMask.contactWithAllCategories())
-        
+        self.physicBody = physicsComponent.physicBody
         self.addComponent(physicsComponent)
         
         // ADD Interaction Component

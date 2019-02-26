@@ -24,6 +24,8 @@ extension Reception: InteractDelegate {
                 guard let roomerNode = roomer.component(ofType: RenderComponent.self)?.node else { return }
                 guard let recepetionNode = self.component(ofType: RenderComponent.self)?.node else { return }
                 
+                recepetionNode.physicsBody = nil
+                
                 // Ajust Starff on Reception Table
                 staffNode.node.xScale = -1
                 staffNode.node.position = recepetionNode.position
@@ -68,6 +70,7 @@ extension Reception: InteractDelegate {
                     roomer.assisted()
                     starffAnimateComp.animateNode(withState: .idle)
                     staff.addComponent(MoveComponent(maxSpeed: PlayerConstants.normal))
+                    recepetionNode.physicsBody = self.physicBody
                 }
             }
         }
