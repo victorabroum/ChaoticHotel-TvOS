@@ -19,6 +19,12 @@ extension Elevator: InteractDelegate {
         case .goUp:
             node.position.y = gameScene.childNode(withName: "elevatorGoDown")!.position.y
         }
+        
+        if let baloon = self.component(ofType: BallonComponent.self) {
+            baloon.dismissBallon()
+            print("MATA BALOON")
+            self.removeComponent(ofType: BallonComponent.self)
+        }
     }
     
 }

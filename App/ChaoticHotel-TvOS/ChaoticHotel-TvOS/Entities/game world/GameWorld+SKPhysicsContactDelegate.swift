@@ -13,7 +13,7 @@ import GameplayKit
 extension GameWorld: SKPhysicsContactDelegate {
     func didBegin(_ contact: SKPhysicsContact) {
         
-//        self.showBaloon(forContact: contact)
+        self.showBaloon(forContact: contact)
         
         guard let staffEntity = contact.bodyA.node?.entity is Starff ?
             contact.bodyA.node?.entity : contact.bodyB.node?.entity else { return }
@@ -27,7 +27,7 @@ extension GameWorld: SKPhysicsContactDelegate {
     
     func didEnd(_ contact: SKPhysicsContact) {
         
-//        self.dismissBaloon(forContact: contact)
+        self.dismissBaloon(forContact: contact)
         
         guard let staffEntity = contact.bodyA.node!.entity is Starff ?
             contact.bodyA.node!.entity : contact.bodyB.node!.entity else { return }
