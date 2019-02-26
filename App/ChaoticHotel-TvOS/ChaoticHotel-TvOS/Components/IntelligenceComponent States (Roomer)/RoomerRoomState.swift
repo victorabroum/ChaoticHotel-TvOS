@@ -35,6 +35,9 @@ class RoomerRoomState: GKState {
         
         scene.gameWorld.hotelEntity.enterOnRoom(roomer: self.entity)
         
+        node.removeAction(forKey: AnimationComponent.animationKey)
+        node.texture = nil
+        
         // Spawn Bag
         let bag = Items(
             imageNamed: "bag",
