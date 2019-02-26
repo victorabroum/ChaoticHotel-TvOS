@@ -39,7 +39,9 @@ class Hotel: GKEntity {
             
             guard let node = roomer.component(ofType: RenderComponent.self)?.node else { return }
             
-            node.run(SKAction.move(to: room.position, duration: 0))
+            node.run(SKAction.move(to: room.position, duration: 0)) {
+                node.position.y -= node.size.height / 1.6
+            }
             
             // Remove this room for available
             self.availableRooms.removeFirst()

@@ -29,17 +29,7 @@ class RoomerLeaveState: GKState {
     
     override func didEnter(from previousState: GKState?) {
         
-        guard let node = self.entity.component(ofType: RenderComponent.self)?.node else { return }
-        
-        guard let scene = node.scene as? GameScene else { return }
-        
         self.entity.wantLeave = true
-        
-        // Roomer leave the room
-        scene.gameWorld.hotelEntity.addAvailableRoom(self.entity.room)
-        
-        // Change to none room for the Roomer
-        self.entity.changeRoom(nil)
         
         self.stateMachine?.enter(RoomerListnerState.self)
     }

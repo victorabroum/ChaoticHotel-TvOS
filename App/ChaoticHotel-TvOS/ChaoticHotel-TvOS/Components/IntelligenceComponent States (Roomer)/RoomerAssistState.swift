@@ -44,6 +44,15 @@ class RoomerAssistState: GKState {
         ballonNode.dismissBallon()
         
         if (self.entity.wantLeave) {
+            
+            guard let scene = roomerNode.scene as? GameScene else { return }
+            
+            // Roomer leave the room
+            scene.gameWorld.hotelEntity.addAvailableRoom(self.entity.room)
+            
+            // Change to none room for the Roomer
+            self.entity.changeRoom(nil)
+            
             self.stateMachine?.enter(RoomerGoOutState.self)
         } else if self.entity.isInRoom {
             roomerNode.run(SKAction.playSoundFileNamed("door_knock", waitForCompletion: false))

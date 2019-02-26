@@ -10,9 +10,9 @@ import Foundation
 import SpriteKit
 
 struct WaitTimer {
-    static let reception: TimeInterval = 10
-    static let roomService: TimeInterval = 20
-    static let bag: TimeInterval = 10
+    static let reception: TimeInterval = 20
+    static let roomService: TimeInterval = 30
+    static let bag: TimeInterval = 20
     static let slimeSleep: TimeInterval = 5
     static let crawling: TimeInterval = 50
     static let spwanGoop: TimeInterval = 5.0
