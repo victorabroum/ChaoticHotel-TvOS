@@ -72,6 +72,7 @@
 		76D62B30221C4BE8006A03DA /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62B2F221C4BE8006A03DA /* Items.swift */; };
 		76D62B32221C4D92006A03DA /* Items+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62B31221C4D92006A03DA /* Items+Extensions.swift */; };
 		76DAF6A22224E40E0059CD96 /* TeleportTemplate.sks in Resources */ = {isa = PBXBuildFile; fileRef = 76DAF6A12224E40E0059CD96 /* TeleportTemplate.sks */; };
+		76DAF6A722259D080059CD96 /* DoorActions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 76DAF6A622259D080059CD96 /* DoorActions.sks */; };
 		76F618A0221CA45700B92A74 /* Staff+Control.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F6189F221CA45700B92A74 /* Staff+Control.swift */; };
 		76F618A2221DDA4D00B92A74 /* ZPositions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F618A1221DDA4D00B92A74 /* ZPositions.swift */; };
 		76F618A5221DE0DB00B92A74 /* BackgroundHotelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F618A4221DE0DB00B92A74 /* BackgroundHotelNode.swift */; };
@@ -168,6 +169,7 @@
 		76D62B2F221C4BE8006A03DA /* Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
 		76D62B31221C4D92006A03DA /* Items+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Items+Extensions.swift"; sourceTree = "<group>"; };
 		76DAF6A12224E40E0059CD96 /* TeleportTemplate.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TeleportTemplate.sks; sourceTree = "<group>"; };
+		76DAF6A622259D080059CD96 /* DoorActions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DoorActions.sks; sourceTree = "<group>"; };
 		76F6189F221CA45700B92A74 /* Staff+Control.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Staff+Control.swift"; sourceTree = "<group>"; };
 		76F618A1221DDA4D00B92A74 /* ZPositions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZPositions.swift; sourceTree = "<group>"; };
 		76F618A4221DE0DB00B92A74 /* BackgroundHotelNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundHotelNode.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 			children = (
 				7622D3E72224E3A7008AA2B2 /* TeleportAction.sks */,
 				76DAF6A12224E40E0059CD96 /* TeleportTemplate.sks */,
+				76DAF6A622259D080059CD96 /* DoorActions.sks */,
 			);
 			name = Actions;
 			path = Acti;
@@ -639,6 +642,7 @@
 				FD7F66C922207DC1002AE5E9 /* Slime.xcassets in Resources */,
 				760948382220F0FB00C5B681 /* Assets.xcassets in Resources */,
 				76608BAB22130E210023C29C /* Main.storyboard in Resources */,
+				76DAF6A722259D080059CD96 /* DoorActions.sks in Resources */,
 				7622D3D822246592008AA2B2 /* keyboard_sound.wav in Resources */,
 				7622D3E82224E3A7008AA2B2 /* TeleportAction.sks in Resources */,
 				76608BA222130E210023C29C /* GameScene.sks in Resources */,
