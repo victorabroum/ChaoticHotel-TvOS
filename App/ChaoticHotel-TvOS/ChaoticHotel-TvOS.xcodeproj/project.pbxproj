@@ -73,6 +73,7 @@
 		76D62B32221C4D92006A03DA /* Items+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62B31221C4D92006A03DA /* Items+Extensions.swift */; };
 		76DAF6A22224E40E0059CD96 /* TeleportTemplate.sks in Resources */ = {isa = PBXBuildFile; fileRef = 76DAF6A12224E40E0059CD96 /* TeleportTemplate.sks */; };
 		76DAF6A722259D080059CD96 /* DoorActions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 76DAF6A622259D080059CD96 /* DoorActions.sks */; };
+		76DAF6A92225B5F00059CD96 /* EntityManager+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DAF6A82225B5F00059CD96 /* EntityManager+Utils.swift */; };
 		76F618A0221CA45700B92A74 /* Staff+Control.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F6189F221CA45700B92A74 /* Staff+Control.swift */; };
 		76F618A2221DDA4D00B92A74 /* ZPositions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F618A1221DDA4D00B92A74 /* ZPositions.swift */; };
 		76F618A5221DE0DB00B92A74 /* BackgroundHotelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F618A4221DE0DB00B92A74 /* BackgroundHotelNode.swift */; };
@@ -170,6 +171,7 @@
 		76D62B31221C4D92006A03DA /* Items+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Items+Extensions.swift"; sourceTree = "<group>"; };
 		76DAF6A12224E40E0059CD96 /* TeleportTemplate.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TeleportTemplate.sks; sourceTree = "<group>"; };
 		76DAF6A622259D080059CD96 /* DoorActions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DoorActions.sks; sourceTree = "<group>"; };
+		76DAF6A82225B5F00059CD96 /* EntityManager+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EntityManager+Utils.swift"; sourceTree = "<group>"; };
 		76F6189F221CA45700B92A74 /* Staff+Control.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Staff+Control.swift"; sourceTree = "<group>"; };
 		76F618A1221DDA4D00B92A74 /* ZPositions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZPositions.swift; sourceTree = "<group>"; };
 		76F618A4221DE0DB00B92A74 /* BackgroundHotelNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundHotelNode.swift; sourceTree = "<group>"; };
@@ -495,6 +497,7 @@
 			children = (
 				76608BC122146AC90023C29C /* EntityManager.swift */,
 				76F618AC221EE2DB00B92A74 /* EntityManager+SpawnControl.swift */,
+				76DAF6A82225B5F00059CD96 /* EntityManager+Utils.swift */,
 			);
 			path = entityManager;
 			sourceTree = "<group>";
@@ -740,6 +743,7 @@
 				FD0F59CE221C7BAD00856B2F /* EasyMultiPeerService+Extensions.swift in Sources */,
 				76F618AA221EE17600B92A74 /* SpawnGoopComponent.swift in Sources */,
 				FDA177C1221B42A600A8663D /* JoystickAction.swift in Sources */,
+				76DAF6A92225B5F00059CD96 /* EntityManager+Utils.swift in Sources */,
 				76608BBC221459930023C29C /* Staff.swift in Sources */,
 				76D62B22221B4FA8006A03DA /* Elevator+Protocols.swift in Sources */,
 				76D62B2B221C4074006A03DA /* Staff+DeliverService.swift in Sources */,

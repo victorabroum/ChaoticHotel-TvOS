@@ -13,6 +13,12 @@ import GameplayKit
 // Control Spawn Goop
 extension EntityManager {
     func spawnGoop(onParentNode parentNode: SKSpriteNode) {
+        
+        for goopExist in self.allGoop() {
+            let goopNode = goopExist.component(ofType: RenderComponent.self)!.node
+            if (goopNode.contains(parentNode.position)) { return }
+        }
+        
         let goop = Goop(withImage: "goop", parentNode: parentNode)
         goop.stateMachine.enter(GoopIdleState.self)
         self.add(goop)
