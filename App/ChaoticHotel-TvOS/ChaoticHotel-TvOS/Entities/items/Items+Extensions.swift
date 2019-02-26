@@ -52,10 +52,14 @@ extension Items {
             itemNode.zRotation = self.rotation!
         }
         
+        if let baloon = self.component(ofType: BallonComponent.self) {
+            baloon.dismissBallon()
+            self.removeComponent(ofType: BallonComponent.self)
+        }
+        
         itemNode.move(toParent: node)
         itemNode.zPosition = 2
         itemNode.position.x = -(PlayerConstants.width/2 - 20)
-        print("ITEM HEIHT \(itemNode.size.height)")
         itemNode.position.y = (PlayerConstants.height/2 - 35)
         itemNode.physicsBody = nil
     }

@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "pink_starff_walkHandsUp_01.png",
+      "filename" : "pink_starff_idleHandsUp_01.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "pink_starff_walkHandsUp_01@2x.png",
+      "filename" : "pink_starff_idleHandsUp_01@2x.png",
       "scale" : "2x"
     },
     {

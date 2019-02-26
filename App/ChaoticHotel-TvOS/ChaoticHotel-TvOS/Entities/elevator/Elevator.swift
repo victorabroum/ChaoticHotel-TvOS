@@ -10,8 +10,8 @@ import Foundation
 import GameplayKit
 
 enum ElevatorDirection {
-    case upper
-    case down
+    case goUp
+    case goDown
 }
 
 class Elevator: InteractEntity {
@@ -27,6 +27,7 @@ class Elevator: InteractEntity {
         let renderComponent = RenderComponent(imageNamed: "")
         renderComponent.node = SKSpriteNode(texture: nil, color: .clear, size: CGSize(width: 135, height: 50))
         renderComponent.node.entity = self
+        renderComponent.node.zPosition = ZPosition.elevator
         self.addComponent(renderComponent)
         
         // Add Physic component

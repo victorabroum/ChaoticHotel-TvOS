@@ -28,6 +28,7 @@ struct BallonSize {
 
 struct AnimationDuration {
     static let roomerGoOut: TimeInterval = 3
+    static let elevator: TimeInterval = 0.8
 }
 
 struct PlayerConstants {

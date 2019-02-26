@@ -26,23 +26,53 @@ class RoomerGoOutState: GKState {
     }
     
     override func didEnter(from previousState: GKState?) {
-        // To dissmis the ballon
-        guard let ballonNode = self.entity.component(ofType: BallonComponent.self) else { return }
-        ballonNode.dismissBallon()
         
+        guard let ballonNode = self.entity.component(ofType: BallonComponent.self) else { return }
         guard let node = self.entity.component(ofType: RenderComponent.self)?.node else {
             return
         }
+        node.xScale = -1
+        
+        guard let gameScene = node.scene as? GameScene else { return }
+        guard let position = gameScene.childNode(withName: "spawnRoomer")?.position else { return }
         
         if (previousState is RoomerAssistState) {
-            // TODO: Feedback Roomer is happy
+            ballonNode.changeTexture(forTexture: SKTexture(imageNamed: "baloon_happy"))
+            ballonNode.showBallon()
             print("AMEI O HOTEL")
         }
         
-        node.run(SKAction.rotate(byAngle: 1000, duration: AnimationDuration.roomerGoOut)) {
+        // This a Simple Solution
+//        guard let animateRoomer = self.entity.component(ofType: AnimationComponent.self) else { return }
+//        animateRoomer.animateNode(withState: .walk)
+//        node.run(SKAction.moveBy(x: position.x, y: 0, duration: AnimationDuration.roomerGoOut)) {
+//            node.removeFromParent()
+//        }
+        guard let animateRoomer = self.entity.component(ofType: AnimationComponent.self) else { return }
+        
+        if !(self.entity.isInRoom) {
+            // If is first floor
+            animateRoomer.animateNode(withState: .walk)
+            node.run(SKAction.moveBy(x: position.x, y: 0, duration: AnimationDuration.roomerGoOut)) {
+                node.removeFromParent()
+            }
+        } else {
             
-            node.removeFromParent()
+            animateRoomer.animationState = .wait
+            animateRoomer.animateNode(withState: .idle)
+            
+            // If is second floor
+            let zapNode = SKSpriteNode(imageNamed: "zap")
+            
+            zapNode.anchorPoint = CGPoint(x: 0.5, y: 0)
+            zapNode.zPosition = node.zPosition + 10
+            node.addChild(zapNode)
+            
+            zapNode.run(SKAction(named: "zap")!) {
+                node.removeFromParent()
+            }
         }
+        
     }
 
 }

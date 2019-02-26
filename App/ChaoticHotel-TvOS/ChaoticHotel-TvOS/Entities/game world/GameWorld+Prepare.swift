@@ -40,13 +40,13 @@ extension GameWorld {
     
     // Prepare Elevators
     func prepareElevators() {
-        var elevator = Elevator(goTo: .down)
+        var elevator = Elevator(goTo: .goDown)
         if let renderComp = elevator.component(ofType: RenderComponent.self) {
             renderComp.node.position = self.scene.childNode(withName: "elevatorGoDown")!.position
         }
         self.scene.entityManager.add(elevator)
         
-        elevator = Elevator(goTo: .upper)
+        elevator = Elevator(goTo: .goUp)
         if let renderComp = elevator.component(ofType: RenderComponent.self) {
             renderComp.node.position = self.scene.childNode(withName: "elevatorGoUp")!.position
         }
@@ -127,7 +127,7 @@ extension GameWorld {
         // 1st Floor
         var floorNode = SKSpriteNode(
             texture: nil,
-            color: .red,
+            color: .clear,
             size: CGSize(width: self.scene.frame.width, height: 30))
         
         // Physics
@@ -144,7 +144,7 @@ extension GameWorld {
         // 2st Floor
         floorNode = SKSpriteNode(
             texture: nil,
-            color: .orange,
+            color: .clear,
             size: CGSize(width: self.scene.frame.width, height: 20))
         
         // Physics

@@ -13,11 +13,32 @@ extension Elevator: InteractDelegate {
     func action(callBy owner: GKEntity) {
         guard let node = owner.component(ofType: RenderComponent.self)?.node else { return }
         guard let gameScene = node.scene as? GameScene else { return }
-        switch self.goTo {
-        case .down:
-            node.position.y = gameScene.childNode(withName: "elevatorGoUp")!.position.y
-        case .upper:
-            node.position.y = gameScene.childNode(withName: "elevatorGoDown")!.position.y
+        node.position.x = gameScene.childNode(withName: "elevatorGoUp")!.position.x
+        
+        let emitter = SKEmitterNode(fileNamed: "TeleportParticle")
+        emitter?.position.y += 75
+        emitter!.particlePositionRange = CGVector(dx: 100, dy: 350)
+        emitter!.particleBirthRate = 150
+        node.run(SKAction.run {
+            node.addChild(emitter!)
+        })
+        
+        if let baloon = self.component(ofType: BallonComponent.self) {
+            baloon.dismissBallon()
+            self.removeComponent(ofType: BallonComponent.self)
+        }
+        
+        self.removeComponent(ofType: MoveComponent.self)
+        node.run(SKAction.wait(forDuration: AnimationDuration.elevator)) {
+            node.removeChildren(in: [emitter!])
+            self.addComponent(MoveComponent(maxSpeed: PlayerConstants.normal))
+            
+            switch self.goTo {
+            case .goDown:
+                node.position.y = gameScene.childNode(withName: "elevatorGoUp")!.position.y
+            case .goUp:
+                node.position.y = gameScene.childNode(withName: "elevatorGoDown")!.position.y
+            }
         }
     }
     

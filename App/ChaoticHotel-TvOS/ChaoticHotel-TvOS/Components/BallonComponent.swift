@@ -13,17 +13,21 @@ class BallonComponent: GKComponent {
     let ballon: SKSpriteNode!
     init(nodeSuper: SKSpriteNode,
          andTexture texture: SKTexture?) {
-         ballon = SKSpriteNode.init(texture: texture,
-                                       color: #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1), size:
-                    CGSize.init(width: BallonSize.width,
-                                height: BallonSize.height)
-                    )
+        
+        ballon = SKSpriteNode(
+            texture: texture,
+            color: .clear,
+            size: texture!.size())
     
         nodeSuper.addChild(ballon)
-        
-        ballon.zPosition = nodeSuper.zPosition + 10
-        ballon.position.y = (nodeSuper.size.height) + BallonSize.posY
         ballon.alpha = 0.0
+        
+        if (nodeSuper.zRotation > 0) {
+            ballon.position.x = 100
+            ballon.zRotation = -nodeSuper.zRotation
+        } else {
+            ballon.position.y = (nodeSuper.size.height) + BallonSize.posY
+        }
         
         super.init()
     }
