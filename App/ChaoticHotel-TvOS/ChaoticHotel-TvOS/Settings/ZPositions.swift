@@ -13,7 +13,8 @@ struct ZPosition {
     static let starff: CGFloat = 10
     static let roomer: CGFloat = ZPosition.starff - 2
     static let items: CGFloat = ZPosition.starff + 2
-    static let slime: CGFloat = ZPosition.starff + 5
+    static let slime: CGFloat = ZPosition.starff + 6
+    static let goop: CGFloat = ZPosition.starff + 5
     
     // About Background
     static let bgPortal: CGFloat = 11
