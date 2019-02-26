@@ -44,11 +44,33 @@ class RoomerGoOutState: GKState {
             print("AMEI O HOTEL")
         }
         
-        guard let animateRoomer = self.entity.component(ofType: AnimationComponent.self) else { return }
-        animateRoomer.animateNode(withState: .walk)
-        node.run(SKAction.move(to: position, duration: AnimationDuration.roomerGoOut)) {
-            node.removeFromParent()
+        // This a Simple Solution
+//        guard let animateRoomer = self.entity.component(ofType: AnimationComponent.self) else { return }
+//        animateRoomer.animateNode(withState: .walk)
+//        node.run(SKAction.moveBy(x: position.x, y: 0, duration: AnimationDuration.roomerGoOut)) {
+//            node.removeFromParent()
+//        }
+        
+        if !(self.entity.isInRoom) {
+            // If is first floor
+            guard let animateRoomer = self.entity.component(ofType: AnimationComponent.self) else { return }
+            animateRoomer.animateNode(withState: .walk)
+            node.run(SKAction.moveBy(x: position.x, y: 0, duration: AnimationDuration.roomerGoOut)) {
+                node.removeFromParent()
+            }
+        } else {
+            // If is second floor
+            let zapNode = SKSpriteNode(imageNamed: "zap")
+            
+            zapNode.anchorPoint = CGPoint(x: 0.5, y: 0)
+            zapNode.zPosition = node.zPosition + 10
+            node.addChild(zapNode)
+            
+            zapNode.run(SKAction(named: "zap")!) {
+                node.removeFromParent()
+            }
         }
+        
     }
 
 }
