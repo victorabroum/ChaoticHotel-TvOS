@@ -20,7 +20,6 @@ class BallonComponent: GKComponent {
             size: texture!.size())
     
         nodeSuper.addChild(ballon)
-        ballon.zPosition = nodeSuper.zPosition + 10
         ballon.alpha = 0.0
         
         if (nodeSuper.zRotation > 0) {
