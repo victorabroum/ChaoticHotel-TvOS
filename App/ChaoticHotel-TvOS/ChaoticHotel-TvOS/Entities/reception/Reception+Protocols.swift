@@ -37,6 +37,19 @@ extension Reception: InteractDelegate {
                     roomerNode.addChild(emitter!)
                 })
                 
+                let zapNode = SKSpriteNode(imageNamed: "zap")
+                let zapAlphaNode = SKSpriteNode(imageNamed: "zap_alpha")
+                
+                zapNode.anchorPoint = CGPoint(x: 0.5, y: 0)
+                zapNode.zPosition = roomerNode.zPosition + 10
+                roomerNode.addChild(zapNode)
+                zapAlphaNode.anchorPoint = CGPoint(x: 0.5, y: 0)
+                zapAlphaNode.zPosition = roomerNode.zPosition + 10
+                roomerNode.addChild(zapAlphaNode)
+                
+                zapNode.run(SKAction(named: "zap")!)
+                zapAlphaNode.run(SKAction(named: "zapAlpha")!)
+                
                 // Play teleport Sound
                 recepetionNode.run(SKAction.playSoundFileNamed("teleport_sound", waitForCompletion: false))
                 
@@ -47,7 +60,7 @@ extension Reception: InteractDelegate {
                 starffAnimateComp.animateNode(withState: .interactDesk)
                 
                 staffNode.node.run(SKAction.wait(forDuration: 2.5)) {
-                    roomerNode.removeChildren(in: [emitter!])
+                    roomerNode.removeChildren(in: [emitter!, zapNode, zapAlphaNode])
                     roomer!.assisted()
                     starffAnimateComp.animateNode(withState: .idle)
                     staff.addComponent(MoveComponent(maxSpeed: PlayerConstants.normal))

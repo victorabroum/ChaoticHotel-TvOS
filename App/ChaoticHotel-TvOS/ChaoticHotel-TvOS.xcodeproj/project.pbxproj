@@ -23,6 +23,7 @@
 		7622D3E322248A89008AA2B2 /* door_knock.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7622D3DF22248A88008AA2B2 /* door_knock.wav */; };
 		7622D3E422248A89008AA2B2 /* teleport_sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7622D3E022248A89008AA2B2 /* teleport_sound.wav */; };
 		7622D3E522248A89008AA2B2 /* background.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7622D3E122248A89008AA2B2 /* background.wav */; };
+		7622D3E82224E3A7008AA2B2 /* TeleportAction.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7622D3E72224E3A7008AA2B2 /* TeleportAction.sks */; };
 		7650285E2215BB9E009A5CE4 /* Hotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7650285D2215BB9E009A5CE4 /* Hotel.swift */; };
 		76608BA022130E210023C29C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76608B9F22130E210023C29C /* AppDelegate.swift */; };
 		76608BA222130E210023C29C /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 76608BA122130E210023C29C /* GameScene.sks */; };
@@ -70,6 +71,7 @@
 		76D62B2D221C49BF006A03DA /* LifeTimeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62B2C221C49BF006A03DA /* LifeTimeComponent.swift */; };
 		76D62B30221C4BE8006A03DA /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62B2F221C4BE8006A03DA /* Items.swift */; };
 		76D62B32221C4D92006A03DA /* Items+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D62B31221C4D92006A03DA /* Items+Extensions.swift */; };
+		76DAF6A22224E40E0059CD96 /* TeleportTemplate.sks in Resources */ = {isa = PBXBuildFile; fileRef = 76DAF6A12224E40E0059CD96 /* TeleportTemplate.sks */; };
 		76F618A0221CA45700B92A74 /* Staff+Control.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F6189F221CA45700B92A74 /* Staff+Control.swift */; };
 		76F618A2221DDA4D00B92A74 /* ZPositions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F618A1221DDA4D00B92A74 /* ZPositions.swift */; };
 		76F618A5221DE0DB00B92A74 /* BackgroundHotelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F618A4221DE0DB00B92A74 /* BackgroundHotelNode.swift */; };
@@ -115,6 +117,7 @@
 		7622D3DF22248A88008AA2B2 /* door_knock.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = door_knock.wav; path = ../../../../Sounds/door_knock.wav; sourceTree = "<group>"; };
 		7622D3E022248A89008AA2B2 /* teleport_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = teleport_sound.wav; path = ../../../../Sounds/teleport_sound.wav; sourceTree = "<group>"; };
 		7622D3E122248A89008AA2B2 /* background.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = background.wav; path = ../../../../Sounds/background.wav; sourceTree = "<group>"; };
+		7622D3E72224E3A7008AA2B2 /* TeleportAction.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TeleportAction.sks; sourceTree = "<group>"; };
 		7650285D2215BB9E009A5CE4 /* Hotel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hotel.swift; sourceTree = "<group>"; };
 		76608B9C22130E210023C29C /* ChaoticHotel-TvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ChaoticHotel-TvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		76608B9F22130E210023C29C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -164,6 +167,7 @@
 		76D62B2C221C49BF006A03DA /* LifeTimeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeTimeComponent.swift; sourceTree = "<group>"; };
 		76D62B2F221C4BE8006A03DA /* Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
 		76D62B31221C4D92006A03DA /* Items+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Items+Extensions.swift"; sourceTree = "<group>"; };
+		76DAF6A12224E40E0059CD96 /* TeleportTemplate.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TeleportTemplate.sks; sourceTree = "<group>"; };
 		76F6189F221CA45700B92A74 /* Staff+Control.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Staff+Control.swift"; sourceTree = "<group>"; };
 		76F618A1221DDA4D00B92A74 /* ZPositions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZPositions.swift; sourceTree = "<group>"; };
 		76F618A4221DE0DB00B92A74 /* BackgroundHotelNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundHotelNode.swift; sourceTree = "<group>"; };
@@ -228,6 +232,16 @@
 			path = Sounds;
 			sourceTree = "<group>";
 		};
+		7622D3E62224E388008AA2B2 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				7622D3E72224E3A7008AA2B2 /* TeleportAction.sks */,
+				76DAF6A12224E40E0059CD96 /* TeleportTemplate.sks */,
+			);
+			name = Actions;
+			path = Acti;
+			sourceTree = "<group>";
+		};
 		76608B9322130E210023C29C = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +262,7 @@
 		76608B9E22130E210023C29C /* ChaoticHotel-TvOS */ = {
 			isa = PBXGroup;
 			children = (
+				7622D3E62224E388008AA2B2 /* Actions */,
 				7622D3C5222460AA008AA2B2 /* Sounds */,
 				FD7F66C522207DC1002AE5E9 /* Assets */,
 				FD0F59C3221C7B5F00856B2F /* Connectivity */,
@@ -625,11 +640,13 @@
 				760948382220F0FB00C5B681 /* Assets.xcassets in Resources */,
 				76608BAB22130E210023C29C /* Main.storyboard in Resources */,
 				7622D3D822246592008AA2B2 /* keyboard_sound.wav in Resources */,
+				7622D3E82224E3A7008AA2B2 /* TeleportAction.sks in Resources */,
 				76608BA222130E210023C29C /* GameScene.sks in Resources */,
 				7622D3E322248A89008AA2B2 /* door_knock.wav in Resources */,
 				7622D3D522246592008AA2B2 /* checkOut_voice.wav in Resources */,
 				760948342220754300C5B681 /* Slime.xcassets in Resources */,
 				7622D3D722246592008AA2B2 /* clean_sound.wav in Resources */,
+				76DAF6A22224E40E0059CD96 /* TeleportTemplate.sks in Resources */,
 				7622D3DB22246592008AA2B2 /* roomService_voice.wav in Resources */,
 				76094832222070E500C5B681 /* Roomers.xcassets in Resources */,
 				76608BAD22130E230023C29C /* Assets.xcassets in Resources */,
