@@ -11,6 +11,9 @@ import GameplayKit
 
 extension Elevator: InteractDelegate {
     func action(callBy owner: GKEntity) {
+        
+        owner.removeComponent(ofType: MoveComponent.self)
+        
         guard let node = owner.component(ofType: RenderComponent.self)?.node else { return }
         guard let gameScene = node.scene as? GameScene else { return }
         node.position.x = gameScene.childNode(withName: "elevatorGoUp")!.position.x
@@ -28,10 +31,9 @@ extension Elevator: InteractDelegate {
             self.removeComponent(ofType: BallonComponent.self)
         }
         
-        self.removeComponent(ofType: MoveComponent.self)
         node.run(SKAction.wait(forDuration: AnimationDuration.elevator)) {
             node.removeChildren(in: [emitter!])
-            self.addComponent(MoveComponent(maxSpeed: PlayerConstants.normal))
+            owner.addComponent(MoveComponent(maxSpeed: PlayerConstants.normal))
             
             switch self.goTo {
             case .goDown:
