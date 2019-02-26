@@ -15,14 +15,16 @@ extension Reception: InteractDelegate {
             if (staff.holdItem != nil) { return }
             if (!self.hotel.receptionQueue.isEmpty) {
                 
-                let roomer = self.hotel.exitQueue()
+                let roomer = self.hotel.receptionQueue.first!
                 
                 // Remove move component from Staff
                 staff.removeComponent(ofType: MoveComponent.self)
                 
                 guard let staffNode = staff.component(ofType: RenderComponent.self) else { return }
-                guard let roomerNode = roomer?.component(ofType: RenderComponent.self)?.node else { return }
+                guard let roomerNode = roomer.component(ofType: RenderComponent.self)?.node else { return }
                 guard let recepetionNode = self.component(ofType: RenderComponent.self)?.node else { return }
+                
+                recepetionNode.physicsBody = nil
                 
                 // Ajust Starff on Reception Table
                 staffNode.node.xScale = -1
@@ -64,9 +66,11 @@ extension Reception: InteractDelegate {
                 
                 staffNode.node.run(SKAction.wait(forDuration: 2.5)) {
                     roomerNode.removeChildren(in: [emitter!, zapNode, zapAlphaNode])
-                    roomer!.assisted()
+                    _ = self.hotel.exitQueue()
+                    roomer.assisted()
                     starffAnimateComp.animateNode(withState: .idle)
                     staff.addComponent(MoveComponent(maxSpeed: PlayerConstants.normal))
+                    recepetionNode.physicsBody = self.physicBody
                 }
             }
         }
