@@ -54,7 +54,10 @@ extension Reception: InteractDelegate {
                 recepetionNode.run(SKAction.playSoundFileNamed("teleport_sound", waitForCompletion: false))
                 
                 // Player keyboard sound
-                staffNode.node.run(SKAction.playSoundFileNamed("keyboard_sound", waitForCompletion: false))
+                staffNode.node.run(
+                SKAction.repeat(
+                    SKAction.playSoundFileNamed("keybord_checkIn", waitForCompletion: false), count: 2)
+                )
                 
                 guard let starffAnimateComp = staff.component(ofType: AnimationComponent.self) else { return }
                 starffAnimateComp.animateNode(withState: .interactDesk)
