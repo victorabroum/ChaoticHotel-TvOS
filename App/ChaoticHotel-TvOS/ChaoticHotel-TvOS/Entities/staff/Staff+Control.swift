@@ -20,7 +20,7 @@ extension Starff {
             self.component(ofType: RenderComponent.self)?.node.scene as? GameScene
             else { return }
         
-        if (physicsBody.allContactedBodies().isEmpty) {
+        if (physicsBody.allContactedBodies().isEmpty && self.holdItem != nil) {
             self.holdItem.drop(callBy: self)
         } else {
             
