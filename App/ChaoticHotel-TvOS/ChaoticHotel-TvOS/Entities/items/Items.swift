@@ -42,7 +42,9 @@ class Items: InteractEntity {
         physicsComp.physicBody.contactTestBitMask =
             ~(CategoryMask.contactWithAllCategories())
         physicsComp.physicBody.collisionBitMask =
-            ~(CategoryMask.contactWithAllCategories(less: [CategoryMask.floor]))
+            ~(CategoryMask.contactWithAllCategories(
+                less: [CategoryMask.floor,
+                       CategoryMask.walls]))
         self.physicsBodyComp = physicsComp
         self.addComponent(physicsComp)
         
