@@ -45,6 +45,10 @@ extension AnimationComponent {
             let textures =
                 self.texturesToAnimate(withName: "\(self.textureAtlasName)")
             
+            if let action = SKAction(named: "\(state!)") {
+                self.nodeToAnimate.run(action)
+            }
+            
             self.nodeToAnimate.run(SKAction.animate(
                 with: textures,
                 timePerFrame: 0.1)) {

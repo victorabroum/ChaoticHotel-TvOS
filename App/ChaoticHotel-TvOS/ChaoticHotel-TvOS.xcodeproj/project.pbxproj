@@ -15,8 +15,6 @@
 		760948382220F0FB00C5B681 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 760948362220F0FB00C5B681 /* Assets.xcassets */; };
 		7622D3D522246592008AA2B2 /* checkOut_voice.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7622D3CE22246591008AA2B2 /* checkOut_voice.wav */; };
 		7622D3D622246592008AA2B2 /* angry_voice.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7622D3CF22246591008AA2B2 /* angry_voice.wav */; };
-		7622D3D722246592008AA2B2 /* clean_sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7622D3D022246591008AA2B2 /* clean_sound.wav */; };
-		7622D3D822246592008AA2B2 /* keyboard_sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7622D3D122246592008AA2B2 /* keyboard_sound.wav */; };
 		7622D3DB22246592008AA2B2 /* roomService_voice.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7622D3D422246592008AA2B2 /* roomService_voice.wav */; };
 		7622D3DD22248497008AA2B2 /* GameWorld+Baloons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7622D3DC22248497008AA2B2 /* GameWorld+Baloons.swift */; };
 		7622D3E222248A89008AA2B2 /* checkIn_bell.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7622D3DE22248A88008AA2B2 /* checkIn_bell.wav */; };
@@ -74,6 +72,9 @@
 		76DAF6A22224E40E0059CD96 /* TeleportTemplate.sks in Resources */ = {isa = PBXBuildFile; fileRef = 76DAF6A12224E40E0059CD96 /* TeleportTemplate.sks */; };
 		76DAF6A722259D080059CD96 /* DoorActions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 76DAF6A622259D080059CD96 /* DoorActions.sks */; };
 		76DAF6A92225B5F00059CD96 /* EntityManager+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DAF6A82225B5F00059CD96 /* EntityManager+Utils.swift */; };
+		76DAF6AD2225BD690059CD96 /* keybord_checkIn.wav in Resources */ = {isa = PBXBuildFile; fileRef = 76DAF6AB2225BD690059CD96 /* keybord_checkIn.wav */; };
+		76DAF6B42225C07F0059CD96 /* clean_goop.wav in Resources */ = {isa = PBXBuildFile; fileRef = 76DAF6B32225C07F0059CD96 /* clean_goop.wav */; };
+		76DAF6B62225C0A90059CD96 /* CleanActions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 76DAF6B52225C0A90059CD96 /* CleanActions.sks */; };
 		76F618A0221CA45700B92A74 /* Staff+Control.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F6189F221CA45700B92A74 /* Staff+Control.swift */; };
 		76F618A2221DDA4D00B92A74 /* ZPositions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F618A1221DDA4D00B92A74 /* ZPositions.swift */; };
 		76F618A5221DE0DB00B92A74 /* BackgroundHotelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F618A4221DE0DB00B92A74 /* BackgroundHotelNode.swift */; };
@@ -111,8 +112,6 @@
 		760948362220F0FB00C5B681 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7622D3CE22246591008AA2B2 /* checkOut_voice.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = checkOut_voice.wav; path = ../../../../Desing/Sounds/checkOut_voice.wav; sourceTree = "<group>"; };
 		7622D3CF22246591008AA2B2 /* angry_voice.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = angry_voice.wav; path = ../../../../Desing/Sounds/angry_voice.wav; sourceTree = "<group>"; };
-		7622D3D022246591008AA2B2 /* clean_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = clean_sound.wav; path = ../../../../Desing/Sounds/clean_sound.wav; sourceTree = "<group>"; };
-		7622D3D122246592008AA2B2 /* keyboard_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = keyboard_sound.wav; path = ../../../../Desing/Sounds/keyboard_sound.wav; sourceTree = "<group>"; };
 		7622D3D422246592008AA2B2 /* roomService_voice.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = roomService_voice.wav; path = ../../../../Desing/Sounds/roomService_voice.wav; sourceTree = "<group>"; };
 		7622D3DC22248497008AA2B2 /* GameWorld+Baloons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameWorld+Baloons.swift"; sourceTree = "<group>"; };
 		7622D3DE22248A88008AA2B2 /* checkIn_bell.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = checkIn_bell.wav; path = ../../../../Sounds/checkIn_bell.wav; sourceTree = "<group>"; };
@@ -172,6 +171,9 @@
 		76DAF6A12224E40E0059CD96 /* TeleportTemplate.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TeleportTemplate.sks; sourceTree = "<group>"; };
 		76DAF6A622259D080059CD96 /* DoorActions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DoorActions.sks; sourceTree = "<group>"; };
 		76DAF6A82225B5F00059CD96 /* EntityManager+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EntityManager+Utils.swift"; sourceTree = "<group>"; };
+		76DAF6AB2225BD690059CD96 /* keybord_checkIn.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = keybord_checkIn.wav; path = ../../../../Sounds/keybord_checkIn.wav; sourceTree = "<group>"; };
+		76DAF6B32225C07F0059CD96 /* clean_goop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = clean_goop.wav; path = ../../../../Sounds/clean_goop.wav; sourceTree = "<group>"; };
+		76DAF6B52225C0A90059CD96 /* CleanActions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CleanActions.sks; sourceTree = "<group>"; };
 		76F6189F221CA45700B92A74 /* Staff+Control.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Staff+Control.swift"; sourceTree = "<group>"; };
 		76F618A1221DDA4D00B92A74 /* ZPositions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZPositions.swift; sourceTree = "<group>"; };
 		76F618A4221DE0DB00B92A74 /* BackgroundHotelNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundHotelNode.swift; sourceTree = "<group>"; };
@@ -223,14 +225,14 @@
 		7622D3C5222460AA008AA2B2 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				76DAF6B32225C07F0059CD96 /* clean_goop.wav */,
+				76DAF6AB2225BD690059CD96 /* keybord_checkIn.wav */,
 				7622D3E122248A89008AA2B2 /* background.wav */,
 				7622D3DE22248A88008AA2B2 /* checkIn_bell.wav */,
 				7622D3DF22248A88008AA2B2 /* door_knock.wav */,
 				7622D3E022248A89008AA2B2 /* teleport_sound.wav */,
 				7622D3CF22246591008AA2B2 /* angry_voice.wav */,
 				7622D3CE22246591008AA2B2 /* checkOut_voice.wav */,
-				7622D3D022246591008AA2B2 /* clean_sound.wav */,
-				7622D3D122246592008AA2B2 /* keyboard_sound.wav */,
 				7622D3D422246592008AA2B2 /* roomService_voice.wav */,
 			);
 			path = Sounds;
@@ -242,6 +244,7 @@
 				7622D3E72224E3A7008AA2B2 /* TeleportAction.sks */,
 				76DAF6A12224E40E0059CD96 /* TeleportTemplate.sks */,
 				76DAF6A622259D080059CD96 /* DoorActions.sks */,
+				76DAF6B52225C0A90059CD96 /* CleanActions.sks */,
 			);
 			name = Actions;
 			path = Acti;
@@ -641,23 +644,24 @@
 				7622D3E522248A89008AA2B2 /* background.wav in Resources */,
 				760948372220F0FB00C5B681 /* TeleportParticle.sks in Resources */,
 				7622D3E422248A89008AA2B2 /* teleport_sound.wav in Resources */,
+				76DAF6B42225C07F0059CD96 /* clean_goop.wav in Resources */,
 				FD7F66CB22207DC1002AE5E9 /* Roomers.xcassets in Resources */,
 				FD7F66C922207DC1002AE5E9 /* Slime.xcassets in Resources */,
 				760948382220F0FB00C5B681 /* Assets.xcassets in Resources */,
 				76608BAB22130E210023C29C /* Main.storyboard in Resources */,
 				76DAF6A722259D080059CD96 /* DoorActions.sks in Resources */,
-				7622D3D822246592008AA2B2 /* keyboard_sound.wav in Resources */,
 				7622D3E82224E3A7008AA2B2 /* TeleportAction.sks in Resources */,
 				76608BA222130E210023C29C /* GameScene.sks in Resources */,
 				7622D3E322248A89008AA2B2 /* door_knock.wav in Resources */,
 				7622D3D522246592008AA2B2 /* checkOut_voice.wav in Resources */,
 				760948342220754300C5B681 /* Slime.xcassets in Resources */,
-				7622D3D722246592008AA2B2 /* clean_sound.wav in Resources */,
+				76DAF6B62225C0A90059CD96 /* CleanActions.sks in Resources */,
 				76DAF6A22224E40E0059CD96 /* TeleportTemplate.sks in Resources */,
 				7622D3DB22246592008AA2B2 /* roomService_voice.wav in Resources */,
 				76094832222070E500C5B681 /* Roomers.xcassets in Resources */,
 				76608BAD22130E230023C29C /* Assets.xcassets in Resources */,
 				7622D3E222248A89008AA2B2 /* checkIn_bell.wav in Resources */,
+				76DAF6AD2225BD690059CD96 /* keybord_checkIn.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
