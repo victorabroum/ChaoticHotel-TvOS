@@ -78,6 +78,9 @@
 		76DAF6B9222634AC0059CD96 /* Balloon+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DAF6B8222634AC0059CD96 /* Balloon+Utils.swift */; };
 		76DAF6BB2226C61B0059CD96 /* MoneyComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DAF6BA2226C61B0059CD96 /* MoneyComponent.swift */; };
 		76DAF6BF2226C7130059CD96 /* MoveComponent+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DAF6BE2226C7130059CD96 /* MoveComponent+Utils.swift */; };
+		76DAF6C22226D66A0059CD96 /* CashRegisterComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DAF6C12226D66A0059CD96 /* CashRegisterComponent.swift */; };
+		76DAF6C42226D6CA0059CD96 /* CashRegisterSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DAF6C32226D6CA0059CD96 /* CashRegisterSystem.swift */; };
+		76DAF6C62226D8590059CD96 /* EntityManager+Cash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DAF6C52226D8590059CD96 /* EntityManager+Cash.swift */; };
 		76F618A0221CA45700B92A74 /* Staff+Control.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F6189F221CA45700B92A74 /* Staff+Control.swift */; };
 		76F618A2221DDA4D00B92A74 /* ZPositions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F618A1221DDA4D00B92A74 /* ZPositions.swift */; };
 		76F618A5221DE0DB00B92A74 /* BackgroundHotelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F618A4221DE0DB00B92A74 /* BackgroundHotelNode.swift */; };
@@ -180,6 +183,9 @@
 		76DAF6B8222634AC0059CD96 /* Balloon+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Balloon+Utils.swift"; sourceTree = "<group>"; };
 		76DAF6BA2226C61B0059CD96 /* MoneyComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyComponent.swift; sourceTree = "<group>"; };
 		76DAF6BE2226C7130059CD96 /* MoveComponent+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoveComponent+Utils.swift"; sourceTree = "<group>"; };
+		76DAF6C12226D66A0059CD96 /* CashRegisterComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashRegisterComponent.swift; sourceTree = "<group>"; };
+		76DAF6C32226D6CA0059CD96 /* CashRegisterSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashRegisterSystem.swift; sourceTree = "<group>"; };
+		76DAF6C52226D8590059CD96 /* EntityManager+Cash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EntityManager+Cash.swift"; sourceTree = "<group>"; };
 		76F6189F221CA45700B92A74 /* Staff+Control.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Staff+Control.swift"; sourceTree = "<group>"; };
 		76F618A1221DDA4D00B92A74 /* ZPositions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZPositions.swift; sourceTree = "<group>"; };
 		76F618A4221DE0DB00B92A74 /* BackgroundHotelNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundHotelNode.swift; sourceTree = "<group>"; };
@@ -356,6 +362,7 @@
 		76608BB922130F360023C29C /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				76DAF6C02226D4C10059CD96 /* cashRegister */,
 				76F618A8221EE16300B92A74 /* slime */,
 				FDFF24FC2217405800BF8593 /* IntelligenceComponent States (Goop) */,
 				76608BC92214968F0023C29C /* IntelligenceComponent States (Roomer) */,
@@ -510,6 +517,15 @@
 			path = moveComponent;
 			sourceTree = "<group>";
 		};
+		76DAF6C02226D4C10059CD96 /* cashRegister */ = {
+			isa = PBXGroup;
+			children = (
+				76DAF6C12226D66A0059CD96 /* CashRegisterComponent.swift */,
+				76DAF6C32226D6CA0059CD96 /* CashRegisterSystem.swift */,
+			);
+			path = cashRegister;
+			sourceTree = "<group>";
+		};
 		76F618A3221DE0B100B92A74 /* customNodes */ = {
 			isa = PBXGroup;
 			children = (
@@ -534,6 +550,7 @@
 				76608BC122146AC90023C29C /* EntityManager.swift */,
 				76F618AC221EE2DB00B92A74 /* EntityManager+SpawnControl.swift */,
 				76DAF6A82225B5F00059CD96 /* EntityManager+Utils.swift */,
+				76DAF6C52226D8590059CD96 /* EntityManager+Cash.swift */,
 			);
 			path = entityManager;
 			sourceTree = "<group>";
@@ -766,6 +783,7 @@
 				76D62B27221C3CC6006A03DA /* Kitchen+Protocols.swift in Sources */,
 				7609482D22203FD900C5B681 /* AnimationComponent.swift in Sources */,
 				76608BD922149B520023C29C /* RoomerGoOutState.swift in Sources */,
+				76DAF6C62226D8590059CD96 /* EntityManager+Cash.swift in Sources */,
 				FDFF24F5221738EF00BF8593 /* Goop.swift in Sources */,
 				76608BD722149B2D0023C29C /* RoomerLeaveState.swift in Sources */,
 				FDFF24C92214C6B900BF8593 /* BallonComponent.swift in Sources */,
@@ -777,6 +795,7 @@
 				76608BC8221487B60023C29C /* Roomer.swift in Sources */,
 				76608BCF22149A2E0023C29C /* RoomerAssistState.swift in Sources */,
 				76F618AF221F14C900B92A74 /* SpawnRoomerComponent.swift in Sources */,
+				76DAF6C42226D6CA0059CD96 /* CashRegisterSystem.swift in Sources */,
 				76D62B06221AF49E006A03DA /* GameWorld+SKPhysicsContactDelegate.swift in Sources */,
 				76608BD522149AF40023C29C /* RoomerRoomServiceState.swift in Sources */,
 				FDFF24CE2215EAEB00BF8593 /* SlimeIdleState.swift in Sources */,
@@ -785,6 +804,7 @@
 				FDA177C1221B42A600A8663D /* JoystickAction.swift in Sources */,
 				76DAF6A92225B5F00059CD96 /* EntityManager+Utils.swift in Sources */,
 				76608BBC221459930023C29C /* Staff.swift in Sources */,
+				76DAF6C22226D66A0059CD96 /* CashRegisterComponent.swift in Sources */,
 				76D62B22221B4FA8006A03DA /* Elevator+Protocols.swift in Sources */,
 				76D62B2B221C4074006A03DA /* Staff+DeliverService.swift in Sources */,
 				76608BDB2214A08E0023C29C /* Roomer+Extensions.swift in Sources */,

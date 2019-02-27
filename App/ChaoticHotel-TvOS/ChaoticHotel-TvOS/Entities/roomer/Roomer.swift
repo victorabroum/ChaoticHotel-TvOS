@@ -62,6 +62,10 @@ class Roomer: AssistEntity {
         animateComp.nodeToAnimate = renderComponent.node
         animateComp.animateNode(withState: .idle)
         self.addComponent(animateComp)
+        
+        // Add Money Component
+        let moneyComp = MoneyComponent()
+        self.addComponent(moneyComp)
     }
     
     required init?(coder aDecoder: NSCoder) {
