@@ -75,6 +75,7 @@
 		76DAF6AD2225BD690059CD96 /* keybord_checkIn.wav in Resources */ = {isa = PBXBuildFile; fileRef = 76DAF6AB2225BD690059CD96 /* keybord_checkIn.wav */; };
 		76DAF6B42225C07F0059CD96 /* clean_goop.wav in Resources */ = {isa = PBXBuildFile; fileRef = 76DAF6B32225C07F0059CD96 /* clean_goop.wav */; };
 		76DAF6B62225C0A90059CD96 /* CleanActions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 76DAF6B52225C0A90059CD96 /* CleanActions.sks */; };
+		76DAF6B9222634AC0059CD96 /* Balloon+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DAF6B8222634AC0059CD96 /* Balloon+Utils.swift */; };
 		76F618A0221CA45700B92A74 /* Staff+Control.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F6189F221CA45700B92A74 /* Staff+Control.swift */; };
 		76F618A2221DDA4D00B92A74 /* ZPositions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F618A1221DDA4D00B92A74 /* ZPositions.swift */; };
 		76F618A5221DE0DB00B92A74 /* BackgroundHotelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F618A4221DE0DB00B92A74 /* BackgroundHotelNode.swift */; };
@@ -174,6 +175,7 @@
 		76DAF6AB2225BD690059CD96 /* keybord_checkIn.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = keybord_checkIn.wav; path = ../../../../Sounds/keybord_checkIn.wav; sourceTree = "<group>"; };
 		76DAF6B32225C07F0059CD96 /* clean_goop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = clean_goop.wav; path = ../../../../Sounds/clean_goop.wav; sourceTree = "<group>"; };
 		76DAF6B52225C0A90059CD96 /* CleanActions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CleanActions.sks; sourceTree = "<group>"; };
+		76DAF6B8222634AC0059CD96 /* Balloon+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Balloon+Utils.swift"; sourceTree = "<group>"; };
 		76F6189F221CA45700B92A74 /* Staff+Control.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Staff+Control.swift"; sourceTree = "<group>"; };
 		76F618A1221DDA4D00B92A74 /* ZPositions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZPositions.swift; sourceTree = "<group>"; };
 		76F618A4221DE0DB00B92A74 /* BackgroundHotelNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundHotelNode.swift; sourceTree = "<group>"; };
@@ -356,7 +358,7 @@
 				76608BBD22145A780023C29C /* RenderComponent.swift */,
 				76608BBF22145EA10023C29C /* MoveComponent.swift */,
 				76608BC3221478BE0023C29C /* MoveSystem.swift */,
-				FDFF24C82214C6B900BF8593 /* BallonComponent.swift */,
+				76DAF6B7222634510059CD96 /* balloon */,
 				76D62AFD221AE8DC006A03DA /* PhysicsBoydComponent.swift */,
 				76D62B0B221B2D89006A03DA /* ServiceComponent.swift */,
 				76D62B0D221B2D96006A03DA /* InteractionComponent.swift */,
@@ -475,6 +477,15 @@
 				7679F6062221A38F00E3C15E /* Items+Mop.swift */,
 			);
 			path = items;
+			sourceTree = "<group>";
+		};
+		76DAF6B7222634510059CD96 /* balloon */ = {
+			isa = PBXGroup;
+			children = (
+				FDFF24C82214C6B900BF8593 /* BallonComponent.swift */,
+				76DAF6B8222634AC0059CD96 /* Balloon+Utils.swift */,
+			);
+			path = balloon;
 			sourceTree = "<group>";
 		};
 		76F618A3221DE0B100B92A74 /* customNodes */ = {
@@ -709,6 +720,7 @@
 				76D62B12221B3BD9006A03DA /* AssistEntity.swift in Sources */,
 				FDFF24FE221740EF00BF8593 /* GoopIdleState.swift in Sources */,
 				76608BCD2214996C0023C29C /* RoomerGiveUpState.swift in Sources */,
+				76DAF6B9222634AC0059CD96 /* Balloon+Utils.swift in Sources */,
 				76D62B25221C3B74006A03DA /* Kitchen.swift in Sources */,
 				760948302220497F00C5B681 /* AnimationComponent+Utils.swift in Sources */,
 				76D62AFC221AE495006A03DA /* CategoryMask.swift in Sources */,
