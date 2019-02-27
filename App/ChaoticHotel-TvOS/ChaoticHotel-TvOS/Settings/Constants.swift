@@ -69,3 +69,7 @@ struct ListOfRoomers {
         "krillbert"
     ]
 }
+
+struct MoneyConstants {
+    static let initialMoney: Int = 10
+}

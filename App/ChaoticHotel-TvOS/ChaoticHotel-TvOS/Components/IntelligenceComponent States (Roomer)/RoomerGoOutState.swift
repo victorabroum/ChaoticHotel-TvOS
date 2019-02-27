@@ -41,7 +41,12 @@ class RoomerGoOutState: GKState {
             ballonNode.showBallon()
         }
         
-        // TODO: #06 Logic to lost some points
+        // TODO: #06 Logic to refresh cash label
+        
+        guard let moneyComp = self.entity.component(ofType: MoneyComponent.self) else { return }
+        
+        let cashRegisterComp = gameScene.entityManager.getCashRegisterComp()
+        cashRegisterComp.addCashRegister(withAmount: moneyComp.amount)
         
         guard let animateRoomer = self.entity.component(ofType: AnimationComponent.self) else { return }
         

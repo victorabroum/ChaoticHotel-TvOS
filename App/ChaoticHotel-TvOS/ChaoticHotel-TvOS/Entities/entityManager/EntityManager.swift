@@ -22,7 +22,11 @@ class EntityManager {
         let lifeSytem = GKComponentSystem(componentClass: LifeTimeComponent.self)
         let spawnGoopSystem = GKComponentSystem(componentClass: SpawnGoopComponent.self)
         let spawnRoomerSystem = GKComponentSystem(componentClass: SpawnRoomerComponent.self)
-        return [moveSystem, spawnGoopSystem, spawnRoomerSystem, lifeSytem]
+        let cashRegisterSystem = GKComponentSystem(componentClass: CashRegisterComponent.self)
+        return [moveSystem, spawnGoopSystem,
+                spawnRoomerSystem, lifeSytem,
+                cashRegisterSystem
+        ]
     }()
     
     // Init with a Scene
