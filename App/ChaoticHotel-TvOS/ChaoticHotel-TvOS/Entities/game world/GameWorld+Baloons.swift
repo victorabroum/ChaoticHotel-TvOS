@@ -40,7 +40,7 @@ extension GameWorld {
             if (textureName != "") {
                 let baloonComp = BallonComponent(
                     nodeSuper: entityNode,
-                    andTexture: SKTexture(imageNamed: textureName))
+                    andTextureNamed: textureName)
                 baloonComp.showBallon()
                 entity?.addComponent(baloonComp)
             }

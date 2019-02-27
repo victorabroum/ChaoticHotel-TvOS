@@ -11,13 +11,15 @@ import GameplayKit
 
 class BallonComponent: GKComponent {
     let ballon: SKSpriteNode!
+    var textureName: String
     init(nodeSuper: SKSpriteNode,
-         andTexture texture: SKTexture?) {
-        
+         andTextureNamed textureNamed: String) {
+        self.textureName = textureNamed
+        let texture = SKTexture(imageNamed: textureNamed)
         ballon = SKSpriteNode(
             texture: texture,
             color: .clear,
-            size: texture!.size())
+            size: texture.size())
     
         nodeSuper.addChild(ballon)
         ballon.alpha = 0.0
@@ -33,13 +35,28 @@ class BallonComponent: GKComponent {
     }
     func showBallon() {
         self.ballon.alpha = 1.0
+        let waitTime = self.waitTime()
+        let moveUp = SKAction.moveBy(x: 0, y: 10, duration: 1)
+        let sequence = SKAction.sequence([moveUp, moveUp.reversed()])
+        self.ballon.run(SKAction.repeatForever(sequence))
+        if (waitTime != 0) {
+//            self.ballon.run(SKAction.colorize(
+//                with: .red,
+//                colorBlendFactor: 1,
+//                duration: waitTime))
+            self.ballon.run(SKAction.fadeAlpha(to: 0, duration: waitTime))
+        }
+        
     }
     
     func dismissBallon() {
         self.ballon.alpha = 0.0
+        self.ballon.removeAllActions()
     }
     
-    func changeTexture(forTexture texture: SKTexture?) {
+    func changeTexture(forTexture textureNamed: String) {
+        self.textureName = textureNamed
+        let texture = SKTexture(imageNamed: textureNamed)
         self.ballon.texture = texture
     }
     

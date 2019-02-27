@@ -37,17 +37,11 @@ class RoomerGoOutState: GKState {
         guard let position = gameScene.childNode(withName: "spawnRoomer")?.position else { return }
         
         if (previousState is RoomerAssistState) {
-            ballonNode.changeTexture(forTexture: SKTexture(imageNamed: "baloon_happy"))
+            ballonNode.changeTexture(forTexture: "baloon_happy")
             ballonNode.showBallon()
             print("AMEI O HOTEL")
         }
         
-        // This a Simple Solution
-//        guard let animateRoomer = self.entity.component(ofType: AnimationComponent.self) else { return }
-//        animateRoomer.animateNode(withState: .walk)
-//        node.run(SKAction.moveBy(x: position.x, y: 0, duration: AnimationDuration.roomerGoOut)) {
-//            node.removeFromParent()
-//        }
         guard let animateRoomer = self.entity.component(ofType: AnimationComponent.self) else { return }
         
         if !(self.entity.isInRoom) {

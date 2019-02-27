@@ -83,7 +83,7 @@ class RoomerListnerState: GKState {
         guard let ballon = self.entity.component(ofType: BallonComponent.self) else {return}
         
         if (imageNamed != nil) {
-            ballon.changeTexture(forTexture: SKTexture(imageNamed: imageNamed!))
+            ballon.changeTexture(forTexture: imageNamed!)
         }
         
         ballon.showBallon()
