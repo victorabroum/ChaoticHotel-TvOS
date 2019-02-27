@@ -10,6 +10,6 @@ import Foundation
 
 extension CashRegisterComponent {
     override func update(deltaTime seconds: TimeInterval) {
-        self.entityManager.refreshCashLabel(newContent: "\(self.amount)")
+//        self.entityManager.refreshCashLabel(newContent: "\(self.amount)")
     }
 }

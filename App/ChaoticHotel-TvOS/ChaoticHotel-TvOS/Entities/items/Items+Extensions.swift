@@ -62,6 +62,7 @@ extension Items {
         itemNode.position.x = -(PlayerConstants.width/2 - 20)
         itemNode.position.y = (PlayerConstants.height/2 - 35)
         itemNode.physicsBody = nil
+//        itemNode.physicsBody?.affectedByGravity = false
     }
     
     func drop(callBy owner: GKEntity) {
@@ -81,6 +82,7 @@ extension Items {
         
         itemNode.move(toParent: itemNode.scene!)
         itemNode.zPosition = ZPosition.items
+//        itemNode.physicsBody?.affectedByGravity = true
         itemNode.physicsBody = self.physicsBodyComp.physicBody
         
     }
