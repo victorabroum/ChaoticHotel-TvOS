@@ -29,8 +29,6 @@ class RoomerGiveUpState: GKState {
     
     override func didEnter(from previousState: GKState?) {
         
-        // TODO: #06 Logic to lost some points
-        
         // Go to Reception
         guard let node = self.entity.component(ofType: RenderComponent.self)?.node else {
             return
@@ -46,9 +44,6 @@ class RoomerGiveUpState: GKState {
             _ = scene.gameWorld.hotelEntity.exitQueue()
             
         }
-        
-        // TODO: Feedback Roomer is angry
-        print("QUE HOTEL MERDA")
         guard let baloon = self.entity.component(ofType: BallonComponent.self) else { return }
         baloon.changeTexture(forTexture: "baloon_angry")
         baloon.showBallon()

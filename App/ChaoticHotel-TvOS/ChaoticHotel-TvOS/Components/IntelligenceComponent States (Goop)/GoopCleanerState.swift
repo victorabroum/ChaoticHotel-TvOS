@@ -41,8 +41,5 @@ class GoopCleanerState: GKState {
         if let gameScene = node.scene as? GameScene {
             gameScene.entityManager.remove(self.entity)
         }
-        
-        //TODO - Liberar pontuação para o usuário
-        
     }
 }

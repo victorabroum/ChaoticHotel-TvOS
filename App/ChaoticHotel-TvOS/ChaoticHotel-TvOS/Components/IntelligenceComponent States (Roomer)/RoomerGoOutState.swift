@@ -39,8 +39,9 @@ class RoomerGoOutState: GKState {
         if (previousState is RoomerAssistState) {
             ballonNode.changeTexture(forTexture: "baloon_happy")
             ballonNode.showBallon()
-            print("AMEI O HOTEL")
         }
+        
+        // TODO: #06 Logic to lost some points
         
         guard let animateRoomer = self.entity.component(ofType: AnimationComponent.self) else { return }
         

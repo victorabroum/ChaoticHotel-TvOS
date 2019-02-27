@@ -30,11 +30,10 @@ class RoomerWaitState: GKState {
     }
     
     override func didEnter(from previousState: GKState?) {
-        // TODO: Logic to wait a time and after call random service
         
         guard let node = self.entity.component(ofType: RenderComponent.self)?.node else { return }
         
-        node.run(SKAction.wait(forDuration: 2)) {
+        node.run(SKAction.wait(forDuration: TimeInterval.random(in: 2...5))) {
             // Has 60% of chance to ask for Room Service
             if (Int.random(in: 0...10) >= 3) {
                 node.run(
