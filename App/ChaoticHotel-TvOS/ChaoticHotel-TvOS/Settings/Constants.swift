@@ -9,6 +9,9 @@
 import Foundation
 import SpriteKit
 
+//Connectivity
+let displayNameAppleTV = "ffstudio.appletv-os"
+
 struct WaitTimer {
     static let reception: TimeInterval = 20
     static let roomService: TimeInterval = 30

@@ -15,7 +15,7 @@ public class EasyMultiPeerService: NSObject {
     // and can contain only ASCII lowercase letters, numbers and hyphens.
     private var easyMultiPeerServiceType = "easy-multipeer"
     
-    private let myPeerId = MCPeerID(displayName: UIDevice.current.name)
+    private let myPeerId = MCPeerID(displayName: displayNameAppleTV)
     
     // For advertiser
     private let serviceAdvertiser: MCNearbyServiceAdvertiser
