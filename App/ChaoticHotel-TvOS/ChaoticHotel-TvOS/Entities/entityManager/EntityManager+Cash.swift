@@ -18,7 +18,7 @@ extension EntityManager {
     
     func getCashRegisterComp() -> CashRegisterComponent {
         let gameWorld = self.entities.first { (entity) -> Bool in
-            if( entity is GameWorld) { return true }
+            if( entity is Score) { return true }
             return false
         }
         

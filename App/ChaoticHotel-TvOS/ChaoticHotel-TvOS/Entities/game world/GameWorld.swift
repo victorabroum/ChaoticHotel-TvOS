@@ -37,10 +37,6 @@ class GameWorld: GKEntity {
         // Set ContactDelegate
         self.scene.physicsWorld.contactDelegate = self
         
-        // Add Cash Register Comp
-        let cashRegisterComp = CashRegisterComponent(entityManager: self.scene.entityManager)
-        self.addComponent(cashRegisterComp)
-        
         // Prepare Level
         self.prepareLevel()
         

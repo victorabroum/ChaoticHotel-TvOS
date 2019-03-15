@@ -26,4 +26,7 @@ struct ZPosition {
     static let door: CGFloat = ZPosition.bgScene - 5
     static let bgDoor: CGFloat = ZPosition.bgScene - 10
     static let bgSky: CGFloat = -50
+    
+    // About HUD
+    static let baseHUD: CGFloat = 100
 }

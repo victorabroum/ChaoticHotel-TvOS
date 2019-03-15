@@ -13,6 +13,7 @@ import GameplayKit
 extension GameWorld {
     
     func prepareLevel() {
+        self.prepareHUD()
         self.prepareElevators()
         self.prepareReceptionTable()
         self.prepareKitchen()
@@ -157,5 +158,17 @@ extension GameWorld {
         // Position
         floorNode.position.y -= 105
         self.scene.addChild(floorNode)
+    }
+    
+    func prepareHUD() {
+        let scoreHUD = Score()
+        
+        guard let scoreNode = scoreHUD.component(ofType: RenderComponent.self)?.node else { return }
+        
+        scoreNode.position = CGPoint(
+            x: scene.frame.width / 3,
+            y: scene.frame.height / 3)
+        
+        self.scene.entityManager.add(scoreHUD)
     }
 }

@@ -22,6 +22,8 @@
 		7622D3E422248A89008AA2B2 /* teleport_sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7622D3E022248A89008AA2B2 /* teleport_sound.wav */; };
 		7622D3E522248A89008AA2B2 /* background.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7622D3E122248A89008AA2B2 /* background.wav */; };
 		7622D3E82224E3A7008AA2B2 /* TeleportAction.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7622D3E72224E3A7008AA2B2 /* TeleportAction.sks */; };
+		76373445223A8E4A006E894D /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76373444223A8E4A006E894D /* Score.swift */; };
+		76373449223A9011006E894D /* LabelComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76373448223A9011006E894D /* LabelComponent.swift */; };
 		7650285E2215BB9E009A5CE4 /* Hotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7650285D2215BB9E009A5CE4 /* Hotel.swift */; };
 		76608BA022130E210023C29C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76608B9F22130E210023C29C /* AppDelegate.swift */; };
 		76608BA222130E210023C29C /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 76608BA122130E210023C29C /* GameScene.sks */; };
@@ -79,7 +81,6 @@
 		76DAF6BB2226C61B0059CD96 /* MoneyComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DAF6BA2226C61B0059CD96 /* MoneyComponent.swift */; };
 		76DAF6BF2226C7130059CD96 /* MoveComponent+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DAF6BE2226C7130059CD96 /* MoveComponent+Utils.swift */; };
 		76DAF6C22226D66A0059CD96 /* CashRegisterComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DAF6C12226D66A0059CD96 /* CashRegisterComponent.swift */; };
-		76DAF6C42226D6CA0059CD96 /* CashRegisterSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DAF6C32226D6CA0059CD96 /* CashRegisterSystem.swift */; };
 		76DAF6C62226D8590059CD96 /* EntityManager+Cash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DAF6C52226D8590059CD96 /* EntityManager+Cash.swift */; };
 		76F618A0221CA45700B92A74 /* Staff+Control.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F6189F221CA45700B92A74 /* Staff+Control.swift */; };
 		76F618A2221DDA4D00B92A74 /* ZPositions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F618A1221DDA4D00B92A74 /* ZPositions.swift */; };
@@ -125,6 +126,8 @@
 		7622D3E022248A89008AA2B2 /* teleport_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = teleport_sound.wav; path = ../../../../Sounds/teleport_sound.wav; sourceTree = "<group>"; };
 		7622D3E122248A89008AA2B2 /* background.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = background.wav; path = ../../../../Sounds/background.wav; sourceTree = "<group>"; };
 		7622D3E72224E3A7008AA2B2 /* TeleportAction.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TeleportAction.sks; sourceTree = "<group>"; };
+		76373444223A8E4A006E894D /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
+		76373448223A9011006E894D /* LabelComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelComponent.swift; sourceTree = "<group>"; };
 		7650285D2215BB9E009A5CE4 /* Hotel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hotel.swift; sourceTree = "<group>"; };
 		76608B9C22130E210023C29C /* ChaoticHotel-TvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ChaoticHotel-TvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		76608B9F22130E210023C29C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -184,7 +187,6 @@
 		76DAF6BA2226C61B0059CD96 /* MoneyComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyComponent.swift; sourceTree = "<group>"; };
 		76DAF6BE2226C7130059CD96 /* MoveComponent+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoveComponent+Utils.swift"; sourceTree = "<group>"; };
 		76DAF6C12226D66A0059CD96 /* CashRegisterComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashRegisterComponent.swift; sourceTree = "<group>"; };
-		76DAF6C32226D6CA0059CD96 /* CashRegisterSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashRegisterSystem.swift; sourceTree = "<group>"; };
 		76DAF6C52226D8590059CD96 /* EntityManager+Cash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EntityManager+Cash.swift"; sourceTree = "<group>"; };
 		76F6189F221CA45700B92A74 /* Staff+Control.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Staff+Control.swift"; sourceTree = "<group>"; };
 		76F618A1221DDA4D00B92A74 /* ZPositions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZPositions.swift; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 				76D62B01221AF317006A03DA /* roomer */,
 				76D62B02221AF326006A03DA /* hotel */,
 				76D62B03221AF32F006A03DA /* game world */,
+				76373444223A8E4A006E894D /* Score.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 				76D62B0D221B2D96006A03DA /* InteractionComponent.swift */,
 				76D62B2C221C49BF006A03DA /* LifeTimeComponent.swift */,
 				76F618AE221F14C900B92A74 /* SpawnRoomerComponent.swift */,
+				76373448223A9011006E894D /* LabelComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -521,7 +525,6 @@
 			isa = PBXGroup;
 			children = (
 				76DAF6C12226D66A0059CD96 /* CashRegisterComponent.swift */,
-				76DAF6C32226D6CA0059CD96 /* CashRegisterSystem.swift */,
 			);
 			path = cashRegister;
 			sourceTree = "<group>";
@@ -776,6 +779,7 @@
 				76D62B30221C4BE8006A03DA /* Items.swift in Sources */,
 				76D62B18221B4463006A03DA /* InteractDelegate.swift in Sources */,
 				76D62B16221B444C006A03DA /* InteractEntity.swift in Sources */,
+				76373445223A8E4A006E894D /* Score.swift in Sources */,
 				76608BD322149ACC0023C29C /* RoomerListnerState.swift in Sources */,
 				FDFF24FB221739A400BF8593 /* Goop+Extensions.swift in Sources */,
 				76D62AFE221AE8DC006A03DA /* PhysicsBoydComponent.swift in Sources */,
@@ -784,6 +788,7 @@
 				7609482D22203FD900C5B681 /* AnimationComponent.swift in Sources */,
 				76608BD922149B520023C29C /* RoomerGoOutState.swift in Sources */,
 				76DAF6C62226D8590059CD96 /* EntityManager+Cash.swift in Sources */,
+				76373449223A9011006E894D /* LabelComponent.swift in Sources */,
 				FDFF24F5221738EF00BF8593 /* Goop.swift in Sources */,
 				76608BD722149B2D0023C29C /* RoomerLeaveState.swift in Sources */,
 				FDFF24C92214C6B900BF8593 /* BallonComponent.swift in Sources */,
@@ -795,7 +800,6 @@
 				76608BC8221487B60023C29C /* Roomer.swift in Sources */,
 				76608BCF22149A2E0023C29C /* RoomerAssistState.swift in Sources */,
 				76F618AF221F14C900B92A74 /* SpawnRoomerComponent.swift in Sources */,
-				76DAF6C42226D6CA0059CD96 /* CashRegisterSystem.swift in Sources */,
 				76D62B06221AF49E006A03DA /* GameWorld+SKPhysicsContactDelegate.swift in Sources */,
 				76608BD522149AF40023C29C /* RoomerRoomServiceState.swift in Sources */,
 				FDFF24CE2215EAEB00BF8593 /* SlimeIdleState.swift in Sources */,
