@@ -35,8 +35,9 @@ class RoomerGiveUpState: GKState {
         }
         
         // Lost some tips
-        guard let moneyComp = self.entity.component(ofType: MoneyComponent.self) else { return }
-        moneyComp.giveSome(tip: Int.random(in: -15 ... -10))
+        if let giveMoneyComp = self.entity.component(ofType: GiveMoneyComponent.self) {
+            giveMoneyComp.amount -= .random(in: 20 ... 40)
+        }
         
         guard let scene = node.scene as? GameScene else { return }
         
