@@ -57,10 +57,10 @@ enum Itens {
 }
 
 enum PlayerColors: String, CaseIterable {
-    case red = "red"
-    case yellow = "yellow"
-    case blue = "blue"
-    case pink = "pink"
+    case red
+    case yellow
+    case blue
+    case pink
 }
 
 struct ListOfRoomers {
@@ -72,4 +72,8 @@ struct ListOfRoomers {
 
 struct MoneyConstants {
     static let initialMoney: Int = 10
+}
+
+struct FontSize {
+    static let score: CGFloat = 70
 }

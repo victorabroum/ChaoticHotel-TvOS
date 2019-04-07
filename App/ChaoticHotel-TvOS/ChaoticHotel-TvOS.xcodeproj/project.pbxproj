@@ -22,6 +22,10 @@
 		7622D3E422248A89008AA2B2 /* teleport_sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7622D3E022248A89008AA2B2 /* teleport_sound.wav */; };
 		7622D3E522248A89008AA2B2 /* background.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7622D3E122248A89008AA2B2 /* background.wav */; };
 		7622D3E82224E3A7008AA2B2 /* TeleportAction.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7622D3E72224E3A7008AA2B2 /* TeleportAction.sks */; };
+		76373445223A8E4A006E894D /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76373444223A8E4A006E894D /* Score.swift */; };
+		76373449223A9011006E894D /* LabelComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76373448223A9011006E894D /* LabelComponent.swift */; };
+		76373874225A1FF7006D1357 /* Notification+Names.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76373873225A1FF7006D1357 /* Notification+Names.swift */; };
+		76373876225A2133006D1357 /* GiveMoneyComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76373875225A2133006D1357 /* GiveMoneyComponent.swift */; };
 		7650285E2215BB9E009A5CE4 /* Hotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7650285D2215BB9E009A5CE4 /* Hotel.swift */; };
 		76608BA022130E210023C29C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76608B9F22130E210023C29C /* AppDelegate.swift */; };
 		76608BA222130E210023C29C /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 76608BA122130E210023C29C /* GameScene.sks */; };
@@ -76,11 +80,7 @@
 		76DAF6B42225C07F0059CD96 /* clean_goop.wav in Resources */ = {isa = PBXBuildFile; fileRef = 76DAF6B32225C07F0059CD96 /* clean_goop.wav */; };
 		76DAF6B62225C0A90059CD96 /* CleanActions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 76DAF6B52225C0A90059CD96 /* CleanActions.sks */; };
 		76DAF6B9222634AC0059CD96 /* Balloon+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DAF6B8222634AC0059CD96 /* Balloon+Utils.swift */; };
-		76DAF6BB2226C61B0059CD96 /* MoneyComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DAF6BA2226C61B0059CD96 /* MoneyComponent.swift */; };
-		76DAF6BF2226C7130059CD96 /* MoveComponent+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DAF6BE2226C7130059CD96 /* MoveComponent+Utils.swift */; };
 		76DAF6C22226D66A0059CD96 /* CashRegisterComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DAF6C12226D66A0059CD96 /* CashRegisterComponent.swift */; };
-		76DAF6C42226D6CA0059CD96 /* CashRegisterSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DAF6C32226D6CA0059CD96 /* CashRegisterSystem.swift */; };
-		76DAF6C62226D8590059CD96 /* EntityManager+Cash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DAF6C52226D8590059CD96 /* EntityManager+Cash.swift */; };
 		76F618A0221CA45700B92A74 /* Staff+Control.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F6189F221CA45700B92A74 /* Staff+Control.swift */; };
 		76F618A2221DDA4D00B92A74 /* ZPositions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F618A1221DDA4D00B92A74 /* ZPositions.swift */; };
 		76F618A5221DE0DB00B92A74 /* BackgroundHotelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F618A4221DE0DB00B92A74 /* BackgroundHotelNode.swift */; };
@@ -125,6 +125,10 @@
 		7622D3E022248A89008AA2B2 /* teleport_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = teleport_sound.wav; path = ../../../../Sounds/teleport_sound.wav; sourceTree = "<group>"; };
 		7622D3E122248A89008AA2B2 /* background.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = background.wav; path = ../../../../Sounds/background.wav; sourceTree = "<group>"; };
 		7622D3E72224E3A7008AA2B2 /* TeleportAction.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TeleportAction.sks; sourceTree = "<group>"; };
+		76373444223A8E4A006E894D /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
+		76373448223A9011006E894D /* LabelComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelComponent.swift; sourceTree = "<group>"; };
+		76373873225A1FF7006D1357 /* Notification+Names.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Names.swift"; sourceTree = "<group>"; };
+		76373875225A2133006D1357 /* GiveMoneyComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiveMoneyComponent.swift; sourceTree = "<group>"; };
 		7650285D2215BB9E009A5CE4 /* Hotel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hotel.swift; sourceTree = "<group>"; };
 		76608B9C22130E210023C29C /* ChaoticHotel-TvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ChaoticHotel-TvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		76608B9F22130E210023C29C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -181,11 +185,7 @@
 		76DAF6B32225C07F0059CD96 /* clean_goop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = clean_goop.wav; path = ../../../../Sounds/clean_goop.wav; sourceTree = "<group>"; };
 		76DAF6B52225C0A90059CD96 /* CleanActions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CleanActions.sks; sourceTree = "<group>"; };
 		76DAF6B8222634AC0059CD96 /* Balloon+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Balloon+Utils.swift"; sourceTree = "<group>"; };
-		76DAF6BA2226C61B0059CD96 /* MoneyComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyComponent.swift; sourceTree = "<group>"; };
-		76DAF6BE2226C7130059CD96 /* MoveComponent+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoveComponent+Utils.swift"; sourceTree = "<group>"; };
 		76DAF6C12226D66A0059CD96 /* CashRegisterComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashRegisterComponent.swift; sourceTree = "<group>"; };
-		76DAF6C32226D6CA0059CD96 /* CashRegisterSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashRegisterSystem.swift; sourceTree = "<group>"; };
-		76DAF6C52226D8590059CD96 /* EntityManager+Cash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EntityManager+Cash.swift"; sourceTree = "<group>"; };
 		76F6189F221CA45700B92A74 /* Staff+Control.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Staff+Control.swift"; sourceTree = "<group>"; };
 		76F618A1221DDA4D00B92A74 /* ZPositions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZPositions.swift; sourceTree = "<group>"; };
 		76F618A4221DE0DB00B92A74 /* BackgroundHotelNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundHotelNode.swift; sourceTree = "<group>"; };
@@ -326,6 +326,7 @@
 				76D62AF42216FD50006A03DA /* CGPoint+Extensions.swift */,
 				76D62AFB221AE495006A03DA /* CategoryMask.swift */,
 				76F618A1221DDA4D00B92A74 /* ZPositions.swift */,
+				76373873225A1FF7006D1357 /* Notification+Names.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -355,6 +356,7 @@
 				76D62B01221AF317006A03DA /* roomer */,
 				76D62B02221AF326006A03DA /* hotel */,
 				76D62B03221AF32F006A03DA /* game world */,
+				76373444223A8E4A006E894D /* Score.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -369,13 +371,14 @@
 				76DAF6BD2226C6D90059CD96 /* moveComponent */,
 				76DAF6B7222634510059CD96 /* balloonComponent */,
 				7609482E2220496100C5B681 /* animationComponent */,
-				76DAF6BC2226C61E0059CD96 /* moneyComponent */,
 				76608BBD22145A780023C29C /* RenderComponent.swift */,
 				76D62AFD221AE8DC006A03DA /* PhysicsBoydComponent.swift */,
 				76D62B0B221B2D89006A03DA /* ServiceComponent.swift */,
 				76D62B0D221B2D96006A03DA /* InteractionComponent.swift */,
 				76D62B2C221C49BF006A03DA /* LifeTimeComponent.swift */,
 				76F618AE221F14C900B92A74 /* SpawnRoomerComponent.swift */,
+				76373448223A9011006E894D /* LabelComponent.swift */,
+				76373875225A2133006D1357 /* GiveMoneyComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -499,15 +502,6 @@
 			path = balloonComponent;
 			sourceTree = "<group>";
 		};
-		76DAF6BC2226C61E0059CD96 /* moneyComponent */ = {
-			isa = PBXGroup;
-			children = (
-				76DAF6BA2226C61B0059CD96 /* MoneyComponent.swift */,
-				76DAF6BE2226C7130059CD96 /* MoveComponent+Utils.swift */,
-			);
-			path = moneyComponent;
-			sourceTree = "<group>";
-		};
 		76DAF6BD2226C6D90059CD96 /* moveComponent */ = {
 			isa = PBXGroup;
 			children = (
@@ -521,7 +515,6 @@
 			isa = PBXGroup;
 			children = (
 				76DAF6C12226D66A0059CD96 /* CashRegisterComponent.swift */,
-				76DAF6C32226D6CA0059CD96 /* CashRegisterSystem.swift */,
 			);
 			path = cashRegister;
 			sourceTree = "<group>";
@@ -550,7 +543,6 @@
 				76608BC122146AC90023C29C /* EntityManager.swift */,
 				76F618AC221EE2DB00B92A74 /* EntityManager+SpawnControl.swift */,
 				76DAF6A82225B5F00059CD96 /* EntityManager+Utils.swift */,
-				76DAF6C52226D8590059CD96 /* EntityManager+Cash.swift */,
 			);
 			path = entityManager;
 			sourceTree = "<group>";
@@ -663,6 +655,7 @@
 				TargetAttributes = {
 					76608B9B22130E210023C29C = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -748,16 +741,15 @@
 				76D62AF722172CFA006A03DA /* RoomerArriveState.swift in Sources */,
 				76D62AF32216F82B006A03DA /* Hotel+ControlQueue.swift in Sources */,
 				7622D3DD22248497008AA2B2 /* GameWorld+Baloons.swift in Sources */,
-				76DAF6BF2226C7130059CD96 /* MoveComponent+Utils.swift in Sources */,
 				7679F6072221A38F00E3C15E /* Items+Mop.swift in Sources */,
 				76F618A7221DE13A00B92A74 /* LugaggeCartNode.swift in Sources */,
+				76373876225A2133006D1357 /* GiveMoneyComponent.swift in Sources */,
 				76D62B1B221B44CA006A03DA /* Reception.swift in Sources */,
 				FDFF24CB2215E18D00BF8593 /* Slime.swift in Sources */,
 				76608BC622147ACF0023C29C /* GameScene+Extesions.swift in Sources */,
 				FDFF24D02215EB9500BF8593 /* SlimeCrawlingState.swift in Sources */,
 				76608BA622130E210023C29C /* GameScene.swift in Sources */,
 				76608BC222146AC90023C29C /* EntityManager.swift in Sources */,
-				76DAF6BB2226C61B0059CD96 /* MoneyComponent.swift in Sources */,
 				76D62B12221B3BD9006A03DA /* AssistEntity.swift in Sources */,
 				FDFF24FE221740EF00BF8593 /* GoopIdleState.swift in Sources */,
 				76608BCD2214996C0023C29C /* RoomerGiveUpState.swift in Sources */,
@@ -776,6 +768,7 @@
 				76D62B30221C4BE8006A03DA /* Items.swift in Sources */,
 				76D62B18221B4463006A03DA /* InteractDelegate.swift in Sources */,
 				76D62B16221B444C006A03DA /* InteractEntity.swift in Sources */,
+				76373445223A8E4A006E894D /* Score.swift in Sources */,
 				76608BD322149ACC0023C29C /* RoomerListnerState.swift in Sources */,
 				FDFF24FB221739A400BF8593 /* Goop+Extensions.swift in Sources */,
 				76D62AFE221AE8DC006A03DA /* PhysicsBoydComponent.swift in Sources */,
@@ -783,7 +776,7 @@
 				76D62B27221C3CC6006A03DA /* Kitchen+Protocols.swift in Sources */,
 				7609482D22203FD900C5B681 /* AnimationComponent.swift in Sources */,
 				76608BD922149B520023C29C /* RoomerGoOutState.swift in Sources */,
-				76DAF6C62226D8590059CD96 /* EntityManager+Cash.swift in Sources */,
+				76373449223A9011006E894D /* LabelComponent.swift in Sources */,
 				FDFF24F5221738EF00BF8593 /* Goop.swift in Sources */,
 				76608BD722149B2D0023C29C /* RoomerLeaveState.swift in Sources */,
 				FDFF24C92214C6B900BF8593 /* BallonComponent.swift in Sources */,
@@ -795,7 +788,6 @@
 				76608BC8221487B60023C29C /* Roomer.swift in Sources */,
 				76608BCF22149A2E0023C29C /* RoomerAssistState.swift in Sources */,
 				76F618AF221F14C900B92A74 /* SpawnRoomerComponent.swift in Sources */,
-				76DAF6C42226D6CA0059CD96 /* CashRegisterSystem.swift in Sources */,
 				76D62B06221AF49E006A03DA /* GameWorld+SKPhysicsContactDelegate.swift in Sources */,
 				76608BD522149AF40023C29C /* RoomerRoomServiceState.swift in Sources */,
 				FDFF24CE2215EAEB00BF8593 /* SlimeIdleState.swift in Sources */,
@@ -809,6 +801,7 @@
 				76D62B2B221C4074006A03DA /* Staff+DeliverService.swift in Sources */,
 				76608BDB2214A08E0023C29C /* Roomer+Extensions.swift in Sources */,
 				76D62B00221AF13A006A03DA /* GameWorld.swift in Sources */,
+				76373874225A1FF7006D1357 /* Notification+Names.swift in Sources */,
 				FDFF24C72214BB4B00BF8593 /* Constants.swift in Sources */,
 				76F618B1221F212500B92A74 /* GameWorld+Prepare.swift in Sources */,
 				76608BCB221497190023C29C /* RoomerWaitState.swift in Sources */,
@@ -964,7 +957,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ffstudio.ChaoticHotel-TvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
 			};
 			name = Debug;
@@ -983,7 +976,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ffstudio.ChaoticHotel-TvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
 			};
 			name = Release;

@@ -1,19 +1,24 @@
 //
-//  MoneyComponent.swift
+//  LabelComponent.swift
 //  ChaoticHotel-TvOS
 //
-//  Created by Victor Vasconcelos on 27/02/19.
+//  Created by Victor Vasconcelos on 14/03/19.
 //  Copyright © 2019 FF Studio. All rights reserved.
 //
 
 import Foundation
 import GameplayKit
 
-class MoneyComponent: GKComponent {
-    var amount: Int
+class LabelComponent: GKComponent {
+    var content: String = "" {
+        didSet {
+            labelNode.text = content
+        }
+    }
+    
+    var labelNode = SKLabelNode()
     
     override init() {
-        self.amount = 0
         super.init()
     }
     

@@ -63,9 +63,9 @@ class Roomer: AssistEntity {
         animateComp.animateNode(withState: .idle)
         self.addComponent(animateComp)
         
-        // Add Money Component
-        let moneyComp = MoneyComponent()
-        self.addComponent(moneyComp)
+        // Add Give Money Comp
+        let giveMoneyComponent = GiveMoneyComponent(amount: .random(in: 10...15))
+        addComponent(giveMoneyComponent)
     }
     
     required init?(coder aDecoder: NSCoder) {

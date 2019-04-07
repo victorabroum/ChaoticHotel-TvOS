@@ -44,8 +44,9 @@ class RoomerAssistState: GKState {
         ballonNode.dismissBallon()
         
         // Add some tips
-        guard let moneyComp = self.entity.component(ofType: MoneyComponent.self) else { return }
-        moneyComp.giveSome(tip: Int.random(in: 10...15))
+        if let giveMoneyComp = self.entity.component(ofType: GiveMoneyComponent.self) {
+            giveMoneyComp.amount += .random(in: 10...15)
+        }
         
         if (self.entity.wantLeave) {
             
